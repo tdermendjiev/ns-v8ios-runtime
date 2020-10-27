@@ -13,6 +13,7 @@ public:
     static SymbolLoader& instance();
 
     void* loadFunctionSymbol(const ModuleMeta*, const char* symbolName);
+    void* loadSwiftFunctionSymbol(const char* symbolName);
     void* loadDataSymbol(const ModuleMeta*, const char* symbolName);
     bool ensureModule(const ModuleMeta*);
 

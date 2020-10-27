@@ -40,6 +40,49 @@ void MetadataBuilder::GlobalPropertyGetter(Local<v8::Name> property, const Prope
 
     const Meta* meta = ArgConverter::GetMeta(propName);
     if (meta == nullptr || !meta->isAvailable()) {
+        if (strcmp("aMethod2", propName.c_str()) != 0) {
+            return;
+        }
+        const SwiftMeta* meta = ArgConverter::GetSwiftMeta(propName);
+        if (meta == nullptr) {
+            printf("not found");
+        }
+        if (meta->type() == SwiftMetaType::SwiftFunction) {
+            Local<Context> context = isolate->GetCurrentContext();
+            
+            auto cache = Caches::Get(isolate);
+            std::string funcName = meta->name();
+            auto it = cache->CFunctions.find(funcName);
+            if (it != cache->CFunctions.end()) {
+                Local<v8::Function> func = it->second->Get(isolate);
+                info.GetReturnValue().Set(func);
+                return;
+            }
+
+            const SwiftFunctionMeta* funcMeta = static_cast<const SwiftFunctionMeta*>(meta);
+            void* functionPointer = SymbolLoader::instance().loadSwiftFunctionSymbol(meta->demangledName());
+            if (functionPointer == nullptr) {
+                Log(@"Unable to load \"%s\" function", meta->name());
+                tns::Assert(false, isolate);
+            }
+
+            SwiftCacheItem<SwiftFunctionMeta>* item = new SwiftCacheItem<SwiftFunctionMeta>(funcMeta, std::string(), functionPointer);
+            if(item == nullptr) {
+                
+            };
+            Local<External> ext = External::New(isolate, item);
+            Local<v8::Function> func;
+            bool success = v8::Function::New(context, CFunctionCallback, ext).ToLocal(&func);
+            tns::Assert(success, isolate);
+
+            tns::SetValue(isolate, func, new SwiftFunctionWrapper(funcMeta));
+            MetadataBuilder::DefineFunctionLengthProperty(context, funcMeta->encodings(), func);
+
+            cache->CFunctions.emplace(funcName, std::make_unique<Persistent<v8::Function>>(isolate, func));
+
+            info.GetReturnValue().Set(func);
+            printf("A");
+        }
         return;
     }
 
@@ -819,7 +862,7 @@ Local<Value> MetadataBuilder::InvokeMethod(Local<Context> context, const MethodM
 void MetadataBuilder::CFunctionCallback(const FunctionCallbackInfo<Value>& info) {
     Isolate* isolate = info.GetIsolate();
     try {
-        CacheItem<FunctionMeta>* item = static_cast<CacheItem<FunctionMeta>*>(info.Data().As<External>()->Value());
+        CacheItem<SwiftFunctionMeta>* item = static_cast<CacheItem<SwiftFunctionMeta>*>(info.Data().As<External>()->Value());
 
         if (strcmp(item->meta_->jsName(), "UIApplicationMain") == 0) {
             std::vector<std::shared_ptr<Persistent<Value>>> args;
@@ -827,23 +870,23 @@ void MetadataBuilder::CFunctionCallback(const FunctionCallbackInfo<Value>& info)
                 args.push_back(std::make_shared<Persistent<Value>>(isolate, info[i]));
             }
 
-            Tasks::Register([isolate, item, args]() {
-                v8::Locker locker(isolate);
-                Isolate::Scope isolate_scope(isolate);
-                HandleScope handle_scope(isolate);
-                std::vector<Local<Value>> localArgs;
-                localArgs.reserve(args.size());
-                for (int i = 0; i < args.size(); i++) {
-                    Local<Value> arg = args[i]->Get(isolate);
-                    localArgs.push_back(arg);
-                }
-                const TypeEncoding* typeEncoding = item->meta_->encodings()->first();
-                V8VectorArgs vectorArgs(localArgs);
-                Local<Context> context = Caches::Get(isolate)->GetContext();
-                v8::Unlocker unlocker(isolate);
-                CMethodCall methodCall(context, item->userData_, typeEncoding, vectorArgs, item->meta_->ownsReturnedCocoaObject(), false);
-                Interop::CallFunction(methodCall);
-            });
+//            Tasks::Register([isolate, item, args]() {
+//                v8::Locker locker(isolate);
+//                Isolate::Scope isolate_scope(isolate);
+//                HandleScope handle_scope(isolate);
+//                std::vector<Local<Value>> localArgs;
+//                localArgs.reserve(args.size());
+//                for (int i = 0; i < args.size(); i++) {
+//                    Local<Value> arg = args[i]->Get(isolate);
+//                    localArgs.push_back(arg);
+//                }
+//                const TypeEncoding* typeEncoding = item->meta_->encodings()->first();
+//                V8VectorArgs vectorArgs(localArgs);
+//                Local<Context> context = Caches::Get(isolate)->GetContext();
+//                v8::Unlocker unlocker(isolate);
+//                CMethodCall methodCall(context, item->userData_, typeEncoding, vectorArgs, item->meta_->ownsReturnedCocoaObject(), false);
+//                Interop::CallFunction(methodCall);
+//            });
 
             return;
         }
@@ -851,8 +894,10 @@ void MetadataBuilder::CFunctionCallback(const FunctionCallbackInfo<Value>& info)
         V8FunctionCallbackArgs args(info);
         const TypeEncoding* typeEncoding = item->meta_->encodings()->first();
         Local<Context> context = isolate->GetCurrentContext();
-        const FunctionMeta* funcMeta = item->meta_;
-        CMethodCall methodCall(context, item->userData_, typeEncoding, args, funcMeta->ownsReturnedCocoaObject(), funcMeta->returnsUnmanaged());
+        const SwiftFunctionMeta* fMeta = item->meta_;
+        printf("%s", fMeta->jsName());
+//        const FunctionMeta* funcMeta = item->meta_;
+        CMethodCall methodCall(context, item->userData_, typeEncoding, args, false, false);
         Local<Value> result = Interop::CallFunction(methodCall);
 
         if (typeEncoding->type != BinaryTypeEncodingType::VoidEncoding) {

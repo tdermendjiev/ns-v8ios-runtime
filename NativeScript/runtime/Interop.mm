@@ -1049,7 +1049,8 @@ Local<Value> Interop::GetResult(Local<Context> context, const TypeEncoding* type
         return jsResult;
     }
 
-    return Interop::GetPrimitiveReturnType(context, typeEncoding->type, call);
+    auto result = Interop::GetPrimitiveReturnType(context, typeEncoding->type, call);
+    return result;
 }
 
 Local<Value> Interop::GetPrimitiveReturnType(Local<Context> context, BinaryTypeEncodingType type, BaseCall* call) {
@@ -1424,6 +1425,8 @@ Local<Value> Interop::CallFunctionInternal(MethodCall& methodCall) {
         methodCall.ownsReturnedObject_,
         methodCall.returnsUnmanaged_,
         methodCall.isInitializer_);
+    
+    printf("A");
 
     return result;
 }

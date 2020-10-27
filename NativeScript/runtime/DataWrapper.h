@@ -517,6 +517,23 @@ private:
     const FunctionMeta* meta_;
 };
 
+class SwiftFunctionWrapper: public BaseDataWrapper {
+public:
+    SwiftFunctionWrapper(const SwiftFunctionMeta* meta)
+        : meta_(meta) {
+    }
+
+    const WrapperType Type() {
+        return WrapperType::Function;
+    }
+
+    const SwiftFunctionMeta* Meta() {
+        return this->meta_;
+    }
+private:
+    const SwiftFunctionMeta* meta_;
+};
+
 class AnonymousFunctionWrapper: public BaseDataWrapper {
 public:
     AnonymousFunctionWrapper(void* functionPointer, const TypeEncoding* parametersEncoding, size_t parametersCount)

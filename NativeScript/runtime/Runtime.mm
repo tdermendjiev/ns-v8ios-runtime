@@ -32,6 +32,7 @@ NSDictionary* AppPackageJson = nil;
 
 void Runtime::Initialize() {
     MetaFile::setInstance(RuntimeConfig.MetadataPtr);
+    SwiftMetaFile::setInstance(RuntimeConfig.SwiftMetadataPtr);
 }
 
 Runtime::Runtime() {

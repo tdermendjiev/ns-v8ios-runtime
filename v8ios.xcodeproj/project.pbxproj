@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B29CB2A25473D96001233FF /* SwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B29CB2925473D96001233FF /* SwiftClass.swift */; };
 		2B7EA6AF2353477000E5184E /* NativeScriptException.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EA6AD2353476F00E5184E /* NativeScriptException.mm */; };
 		2B7EA6B02353477000E5184E /* NativeScriptException.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B7EA6AE2353477000E5184E /* NativeScriptException.h */; };
 		C2229973235449B400C1DFD6 /* InspectorServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = C2229971235449B300C1DFD6 /* InspectorServer.mm */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
@@ -530,6 +531,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2B29CB2825473D95001233FF /* TestRunner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestRunner-Bridging-Header.h"; sourceTree = "<group>"; };
+		2B29CB2925473D96001233FF /* SwiftClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftClass.swift; sourceTree = "<group>"; };
 		2B7EA6AD2353476F00E5184E /* NativeScriptException.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NativeScriptException.mm; sourceTree = "<group>"; };
 		2B7EA6AE2353477000E5184E /* NativeScriptException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeScriptException.h; sourceTree = "<group>"; };
 		C2003F9E23FA78CD0043B815 /* TNSDerivedClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNSDerivedClass.h; sourceTree = "<group>"; };
@@ -1902,6 +1905,8 @@
 			isa = PBXGroup;
 			children = (
 				C2DDEBDB229EB37A00345BFE /* main.m */,
+				2B29CB2925473D96001233FF /* SwiftClass.swift */,
+				2B29CB2825473D95001233FF /* TestRunner-Bridging-Header.h */,
 			);
 			path = "Source Files";
 			sourceTree = "<group>";
@@ -2255,6 +2260,7 @@
 					};
 					C2DDEB15229EA89000345BFE = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1200;
 					};
 					C2DDEB31229EAB3B00345BFE = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -2578,6 +2584,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B29CB2A25473D96001233FF /* SwiftClass.swift in Sources */,
 				C2DDEBDC229EB37A00345BFE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3073,9 +3080,10 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = CHSQ3M3P37;
 				EXPORTED_SYMBOLS_FILE = "$(PROJECT_DIR)/TestFixtures/exported-symbols.txt";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -3103,11 +3111,21 @@
 					__DATA,
 					__TNSMetadata,
 					"$(CONFIGURATION_BUILD_DIR)/metadata-$(CURRENT_ARCH).bin",
+					"-sectcreate",
+					__DATA,
+					__SwiftMetadata,
+					/Users/teodordermendzhiev/Documents/SwiftMetadata.bin,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.nativescript.TestRunner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRIPFLAGS = "-s $(PROJECT_DIR)/TestFixtures/exported-symbols.txt";
+				STRIP_INSTALLED_PRODUCT = NO;
+				STRIP_STYLE = "non-global";
+				STRIP_SWIFT_SYMBOLS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "TestRunner/Source Files/TestRunner-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -3118,9 +3136,10 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = CHSQ3M3P37;
 				EXPORTED_SYMBOLS_FILE = "$(PROJECT_DIR)/TestFixtures/exported-symbols.txt";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -3148,11 +3167,20 @@
 					__DATA,
 					__TNSMetadata,
 					"$(CONFIGURATION_BUILD_DIR)/metadata-$(CURRENT_ARCH).bin",
+					"-sectcreate",
+					__DATA,
+					__TNSSwiftMetadata,
+					/Users/teodordermendzhiev/Documents/SwiftMetadata.bin,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.nativescript.TestRunner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRIPFLAGS = "-s $(PROJECT_DIR)/TestFixtures/exported-symbols.txt";
+				STRIP_INSTALLED_PRODUCT = NO;
+				STRIP_STYLE = "non-global";
+				STRIP_SWIFT_SYMBOLS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "TestRunner/Source Files/TestRunner-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
 			};

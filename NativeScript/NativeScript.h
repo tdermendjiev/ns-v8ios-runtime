@@ -4,6 +4,7 @@
 
 @property (nonatomic, retain) NSString* BaseDir;
 @property (nonatomic) void* MetadataPtr;
+@property (nonatomic) void* SwiftMetadataPtr;
 @property BOOL IsDebug;
 @property BOOL LogToSystemConsole;
 @property int ArgumentsCount;

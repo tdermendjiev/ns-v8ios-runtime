@@ -91,9 +91,39 @@ const Meta* GlobalTable<TYPE>::findMeta(const char* identifierString, size_t len
     }
     return nullptr;
 }
+template <GlobalTableType TYPE>
+const SwiftMeta* SwiftGlobalTable<TYPE>::findMeta(const char* identifierString, bool onlyIfAvailable) const {
+    unsigned hash = WTF::StringHasher::computeHashAndMaskTop8Bits<LChar>(reinterpret_cast<const LChar*>(identifierString));
+    return this->findMeta(identifierString, strlen(identifierString), hash, onlyIfAvailable);
+}
+
+template <GlobalTableType TYPE>
+const SwiftMeta* SwiftGlobalTable<TYPE>::findMeta(const char* identifierString, size_t length, unsigned hash, bool onlyIfAvailable) const {
+    int bucketIndex = hash % buckets.count;
+    if (this->buckets[bucketIndex].isNull()) {
+        return nullptr;
+    }
+//    const SwiftMeta* meta = buckets[bucketIndex].valuePtr();
+//    if (this->compareName(*meta, identifierString, length)) {
+//        return meta;
+//    }
+    const ArrayOfPtrTo<SwiftMeta>& bucketContent = buckets[bucketIndex].value();
+    for (ArrayOfPtrTo<SwiftMeta>::iterator it = bucketContent.begin(); it != bucketContent.end(); it++) {
+        const SwiftMeta* meta = (*it).valuePtr();
+        if (this->compareName(*meta, identifierString, length)) {
+            return meta;
+        }
+    }
+    return nullptr;
+}
 
 template <>
 inline bool GlobalTable<ByJsName>::compareName(const Meta& meta, const char* identifierString, size_t length) {
+    return compareIdentifiers(meta.jsName(), identifierString, length) == 0;
+}
+
+template <>
+inline bool SwiftGlobalTable<ByJsName>::compareName(const SwiftMeta& meta, const char* identifierString, size_t length) {
     return compareIdentifiers(meta.jsName(), identifierString, length) == 0;
 }
 
@@ -133,6 +163,27 @@ bool GlobalTable<TYPE>::iterator::operator!=(const iterator& other) const {
 
 template <GlobalTableType TYPE>
 void GlobalTable<TYPE>::iterator::findNext() {
+    if (this->_topLevelIndex == this->_globalTable->buckets.count) {
+        return;
+    }
+
+    do {
+        if (!this->_globalTable->buckets[_topLevelIndex].isNull()) {
+            int bucketLength = this->_globalTable->buckets[_topLevelIndex].value().count;
+            while (this->_bucketIndex < bucketLength) {
+                if (this->getCurrent() != nullptr) {
+                    return;
+                }
+                this->_bucketIndex++;
+            }
+        }
+        this->_bucketIndex = 0;
+        this->_topLevelIndex++;
+    } while (this->_topLevelIndex < this->_globalTable->buckets.count);
+}
+
+template <GlobalTableType TYPE>
+void SwiftGlobalTable<TYPE>::iterator::findNext() {
     if (this->_topLevelIndex == this->_globalTable->buckets.count) {
         return;
     }

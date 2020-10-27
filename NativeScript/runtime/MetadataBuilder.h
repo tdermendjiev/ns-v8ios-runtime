@@ -65,6 +65,19 @@ private:
         const std::string className_;
         void* userData_;
     };
+    
+    template<class T>
+    struct SwiftCacheItem {
+        SwiftCacheItem(const T* meta, const std::string className, void* userData = nullptr)
+        : meta_(meta),
+          className_(className),
+          userData_(userData) {
+            static_assert(std::is_base_of<SwiftMeta, T>::value, "Derived not derived from SwiftMeta");
+        }
+        const T* meta_;
+        const std::string className_;
+        void* userData_;
+    };
 };
 
 }

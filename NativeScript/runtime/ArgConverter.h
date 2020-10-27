@@ -37,6 +37,7 @@ public:
     static std::shared_ptr<v8::Persistent<v8::Value>> CreateEmptyStruct(v8::Local<v8::Context> context);
     static const Meta* FindMeta(Class klass, const TypeEncoding* typeEncoding = nullptr);
     static const Meta* GetMeta(std::string name);
+    static const SwiftMeta* GetSwiftMeta(std::string name);
     static const ProtocolMeta* FindProtocolMeta(Protocol* protocol);
     static void MethodCallback(ffi_cif* cif, void* retValue, void** argValues, void* userData);
     static void SetValue(v8::Local<v8::Context> context, void* retValue, v8::Local<v8::Value> value, const TypeEncoding* typeEncoding);

@@ -713,6 +713,27 @@ const Meta* ArgConverter::GetMeta(std::string name) {
     return result;
 }
 
+const SwiftMeta* ArgConverter::GetSwiftMeta(std::string name) {
+//    bool found;
+
+    const SwiftGlobalTable<GlobalTableType::ByJsName>* globalTable = SwiftMetaFile::instance()->globalTableJs();
+    const SwiftMeta* result = globalTable->findMeta(name.c_str(), false /** onlyIfAvailable **/);
+
+//    if (result == nullptr) {
+//        const SwiftGlobalTable<GlobalTableType::ByNativeName>* globalTableInterfaceNames = MetaFile::instance()->globalTableNativeInterfaces();
+//        result = globalTableInterfaceNames->findMeta(name.c_str(), false /** onlyIfAvailable **/);
+//
+//        if (result == nullptr) {
+//            const GlobalTable<GlobalTableType::ByNativeName>* globalTableProtocolNames = MetaFile::instance()->globalTableNativeProtocols();
+//            result = globalTableProtocolNames->findMeta(name.c_str(), false /** onlyIfAvailable **/);
+//        }
+//    }
+
+//    Caches::Metadata->Insert(name, result);
+
+    return result;
+}
+
 const ProtocolMeta* ArgConverter::FindProtocolMeta(Protocol* protocol) {
     std::string protocolName = protocol_getName(protocol);
     const Meta* meta = ArgConverter::GetMeta(protocolName);

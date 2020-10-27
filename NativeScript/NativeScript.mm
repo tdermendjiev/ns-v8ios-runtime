@@ -13,6 +13,7 @@ using namespace tns;
 
 @synthesize BaseDir;
 @synthesize MetadataPtr;
+@synthesize SwiftMetadataPtr;
 @synthesize IsDebug;
 
 @end
@@ -25,6 +26,7 @@ static std::shared_ptr<Runtime> runtime_;
     RuntimeConfig.BaseDir = [config.BaseDir UTF8String];
     RuntimeConfig.ApplicationPath = [[config.BaseDir stringByAppendingPathComponent:@"app"] UTF8String];
     RuntimeConfig.MetadataPtr = [config MetadataPtr];
+    RuntimeConfig.SwiftMetadataPtr = [config SwiftMetadataPtr];
     RuntimeConfig.IsDebug = [config IsDebug];
     RuntimeConfig.LogToSystemConsole = [config LogToSystemConsole];
 

@@ -125,6 +125,10 @@ void* SymbolLoader::loadFunctionSymbol(const ModuleMeta* module, const char* sym
     return dlsym(RTLD_DEFAULT, symbolName);
 }
 
+void* SymbolLoader::loadSwiftFunctionSymbol(const char* symbolName) {
+    return dlsym(RTLD_DEFAULT, symbolName);
+}
+
 void* SymbolLoader::loadDataSymbol(const ModuleMeta* module, const char* symbolName) {
     if (auto resolver = this->resolveModule(module)) {
         return resolver->loadDataSymbol(symbolName);

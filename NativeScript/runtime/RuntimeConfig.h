@@ -8,6 +8,7 @@ struct RuntimeConfig {
     std::string BaseDir;
     std::string ApplicationPath;
     void* MetadataPtr;
+    void* SwiftMetadataPtr;
     bool IsDebug;
     bool LogToSystemConsole;
 };

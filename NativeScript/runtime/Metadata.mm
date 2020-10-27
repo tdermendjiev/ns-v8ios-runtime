@@ -281,12 +281,27 @@ vector<const MethodMeta*> BaseClassMeta::initializersWithProtocols(vector<const 
 
 static MetaFile* metaFileInstance(nullptr);
 
+static SwiftMetaFile* swiftMetaFileInstance(nullptr);
+
 MetaFile* MetaFile::instance() {
     return metaFileInstance;
+}
+
+SwiftMetaFile* SwiftMetaFile::instance() {
+    return swiftMetaFileInstance;
 }
 
 MetaFile* MetaFile::setInstance(void* metadataPtr) {
     metaFileInstance = reinterpret_cast<MetaFile*>(metadataPtr);
     return metaFileInstance;
+}
+
+SwiftMetaFile* SwiftMetaFile::setInstance(void* swiftMetadataPtr) {
+    swiftMetaFileInstance = reinterpret_cast<SwiftMetaFile*>(swiftMetadataPtr);
+    auto t = swiftMetaFileInstance->topLevelModulesTable();
+    if (t) {
+        printf("a");
+    }
+    return swiftMetaFileInstance;
 }
 }
