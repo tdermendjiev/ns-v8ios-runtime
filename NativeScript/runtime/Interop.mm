@@ -1425,8 +1425,6 @@ Local<Value> Interop::CallFunctionInternal(MethodCall& methodCall) {
         methodCall.ownsReturnedObject_,
         methodCall.returnsUnmanaged_,
         methodCall.isInitializer_);
-    
-    printf("A");
 
     return result;
 }

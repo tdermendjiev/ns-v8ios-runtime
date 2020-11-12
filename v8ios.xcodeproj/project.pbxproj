@@ -1081,6 +1081,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BCCD658255D86BD00D4D0A9 /* swift_files */ = {
+			isa = PBXGroup;
+			children = (
+				2B29CB2925473D96001233FF /* SwiftClass.swift */,
+			);
+			path = swift_files;
+			sourceTree = "<group>";
+		};
 		C22536AF241A318900192740 /* arm64 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1904,8 +1912,8 @@
 		C2DDEBDA229EB37A00345BFE /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
+				2BCCD658255D86BD00D4D0A9 /* swift_files */,
 				C2DDEBDB229EB37A00345BFE /* main.m */,
-				2B29CB2925473D96001233FF /* SwiftClass.swift */,
 				2B29CB2825473D95001233FF /* TestRunner-Bridging-Header.h */,
 			);
 			path = "Source Files";
@@ -2181,6 +2189,7 @@
 			buildConfigurationList = C2DDEB29229EA89200345BFE /* Build configuration list for PBXNativeTarget "TestRunner" */;
 			buildPhases = (
 				C2F4CBBD22C61D480036B56F /* ShellScript */,
+				2BCCD657255D860600D4D0A9 /* ShellScript */,
 				C2DDEB12229EA89000345BFE /* Sources */,
 				C2DDEB13229EA89000345BFE /* Frameworks */,
 				C2DDEB14229EA89000345BFE /* Resources */,
@@ -2337,6 +2346,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2BCCD657255D860600D4D0A9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ${PROJECT_DIR}/swift-metadata-generator\n./SwiftMetadata -swift-files-path /Users/teodordermendzhiev/workspace/ns-v8ios-runtime/TestRunner/Source\\ Files/swift_files -output-bin /Users/teodordermendzhiev/Documents/SwiftMetadata.bin\n";
+		};
 		C27E5DB322F31FF800498ED0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2911,6 +2937,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
+				STRIP_SWIFT_SYMBOLS = NO;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
@@ -2965,6 +2993,8 @@
 				MTL_FAST_MATH = YES;
 				OTHER_CFLAGS = "";
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
+				STRIP_SWIFT_SYMBOLS = NO;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
@@ -3085,9 +3115,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = CHSQ3M3P37;
+				ENABLE_BITCODE = YES;
 				EXPORTED_SYMBOLS_FILE = "$(PROJECT_DIR)/TestFixtures/exported-symbols.txt";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/NativeScript",
 					"$(SRCROOT)/TestFixtures",
@@ -3098,6 +3130,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LINKER_DISPLAYS_MANGLED_NAMES = NO;
 				OTHER_LDFLAGS = (
 					"-Wl,-search_paths_first",
 					"-ObjC",
@@ -3141,9 +3174,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = CHSQ3M3P37;
+				ENABLE_BITCODE = YES;
 				EXPORTED_SYMBOLS_FILE = "$(PROJECT_DIR)/TestFixtures/exported-symbols.txt";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/NativeScript",
 					"$(SRCROOT)/TestFixtures",
@@ -3154,6 +3189,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LINKER_DISPLAYS_MANGLED_NAMES = NO;
 				OTHER_LDFLAGS = (
 					"-Wl,-search_paths_first",
 					"-ObjC",

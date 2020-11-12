@@ -220,4 +220,4 @@ __SCNVector3FromFloat3
 __SCNVector4FromFloat4
 __SCNMatrix4FromMat4
 _getStructFromCallback
-_mymodule_foo
+_$s10TestRunner8aMethod28paramIntySi_tF

@@ -298,10 +298,6 @@ MetaFile* MetaFile::setInstance(void* metadataPtr) {
 
 SwiftMetaFile* SwiftMetaFile::setInstance(void* swiftMetadataPtr) {
     swiftMetaFileInstance = reinterpret_cast<SwiftMetaFile*>(swiftMetadataPtr);
-    auto t = swiftMetaFileInstance->topLevelModulesTable();
-    if (t) {
-        printf("a");
-    }
     return swiftMetaFileInstance;
 }
 }

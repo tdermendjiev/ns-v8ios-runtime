@@ -24,6 +24,7 @@ private:
     static void AllocCallback(const v8::FunctionCallbackInfo<v8::Value>& info);
     static void MethodCallback(const v8::FunctionCallbackInfo<v8::Value>& info);
     static void CFunctionCallback(const v8::FunctionCallbackInfo<v8::Value>& info);
+    static void SwiftFunctionCallback(const v8::FunctionCallbackInfo<v8::Value>& info);
     static void PropertyGetterCallback(const v8::FunctionCallbackInfo<v8::Value>& info);
     static void PropertySetterCallback(const v8::FunctionCallbackInfo<v8::Value>& info);
     static void PropertyNameGetterCallback(v8::Local<v8::Name> name, const v8::PropertyCallbackInfo<v8::Value> &info);
