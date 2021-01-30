@@ -41,9 +41,8 @@ Interop::JSBlock::JSBlockDescriptor Interop::JSBlock::kJSBlockDescriptor = {
                 Isolate::Scope isolate_scope(runtimeIsolate);
                 HandleScope handle_scope(runtimeIsolate);
                 Local<Value> callback = wrapper->callback_->Get(runtimeIsolate);
-                if (!callback.IsEmpty() && callback->IsObject()) {
-                    Local<Context> context = callback.As<Object>()->CreationContext();
-                    Isolate* isolate = context->GetIsolate();
+                Isolate* isolate = wrapper->isolate_;
+                if (Runtime::IsAlive(isolate) && !callback.IsEmpty() && callback->IsObject()) {
                     v8::Locker locker(isolate);
                     Isolate::Scope isolate_scope(isolate);
                     HandleScope handle_scope(isolate);
@@ -347,8 +346,6 @@ void Interop::WriteValue(Local<Context> context, const TypeEncoding* typeEncodin
             std::shared_ptr<Persistent<Value>> poCallback = std::make_shared<Persistent<Value>>(isolate, arg);
             MethodCallbackWrapper* userData = new MethodCallbackWrapper(isolate, poCallback, 1, argsCount, blockTypeEncoding);
             blockPtr = Interop::CreateBlock(1, argsCount, blockTypeEncoding, ArgConverter::MethodCallback, userData);
-
-            [(id)blockPtr autorelease];
 
             BlockWrapper* wrapper = new BlockWrapper((void*)blockPtr, blockTypeEncoding);
             tns::SetValue(isolate, arg.As<v8::Function>(), wrapper);
