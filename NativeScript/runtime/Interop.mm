@@ -146,13 +146,15 @@ void Interop::WriteValue(Local<Context> context, const SwiftTypeEncoding* typeEn
         ffi_type* ffiType = FFICall::GetArgumentType(typeEncoding, true);
         size_t size = ffiType->size;
         memset(dest, 0, size);
-    } else if (tns::IsBool(arg) && typeEncoding->type == BinaryTypeEncodingType::IdEncoding) {
-        bool value = tns::ToBool(arg);
-        NSObject* o = @(value);
-        Interop::SetValue(dest, o);
     } else if (tns::IsBool(arg)) {
         bool value = tns::ToBool(arg);
         Interop::SetValue(dest, value);
+    } else if (Interop::IsNumbericType(typeEncoding->type) || tns::IsNumber(arg)) {
+        double value = tns::ToNumber(isolate, arg);
+
+        if (typeEncoding->type == SwiftBinaryTypeEncodingType::SwiftIntEncoding) {
+            Interop::SetNumericValue<int>(dest, value);
+        }
     } else {
         tns::Assert(false, isolate);
     }
@@ -1201,6 +1203,24 @@ Local<Value> Interop::GetPrimitiveReturnType(Local<Context> context, BinaryTypeE
     return Local<Value>();
 }
 
+Local<Value> Interop::GetPrimitiveReturnType(Local<Context> context, SwiftBinaryTypeEncodingType type, BaseCall* call) {
+    Isolate* isolate = context->GetIsolate();
+
+
+    if (type == SwiftBinaryTypeEncodingType::SwiftIntEncoding) {
+        int result = call->GetResult<int>();
+        return Number::New(isolate, result);
+    }
+
+    if (type != SwiftBinaryTypeEncodingType::SwiftVoidEncoding) {
+        tns::Assert(false, isolate);
+    }
+
+    // TODO: Handle all the possible return types https://nshipster.com/type-encodings/
+
+    return Local<Value>();
+}
+
 std::vector<std::string> Interop::GetAdditionalProtocols(const TypeEncoding* typeEncoding) {
     std::vector<std::string> additionalProtocols;
 
@@ -1235,6 +1255,11 @@ bool Interop::IsNumbericType(BinaryTypeEncodingType type) {
         type == BinaryTypeEncodingType::LongLongEncoding ||
         type == BinaryTypeEncodingType::FloatEncoding ||
         type == BinaryTypeEncodingType::DoubleEncoding;
+}
+
+bool Interop::IsNumbericType(SwiftBinaryTypeEncodingType type) {
+    return
+    type == SwiftBinaryTypeEncodingType::SwiftIntEncoding;
 }
 
 void Interop::SetStructPropertyValue(Local<Context> context, StructWrapper* wrapper, StructField field, Local<Value> value) {
@@ -1523,7 +1548,7 @@ Local<Value> Interop::CallFunctionInternal(SwiftMethodCall& methodCall) {
         Interop::SetValue(call.ArgumentBuffer(1), selector);
     }
 
-    bool isInstanceReturnType = methodCall.typeEncoding_->type == BinaryTypeEncodingType::InstanceTypeEncoding;
+    bool isInstanceReturnType = methodCall.typeEncoding_->type == SwiftBinaryTypeEncodingType::SwiftInstanceTypeEncoding;
     bool marshalToPrimitive = methodCall.isPrimitiveFunction_ || !isInstanceReturnType;
 
     Interop::SetFFIParams(methodCall.context_, methodCall.typeEncoding_, &call, argsCount, initialParameterIndex, methodCall.args_);

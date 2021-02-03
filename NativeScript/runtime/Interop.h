@@ -201,6 +201,7 @@ public:
     static void WriteValue(v8::Local<v8::Context> context, const SwiftTypeEncoding* typeEncoding, void* dest, v8::Local<v8::Value> arg);
     static id ToObject(v8::Local<v8::Context> context, v8::Local<v8::Value> arg);
     static v8::Local<v8::Value> GetPrimitiveReturnType(v8::Local<v8::Context> context, BinaryTypeEncodingType type, BaseCall* call);
+    static v8::Local<v8::Value> GetPrimitiveReturnType(v8::Local<v8::Context> context, SwiftBinaryTypeEncodingType type, BaseCall* call);
 private:
     static CFTypeRef CreateBlock(const uint8_t initialParamIndex, const uint8_t argsCount, const TypeEncoding* typeEncoding, FFIMethodCallback callback, void* userData);
     template <typename T>
@@ -222,6 +223,7 @@ private:
     static v8::Local<v8::Value> CallFunctionInternal(MethodCall& methodCall);
     static v8::Local<v8::Value> CallFunctionInternal(SwiftMethodCall& methodCall);
     static bool IsNumbericType(BinaryTypeEncodingType type);
+    static bool IsNumbericType(SwiftBinaryTypeEncodingType type);
     static v8::Local<v8::Object> GetInteropType(v8::Local<v8::Context> context, BinaryTypeEncodingType type);
     static std::vector<std::string> GetAdditionalProtocols(const TypeEncoding* typeEncoding);
 

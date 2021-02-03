@@ -7,28 +7,10 @@ namespace tns {
 
 ffi_type* FFICall::GetArgumentType(const SwiftTypeEncoding* typeEncoding, bool isStructMember) {
     switch (typeEncoding->type) {
-        case BinaryTypeEncodingType::VoidEncoding: {
+        case SwiftBinaryTypeEncodingType::SwiftVoidEncoding: {
             return &ffi_type_void;
         }
-        case BinaryTypeEncodingType::FunctionPointerEncoding: {
-            return &ffi_type_pointer;
-        }
-        case BinaryTypeEncodingType::UnicharEncoding: {
-            return &ffi_type_ushort;
-        }
-        case BinaryTypeEncodingType::BoolEncoding: {
-            return &ffi_type_sint8;
-        }
-        case BinaryTypeEncodingType::UShortEncoding: {
-            return &ffi_type_uint16;
-        }
-        case BinaryTypeEncodingType::ShortEncoding: {
-            return &ffi_type_sint16;
-        }
-        case BinaryTypeEncodingType::UIntEncoding: {
-            return &ffi_type_uint32;
-        }
-        case BinaryTypeEncodingType::IntEncoding: {
+        case SwiftBinaryTypeEncodingType::SwiftIntEncoding: {
             return &ffi_type_sint32;
         }
         default: {

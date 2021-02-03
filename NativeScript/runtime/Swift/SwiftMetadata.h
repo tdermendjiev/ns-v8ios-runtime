@@ -25,7 +25,9 @@ enum SwiftMetaType {
 
 enum SwiftBinaryTypeEncodingType : uint8_t {
     SwiftVoidEncoding,
-    SwiftBoolEncoding
+    SwiftBoolEncoding,
+    SwiftIntEncoding,
+    SwiftInstanceTypeEncoding
 };
 
 template <typename T>
@@ -171,18 +173,12 @@ struct SwiftPtrTo {
         return reinterpret_cast<SwiftPtrTo<V>>(this);
     }
     const T* valuePtr() const {
-        return isNull() ? nullptr : reinterpret_cast<const T*>(tns::offset(MetaFile::instance()->heap(), this->offset));
-    }
-    const T* swiftValuePtr() const {
         return isNull() ? nullptr : reinterpret_cast<const T*>(tns::offset(SwiftMetaFile::instance()->heap(), this->offset));
     }
     const T& value() const {
         return *valuePtr();
     }
     
-    const T& swiftValue() const {
-        return *swiftValuePtr();
-    }
 };
 
 enum SwiftNameIndex {
@@ -225,23 +221,23 @@ union SwiftTypeEncodingDetails {
 };
 
 struct SwiftTypeEncoding {
-    BinaryTypeEncodingType type;
+    SwiftBinaryTypeEncodingType type;
     SwiftTypeEncodingDetails details;
 
     const SwiftTypeEncoding* next() const {
         const SwiftTypeEncoding* afterTypePtr = reinterpret_cast<const SwiftTypeEncoding*>(offset(this, sizeof(type)));
 
         switch (this->type) {
-        case BinaryTypeEncodingType::PointerEncoding: {
-            return this->details.pointer.getInnerType()->next();
-        }
-        case BinaryTypeEncodingType::FunctionPointerEncoding: {
-            const SwiftTypeEncoding* current = this->details.functionPointer.signature.first();
-            for (int i = 0; i < this->details.functionPointer.signature.count; i++) {
-                current = current->next();
-            }
-            return current;
-        }
+//        case SwiftBinaryTypeEncodingType::PointerEncoding: {
+//            return this->details.pointer.getInnerType()->next();
+//        }
+//        case SwiftBinaryTypeEncodingType::FunctionPointerEncoding: {
+//            const SwiftTypeEncoding* current = this->details.functionPointer.signature.first();
+//            for (int i = 0; i < this->details.functionPointer.signature.count; i++) {
+//                current = current->next();
+//            }
+//            return current;
+//        }
         default: {
             return afterTypePtr;
         }
@@ -276,7 +272,7 @@ public:
     }
 
     const ModuleMeta* topLevelModule() const {
-        return this->_topLevelModule.swiftValuePtr();
+        return this->_topLevelModule.valuePtr();
     }
     
     bool flag(int index) const {
@@ -299,7 +295,7 @@ private:
     const char* getNameByIndex(enum SwiftNameIndex index) const {
         int i = index;
         if (!this->hasName() && !this->hasMangledName()) {
-            return this->_names.name.swiftValuePtr();
+            return this->_names.name.valuePtr();
         }
 
         if (!this->hasMangledName() && i >= DemangledName) {
@@ -310,7 +306,7 @@ private:
             i--;
         }
 
-        return this->_names.names.swiftValue().strings[i].swiftValuePtr();
+        return this->_names.names.value().strings[i].valuePtr();
 ////        int i = index;
 //
 //        return this->_names.name.swiftValuePtr();
@@ -396,7 +392,7 @@ private:
 public:
 
     const SwiftTypeEncodingsList<ArrayCount>* encodings() const {
-        return _encoding.swiftValuePtr();
+        return _encoding.valuePtr();
     }
 
 };

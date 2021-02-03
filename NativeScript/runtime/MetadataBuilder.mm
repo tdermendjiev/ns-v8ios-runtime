@@ -924,7 +924,7 @@ void MetadataBuilder::SwiftFunctionCallback(const FunctionCallbackInfo<Value>& i
 //        CMethodCall methodCall(context, item->userData_, typeEncoding, args, false, false);
         Local<Value> result = Interop::CallSwiftFreeFunction(methodCall);
 
-        if (typeEncoding->type != BinaryTypeEncodingType::VoidEncoding) {
+        if (typeEncoding->type != SwiftBinaryTypeEncodingType::SwiftVoidEncoding) {
             info.GetReturnValue().Set(result);
         }
     } catch (NativeScriptException& ex) {
