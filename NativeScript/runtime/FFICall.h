@@ -59,6 +59,8 @@ public:
     }
 
     static ParametrizedCall* Get(const TypeEncoding* typeEncoding, const int initialParameterIndex, const int argsCount);
+    
+    static ParametrizedCall* Get(const SwiftTypeEncoding* typeEncoding, const int initialParameterIndex, const int argsCount);
 
     ffi_cif* Cif;
     size_t ReturnOffset;
@@ -66,6 +68,7 @@ public:
     std::vector<size_t> ArgValueOffsets;
 private:
     static robin_hood::unordered_map<const TypeEncoding*, ParametrizedCall*> callsCache_;
+    static robin_hood::unordered_map<const SwiftTypeEncoding*, ParametrizedCall*> swiftCallsCache_;
 };
 
 class FFICall: public BaseCall {
@@ -85,6 +88,7 @@ public:
     }
 
     static ffi_type* GetArgumentType(const TypeEncoding* typeEncoding, bool isStructMember = false);
+    static ffi_type* GetArgumentType(const SwiftTypeEncoding* typeEncoding, bool isStructMember = false);
     static StructInfo GetStructInfo(const StructMeta* structMeta, std::string structName = "");
     static StructInfo GetStructInfo(size_t fieldsCount, const TypeEncoding* fieldEncoding, const String* fieldNames, std::string structName = "");
 

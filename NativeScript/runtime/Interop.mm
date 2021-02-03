@@ -85,6 +85,10 @@ CFTypeRef Interop::CreateBlock(const uint8_t initialParamIndex, const uint8_t ar
     return blockPointer;
 }
 
+Local<Value> Interop::CallSwiftFreeFunction(SwiftFreeFuncMethodCall& methodCall) {
+    return Interop::CallFunctionInternal(methodCall);
+}
+
 Local<Value> Interop::CallFunction(CMethodCall& methodCall) {
     return Interop::CallFunctionInternal(methodCall);
 }
@@ -122,6 +126,35 @@ void Interop::SetFFIParams(Local<Context> context, const TypeEncoding* typeEncod
         Local<Value> arg = args[i - initialParameterIndex];
         void* argBuffer = call->ArgumentBuffer(i);
         Interop::WriteValue(context, enc, argBuffer, arg);
+    }
+}
+
+void Interop::SetFFIParams(Local<Context> context, const SwiftTypeEncoding* typeEncoding, FFICall* call, const int argsCount, const int initialParameterIndex, V8Args& args) {
+    const SwiftTypeEncoding* enc = typeEncoding;
+    for (int i = initialParameterIndex; i < argsCount; i++) {
+        enc = enc->next();
+        Local<Value> arg = args[i - initialParameterIndex];
+        void* argBuffer = call->ArgumentBuffer(i);
+        Interop::WriteValue(context, enc, argBuffer, arg);
+    }
+}
+
+void Interop::WriteValue(Local<Context> context, const SwiftTypeEncoding* typeEncoding, void* dest, Local<Value> arg) {
+    
+    Isolate* isolate = context->GetIsolate();
+    if (arg.IsEmpty() || arg->IsNullOrUndefined()) {
+        ffi_type* ffiType = FFICall::GetArgumentType(typeEncoding, true);
+        size_t size = ffiType->size;
+        memset(dest, 0, size);
+    } else if (tns::IsBool(arg) && typeEncoding->type == BinaryTypeEncodingType::IdEncoding) {
+        bool value = tns::ToBool(arg);
+        NSObject* o = @(value);
+        Interop::SetValue(dest, o);
+    } else if (tns::IsBool(arg)) {
+        bool value = tns::ToBool(arg);
+        Interop::SetValue(dest, value);
+    } else {
+        tns::Assert(false, isolate);
     }
 }
 
@@ -711,6 +744,14 @@ void Interop::SetStructValue(Local<Value> value, void* destBuffer, ptrdiff_t pos
     double result = !value.IsEmpty() && !value->IsNullOrUndefined() && value->IsNumber()
         ? value.As<Number>()->Value() : 0;
     *static_cast<T*>((void*)((uint8_t*)destBuffer + position)) = result;
+}
+
+Local<Value> Interop::GetResult(Local<Context> context, const SwiftTypeEncoding* typeEncoding, BaseCall* call, bool marshalToPrimitive, std::shared_ptr<Persistent<Value>> parentStruct, bool isInitializer) {
+    
+    //Isolate* isolate = context->GetIsolate();
+    
+    auto result = Interop::GetPrimitiveReturnType(context, typeEncoding->type, call);
+    return result;
 }
 
 Local<Value> Interop::GetResult(Local<Context> context, const TypeEncoding* typeEncoding, BaseCall* call, bool marshalToPrimitive, std::shared_ptr<Persistent<Value>> parentStruct, bool isStructMember, bool ownsReturnedObject, bool returnsUnmanaged, bool isInitializer) {
@@ -1421,6 +1462,101 @@ Local<Value> Interop::CallFunctionInternal(MethodCall& methodCall) {
         false,
         methodCall.ownsReturnedObject_,
         methodCall.returnsUnmanaged_,
+        methodCall.isInitializer_);
+
+    return result;
+}
+
+Local<Value> Interop::CallFunctionInternal(SwiftMethodCall& methodCall) {
+    int initialParameterIndex = methodCall.isPrimitiveFunction_ ? 0 : 2;
+
+    int argsCount = initialParameterIndex + (int)methodCall.args_.Length();
+    int cifArgsCount = methodCall.provideErrorOutParameter_ ? argsCount + 1 : argsCount;
+
+    ParametrizedCall* parametrizedCall = ParametrizedCall::Get(methodCall.typeEncoding_, initialParameterIndex, cifArgsCount);
+
+    FFICall call(parametrizedCall);
+
+    objc_super sup;
+
+    bool isInstanceMethod = (methodCall.target_ && methodCall.target_ != nil);
+
+    if (initialParameterIndex > 1) {
+#if defined(__x86_64__)
+        if (methodCall.metaType_ == SwiftMetaType::SwiftUndefined || methodCall.metaType_ == SwiftMetaType::SwiftStruct) {
+            const unsigned UNIX64_FLAG_RET_IN_MEM = (1 << 10);
+
+            ffi_type* returnType = FFICall::GetArgumentType(methodCall.typeEncoding_);
+
+            if (returnType->type == FFI_TYPE_LONGDOUBLE) {
+                methodCall.functionPointer_ = (void*)objc_msgSend_fpret;
+            } else if (returnType->type == FFI_TYPE_STRUCT && (parametrizedCall->Cif->flags & UNIX64_FLAG_RET_IN_MEM)) {
+                if (methodCall.callSuper_) {
+                    methodCall.functionPointer_ = (void*)objc_msgSendSuper_stret;
+                } else {
+                    methodCall.functionPointer_ = (void*)objc_msgSend_stret;
+                }
+            }
+        }
+#endif
+
+        SEL selector = methodCall.selector_;
+        if (isInstanceMethod) {
+            NSString* selectorStr = NSStringFromSelector(selector);
+            NSString* swizzledMethodSelectorStr = [NSString stringWithFormat:@"%s%@", Constants::SwizzledPrefix.c_str(), selectorStr];
+            SEL swizzledMethodSelector = NSSelectorFromString(swizzledMethodSelectorStr);
+            if ([methodCall.target_ respondsToSelector:swizzledMethodSelector]) {
+                selector = swizzledMethodSelector;
+            }
+
+            if (methodCall.callSuper_) {
+                sup.receiver = methodCall.target_;
+                sup.super_class = class_getSuperclass(object_getClass(methodCall.target_));
+                Interop::SetValue(call.ArgumentBuffer(0), &sup);
+            } else {
+                Interop::SetValue(call.ArgumentBuffer(0), methodCall.target_);
+            }
+        } else {
+            Interop::SetValue(call.ArgumentBuffer(0), methodCall.clazz_);
+        }
+
+        Interop::SetValue(call.ArgumentBuffer(1), selector);
+    }
+
+    bool isInstanceReturnType = methodCall.typeEncoding_->type == BinaryTypeEncodingType::InstanceTypeEncoding;
+    bool marshalToPrimitive = methodCall.isPrimitiveFunction_ || !isInstanceReturnType;
+
+    Interop::SetFFIParams(methodCall.context_, methodCall.typeEncoding_, &call, argsCount, initialParameterIndex, methodCall.args_);
+
+    void* errorRef = nullptr;
+    if (methodCall.provideErrorOutParameter_) {
+        void* dest = call.ArgumentBuffer(argsCount);
+        errorRef = malloc(ffi_type_pointer.size);
+        Interop::SetValue(dest, errorRef);
+    }
+
+    @try {
+        ffi_call(parametrizedCall->Cif, FFI_FN(methodCall.functionPointer_), call.ResultBuffer(), call.ArgsArray());
+    } @catch (NSException* e) {
+        std::string message = [[e description] UTF8String];
+        throw NativeScriptException(message);
+    }
+
+    if (errorRef != nullptr) {
+        NSError*__strong* errorPtr = (NSError*__strong*)errorRef;
+        NSError* error = errorPtr[0];
+        std::free(errorRef);
+        if (error) {
+            throw NativeScriptException([[error localizedDescription] UTF8String]);
+        }
+    }
+
+    Local<Value> result = Interop::GetResult(
+        methodCall.context_,
+        methodCall.typeEncoding_,
+        &call,
+        marshalToPrimitive,
+        nullptr,
         methodCall.isInitializer_);
 
     return result;

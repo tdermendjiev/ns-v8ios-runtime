@@ -58,7 +58,7 @@ void MetadataBuilder::GlobalPropertyGetter(Local<v8::Name> property, const Prope
 
             const SwiftFunctionMeta* funcMeta = static_cast<const SwiftFunctionMeta*>(meta);
             std::string moduleName = "$s10TestRunner";
-            std::string symbolName = moduleName + meta->demangledName();
+            std::string symbolName = moduleName + meta->mangledName();
             void* functionPointer = SymbolLoader::instance().loadSwiftFunctionSymbol(symbolName.c_str());
             if (functionPointer == nullptr) {
                 Log(@"Unable to load \"%s\" function", meta->name());
@@ -841,6 +841,14 @@ void MetadataBuilder::DefineFunctionLengthProperty(Local<Context> context, const
     tns::Assert(success, isolate);
 }
 
+void MetadataBuilder::DefineFunctionLengthProperty(Local<Context> context, const SwiftTypeEncodingsList<ArrayCount>* encodings, Local<v8::Function> func) {
+    Isolate* isolate = context->GetIsolate();
+    const PropertyAttribute readOnlyFlags = static_cast<PropertyAttribute>(PropertyAttribute::DontEnum | PropertyAttribute::DontDelete | PropertyAttribute::ReadOnly);
+    int paramsCount = std::max(0, encodings->count - 1);
+    bool success = func->DefineOwnProperty(context, tns::ToV8String(isolate, "length"), Number::New(isolate, paramsCount), readOnlyFlags).FromMaybe(false);
+    tns::Assert(success, isolate);
+}
+
 Local<Value> MetadataBuilder::InvokeMethod(Local<Context> context, const MethodMeta* meta, Local<Object> receiver, V8Args& args, std::string containingClass, bool isMethodCallback) {
     Class klass = objc_getClass(containingClass.c_str());
     // TODO: Find out if the isMethodCallback property can be determined based on a UITableViewController.prototype.viewDidLoad.call(this) or super.viewDidLoad() call
@@ -907,13 +915,14 @@ void MetadataBuilder::SwiftFunctionCallback(const FunctionCallbackInfo<Value>& i
         CacheItem<SwiftFunctionMeta>* item = static_cast<CacheItem<SwiftFunctionMeta>*>(info.Data().As<External>()->Value());
 
         V8FunctionCallbackArgs args(info);
-        const TypeEncoding* typeEncoding = item->meta_->encodings()->first();
+        const SwiftTypeEncoding* typeEncoding = item->meta_->encodings()->first();
         Local<Context> context = isolate->GetCurrentContext();
         const SwiftFunctionMeta* fMeta = item->meta_;
         printf("%s", fMeta->jsName());
 //        const FunctionMeta* funcMeta = item->meta_;
-        CMethodCall methodCall(context, item->userData_, typeEncoding, args, false, false);
-        Local<Value> result = Interop::CallFunction(methodCall);
+        SwiftFreeFuncMethodCall methodCall(context, item->userData_, typeEncoding, args, false, false);
+//        CMethodCall methodCall(context, item->userData_, typeEncoding, args, false, false);
+        Local<Value> result = Interop::CallSwiftFreeFunction(methodCall);
 
         if (typeEncoding->type != BinaryTypeEncodingType::VoidEncoding) {
             info.GetReturnValue().Set(result);

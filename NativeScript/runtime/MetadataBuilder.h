@@ -44,6 +44,7 @@ private:
     static void RegisterStaticProperties(v8::Local<v8::Context> context, v8::Local<v8::Function> ctorFunc, const BaseClassMeta* meta, const std::string className, KnownUnknownClassPair pair, robin_hood::unordered_map<std::string, uint8_t>& names);
     static void RegisterStaticProtocols(v8::Local<v8::Context> context, v8::Local<v8::Function> ctorFunc, const BaseClassMeta* meta, const std::string className, KnownUnknownClassPair pair, robin_hood::unordered_map<std::string, uint8_t>& names);
     static void DefineFunctionLengthProperty(v8::Local<v8::Context> context, const TypeEncodingsList<ArrayCount>* encodings, v8::Local<v8::Function> func);
+    static void DefineFunctionLengthProperty(v8::Local<v8::Context> context, const SwiftTypeEncodingsList<ArrayCount>* encodings, v8::Local<v8::Function> func);
 
     static void SwizzledInstanceMethodCallback(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const v8::PropertyCallbackInfo<v8::Value>& info);
     static void SwizzledPropertyCallback(v8::Local<v8::Name> property, const v8::PropertyDescriptor& desc, const v8::PropertyCallbackInfo<v8::Value>& info);

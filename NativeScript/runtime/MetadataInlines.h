@@ -3,6 +3,7 @@
 
 #include <objc/runtime.h>
 #include "StringHasher.h"
+#include "SwiftMetadata.h"
 
 namespace tns {
 
@@ -107,8 +108,8 @@ const SwiftMeta* SwiftGlobalTable<TYPE>::findMeta(const char* identifierString, 
 //    if (this->compareName(*meta, identifierString, length)) {
 //        return meta;
 //    }
-    const ArrayOfPtrTo<SwiftMeta>& bucketContent = buckets[bucketIndex].value();
-    for (ArrayOfPtrTo<SwiftMeta>::iterator it = bucketContent.begin(); it != bucketContent.end(); it++) {
+    const ArrayOfSwiftPtrTo<SwiftMeta>& bucketContent = buckets[bucketIndex].value();
+    for (ArrayOfSwiftPtrTo<SwiftMeta>::iterator it = bucketContent.begin(); it != bucketContent.end(); it++) {
         const SwiftMeta* meta = (*it).valuePtr();
         if (this->compareName(*meta, identifierString, length)) {
             return meta;

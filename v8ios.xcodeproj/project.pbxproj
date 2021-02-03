@@ -10,6 +10,7 @@
 		2B29CB2A25473D96001233FF /* SwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B29CB2925473D96001233FF /* SwiftClass.swift */; };
 		2B7EA6AF2353477000E5184E /* NativeScriptException.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EA6AD2353476F00E5184E /* NativeScriptException.mm */; };
 		2B7EA6B02353477000E5184E /* NativeScriptException.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B7EA6AE2353477000E5184E /* NativeScriptException.h */; };
+		2BF6186A25C9A1EF00B3DFAC /* SwiftMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF6186925C9A1EF00B3DFAC /* SwiftMetadata.h */; };
 		C2229973235449B400C1DFD6 /* InspectorServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = C2229971235449B300C1DFD6 /* InspectorServer.mm */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		C2229974235449B400C1DFD6 /* InspectorServer.h in Headers */ = {isa = PBXBuildFile; fileRef = C2229972235449B400C1DFD6 /* InspectorServer.h */; };
 		C2229977235492EC00C1DFD6 /* v8-ns-debugger-agent-impl.h in Headers */ = {isa = PBXBuildFile; fileRef = C2229975235492EC00C1DFD6 /* v8-ns-debugger-agent-impl.h */; };
@@ -535,6 +536,7 @@
 		2B29CB2925473D96001233FF /* SwiftClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftClass.swift; sourceTree = "<group>"; };
 		2B7EA6AD2353476F00E5184E /* NativeScriptException.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NativeScriptException.mm; sourceTree = "<group>"; };
 		2B7EA6AE2353477000E5184E /* NativeScriptException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeScriptException.h; sourceTree = "<group>"; };
+		2BF6186925C9A1EF00B3DFAC /* SwiftMetadata.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftMetadata.h; sourceTree = "<group>"; };
 		C2003F9E23FA78CD0043B815 /* TNSDerivedClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNSDerivedClass.h; sourceTree = "<group>"; };
 		C2229971235449B300C1DFD6 /* InspectorServer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = InspectorServer.mm; sourceTree = "<group>"; };
 		C2229972235449B400C1DFD6 /* InspectorServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InspectorServer.h; sourceTree = "<group>"; };
@@ -1087,6 +1089,14 @@
 				2B29CB2925473D96001233FF /* SwiftClass.swift */,
 			);
 			path = swift_files;
+			sourceTree = "<group>";
+		};
+		2BF6186825C9A1D300B3DFAC /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				2BF6186925C9A1EF00B3DFAC /* SwiftMetadata.h */,
+			);
+			path = Swift;
 			sourceTree = "<group>";
 		};
 		C22536AF241A318900192740 /* arm64 */ = {
@@ -1823,6 +1833,7 @@
 		C2DDEB3B229EAB8600345BFE /* runtime */ = {
 			isa = PBXGroup;
 			children = (
+				2BF6186825C9A1D300B3DFAC /* Swift */,
 				C2DDEB66229EAC8100345BFE /* ArgConverter.h */,
 				C2DDEB6A229EAC8200345BFE /* ArgConverter.mm */,
 				C2DDEB6F229EAC8200345BFE /* ArrayAdapter.h */,
@@ -2060,6 +2071,7 @@
 				C247C34F22F828E3001D2CA2 /* v8-debugger-agent-impl.h in Headers */,
 				C247C36F22F828E3001D2CA2 /* Runtime.h in Headers */,
 				C22536B6241A318900192740 /* ffi.h in Headers */,
+				2BF6186A25C9A1EF00B3DFAC /* SwiftMetadata.h in Headers */,
 				C2DDEB8F229EAC8300345BFE /* ArgConverter.h in Headers */,
 				C247C37822F828E3001D2CA2 /* Forward.h in Headers */,
 				C247C33A22F828E3001D2CA2 /* conversions.h in Headers */,

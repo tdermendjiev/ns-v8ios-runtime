@@ -5,6 +5,42 @@
 
 namespace tns {
 
+ffi_type* FFICall::GetArgumentType(const SwiftTypeEncoding* typeEncoding, bool isStructMember) {
+    switch (typeEncoding->type) {
+        case BinaryTypeEncodingType::VoidEncoding: {
+            return &ffi_type_void;
+        }
+        case BinaryTypeEncodingType::FunctionPointerEncoding: {
+            return &ffi_type_pointer;
+        }
+        case BinaryTypeEncodingType::UnicharEncoding: {
+            return &ffi_type_ushort;
+        }
+        case BinaryTypeEncodingType::BoolEncoding: {
+            return &ffi_type_sint8;
+        }
+        case BinaryTypeEncodingType::UShortEncoding: {
+            return &ffi_type_uint16;
+        }
+        case BinaryTypeEncodingType::ShortEncoding: {
+            return &ffi_type_sint16;
+        }
+        case BinaryTypeEncodingType::UIntEncoding: {
+            return &ffi_type_uint32;
+        }
+        case BinaryTypeEncodingType::IntEncoding: {
+            return &ffi_type_sint32;
+        }
+        default: {
+            break;
+        }
+    }
+
+    // TODO: implement all the possible encoding types
+    tns::Assert(false);
+    return nullptr;
+}
+
 ffi_type* FFICall::GetArgumentType(const TypeEncoding* typeEncoding, bool isStructMember) {
     switch (typeEncoding->type) {
         case BinaryTypeEncodingType::VoidEncoding: {
@@ -274,7 +310,37 @@ ParametrizedCall* ParametrizedCall::Get(const TypeEncoding* typeEncoding, const 
     return call;
 }
 
+ParametrizedCall* ParametrizedCall::Get(const SwiftTypeEncoding* typeEncoding, const int initialParameterIndex, const int argsCount) {
+    auto it = swiftCallsCache_.find(typeEncoding);
+    if (it != swiftCallsCache_.end()) {
+        return it->second;
+    }
+
+    const ffi_type** parameterTypesFFITypes = new const ffi_type*[argsCount]();
+    ffi_type* returnType = FFICall::GetArgumentType(typeEncoding);
+
+    for (int i = 0; i < initialParameterIndex; i++) {
+        parameterTypesFFITypes[i] = &ffi_type_pointer;
+    }
+
+    const SwiftTypeEncoding* enc = typeEncoding;
+    for (int i = initialParameterIndex; i < argsCount; i++) {
+        enc = enc->next();
+        parameterTypesFFITypes[i] = FFICall::GetArgumentType(enc);
+    }
+
+    ffi_cif* cif = new ffi_cif();
+    ffi_status status = ffi_prep_cif(cif, FFI_DEFAULT_ABI, argsCount, returnType, const_cast<ffi_type**>(parameterTypesFFITypes));
+    tns::Assert(status == FFI_OK);
+
+    ParametrizedCall* call = new ParametrizedCall(cif);
+    swiftCallsCache_.emplace(typeEncoding, call);
+
+    return call;
+}
+
 robin_hood::unordered_map<const TypeEncoding*, ParametrizedCall*> ParametrizedCall::callsCache_;
+robin_hood::unordered_map<const SwiftTypeEncoding*, ParametrizedCall*> ParametrizedCall::swiftCallsCache_;
 robin_hood::unordered_map<std::string, StructInfo> FFICall::structInfosCache_;
 
 }
