@@ -30,9 +30,11 @@ enum SwiftBinaryTypeEncodingType : uint8_t {
     SwiftInstanceTypeEncoding
 };
 
+#pragma pack(push, 1)
+
 template <typename T>
 struct SwiftPtrTo;
-class SwiftMeta;
+struct SwiftMeta;
 struct SwiftInterfaceMeta;
 struct SwiftProtocolMeta;
 struct SwiftTypeEncoding;
@@ -109,8 +111,6 @@ struct SwiftGlobalTable {
     int sizeInBytes() const {
         return buckets.sizeInBytes();
     }
-
-    static bool compareName(const Meta& meta, const char* identifierString, size_t length);
 };
 
 struct SwiftMetaFile {
@@ -246,18 +246,19 @@ struct SwiftTypeEncoding {
 };
 
 
-class SwiftMeta {
-public:
+struct SwiftMeta {
+
     SwiftMetaNames _names;
     SwiftPtrTo<ModuleMeta> _topLevelModule;
     uint16_t _flags;
     
-    SwiftMeta(SwiftMetaNames names, SwiftPtrTo<ModuleMeta> m, uint16_t flags){
-        _names = names;
-        _topLevelModule = m;
-        _flags = flags;
-    }
     
+//    SwiftMeta(SwiftMetaNames names, SwiftPtrTo<ModuleMeta> m, uint16_t flags){
+//        _names = names;
+//        _topLevelModule = m;
+//        _flags = flags;
+//    }
+public:
     SwiftMetaType type() const {
         SwiftMetaType type = (SwiftMetaType)(this->_flags & MetaTypeMask);
         return type;
@@ -384,18 +385,19 @@ struct SwiftPtrTo<SwiftMeta> {
 };
 
 struct SwiftFunctionMeta : SwiftMeta {
-
 private:
-    
     SwiftPtrTo<SwiftTypeEncodingsList<ArrayCount>> _encoding;
 
 public:
 
     const SwiftTypeEncodingsList<ArrayCount>* encodings() const {
+     
         return _encoding.valuePtr();
     }
 
 };
+
+#pragma pack(pop)
 
 }
 

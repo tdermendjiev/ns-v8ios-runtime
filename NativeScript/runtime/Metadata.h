@@ -136,7 +136,7 @@ enum BinaryTypeEncodingType : uint8_t {
 template <typename T>
 struct PtrTo;
 struct Meta;
-class SwiftMeta;
+struct SwiftMeta;
 struct InterfaceMeta;
 struct ProtocolMeta;
 struct ModuleMeta;
