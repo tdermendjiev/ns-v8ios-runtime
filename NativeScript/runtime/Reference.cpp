@@ -80,6 +80,10 @@ void Reference::ReferenceConstructorCallback(const FunctionCallbackInfo<Value>& 
             val = new Persistent<Value>(isolate, info[1]);
         }
     }
+    
+    if(val != nullptr) {
+        val->SetWeak();
+    }
 
     ReferenceWrapper* wrapper = new ReferenceWrapper(typeWrapper, val);
     Local<Object> thiz = info.This();
@@ -308,7 +312,9 @@ void Reference::RegisterToStringMethod(Local<Context> context, Local<Object> pro
 }
 
 Reference::DataPair Reference::GetTypeEncodingDataPair(Local<Object> obj) {
-    Local<Context> context = obj->CreationContext();
+    Local<Context> context;
+    bool success = obj->GetCreationContext().ToLocal(&context);
+    tns::Assert(success);
     Isolate* isolate = context->GetIsolate();
     BaseDataWrapper* wrapper = tns::GetValue(isolate, obj);
     tns::Assert(wrapper != nullptr && wrapper->Type() == WrapperType::Reference, isolate);
