@@ -52,8 +52,49 @@ static std::shared_ptr<Runtime> runtime_;
     CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, true);
 
     tns::Tasks::Drain();
-
+ 
     runtime_.reset();
+}
+
++ (void)initialize:(Config*)config {
+
+    RuntimeConfig.MetadataPtr = [config MetadataPtr];
+    RuntimeConfig.IsDebug = [config IsDebug];
+    RuntimeConfig.LogToSystemConsole = [config LogToSystemConsole];
+    
+    Runtime::Initialize();
+    runtime_ = std::make_shared<Runtime>();
+
+    std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
+    Isolate* isolate = runtime_->CreateIsolate();
+    runtime_->Init(isolate);
+    std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count();
+    printf("Runtime initialization took %llims\n", duration);
+    
+    
+    CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, true);
+
+    tns::Tasks::Drain();
+    
+    runtime_.reset();
+    
+}
+
++ (void)runScriptString: (NSString*) script {
+    
+    Isolate* isolate = runtime_->CreateIsolate();
+    runtime_->Init(isolate);
+    
+    std::string cppString = std::string([script UTF8String]);
+    runtime_->RunScript(cppString);
+    
+    CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, true);
+
+    tns::Tasks::Drain();
+    
+    runtime_.reset();
+ 
 }
 
 + (bool)liveSync {

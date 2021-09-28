@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		2B7EA6AF2353477000E5184E /* NativeScriptException.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EA6AD2353476F00E5184E /* NativeScriptException.mm */; };
 		2B7EA6B02353477000E5184E /* NativeScriptException.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B7EA6AE2353477000E5184E /* NativeScriptException.h */; };
+		2BB920282702FA3F006C4F9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB920272702FA3F006C4F9B /* AppDelegate.m */; };
+		2BB9202B2702FA3F006C4F9B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9202A2702FA3F006C4F9B /* SceneDelegate.m */; };
+		2BB9202E2702FA3F006C4F9B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9202D2702FA3F006C4F9B /* ViewController.m */; };
+		2BB920312702FA3F006C4F9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9202F2702FA3F006C4F9B /* Main.storyboard */; };
+		2BB920332702FA41006C4F9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BB920322702FA41006C4F9B /* Assets.xcassets */; };
+		2BB920362702FA41006C4F9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB920342702FA41006C4F9B /* LaunchScreen.storyboard */; };
+		2BB920392702FA41006C4F9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB920382702FA41006C4F9B /* main.m */; };
+		2BB920432702FB2F006C4F9B /* NativeScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DDEB32229EAB3B00345BFE /* NativeScript.framework */; };
+		2BB920442702FB2F006C4F9B /* NativeScript.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C2DDEB32229EAB3B00345BFE /* NativeScript.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2BB9206F27030822006C4F9B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB9206E27030822006C4F9B /* WebKit.framework */; };
 		C205257F2577D6F900C12A5C /* NativeScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DDEB32229EAB3B00345BFE /* NativeScript.framework */; };
 		C20525802577D6F900C12A5C /* NativeScript.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C2DDEB32229EAB3B00345BFE /* NativeScript.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C20525A82577D86600C12A5C /* TNSWidgets.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C20525A72577D86600C12A5C /* TNSWidgets.xcframework */; };
@@ -443,6 +453,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2BB920452702FB2F006C4F9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C27E277822202663009C10A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2DDEB31229EAB3B00345BFE;
+			remoteInfo = NativeScript;
+		};
+		2BB9204D2702FB59006C4F9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C27E277822202663009C10A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2F4CBB222C60BFD0036B56F;
+			remoteInfo = "metadata-generator";
+		};
 		C2253787241A41C500192740 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C27E277822202663009C10A3 /* Project object */;
@@ -495,6 +519,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		2BB920472702FB2F006C4F9B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2BB920442702FB2F006C4F9B /* NativeScript.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C27E5DAD22F31F3D00498ED0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -541,6 +576,19 @@
 /* Begin PBXFileReference section */
 		2B7EA6AD2353476F00E5184E /* NativeScriptException.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NativeScriptException.mm; sourceTree = "<group>"; };
 		2B7EA6AE2353477000E5184E /* NativeScriptException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeScriptException.h; sourceTree = "<group>"; };
+		2BB920242702FA3E006C4F9B /* AppInWebview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppInWebview.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BB920262702FA3F006C4F9B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2BB920272702FA3F006C4F9B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2BB920292702FA3F006C4F9B /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		2BB9202A2702FA3F006C4F9B /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		2BB9202C2702FA3F006C4F9B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2BB9202D2702FA3F006C4F9B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2BB920302702FA3F006C4F9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2BB920322702FA41006C4F9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2BB920352702FA41006C4F9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2BB920372702FA41006C4F9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BB920382702FA41006C4F9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2BB9206E27030822006C4F9B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		C2003F9E23FA78CD0043B815 /* TNSDerivedClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNSDerivedClass.h; sourceTree = "<group>"; };
 		C20525A72577D86600C12A5C /* TNSWidgets.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = TNSWidgets.xcframework; sourceTree = "<group>"; };
 		C20AB5E426E1015200E2B41D /* OneByteStringResource.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OneByteStringResource.cpp; sourceTree = "<group>"; };
@@ -1042,6 +1090,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2BB920212702FA3E006C4F9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BB9206F27030822006C4F9B /* WebKit.framework in Frameworks */,
+				2BB920432702FB2F006C4F9B /* NativeScript.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C225377F241A41C500192740 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1098,6 +1155,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BB920252702FA3F006C4F9B /* AppInWebview */ = {
+			isa = PBXGroup;
+			children = (
+				2BB920262702FA3F006C4F9B /* AppDelegate.h */,
+				2BB920272702FA3F006C4F9B /* AppDelegate.m */,
+				2BB920292702FA3F006C4F9B /* SceneDelegate.h */,
+				2BB9202A2702FA3F006C4F9B /* SceneDelegate.m */,
+				2BB9202C2702FA3F006C4F9B /* ViewController.h */,
+				2BB9202D2702FA3F006C4F9B /* ViewController.m */,
+				2BB9202F2702FA3F006C4F9B /* Main.storyboard */,
+				2BB920322702FA41006C4F9B /* Assets.xcassets */,
+				2BB920342702FA41006C4F9B /* LaunchScreen.storyboard */,
+				2BB920372702FA41006C4F9B /* Info.plist */,
+				2BB920382702FA41006C4F9B /* main.m */,
+			);
+			path = AppInWebview;
+			sourceTree = "<group>";
+		};
 		C22536AF241A318900192740 /* arm64 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1479,6 +1554,7 @@
 				C27E5D8C22F31CCA00498ED0 /* AppWithModules */,
 				C29374E3229FC0F60075CB16 /* TestFixtures */,
 				C2A5DFE62328C4B900A91A76 /* TKLiveSync */,
+				2BB920252702FA3F006C4F9B /* AppInWebview */,
 				C27E278122202664009C10A3 /* Products */,
 				C2FF3016225203FD00933782 /* Frameworks */,
 			);
@@ -1494,6 +1570,7 @@
 				C27E5D8B22F31CC900498ED0 /* AppWithModules.app */,
 				C23992C7236C2D6E00D2F720 /* TestRunnerTests.xctest */,
 				C2253782241A41C500192740 /* TKLiveSync.framework */,
+				2BB920242702FA3E006C4F9B /* AppInWebview.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1948,6 +2025,7 @@
 		C2FF3016225203FD00933782 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2BB9206E27030822006C4F9B /* WebKit.framework */,
 				C2253801241A5AA200192740 /* libbz2.tbd */,
 				C2FF301F2252065E00933782 /* CoreFoundation.framework */,
 				C2FF301C2252062A00933782 /* UIKit.framework */,
@@ -2145,6 +2223,27 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		2BB920232702FA3E006C4F9B /* AppInWebview */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BB9203A2702FA41006C4F9B /* Build configuration list for PBXNativeTarget "AppInWebview" */;
+			buildPhases = (
+				2BB9204F2702FB6A006C4F9B /* ShellScript */,
+				2BB920202702FA3E006C4F9B /* Sources */,
+				2BB920212702FA3E006C4F9B /* Frameworks */,
+				2BB920222702FA3E006C4F9B /* Resources */,
+				2BB920472702FB2F006C4F9B /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2BB9204E2702FB59006C4F9B /* PBXTargetDependency */,
+				2BB920462702FB2F006C4F9B /* PBXTargetDependency */,
+			);
+			name = AppInWebview;
+			productName = AppInWebview;
+			productReference = 2BB920242702FA3E006C4F9B /* AppInWebview.app */;
+			productType = "com.apple.product-type.application";
+		};
 		C2253781241A41C500192740 /* TKLiveSync */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C225378D241A41C500192740 /* Build configuration list for PBXNativeTarget "TKLiveSync" */;
@@ -2288,6 +2387,9 @@
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = Progress;
 				TargetAttributes = {
+					2BB920232702FA3E006C4F9B = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					C2253781241A41C500192740 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -2332,11 +2434,22 @@
 				C2F4CBB222C60BFD0036B56F /* metadata-generator */,
 				C23992C6236C2D6E00D2F720 /* TestRunnerTests */,
 				C2253781241A41C500192740 /* TKLiveSync */,
+				2BB920232702FA3E006C4F9B /* AppInWebview */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2BB920222702FA3E006C4F9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BB920362702FA41006C4F9B /* LaunchScreen.storyboard in Resources */,
+				2BB920332702FA41006C4F9B /* Assets.xcassets in Resources */,
+				2BB920312702FA3F006C4F9B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C2253780241A41C500192740 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2379,6 +2492,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2BB9204F2702FB6A006C4F9B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ${PROJECT_DIR}/metadata-generator/build/bin\ncp ../../build-step-metadata-generator.py .\n./build-step-metadata-generator.py\n";
+		};
 		C27E5DB322F31FF800498ED0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2434,6 +2564,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2BB920202702FA3E006C4F9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BB9202E2702FA3F006C4F9B /* ViewController.m in Sources */,
+				2BB920282702FA3F006C4F9B /* AppDelegate.m in Sources */,
+				2BB920392702FA41006C4F9B /* main.m in Sources */,
+				2BB9202B2702FA3F006C4F9B /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C225377E241A41C500192740 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2739,6 +2880,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2BB920462702FB2F006C4F9B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2DDEB31229EAB3B00345BFE /* NativeScript */;
+			targetProxy = 2BB920452702FB2F006C4F9B /* PBXContainerItemProxy */;
+		};
+		2BB9204E2702FB59006C4F9B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2F4CBB222C60BFD0036B56F /* metadata-generator */;
+			targetProxy = 2BB9204D2702FB59006C4F9B /* PBXContainerItemProxy */;
+		};
 		C2253788241A41C500192740 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C2253781241A41C500192740 /* TKLiveSync */;
@@ -2778,7 +2929,77 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		2BB9202F2702FA3F006C4F9B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BB920302702FA3F006C4F9B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2BB920342702FA41006C4F9B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BB920352702FA41006C4F9B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		2BB9203B2702FA41006C4F9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H6KAAZFWNY;
+				INFOPLIST_FILE = AppInWebview/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-ObjC",
+					"-framework",
+					NativeScript,
+					"-sectcreate",
+					__DATA,
+					__TNSMetadata,
+					"$(CONFIGURATION_BUILD_DIR)/metadata-$(CURRENT_ARCH).bin",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tdermendjiev.AppInWebview;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2BB9203C2702FA41006C4F9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H6KAAZFWNY;
+				INFOPLIST_FILE = AppInWebview/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = tdermendjiev.AppInWebview;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		C225378B241A41C500192740 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3377,6 +3598,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2BB9203A2702FA41006C4F9B /* Build configuration list for PBXNativeTarget "AppInWebview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BB9203B2702FA41006C4F9B /* Debug */,
+				2BB9203C2702FA41006C4F9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C225378D241A41C500192740 /* Build configuration list for PBXNativeTarget "TKLiveSync" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
