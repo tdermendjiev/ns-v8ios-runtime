@@ -15,6 +15,7 @@
 #include "TSHelpers.h"
 #include "WeakRef.h"
 #include "Worker.h"
+#include "WebviewDispatcher.h"
 // #include "SetTimeout.h"
 
 #define STRINGIZE(x) #x
@@ -78,7 +79,7 @@ Isolate* Runtime::CreateIsolate() {
     return isolate;
 }
 
-void Runtime::Init(Isolate* isolate) {
+void Runtime::Init(Isolate* isolate, bool isNSWorker) {
     std::shared_ptr<Caches> cache = Caches::Get(isolate);
     cache->ObjectCtorInitializer = MetadataBuilder::GetOrCreateConstructorFunctionTemplate;
     cache->StructCtorInitializer = MetadataBuilder::GetOrCreateStructCtorFunction;
@@ -91,7 +92,11 @@ void Runtime::Init(Isolate* isolate) {
     DefineNativeScriptVersion(isolate, globalTemplate);
 
     Worker::Init(isolate, globalTemplate, mainThreadInitialized_);
+    if (isNSWorker) {
+        
+    }
     DefinePerformanceObject(isolate, globalTemplate);
+    DefineGlobalPostMessage(isolate, globalTemplate);
     DefineTimeMethod(isolate, globalTemplate);
     ObjectManager::Init(isolate, globalTemplate);
 //    SetTimeout::Init(isolate, globalTemplate);
@@ -205,6 +210,55 @@ void Runtime::DefineCollectFunction(Local<Context> context) {
     const PropertyAttribute readOnlyFlags = static_cast<PropertyAttribute>(PropertyAttribute::DontDelete | PropertyAttribute::ReadOnly);
     success = global->DefineOwnProperty(context, tns::ToV8String(isolate, "__collect"), gcFunc, readOnlyFlags).FromMaybe(false);
     tns::Assert(success, isolate);
+}
+
+void Runtime::DefineGlobalPostMessage(Isolate* isolate, Local<ObjectTemplate> globalTemplate) {
+    Local<FunctionTemplate> postMessageTemplate = FunctionTemplate::New(isolate, Runtime::PostMessageToMainCallback);
+
+    Local<v8::String> postMessageName = ToV8String(isolate, "postmessage");
+    globalTemplate->Set(postMessageName, postMessageTemplate);
+}
+
+//todo: should not be here
+void Runtime::PostMessageToMainCallback(const FunctionCallbackInfo<Value>& info) {
+    // Send message from worker to main
+    Isolate* isolate = info.GetIsolate();
+
+    try {
+        if (info.Length() < 1) {
+            throw NativeScriptException("Not enough arguments.");
+        }
+
+        if (info.Length() > 1) {
+            throw NativeScriptException("Too many arguments passed.");
+        }
+
+
+        Local<Value> error;
+        Local<Value> result = Worker::Serialize(isolate, info[0], error);
+        if (result.IsEmpty()) {
+            isolate->ThrowException(error);
+            return;
+        }
+
+        std::string message = tns::ToString(isolate, result);
+        
+        [[WebviewDispatcher shared] postMessage: [NSString stringWithCString:message.c_str()
+                                                                    encoding:[NSString defaultCStringEncoding]]];
+        
+
+//        tns::ExecuteOnMainThread([state, message]() {
+//            Isolate* isolate = state->GetIsolate();
+//            v8::Locker locker(isolate);
+//            Isolate::Scope isolate_scope(isolate);
+//            HandleScope handle_scope(isolate);
+//            Local<Value> workerInstance = state->GetWorker()->Get(isolate);
+//            tns::Assert(!workerInstance.IsEmpty() && workerInstance->IsObject(), isolate);
+//            Worker::OnMessageCallback(isolate, workerInstance, message);
+//        });
+    } catch (NativeScriptException& ex) {
+        ex.ReThrowToV8(isolate);
+    }
 }
 
 void Runtime::DefinePerformanceObject(Isolate* isolate, Local<ObjectTemplate> globalTemplate) {

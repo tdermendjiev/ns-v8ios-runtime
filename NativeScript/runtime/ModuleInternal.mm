@@ -293,12 +293,12 @@ Local<Script> ModuleInternal::LoadScript(Isolate* isolate, const std::string& pa
     return script;
 }
 
-Local<Value> ModuleInternal::RunScriptString(Isolate* isolate, Local<Context> context, const std::string scriptString) {
+MaybeLocal<Value> ModuleInternal::RunScriptString(Isolate* isolate, Local<Context> context, const std::string scriptString) {
     ScriptCompiler::CompileOptions options = ScriptCompiler::kNoCompileOptions;
     ScriptCompiler::Source source(tns::ToV8String(isolate, scriptString));
     TryCatch tc(isolate);
     Local<Script> script = ScriptCompiler::Compile(context, &source, options).ToLocalChecked();
-    Local<Value> result = script->Run(context).ToLocalChecked();
+    MaybeLocal<Value> result = script->Run(context);
     return result;
 }
 

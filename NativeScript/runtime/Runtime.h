@@ -13,10 +13,10 @@ public:
     Runtime();
     ~Runtime();
     v8::Isolate* CreateIsolate();
-    void Init(v8::Isolate* isolate);
+    void Init(v8::Isolate* isolate, bool isNSWorker);
+    void DefineGlobalPostMessage(v8::Isolate* isolate, v8::Local<v8::ObjectTemplate> globalTemplate);
     void RunMainScript();
     v8::Isolate* GetIsolate();
-
     const int WorkerId();
 
     void SetWorkerId(int workerId);
@@ -47,6 +47,7 @@ public:
 
     static bool IsAlive(v8::Isolate* isolate);
 private:
+    static void PostMessageToMainCallback(const v8::FunctionCallbackInfo<v8::Value>& info);
     static thread_local Runtime* currentRuntime_;
     static std::shared_ptr<v8::Platform> platform_;
     static std::vector<v8::Isolate*> isolates_;
