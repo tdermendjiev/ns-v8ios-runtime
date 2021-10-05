@@ -21,6 +21,7 @@
 		2BB9206F27030822006C4F9B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB9206E27030822006C4F9B /* WebKit.framework */; };
 		2BB9213A2703B444006C4F9B /* WebviewDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BB921392703B444006C4F9B /* WebviewDispatcher.h */; };
 		2BB921412703B457006C4F9B /* WebviewDispatcher.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2BB921402703B457006C4F9B /* WebviewDispatcher.mm */; };
+		5FD84636270C4951005AB313 /* safe_conversions_arm_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FD84635270C4951005AB313 /* safe_conversions_arm_impl.h */; };
 		C205257F2577D6F900C12A5C /* NativeScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DDEB32229EAB3B00345BFE /* NativeScript.framework */; };
 		C20525802577D6F900C12A5C /* NativeScript.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C2DDEB32229EAB3B00345BFE /* NativeScript.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C20525A82577D86600C12A5C /* TNSWidgets.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C20525A72577D86600C12A5C /* TNSWidgets.xcframework */; };
@@ -593,6 +594,7 @@
 		2BB9206E27030822006C4F9B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		2BB921392703B444006C4F9B /* WebviewDispatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebviewDispatcher.h; sourceTree = "<group>"; };
 		2BB921402703B457006C4F9B /* WebviewDispatcher.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = WebviewDispatcher.mm; sourceTree = "<group>"; };
+		5FD84635270C4951005AB313 /* safe_conversions_arm_impl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = safe_conversions_arm_impl.h; sourceTree = "<group>"; };
 		C2003F9E23FA78CD0043B815 /* TNSDerivedClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNSDerivedClass.h; sourceTree = "<group>"; };
 		C20525A72577D86600C12A5C /* TNSWidgets.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = TNSWidgets.xcframework; sourceTree = "<group>"; };
 		C20AB5E426E1015200E2B41D /* OneByteStringResource.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OneByteStringResource.cpp; sourceTree = "<group>"; };
@@ -1524,6 +1526,7 @@
 				C247C32722F828E3001D2CA2 /* atomic-utils.h */,
 				C247C32822F828E3001D2CA2 /* compiler-specific.h */,
 				C247C32922F828E3001D2CA2 /* atomicops_internals_atomicword_compat.h */,
+				5FD84635270C4951005AB313 /* safe_conversions_arm_impl.h */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -2105,6 +2108,7 @@
 				2BB9213A2703B444006C4F9B /* WebviewDispatcher.h in Headers */,
 				C247C38722F828E3001D2CA2 /* string-16.h in Headers */,
 				C2B30FE0238418CA009D6A46 /* parser_handler.h in Headers */,
+				5FD84636270C4951005AB313 /* safe_conversions_arm_impl.h in Headers */,
 				C2B30FDE238418CA009D6A46 /* json.h in Headers */,
 				C2DDEBA1229EAC8300345BFE /* FFICall.h in Headers */,
 				C247C35522F828E3001D2CA2 /* search-util.h in Headers */,
@@ -2962,6 +2966,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H6KAAZFWNY;
@@ -2992,6 +2997,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H6KAAZFWNY;
@@ -3133,6 +3139,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -3194,6 +3201,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
