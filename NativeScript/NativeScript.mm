@@ -21,6 +21,7 @@ using namespace tns;
 @implementation NativeScript
 
 std::unique_ptr<Runtime> runtime_;
+extern char startOfMetadataSection __asm("section$start$__DATA$__TNSMetadata");
 
 - (instancetype)initWithConfig:(Config*)config {
     
@@ -31,7 +32,11 @@ std::unique_ptr<Runtime> runtime_;
         } else {
             RuntimeConfig.ApplicationPath = [[config.BaseDir stringByAppendingPathComponent:@"app"] UTF8String];
         }
-        RuntimeConfig.MetadataPtr = [config MetadataPtr];
+//        void* metadataPtr = &startOfMetadataSection;
+//        RuntimeConfig.MetadataPtr = [config MetadataPtr];
+        RuntimeConfig.MetadataPtr = &startOfMetadataSection;
+        
+        
         RuntimeConfig.IsDebug = [config IsDebug];
         RuntimeConfig.LogToSystemConsole = [config LogToSystemConsole];
 

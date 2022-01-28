@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B7EA6AF2353477000E5184E /* NativeScriptException.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EA6AD2353476F00E5184E /* NativeScriptException.mm */; };
 		2B7EA6B02353477000E5184E /* NativeScriptException.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B7EA6AE2353477000E5184E /* NativeScriptException.h */; };
+		5FFAB23527A44EF4009A666A /* metadata-x86_64.bin in Resources */ = {isa = PBXBuildFile; fileRef = 5FFAB23427A44EF4009A666A /* metadata-x86_64.bin */; };
 		C205257F2577D6F900C12A5C /* NativeScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DDEB32229EAB3B00345BFE /* NativeScript.framework */; };
 		C20525802577D6F900C12A5C /* NativeScript.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C2DDEB32229EAB3B00345BFE /* NativeScript.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C20525A82577D86600C12A5C /* TNSWidgets.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C20525A72577D86600C12A5C /* TNSWidgets.xcframework */; };
@@ -541,6 +542,7 @@
 /* Begin PBXFileReference section */
 		2B7EA6AD2353476F00E5184E /* NativeScriptException.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NativeScriptException.mm; sourceTree = "<group>"; };
 		2B7EA6AE2353477000E5184E /* NativeScriptException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeScriptException.h; sourceTree = "<group>"; };
+		5FFAB23427A44EF4009A666A /* metadata-x86_64.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "metadata-x86_64.bin"; path = "/Users/c5326378/workspace/ns-v8ios-runtime/NativeScript/metadata/../../build/Debug-iphonesimulator/metadata-x86_64.bin"; sourceTree = "<absolute>"; };
 		C2003F9E23FA78CD0043B815 /* TNSDerivedClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNSDerivedClass.h; sourceTree = "<group>"; };
 		C20525A72577D86600C12A5C /* TNSWidgets.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = TNSWidgets.xcframework; sourceTree = "<group>"; };
 		C20AB5E426E1015200E2B41D /* OneByteStringResource.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OneByteStringResource.cpp; sourceTree = "<group>"; };
@@ -1098,6 +1100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5FFAB23327A44EE8009A666A /* metadata */ = {
+			isa = PBXGroup;
+			children = (
+				5FFAB23427A44EF4009A666A /* metadata-x86_64.bin */,
+			);
+			path = metadata;
+			sourceTree = "<group>";
+		};
 		C22536AF241A318900192740 /* arm64 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1835,6 +1845,7 @@
 		C2DDEB33229EAB3B00345BFE /* NativeScript */ = {
 			isa = PBXGroup;
 			children = (
+				5FFAB23327A44EE8009A666A /* metadata */,
 				C247C14C22F82842001D2CA2 /* include */,
 				C2DDEB3B229EAB8600345BFE /* runtime */,
 				C247C29522F828E2001D2CA2 /* inspector */,
@@ -2373,6 +2384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FFAB23527A44EF4009A666A /* metadata-x86_64.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3265,6 +3277,10 @@
 					"-lv8_libbase",
 					"-lv8_libplatform",
 					"-lv8_bigint",
+					"-sectcreate",
+					__DATA,
+					__TNSMetadata,
+					"/Users/c5326378/workspace/ns-v8ios-runtime/NativeScript/metadata/../../build/Debug-iphonesimulator/metadata-x86_64.bin",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.nativescript.NativeScript;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -3333,6 +3349,10 @@
 					"-lv8_libbase",
 					"-lv8_libplatform",
 					"-lv8_bigint",
+					"-sectcreate",
+					__DATA,
+					__TNSMetadata,
+					"/Users/c5326378/workspace/ns-v8ios-runtime/NativeScript/metadata/../../build/Debug-iphonesimulator/metadata-x86_64.bin",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.nativescript.NativeScript;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
