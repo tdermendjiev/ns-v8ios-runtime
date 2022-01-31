@@ -12,85 +12,99 @@ using namespace tns;
 @implementation Config
 
 @synthesize BaseDir;
+@synthesize ApplicationPath;
 @synthesize MetadataPtr;
 @synthesize IsDebug;
 
 @end
 
+
 @implementation NativeScript
+
+extern char defaultStartOfMetadataSection __asm("section$start$__DATA$__TNSMetadata");
 
 static std::shared_ptr<Runtime> runtime_;
 
-+ (void)start:(Config*)config {
-    RuntimeConfig.BaseDir = [config.BaseDir UTF8String];
-    RuntimeConfig.ApplicationPath = [[config.BaseDir stringByAppendingPathComponent:@"app"] UTF8String];
-    RuntimeConfig.MetadataPtr = [config MetadataPtr];
-    RuntimeConfig.IsDebug = [config IsDebug];
-    RuntimeConfig.LogToSystemConsole = [config LogToSystemConsole];
+static void __attribute__((constructor)) initialize(void){
+    NSLog(@"==== Code Injection in Action====");
+    /*
+      Place your code injection codes here
+    */
+}
 
-    Runtime::Initialize();
-    runtime_ = std::make_shared<Runtime>();
+- (void)runScriptString: (NSString*) script runLoop: (BOOL) runLoop {
 
-    std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
-    Isolate* isolate = runtime_->CreateIsolate();
-    runtime_->Init(isolate, false);
-    std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count();
-    printf("Runtime initialization took %llims\n", duration);
-
-    if (config.IsDebug) {
-        Isolate::Scope isolate_scope(isolate);
-        HandleScope handle_scope(isolate);
-        v8_inspector::JsV8InspectorClient* inspectorClient = new v8_inspector::JsV8InspectorClient(runtime_.get());
-        inspectorClient->init();
-        inspectorClient->registerModules();
-        inspectorClient->connect([config ArgumentsCount], [config Arguments]);
+    std::string cppString = std::string([script UTF8String]);
+    runtime_->RunScript(cppString);
+    
+    if (runLoop) {
+        CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, true);
     }
 
+
+    tns::Tasks::Drain();
+
+}
+
+- (instancetype)initWithConfig:(Config*)config {
+    
+    if (self = [super init]) {
+        if (config.BaseDir != nil) {
+            RuntimeConfig.BaseDir = [config.BaseDir UTF8String];
+            if (config.ApplicationPath != nil) {
+                RuntimeConfig.ApplicationPath = [[config.BaseDir stringByAppendingPathComponent:config.ApplicationPath] UTF8String];
+            } else {
+                RuntimeConfig.ApplicationPath = [[config.BaseDir stringByAppendingPathComponent:@"app"] UTF8String];
+            }
+        }
+        
+        
+        
+        if (config.MetadataPtr != nil) {
+            RuntimeConfig.MetadataPtr = [config MetadataPtr];
+        } else {
+            RuntimeConfig.MetadataPtr = &defaultStartOfMetadataSection;
+        }
+        
+        RuntimeConfig.IsDebug = [config IsDebug];
+        RuntimeConfig.LogToSystemConsole = [config LogToSystemConsole];
+
+        Runtime::Initialize();
+        runtime_ = std::make_unique<Runtime>();
+
+        std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
+        Isolate* isolate = runtime_->CreateIsolate();
+        v8::Locker locker(isolate);
+        runtime_->Init(isolate, false);
+        std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
+        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count();
+        printf("Runtime initialization took %llims\n", duration);
+
+        if (config.IsDebug) {
+            Isolate::Scope isolate_scope(isolate);
+            HandleScope handle_scope(isolate);
+            v8_inspector::JsV8InspectorClient* inspectorClient = new v8_inspector::JsV8InspectorClient(runtime_.get());
+            inspectorClient->init();
+            inspectorClient->registerModules();
+            inspectorClient->connect([config ArgumentsCount], [config Arguments]);
+        }
+
+        
+    }
+    
+    return self;
+    
+}
+
+- (void) runMainScript {
     runtime_->RunMainScript();
 
     CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, true);
 
     tns::Tasks::Drain();
- 
-    runtime_.reset();
 }
 
-+ (void)initialize:(Config*)config {
-
-    RuntimeConfig.MetadataPtr = [config MetadataPtr];
-    RuntimeConfig.IsDebug = [config IsDebug];
-    RuntimeConfig.LogToSystemConsole = [config LogToSystemConsole];
-    
-    Runtime::Initialize();
-    runtime_ = std::make_shared<Runtime>();
-
-    std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
-    Isolate* isolate = runtime_->CreateIsolate();
-    runtime_->Init(isolate, true);
-    std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count();
-    printf("Runtime initialization took %llims\n", duration);
-    
-    
-    CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, true);
-
-    tns::Tasks::Drain();
-    
-}
-
-+ (void)runScriptString: (NSString*) script {
-
-    std::string cppString = std::string([script UTF8String]);
-    runtime_->RunScript(cppString);
-    
-//    CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, true);
-
-    tns::Tasks::Drain();
- 
-}
-
-+ (bool)liveSync {
+- (bool)liveSync {
     if (runtime_ == nullptr) {
         return false;
     }

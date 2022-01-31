@@ -98,6 +98,7 @@ void Runtime::Init(Isolate* isolate, bool isNSWorker) {
     DefinePerformanceObject(isolate, globalTemplate);
     DefineGlobalPostMessage(isolate, globalTemplate);
     DefineTimeMethod(isolate, globalTemplate);
+    DefineDrainMicrotaskMethod(isolate, globalTemplate);
     ObjectManager::Init(isolate, globalTemplate);
 //    SetTimeout::Init(isolate, globalTemplate);
     MetadataBuilder::RegisterConstantsOnGlobalObject(isolate, globalTemplate, mainThreadInitialized_);
@@ -290,6 +291,13 @@ void Runtime::DefineTimeMethod(v8::Isolate* isolate, v8::Local<v8::ObjectTemplat
         info.GetReturnValue().Set(duration);
     });
     globalTemplate->Set(ToV8String(isolate, "__time"), timeFunctionTemplate);
+}
+
+void Runtime::DefineDrainMicrotaskMethod(v8::Isolate* isolate, v8::Local<v8::ObjectTemplate> globalTemplate) {
+    Local<FunctionTemplate> drainMicrotaskTemplate = FunctionTemplate::New(isolate, [](const FunctionCallbackInfo<Value>& info) {
+        info.GetIsolate()->PerformMicrotaskCheckpoint();
+    });
+    globalTemplate->Set(ToV8String(isolate, "__drainMicrotaskQueue"), drainMicrotaskTemplate);
 }
 
 bool Runtime::IsAlive(Isolate* isolate) {

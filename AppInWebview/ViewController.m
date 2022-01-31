@@ -9,15 +9,34 @@
 #import "ViewController.h"
 #import <NativeScript/NativeScript.h>
 
+extern char startOfMetadataSection __asm("section$start$__DATA$__TNSMetadata");
+
 @interface ViewController ()
+
+@property (nonatomic, strong) NativeScript* ns;
 
 @end
 
 @implementation ViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    void* metadataPtr = &startOfMetadataSection;
+    
+    Config* config = [[Config alloc] init];
+    config.IsDebug = true;
+    config.LogToSystemConsole = true;
+//    config.BaseDir = @".";
+    config.MetadataPtr = metadataPtr;
+//    config.ArgumentsCount = argc;
+//    config.Arguments = argv;
+
+//        [NativeScript initialize:config];
+    _ns = [[NativeScript alloc] initWithConfig: config];
     
     [[NSNotificationCenter defaultCenter]
             addObserver:self
@@ -27,20 +46,22 @@
     
     _webview.navigationDelegate = self;
     
-    NSURL *targetURL = [NSURL URLWithString:@"http://trial-dirigible.ingress.aws.promart.shoot.canary.k8s-hana.ondemand.com/services/v4/web/native/index.html?refreshToken=1632900788673"];
+    NSURL *targetURL = [NSURL URLWithString:@"http://google.com"];
     NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
     [_webview loadRequest:request];
     [_webview.configuration.userContentController addScriptMessageHandler:self name:@"executor"];
     [_webview.configuration.userContentController addScriptMessageHandler:self name:@"terminator"];
     [_webview.configuration.userContentController addScriptMessageHandler:self name:@"postMessageListener"];
     
+    [_ns runScriptString:@"console.log('HELLO FROM N')" runLoop:false];
 }
 
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
     
     if (message.name == @"executor") {
 //        [NativeScript reinitialize];
-        [NativeScript runScriptString: message.body];
+        [_ns runScriptString:message.body runLoop:false];
+       // [NativeScript runScriptString: message.body];
     }
     
     if (message.name == @"terminator") {
@@ -49,7 +70,8 @@
     
     if (message.name == @"postMessageListener") {
         NSString* scr = [NSString stringWithFormat:@"onmessage(%@)", message.body];
-        [NativeScript runScriptString:scr];
+//        [NativeScript runScriptString:scr];
+        [_ns runScriptString:scr runLoop:false];
     }
 }
 

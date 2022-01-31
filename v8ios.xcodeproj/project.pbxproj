@@ -22,6 +22,7 @@
 		2BB9213A2703B444006C4F9B /* WebviewDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BB921392703B444006C4F9B /* WebviewDispatcher.h */; };
 		2BB921412703B457006C4F9B /* WebviewDispatcher.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2BB921402703B457006C4F9B /* WebviewDispatcher.mm */; };
 		5FD84636270C4951005AB313 /* safe_conversions_arm_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FD84635270C4951005AB313 /* safe_conversions_arm_impl.h */; };
+		5FFAB23A27A46028009A666A /* metadata-x86_64.bin in Resources */ = {isa = PBXBuildFile; fileRef = 5FFAB23927A46028009A666A /* metadata-x86_64.bin */; };
 		C205257F2577D6F900C12A5C /* NativeScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DDEB32229EAB3B00345BFE /* NativeScript.framework */; };
 		C20525802577D6F900C12A5C /* NativeScript.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C2DDEB32229EAB3B00345BFE /* NativeScript.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C20525A82577D86600C12A5C /* TNSWidgets.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C20525A72577D86600C12A5C /* TNSWidgets.xcframework */; };
@@ -595,6 +596,7 @@
 		2BB921392703B444006C4F9B /* WebviewDispatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebviewDispatcher.h; sourceTree = "<group>"; };
 		2BB921402703B457006C4F9B /* WebviewDispatcher.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = WebviewDispatcher.mm; sourceTree = "<group>"; };
 		5FD84635270C4951005AB313 /* safe_conversions_arm_impl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = safe_conversions_arm_impl.h; sourceTree = "<group>"; };
+		5FFAB23927A46028009A666A /* metadata-x86_64.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "metadata-x86_64.bin"; sourceTree = "<group>"; };
 		C2003F9E23FA78CD0043B815 /* TNSDerivedClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNSDerivedClass.h; sourceTree = "<group>"; };
 		C20525A72577D86600C12A5C /* TNSWidgets.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = TNSWidgets.xcframework; sourceTree = "<group>"; };
 		C20AB5E426E1015200E2B41D /* OneByteStringResource.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OneByteStringResource.cpp; sourceTree = "<group>"; };
@@ -1177,6 +1179,14 @@
 				2BB920382702FA41006C4F9B /* main.m */,
 			);
 			path = AppInWebview;
+			sourceTree = "<group>";
+		};
+		5FFAB23827A46002009A666A /* metadata */ = {
+			isa = PBXGroup;
+			children = (
+				5FFAB23927A46028009A666A /* metadata-x86_64.bin */,
+			);
+			path = metadata;
 			sourceTree = "<group>";
 		};
 		C22536AF241A318900192740 /* arm64 */ = {
@@ -1919,6 +1929,7 @@
 		C2DDEB33229EAB3B00345BFE /* NativeScript */ = {
 			isa = PBXGroup;
 			children = (
+				5FFAB23827A46002009A666A /* metadata */,
 				C247C14C22F82842001D2CA2 /* include */,
 				C2DDEB3B229EAB8600345BFE /* runtime */,
 				C247C29522F828E2001D2CA2 /* inspector */,
@@ -2497,6 +2508,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FFAB23A27A46028009A666A /* metadata-x86_64.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3502,6 +3514,10 @@
 					"-lv8_libbase",
 					"-lv8_libplatform",
 					"-lv8_bigint",
+					"-sectcreate",
+					__DATA,
+					__TNSMetadata,
+					"$(SRCROOT)/NativeScript/metadata/metadata-x86_64.bin",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.nativescript.NativeScript;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -3570,6 +3586,10 @@
 					"-lv8_libbase",
 					"-lv8_libplatform",
 					"-lv8_bigint",
+					"-sectcreate",
+					__DATA,
+					__TNSMetadata,
+					"$(SRCROOT)/NativeScript/metadata/metadata-x86_64.bin",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.nativescript.NativeScript;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";

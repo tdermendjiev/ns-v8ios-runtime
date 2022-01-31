@@ -3,6 +3,7 @@
 @interface Config : NSObject
 
 @property (nonatomic, retain) NSString* BaseDir;
+@property (nonatomic, retain) NSString* ApplicationPath;
 @property (nonatomic) void* MetadataPtr;
 @property BOOL IsDebug;
 @property BOOL LogToSystemConsole;
@@ -13,9 +14,9 @@
 
 @interface NativeScript : NSObject
 
-+ (void)start:(Config*)config;
-+ (void)initialize:(Config*)config;
-+ (void)runScriptString: (NSString*) script;
-+ (bool)liveSync;
+- (void)runScriptString: (NSString*) script runLoop: (BOOL)runLoop;
+- (void) runMainScript;
+- (instancetype)initWithConfig:(Config*)config;
+- (bool)liveSync;
 
 @end

@@ -27,14 +27,15 @@ int main(int argc, char * argv[]) {
 #endif
 
         
-        Config* config = [[Config alloc] init];
-        config.IsDebug = isDebug;
-        config.LogToSystemConsole = isDebug;
-        config.MetadataPtr = metadataPtr;
-        config.ArgumentsCount = argc;
-        config.Arguments = argv;
-
-        [NativeScript initialize:config];
+//        Config* config = [[Config alloc] init];
+//        config.IsDebug = isDebug;
+//        config.LogToSystemConsole = isDebug;
+//        config.MetadataPtr = metadataPtr;
+//        config.ArgumentsCount = argc;
+//        config.Arguments = argv;
+//
+//        [NativeScript initialize:config];
+        //NativeScript* ns = [[NativeScript alloc] initWithConfig: config];
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);
 }
