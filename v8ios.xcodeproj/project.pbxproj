@@ -23,6 +23,8 @@
 		2BB921412703B457006C4F9B /* WebviewDispatcher.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2BB921402703B457006C4F9B /* WebviewDispatcher.mm */; };
 		5FD84636270C4951005AB313 /* safe_conversions_arm_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FD84635270C4951005AB313 /* safe_conversions_arm_impl.h */; };
 		5FFAB23A27A46028009A666A /* metadata-x86_64.bin in Resources */ = {isa = PBXBuildFile; fileRef = 5FFAB23927A46028009A666A /* metadata-x86_64.bin */; };
+		5FFAB24E27A828F7009A666A /* VoivodaServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5FFAB24C27A828F7009A666A /* VoivodaServer.mm */; };
+		5FFAB24F27A828F7009A666A /* VoivodaServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FFAB24D27A828F7009A666A /* VoivodaServer.h */; };
 		C205257F2577D6F900C12A5C /* NativeScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DDEB32229EAB3B00345BFE /* NativeScript.framework */; };
 		C20525802577D6F900C12A5C /* NativeScript.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C2DDEB32229EAB3B00345BFE /* NativeScript.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C20525A82577D86600C12A5C /* TNSWidgets.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C20525A72577D86600C12A5C /* TNSWidgets.xcframework */; };
@@ -597,6 +599,8 @@
 		2BB921402703B457006C4F9B /* WebviewDispatcher.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = WebviewDispatcher.mm; sourceTree = "<group>"; };
 		5FD84635270C4951005AB313 /* safe_conversions_arm_impl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = safe_conversions_arm_impl.h; sourceTree = "<group>"; };
 		5FFAB23927A46028009A666A /* metadata-x86_64.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "metadata-x86_64.bin"; sourceTree = "<group>"; };
+		5FFAB24C27A828F7009A666A /* VoivodaServer.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = VoivodaServer.mm; sourceTree = "<group>"; };
+		5FFAB24D27A828F7009A666A /* VoivodaServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoivodaServer.h; sourceTree = "<group>"; };
 		C2003F9E23FA78CD0043B815 /* TNSDerivedClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNSDerivedClass.h; sourceTree = "<group>"; };
 		C20525A72577D86600C12A5C /* TNSWidgets.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = TNSWidgets.xcframework; sourceTree = "<group>"; };
 		C20AB5E426E1015200E2B41D /* OneByteStringResource.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OneByteStringResource.cpp; sourceTree = "<group>"; };
@@ -1314,6 +1318,8 @@
 				C247C29922F828E2001D2CA2 /* base64.cpp */,
 				C2229972235449B400C1DFD6 /* InspectorServer.h */,
 				C2229971235449B300C1DFD6 /* InspectorServer.mm */,
+				5FFAB24D27A828F7009A666A /* VoivodaServer.h */,
+				5FFAB24C27A828F7009A666A /* VoivodaServer.mm */,
 				C247C29A22F828E2001D2CA2 /* JsV8InspectorClient.h */,
 				C28653C1246D7B8900387363 /* JsV8InspectorClient.cpp */,
 				C247C29B22F828E2001D2CA2 /* JsV8InspectorClient.mm */,
@@ -2197,6 +2203,7 @@
 				C2DDEB8F229EAC8300345BFE /* ArgConverter.h in Headers */,
 				C2D1168F25666B090020BF3E /* wrappers.h in Headers */,
 				C247C37822F828E3001D2CA2 /* Forward.h in Headers */,
+				5FFAB24F27A828F7009A666A /* VoivodaServer.h in Headers */,
 				C247C33A22F828E3001D2CA2 /* conversions.h in Headers */,
 				C247C39C22F828E3001D2CA2 /* build_config.h in Headers */,
 				C247C34322F828E3001D2CA2 /* remote-object-id.h in Headers */,
@@ -2801,6 +2808,7 @@
 			files = (
 				C247C36822F828E3001D2CA2 /* Console.cpp in Sources */,
 				C20AB5E626E1015300E2B41D /* OneByteStringResource.cpp in Sources */,
+				5FFAB24E27A828F7009A666A /* VoivodaServer.mm in Sources */,
 				C247C36422F828E3001D2CA2 /* Log.cpp in Sources */,
 				C247C34922F828E3001D2CA2 /* v8-string-conversions.cc in Sources */,
 				C247C38C22F828E3001D2CA2 /* v8-network-agent-impl.cpp in Sources */,
@@ -2993,10 +3001,6 @@
 					"-ObjC",
 					"-framework",
 					NativeScript,
-					"-sectcreate",
-					__DATA,
-					__TNSMetadata,
-					"$(CONFIGURATION_BUILD_DIR)/metadata-$(CURRENT_ARCH).bin",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tdermendjiev.AppInWebview;
 				PRODUCT_NAME = "$(TARGET_NAME)";

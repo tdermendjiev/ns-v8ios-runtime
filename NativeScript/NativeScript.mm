@@ -5,6 +5,8 @@
 #include "runtime/Helpers.h"
 #include "runtime/Runtime.h"
 #include "runtime/Tasks.h"
+#include "VoivodaServer.h"
+#include <iostream>
 
 using namespace v8;
 using namespace tns;
@@ -23,14 +25,36 @@ using namespace tns;
 
 extern char defaultStartOfMetadataSection __asm("section$start$__DATA$__TNSMetadata");
 
-static std::shared_ptr<Runtime> runtime_;
+std::unique_ptr<Runtime> runtime_;
 
-static void __attribute__((constructor)) initialize(void){
-    NSLog(@"==== Code Injection in Action====");
-    /*
-      Place your code injection codes here
-    */
-}
+
+//static void __attribute__((constructor)) initialize(void){
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        NSLog(@"==== Code Injection in Action====");
+//        
+//        in_port_t listenPort = voivoda::VoivodaServer::Init([](std::function<void (std::string)> sender) {
+//            //on connected
+//        },[&] (std::string message) {
+//            std::cout << "Follow this command: " << message;
+//            Config* config = [[Config alloc] init];
+//            config.IsDebug = true;
+//            config.LogToSystemConsole = true;
+//            NSString *objcmessage = [NSString stringWithCString:message.c_str()
+//                                               encoding:[NSString defaultCStringEncoding]];
+////            NSString* script = [NSString stringWithFormat:@"let v = 5; console.log(v);"];
+//            NativeScript* _ns = [[NativeScript alloc] initWithConfig: config];
+//            try {
+//                [_ns runScriptString:objcmessage runLoop:false];
+//            } catch (NSError* err) {
+//                NSLog(@"%@", [err description]);
+//            }
+//        });
+//        
+//        NSLog(@"%d", listenPort);
+//    });
+//    
+//    
+//}
 
 - (void)runScriptString: (NSString*) script runLoop: (BOOL) runLoop {
 

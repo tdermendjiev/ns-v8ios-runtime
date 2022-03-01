@@ -9,8 +9,6 @@
 #import "ViewController.h"
 #import <NativeScript/NativeScript.h>
 
-extern char startOfMetadataSection __asm("section$start$__DATA$__TNSMetadata");
-
 @interface ViewController ()
 
 @property (nonatomic, strong) NativeScript* ns;
@@ -25,13 +23,10 @@ extern char startOfMetadataSection __asm("section$start$__DATA$__TNSMetadata");
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    void* metadataPtr = &startOfMetadataSection;
-    
     Config* config = [[Config alloc] init];
     config.IsDebug = true;
     config.LogToSystemConsole = true;
 //    config.BaseDir = @".";
-    config.MetadataPtr = metadataPtr;
 //    config.ArgumentsCount = argc;
 //    config.Arguments = argv;
 
