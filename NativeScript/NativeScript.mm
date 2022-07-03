@@ -110,15 +110,13 @@ std::unique_ptr<Runtime> runtime_;
             inspectorClient->registerModules();
             inspectorClient->connect([config ArgumentsCount], [config Arguments]);
         }
-
-        
     }
     
     return self;
     
 }
 
-- (void) runMainScript {
+- (void)runMainApplication {
     runtime_->RunMainScript();
 
     CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, true);
