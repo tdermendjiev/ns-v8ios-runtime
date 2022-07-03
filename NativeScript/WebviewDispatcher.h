@@ -8,11 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WebviewDispatcher : NSObject {
-    NSString *someProperty;
-}
-
-@property (nonatomic, retain) NSString *someProperty;
+@interface WebviewDispatcher : NSObject 
 
 + (id)shared;
 - (void) postMessage: (NSString*)msg;

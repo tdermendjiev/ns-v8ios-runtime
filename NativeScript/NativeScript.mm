@@ -82,8 +82,6 @@ std::unique_ptr<Runtime> runtime_;
             }
         }
         
-        
-        
         if (config.MetadataPtr != nil) {
             RuntimeConfig.MetadataPtr = [config MetadataPtr];
         } else {

@@ -10,7 +10,6 @@
 
 @implementation WebviewDispatcher
 
-@synthesize someProperty;
 
 #pragma mark Singleton Methods
 
@@ -24,9 +23,6 @@
 }
 
 - (id)init {
-  if (self = [super init]) {
-      someProperty = [[NSString alloc] initWithString:@"Default Property Value"];
-  }
   return self;
 }
 
