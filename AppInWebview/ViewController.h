@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
+#import "URLTextFieldViewController.h"
+#import "URLLoader.h""
 
-@interface ViewController : UIViewController <WKScriptMessageHandler, WKNavigationDelegate>
+@interface ViewController : UIViewController <WKScriptMessageHandler, WKNavigationDelegate, URLLoader>
 @property (weak, nonatomic) IBOutlet WKWebView *webview;
 
 

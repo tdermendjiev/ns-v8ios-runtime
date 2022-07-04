@@ -21,6 +21,7 @@
 		2BB9206F27030822006C4F9B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB9206E27030822006C4F9B /* WebKit.framework */; };
 		2BB9213A2703B444006C4F9B /* WebviewDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BB921392703B444006C4F9B /* WebviewDispatcher.h */; };
 		2BB921412703B457006C4F9B /* WebviewDispatcher.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2BB921402703B457006C4F9B /* WebviewDispatcher.mm */; };
+		5F4431F228721B5B00409C00 /* URLTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4431F128721B5B00409C00 /* URLTextFieldViewController.m */; };
 		5FD84636270C4951005AB313 /* safe_conversions_arm_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FD84635270C4951005AB313 /* safe_conversions_arm_impl.h */; };
 		5FFAB23A27A46028009A666A /* metadata-x86_64.bin in Resources */ = {isa = PBXBuildFile; fileRef = 5FFAB23927A46028009A666A /* metadata-x86_64.bin */; };
 		5FFAB24E27A828F7009A666A /* VoivodaServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5FFAB24C27A828F7009A666A /* VoivodaServer.mm */; };
@@ -597,6 +598,9 @@
 		2BB9206E27030822006C4F9B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		2BB921392703B444006C4F9B /* WebviewDispatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebviewDispatcher.h; sourceTree = "<group>"; };
 		2BB921402703B457006C4F9B /* WebviewDispatcher.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = WebviewDispatcher.mm; sourceTree = "<group>"; };
+		5F4431F028721B5B00409C00 /* URLTextFieldViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLTextFieldViewController.h; sourceTree = "<group>"; };
+		5F4431F128721B5B00409C00 /* URLTextFieldViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLTextFieldViewController.m; sourceTree = "<group>"; };
+		5F4431F328732D3300409C00 /* URLLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLLoader.h; sourceTree = "<group>"; };
 		5FD84635270C4951005AB313 /* safe_conversions_arm_impl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = safe_conversions_arm_impl.h; sourceTree = "<group>"; };
 		5FFAB23927A46028009A666A /* metadata-x86_64.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "metadata-x86_64.bin"; sourceTree = "<group>"; };
 		5FFAB24C27A828F7009A666A /* VoivodaServer.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = VoivodaServer.mm; sourceTree = "<group>"; };
@@ -1181,6 +1185,9 @@
 				2BB920342702FA41006C4F9B /* LaunchScreen.storyboard */,
 				2BB920372702FA41006C4F9B /* Info.plist */,
 				2BB920382702FA41006C4F9B /* main.m */,
+				5F4431F028721B5B00409C00 /* URLTextFieldViewController.h */,
+				5F4431F128721B5B00409C00 /* URLTextFieldViewController.m */,
+				5F4431F328732D3300409C00 /* URLLoader.h */,
 			);
 			path = AppInWebview;
 			sourceTree = "<group>";
@@ -2602,6 +2609,7 @@
 				2BB920282702FA3F006C4F9B /* AppDelegate.m in Sources */,
 				2BB920392702FA41006C4F9B /* main.m in Sources */,
 				2BB9202B2702FA3F006C4F9B /* SceneDelegate.m in Sources */,
+				5F4431F228721B5B00409C00 /* URLTextFieldViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
