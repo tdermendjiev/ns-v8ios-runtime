@@ -3,6 +3,7 @@
 @interface Config : NSObject
 
 @property (nonatomic, retain) NSString* BaseDir;
+@property (nonatomic, retain) NSString* ApplicationPath;
 @property (nonatomic) void* MetadataPtr;
 @property (nonatomic) void* SwiftMetadataPtr;
 @property BOOL IsDebug;
@@ -14,7 +15,11 @@
 
 @interface NativeScript : NSObject
 
-+ (void)start:(Config*)config;
-+ (bool)liveSync;
+- (instancetype)initWithConfig:(Config*)config;
+/**
+ WARNING: this method does not return in most applications. (UIApplicationMain)
+ */
+- (void)runMainApplication;
+- (bool)liveSync;
 
 @end

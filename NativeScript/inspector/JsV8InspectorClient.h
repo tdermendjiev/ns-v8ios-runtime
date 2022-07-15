@@ -44,6 +44,8 @@ private:
     std::vector<std::string> messages_;
     bool runningNestedLoops_;
     dispatch_queue_t messagesQueue_;
+    dispatch_queue_t messageLoopQueue_;
+    dispatch_semaphore_t messageArrived_;
     std::function<void (std::string)> sender_;
     bool isWaitingForDebugger_;
 

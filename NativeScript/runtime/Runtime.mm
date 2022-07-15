@@ -94,6 +94,7 @@ void Runtime::Init(Isolate* isolate) {
     Worker::Init(isolate, globalTemplate, mainThreadInitialized_);
     DefinePerformanceObject(isolate, globalTemplate);
     DefineTimeMethod(isolate, globalTemplate);
+    DefineDrainMicrotaskMethod(isolate, globalTemplate);
     ObjectManager::Init(isolate, globalTemplate);
 //    SetTimeout::Init(isolate, globalTemplate);
     MetadataBuilder::RegisterConstantsOnGlobalObject(isolate, globalTemplate, mainThreadInitialized_);
@@ -159,10 +160,10 @@ id Runtime::GetAppConfigValue(std::string key) {
     if (AppPackageJson == nil) {
         NSString* packageJsonPath = [[NSString stringWithUTF8String:RuntimeConfig.ApplicationPath.c_str()] stringByAppendingPathComponent:@"package.json"];
         NSData* data = [NSData dataWithContentsOfFile:packageJsonPath];
-        AppPackageJson = @{};
         if (data) {
             NSError* error = nil;
-            AppPackageJson = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+            NSDictionary* dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+            AppPackageJson = [[NSDictionary alloc] initWithDictionary:dict];
         }
     }
 
@@ -229,6 +230,13 @@ void Runtime::DefineTimeMethod(v8::Isolate* isolate, v8::Local<v8::ObjectTemplat
         info.GetReturnValue().Set(duration);
     });
     globalTemplate->Set(ToV8String(isolate, "__time"), timeFunctionTemplate);
+}
+
+void Runtime::DefineDrainMicrotaskMethod(v8::Isolate* isolate, v8::Local<v8::ObjectTemplate> globalTemplate) {
+    Local<FunctionTemplate> drainMicrotaskTemplate = FunctionTemplate::New(isolate, [](const FunctionCallbackInfo<Value>& info) {
+        info.GetIsolate()->PerformMicrotaskCheckpoint();
+    });
+    globalTemplate->Set(ToV8String(isolate, "__drainMicrotaskQueue"), drainMicrotaskTemplate);
 }
 
 bool Runtime::IsAlive(Isolate* isolate) {
