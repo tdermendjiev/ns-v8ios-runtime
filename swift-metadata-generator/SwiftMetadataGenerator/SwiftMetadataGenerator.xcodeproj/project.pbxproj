@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5F1472252881468D0011F206 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1472242881468D0011F206 /* main.swift */; };
+		5F147234288148080011F206 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F147233288148080011F206 /* Meta.swift */; };
+		5F147236288148500011F206 /* MetaVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F147235288148500011F206 /* MetaVisitor.swift */; };
+		5F147239288148C70011F206 /* TypeVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F147238288148C70011F206 /* TypeVisitor.swift */; };
+		5F14723B288148ED0011F206 /* FunctionMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F14723A288148ED0011F206 /* FunctionMeta.swift */; };
+		5F14723D288149570011F206 /* MethodMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F14723C288149570011F206 /* MethodMeta.swift */; };
+		5F14723F288149780011F206 /* ClassMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F14723E288149780011F206 /* ClassMeta.swift */; };
+		5F14724228814AEB0011F206 /* StringHasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F14724128814AEB0011F206 /* StringHasher.swift */; };
+		5F14724D288152A60011F206 /* SourceKittenFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 5F14724C288152A60011F206 /* SourceKittenFramework */; };
+		5F14724F288152E70011F206 /* EnumMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F14724E288152E70011F206 /* EnumMeta.swift */; };
+		5F147251288153000011F206 /* PropertyMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F147250288153000011F206 /* PropertyMeta.swift */; };
+		5F1472532881530B0011F206 /* ProtocolMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1472522881530B0011F206 /* ProtocolMeta.swift */; };
+		5F1472562881534E0011F206 /* BinaryWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1472552881534E0011F206 /* BinaryWriter.swift */; };
+		5F1472582881535F0011F206 /* BinaryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1472572881535F0011F206 /* BinaryOperation.swift */; };
+		5F14725A2881536F0011F206 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1472592881536F0011F206 /* Stream.swift */; };
+		5F14725C288153840011F206 /* BinarySerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F14725B288153840011F206 /* BinarySerializer.swift */; };
+		5F14725E288153970011F206 /* BinaryEncodingSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F14725D288153970011F206 /* BinaryEncodingSerializer.swift */; };
+		5F147260288153A40011F206 /* BinaryStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F14725F288153A40011F206 /* BinaryStructures.swift */; };
+		5F147262288153BA0011F206 /* BinaryMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F147261288153BA0011F206 /* BinaryMeta.swift */; };
+		5F147264288180490011F206 /* FreeFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F147263288180490011F206 /* FreeFunc.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5F14721F2881468D0011F206 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5F1472212881468D0011F206 /* SwiftMetadataGenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftMetadataGenerator; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F1472242881468D0011F206 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		5F147233288148080011F206 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		5F147235288148500011F206 /* MetaVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaVisitor.swift; sourceTree = "<group>"; };
+		5F147238288148C70011F206 /* TypeVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeVisitor.swift; sourceTree = "<group>"; };
+		5F14723A288148ED0011F206 /* FunctionMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionMeta.swift; sourceTree = "<group>"; };
+		5F14723C288149570011F206 /* MethodMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodMeta.swift; sourceTree = "<group>"; };
+		5F14723E288149780011F206 /* ClassMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMeta.swift; sourceTree = "<group>"; };
+		5F14724128814AEB0011F206 /* StringHasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHasher.swift; sourceTree = "<group>"; };
+		5F14724E288152E70011F206 /* EnumMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumMeta.swift; sourceTree = "<group>"; };
+		5F147250288153000011F206 /* PropertyMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyMeta.swift; sourceTree = "<group>"; };
+		5F1472522881530B0011F206 /* ProtocolMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolMeta.swift; sourceTree = "<group>"; };
+		5F1472552881534E0011F206 /* BinaryWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryWriter.swift; sourceTree = "<group>"; };
+		5F1472572881535F0011F206 /* BinaryOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryOperation.swift; sourceTree = "<group>"; };
+		5F1472592881536F0011F206 /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
+		5F14725B288153840011F206 /* BinarySerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySerializer.swift; sourceTree = "<group>"; };
+		5F14725D288153970011F206 /* BinaryEncodingSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryEncodingSerializer.swift; sourceTree = "<group>"; };
+		5F14725F288153A40011F206 /* BinaryStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryStructures.swift; sourceTree = "<group>"; };
+		5F147261288153BA0011F206 /* BinaryMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryMeta.swift; sourceTree = "<group>"; };
+		5F147263288180490011F206 /* FreeFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeFunc.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F14721E2881468D0011F206 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F14724D288152A60011F206 /* SourceKittenFramework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F1472182881468D0011F206 = {
+			isa = PBXGroup;
+			children = (
+				5F1472232881468D0011F206 /* SwiftMetadataGenerator */,
+				5F1472222881468D0011F206 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5F1472222881468D0011F206 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F1472212881468D0011F206 /* SwiftMetadataGenerator */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5F1472232881468D0011F206 /* SwiftMetadataGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				5F1472542881533C0011F206 /* Binary */,
+				5F14724028814ADC0011F206 /* Utils */,
+				5F147232288147F50011F206 /* Meta */,
+				5F1472242881468D0011F206 /* main.swift */,
+				5F147263288180490011F206 /* FreeFunc.swift */,
+			);
+			path = SwiftMetadataGenerator;
+			sourceTree = "<group>";
+		};
+		5F147232288147F50011F206 /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				5F147233288148080011F206 /* Meta.swift */,
+				5F147235288148500011F206 /* MetaVisitor.swift */,
+				5F147238288148C70011F206 /* TypeVisitor.swift */,
+				5F14723A288148ED0011F206 /* FunctionMeta.swift */,
+				5F14723C288149570011F206 /* MethodMeta.swift */,
+				5F14723E288149780011F206 /* ClassMeta.swift */,
+				5F147250288153000011F206 /* PropertyMeta.swift */,
+				5F14724E288152E70011F206 /* EnumMeta.swift */,
+				5F1472522881530B0011F206 /* ProtocolMeta.swift */,
+			);
+			path = Meta;
+			sourceTree = "<group>";
+		};
+		5F14724028814ADC0011F206 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5F14724128814AEB0011F206 /* StringHasher.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5F1472542881533C0011F206 /* Binary */ = {
+			isa = PBXGroup;
+			children = (
+				5F1472552881534E0011F206 /* BinaryWriter.swift */,
+				5F1472572881535F0011F206 /* BinaryOperation.swift */,
+				5F1472592881536F0011F206 /* Stream.swift */,
+				5F14725B288153840011F206 /* BinarySerializer.swift */,
+				5F14725D288153970011F206 /* BinaryEncodingSerializer.swift */,
+				5F14725F288153A40011F206 /* BinaryStructures.swift */,
+				5F147261288153BA0011F206 /* BinaryMeta.swift */,
+			);
+			path = Binary;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5F1472202881468D0011F206 /* SwiftMetadataGenerator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F1472282881468D0011F206 /* Build configuration list for PBXNativeTarget "SwiftMetadataGenerator" */;
+			buildPhases = (
+				5F14721D2881468D0011F206 /* Sources */,
+				5F14721E2881468D0011F206 /* Frameworks */,
+				5F14721F2881468D0011F206 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftMetadataGenerator;
+			packageProductDependencies = (
+				5F14724C288152A60011F206 /* SourceKittenFramework */,
+			);
+			productName = SwiftMetadataGenerator;
+			productReference = 5F1472212881468D0011F206 /* SwiftMetadataGenerator */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F1472192881468D0011F206 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					5F1472202881468D0011F206 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 5F14721C2881468D0011F206 /* Build configuration list for PBXProject "SwiftMetadataGenerator" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5F1472182881468D0011F206;
+			packageReferences = (
+				5F14724328814B340011F206 /* XCRemoteSwiftPackageReference "swift-syntax" */,
+				5F14724B288152A60011F206 /* XCRemoteSwiftPackageReference "SourceKitten" */,
+			);
+			productRefGroup = 5F1472222881468D0011F206 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5F1472202881468D0011F206 /* SwiftMetadataGenerator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5F14721D2881468D0011F206 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F14723B288148ED0011F206 /* FunctionMeta.swift in Sources */,
+				5F147234288148080011F206 /* Meta.swift in Sources */,
+				5F14723F288149780011F206 /* ClassMeta.swift in Sources */,
+				5F1472582881535F0011F206 /* BinaryOperation.swift in Sources */,
+				5F147236288148500011F206 /* MetaVisitor.swift in Sources */,
+				5F1472532881530B0011F206 /* ProtocolMeta.swift in Sources */,
+				5F14724F288152E70011F206 /* EnumMeta.swift in Sources */,
+				5F147264288180490011F206 /* FreeFunc.swift in Sources */,
+				5F147251288153000011F206 /* PropertyMeta.swift in Sources */,
+				5F1472562881534E0011F206 /* BinaryWriter.swift in Sources */,
+				5F147239288148C70011F206 /* TypeVisitor.swift in Sources */,
+				5F1472252881468D0011F206 /* main.swift in Sources */,
+				5F14723D288149570011F206 /* MethodMeta.swift in Sources */,
+				5F14725C288153840011F206 /* BinarySerializer.swift in Sources */,
+				5F147262288153BA0011F206 /* BinaryMeta.swift in Sources */,
+				5F147260288153A40011F206 /* BinaryStructures.swift in Sources */,
+				5F14724228814AEB0011F206 /* StringHasher.swift in Sources */,
+				5F14725A2881536F0011F206 /* Stream.swift in Sources */,
+				5F14725E288153970011F206 /* BinaryEncodingSerializer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5F1472262881468D0011F206 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5F1472272881468D0011F206 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		5F1472292881468D0011F206 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H6KAAZFWNY;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5F14722A2881468D0011F206 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H6KAAZFWNY;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F14721C2881468D0011F206 /* Build configuration list for PBXProject "SwiftMetadataGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F1472262881468D0011F206 /* Debug */,
+				5F1472272881468D0011F206 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F1472282881468D0011F206 /* Build configuration list for PBXNativeTarget "SwiftMetadataGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F1472292881468D0011F206 /* Debug */,
+				5F14722A2881468D0011F206 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5F14724328814B340011F206 /* XCRemoteSwiftPackageReference "swift-syntax" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-syntax.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.50600.1;
+			};
+		};
+		5F14724B288152A60011F206 /* XCRemoteSwiftPackageReference "SourceKitten" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jpsim/SourceKitten";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5F14724C288152A60011F206 /* SourceKittenFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F14724B288152A60011F206 /* XCRemoteSwiftPackageReference "SourceKitten" */;
+			productName = SourceKittenFramework;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 5F1472192881468D0011F206 /* Project object */;
+}
