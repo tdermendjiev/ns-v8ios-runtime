@@ -7,6 +7,7 @@
 
 import Foundation
 import SourceKittenFramework
+import SwiftSyntax
 
 class FunctionMeta: Meta {
     
@@ -26,9 +27,27 @@ class FunctionMeta: Meta {
         self.init(name: name, jsName: name, mangledName: mangledName, moduleName: moduleName, signature: signature)
     }
     
+    convenience init(decl: FunctionDeclSyntax, moduleName: String) {
+        let name = decl.identifier.description
+        let signature = FunctionMeta.signatureFromDecl(decl: decl.signature)
+        let mangledName = FunctionMeta.mangleDecl(decl: decl)
+        self.init(name: name, jsName: name, mangledName: mangledName, moduleName: moduleName, signature: signature)
+    }
+    
+    
     override func visit(visitor: MetaVisitor) {
         var temp = self
         visitor.visit(meta: &temp)
+    }
+    
+    static func mangleDecl(decl: FunctionDeclSyntax) -> String {
+        //todo: implement
+        return ""
+    }
+    
+    static func signatureFromDecl(decl: FunctionSignatureSyntax) -> [Type] {
+        //todo: implement
+        return [Type(type: TypeType.TypeInt)]
     }
 
     static func signatureFromDecl(d: [String:SourceKitRepresentable]) -> [Type] {

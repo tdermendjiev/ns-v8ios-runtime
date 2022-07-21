@@ -10,6 +10,26 @@ import SourceKittenFramework
 import SwiftSyntax
 import SwiftSyntaxParser
 
+class SwiftDeclarationVisitor: SyntaxRewriter {
+    
+    public var metas = [Meta]()
+    
+    override func visit(_ node: FunctionDeclSyntax) -> DeclSyntax {
+        let fMeta = FunctionMeta(decl: node, moduleName: "")
+        metas.append(fMeta)
+        symbols.append(fMeta.mangledName)
+        return super.visit(node)
+    }
+    
+    override func visit(_ node: ClassDeclSyntax) -> DeclSyntax {
+//        let cMeta = ClassMeta(dict: s, moduleName: moduleName, path: path)
+//        metas.append(cMeta)
+//        symbols.append(cMeta.mangledName)
+        return super.visit(node)
+    }
+    
+}
+
 var path: String?
 var outputPath: String?
 
@@ -38,45 +58,16 @@ let enumerator = fileManager.enumerator(atPath: path)
 while let element = enumerator?.nextObject() as? String {
     if element.hasSuffix("swift")  || element.hasSuffix("swiftinterface"){
         do {
-            let file = File(path: path + element)!
-            let result = try Structure(file: file)
-            let dict = result.dictionary
-            var metas = [Meta]()
-            if let decls = dict["key.substructure"] as? [SourceKitRepresentable] {
-                for d in decls {
-                    visitDecl(s: d as! [String: SourceKitRepresentable], metas: &metas, moduleName: element.components(separatedBy: ".swift")[0], path: path + element)
-                }
-            }
-            container.append((file.path!, metas))
+            let file = path + element
+            let url = URL(fileURLWithPath: file)
+            let sourceFile = try SyntaxParser.parse(url)
+            let visitor = SwiftDeclarationVisitor()
+            _ = visitor.visit(sourceFile)
+            
+            container.append((path + element, visitor.metas))
         } catch(let err) {
             print(err)
         }
-    }
-}
-
-func visitDecl(s: [String:SourceKitRepresentable], metas: inout [Meta], moduleName: String, path: String) {
-    if let kind = s["key.kind"] as? String {
-        if kind == "source.lang.swift.decl.function.free" {
-            if let dict = s as? [String:SourceKitRepresentable] {
-                let fMeta = FunctionMeta(dict: s, moduleName: moduleName, path: path)
-                metas.append(fMeta)
-                symbols.append(fMeta.mangledName)
-            } else {
-                print("meta failed")
-            }
-        } else if kind == "source.lang.swift.decl.class" {
-            if let dict = s as? [String:SourceKitRepresentable] {
-                let cMeta = ClassMeta(dict: s, moduleName: moduleName, path: path)
-                metas.append(cMeta)
-                symbols.append(cMeta.mangledName)
-            } else {
-                print("meta failed")
-            }
-
-        }
-    }
-    if let substructure = s["key.substructure"] as? [String: SourceKitRepresentable] {
-        visitDecl(s: substructure, metas: &metas, moduleName: moduleName, path: path)
     }
 }
 
