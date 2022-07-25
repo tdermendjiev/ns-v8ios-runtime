@@ -52,7 +52,19 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-swift-files-path &lt;path&gt; -output-bin &lt;path&gt;/SwiftMetadata.bin"
+            argument = "-swift-files-path   "
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "/Users/teodordermendzhiev/workspace/ns-v8ios-runtime/swift-metadata-generator/SwiftMetadataGenerator/SwiftMetadataGenerator"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-output-bin"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "/Users/teodordermendzhiev/workspace/ns-v8ios-runtime/swift-metadata-generator/SwiftMetadataGenerator/SwiftMetadata.bin"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

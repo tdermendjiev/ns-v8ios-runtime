@@ -41,9 +41,9 @@ class StringHasher {
         }
         
         result ^= result << 3
-        result += result >> 5
+        result = result &+ (result >> 5)
         result ^= result << 2
-        result += result >> 15
+        result = result &+ (result >> 15)
         result ^= result << 10
         
         return result
