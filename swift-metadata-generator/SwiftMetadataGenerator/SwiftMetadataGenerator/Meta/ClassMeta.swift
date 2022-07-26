@@ -7,6 +7,7 @@
 
 import Foundation
 import SourceKittenFramework
+import SwiftSyntax
 
 class ClassMeta: Meta {
     
@@ -37,10 +38,29 @@ class ClassMeta: Meta {
         let mangledName = usr.components(separatedBy: moduleName)[1]
         self.init(name: name, jsName: name, mangledName: mangledName, moduleName: moduleName)
         
+//        populateStaticMethods()
+//        populateInstanceMethods()
+//        populateStaticProperties()
+//        populateInstanceProperties()
+//        populateProtocols()
+    }
+    
+    convenience init(decl: ClassDeclSyntax, moduleName: String, path: String) {
+        let name = decl.identifier.description
+        let offset = decl.identifier.tokenClassification.offset
+        let usr = Meta.usrForOffset(offset: ByteCount(offset), path: path)
+        let mangledName = usr
+        self.init(name: name, jsName: name, mangledName: mangledName, moduleName: moduleName)
+        
+        //for debug
+//        for m in decl.members.members {
+//            print(m.decl.syntaxNodeType)
+//        }
+        
         populateStaticMethods()
-        populateInstanceMethods()
+        populateInstanceMethods(decl: decl, moduleName: moduleName, path: path)
         populateStaticProperties()
-        populateInstanceProperties()
+        populateInstanceProperties(decl: decl)
         populateProtocols()
     }
     
@@ -48,16 +68,37 @@ class ClassMeta: Meta {
         
     }
     
-    private func populateInstanceMethods() {
+    private func populateInstanceMethods(decl: ClassDeclSyntax, moduleName: String, path: String) {
         
+        //should they be sorted?
+        for m in decl.members.members {
+            if let funcDecl = FunctionDeclSyntax(m.decl._syntaxNode) {
+                //print(funcDecl.modifiers?.description)
+                //TODO: check if it's instance
+                if let mods = funcDecl.modifiers {
+                    for mod in mods {
+                        if !(mod.name.text == "static" || mod.name.text == "class" || mod.name.text == "private") {
+                            let methodMeta = MethodMeta(decl: funcDecl, moduleName: moduleName, path: path)
+                            instanceMethods.append(methodMeta)
+                        }
+                        
+                    }
+                }
+                
+            }
+        }
     }
     
     private func populateStaticProperties() {
         
     }
     
-    private func populateInstanceProperties() {
-        
+    private func populateInstanceProperties(decl: ClassDeclSyntax) {
+        for m in decl.members.members {
+            if let varDecl = VariableDeclSyntax(m.decl._syntaxNode) {
+                //print(varDecl.modifiers?.description)
+            }
+        }
     }
     
     private func populateProtocols() {

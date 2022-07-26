@@ -15,3 +15,9 @@ import Foundation
 func aMethod2(paramInt: Int) {
     print("The method has been called with param \(paramInt)")
 }
+
+class AClass {
+    func instanceMethod() {
+        print("Instance method has been called")
+    }
+}

@@ -27,9 +27,9 @@ class SwiftDeclarationVisitor: SyntaxRewriter {
     }
     
     override func visit(_ node: ClassDeclSyntax) -> DeclSyntax {
-//        let cMeta = ClassMeta(dict: s, moduleName: moduleName, path: path)
-//        metas.append(cMeta)
-//        symbols.append(cMeta.mangledName)
+        let cMeta = ClassMeta(decl: node, moduleName: "", path: path)
+        metas.append(cMeta)
+        symbols.append(cMeta.mangledName)
         return super.visit(node)
     }
     
