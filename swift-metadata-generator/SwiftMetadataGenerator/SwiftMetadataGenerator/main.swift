@@ -10,6 +10,8 @@ import SourceKittenFramework
 import SwiftSyntax
 import SwiftSyntaxParser
 
+let MODULE_NAME = "TestRunner"
+
 class SwiftDeclarationVisitor: SyntaxRewriter {
     
     public var metas = [Meta]()

@@ -43,8 +43,15 @@ class FunctionMeta: Meta {
     
     static func mangleDecl(decl: FunctionDeclSyntax, path: String, offset: Int) -> String {
         let usr = Meta.usrForOffset(offset: ByteCount(offset), path: path)
-//        let mangledName = usr.components(separatedBy: moduleName)[1]
-        return usr
+        let url = URL(fileURLWithPath: path)
+        let fileName = url.lastPathComponent.components(separatedBy: ".")[0]
+        let mangledName = usr.components(separatedBy: fileName)[1]
+        
+        let moduleName = MODULE_NAME
+        
+        let symbolName = "_$s\(moduleName.count)\(moduleName)\(mangledName)"
+        print(symbolName)
+        return symbolName
     }
     
     static func signatureFromDecl(decl: FunctionSignatureSyntax) -> [Type] {

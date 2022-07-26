@@ -56,7 +56,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "Users/teodordermendzhiev/workspace/ns-v8ios-runtime/TestRunner/Source\ Files/swift_files"
+            argument = "/Users/teodordermendzhiev/workspace/ns-v8ios-runtime/TestRunner/Source\ Files/swift_files"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

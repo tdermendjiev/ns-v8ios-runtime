@@ -3212,7 +3212,7 @@
 					"-sectcreate",
 					__DATA,
 					__SwiftMetadata,
-					"/Users/c5326378/workspace/ns-v8ios-runtime/swift-metadata-generator/SwiftMetadataGenerator/SwiftMetadata.bin",
+					"/Users/teodordermendzhiev/workspace/ns-v8ios-runtime/swift-metadata-generator/SwiftMetadataGenerator/SwiftMetadata.bin",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.nativescript.TestRunner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
