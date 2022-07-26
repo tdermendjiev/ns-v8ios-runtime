@@ -27,10 +27,11 @@ class FunctionMeta: Meta {
         self.init(name: name, jsName: name, mangledName: mangledName, moduleName: moduleName, signature: signature)
     }
     
-    convenience init(decl: FunctionDeclSyntax, moduleName: String) {
+    convenience init(decl: FunctionDeclSyntax, moduleName: String, path: String) {
         let name = decl.identifier.description
         let signature = FunctionMeta.signatureFromDecl(decl: decl.signature)
-        let mangledName = FunctionMeta.mangleDecl(decl: decl)
+        let offset = decl.identifier.tokenClassification.offset
+        let mangledName = FunctionMeta.mangleDecl(decl: decl, path: path, offset: offset)
         self.init(name: name, jsName: name, mangledName: mangledName, moduleName: moduleName, signature: signature)
     }
     
@@ -40,9 +41,10 @@ class FunctionMeta: Meta {
         visitor.visit(meta: &temp)
     }
     
-    static func mangleDecl(decl: FunctionDeclSyntax) -> String {
-        //todo: implement
-        return ""
+    static func mangleDecl(decl: FunctionDeclSyntax, path: String, offset: Int) -> String {
+        let usr = Meta.usrForOffset(offset: ByteCount(offset), path: path)
+//        let mangledName = usr.components(separatedBy: moduleName)[1]
+        return usr
     }
     
     static func signatureFromDecl(decl: FunctionSignatureSyntax) -> [Type] {

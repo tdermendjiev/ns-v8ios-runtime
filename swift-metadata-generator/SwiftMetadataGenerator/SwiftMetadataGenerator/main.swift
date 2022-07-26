@@ -13,9 +13,14 @@ import SwiftSyntaxParser
 class SwiftDeclarationVisitor: SyntaxRewriter {
     
     public var metas = [Meta]()
+    public var path: String = ""
+    
+    init(path: String) {
+        self.path = path
+    }
     
     override func visit(_ node: FunctionDeclSyntax) -> DeclSyntax {
-        let fMeta = FunctionMeta(decl: node, moduleName: "")
+        let fMeta = FunctionMeta(decl: node, moduleName: "", path: self.path)
         metas.append(fMeta)
         symbols.append(fMeta.mangledName)
         return super.visit(node)
@@ -61,7 +66,7 @@ while let element = enumerator?.nextObject() as? String {
             let file = path + element
             let url = URL(fileURLWithPath: file)
             let sourceFile = try SyntaxParser.parse(url)
-            let visitor = SwiftDeclarationVisitor()
+            let visitor = SwiftDeclarationVisitor(path: file)
             _ = visitor.visit(sourceFile)
             
             container.append((path + element, visitor.metas))
