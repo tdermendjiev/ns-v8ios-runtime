@@ -76,8 +76,9 @@ class StringHasher {
         if (m_hasPendingCharacter) {
             fatalError("pending char")
         }
+        
         var length = data.count
-        let remainder = length & 1;
+        let remainder = UInt32(length) & 1;
         length >>= 1;
         
         let asUInt32Array = data.utf8.map{ UInt32($0) }

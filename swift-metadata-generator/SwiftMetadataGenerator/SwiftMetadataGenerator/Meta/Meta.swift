@@ -54,11 +54,11 @@ enum BinaryMetaType: UInt8 {
     case Undefined = 0
     case Struct = 1
     case Function = 2
-    case Enum = 3
+    case `Class` = 3
     case Var = 4
     case `Protocol` = 5
     case Method = 6
-    case `Class` = 7
+    case Enum = 7
 }
 
 class Meta {

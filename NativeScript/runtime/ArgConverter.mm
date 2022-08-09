@@ -295,6 +295,42 @@ void ArgConverter::SetValue(Local<Context> context, void* retValue, Local<Value>
     tns::Assert(false, isolate);
 }
 
+void ArgConverter::ConstructSwiftObject(Local<Context> context, const FunctionCallbackInfo<Value>& info, Class klass, const SwiftClassMeta* classMeta) {
+    Isolate* isolate = context->GetIsolate();
+    tns::Assert(klass != nullptr, isolate);
+
+    id result = nil;
+
+
+    if (result == nil && classMeta != nullptr && info.Length() == 0) { //info.Length() == 0 => default init
+        std::vector<Local<Value>> args;
+        const SwiftMethodMeta* initializer = ArgConverter::FindInitializer(context, klass, classMeta, info, args);
+//        result = [klass alloc];
+
+        V8VectorArgs vectorArgs(args);
+        result = Interop::CallSwiftInitializer(context, initializer, result, klass, vectorArgs);
+    }
+
+//    if (result == nil) {
+//        result = [[klass alloc] init];
+//    }
+    //initializer
+    auto cache = Caches::Get(isolate);
+    auto it = cache->Instances.find(result);
+    if (it != cache->Instances.end()) {
+        Local<Value> obj = it->second->Get(isolate);
+        info.GetReturnValue().Set(obj);
+    } else {
+        ObjCDataWrapper* wrapper = new ObjCDataWrapper(result);
+        Local<Object> thiz = info.This();
+        Local<Context> context = cache->GetContext();
+        tns::SetValue(isolate, thiz, wrapper);
+        std::shared_ptr<Persistent<Value>> poThiz = ObjectManager::Register(context, thiz);
+        cache->Instances.emplace(result, poThiz);
+        [result retain];
+    }
+}
+
 void ArgConverter::ConstructObject(Local<Context> context, const FunctionCallbackInfo<Value>& info, Class klass, const InterfaceMeta* interfaceMeta) {
     Isolate* isolate = context->GetIsolate();
     tns::Assert(klass != nullptr, isolate);
@@ -328,7 +364,7 @@ void ArgConverter::ConstructObject(Local<Context> context, const FunctionCallbac
     if (result == nil) {
         result = [[klass alloc] init];
     }
-
+    //initializer
     auto cache = Caches::Get(isolate);
     auto it = cache->Instances.find(result);
     if (it != cache->Instances.end()) {
@@ -343,6 +379,10 @@ void ArgConverter::ConstructObject(Local<Context> context, const FunctionCallbac
         cache->Instances.emplace(result, poThiz);
         [result retain];
     }
+}
+
+const SwiftMethodMeta* ArgConverter::FindInitializer(Local<Context> context, Class klass, const SwiftClassMeta* interfaceMeta, const FunctionCallbackInfo<Value>& info, std::vector<Local<Value>>& args) {
+    return nullptr;
 }
 
 const MethodMeta* ArgConverter::FindInitializer(Local<Context> context, Class klass, const InterfaceMeta* interfaceMeta, const FunctionCallbackInfo<Value>& info, std::vector<Local<Value>>& args) {
@@ -655,6 +695,11 @@ Local<Value> ArgConverter::CreateJsWrapper(Local<Context> context, BaseDataWrapp
     }
 
     return receiver;
+}
+
+const SwiftMeta* ArgConverter::FindSwiftMeta(Class klass, const TypeEncoding* typeEncoding) {
+    //todo: implement
+    return nullptr;
 }
 
 const Meta* ArgConverter::FindMeta(Class klass, const TypeEncoding* typeEncoding) {

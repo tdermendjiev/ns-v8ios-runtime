@@ -59,8 +59,10 @@ public:
     v8::Local<v8::Context> GetContext();
 
     robin_hood::unordered_map<const Meta*, std::unique_ptr<v8::Persistent<v8::Value>>> Prototypes;
+    robin_hood::unordered_map<const SwiftMeta*, std::unique_ptr<v8::Persistent<v8::Value>>> SwiftPrototypes;
     robin_hood::unordered_map<std::string, std::unique_ptr<v8::Persistent<v8::Object>>> ClassPrototypes;
     robin_hood::unordered_map<const BaseClassMeta*, std::unique_ptr<v8::Persistent<v8::FunctionTemplate>>> CtorFuncTemplates;
+    robin_hood::unordered_map<const SwiftBaseClassMeta*, std::unique_ptr<v8::Persistent<v8::FunctionTemplate>>> SwiftCtorFuncTemplates;
     robin_hood::unordered_map<std::string, std::unique_ptr<v8::Persistent<v8::Function>>> CtorFuncs;
     robin_hood::unordered_map<std::string, std::unique_ptr<v8::Persistent<v8::Function>>> ProtocolCtorFuncs;
     robin_hood::unordered_map<std::string, std::unique_ptr<v8::Persistent<v8::Function>>> StructConstructorFunctions;

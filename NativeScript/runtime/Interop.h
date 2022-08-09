@@ -189,6 +189,7 @@ class Interop {
 public:
     static void RegisterInteropTypes(v8::Local<v8::Context> context);
     static IMP CreateMethod(const uint8_t initialParamIndex, const uint8_t argsCount, const TypeEncoding* typeEncoding, FFIMethodCallback callback, void* userData);
+    static id CallSwiftInitializer(v8::Local<v8::Context> context, const SwiftMethodMeta* methodMeta, id target, Class clazz, V8Args& args);
     static id CallInitializer(v8::Local<v8::Context> context, const MethodMeta* methodMeta, id target, Class clazz, V8Args& args);
     static v8::Local<v8::Value> CallSwiftFreeFunction(SwiftFreeFuncMethodCall& methodCall);
     static v8::Local<v8::Value> CallFunction(ObjCMethodCall& methodCall);

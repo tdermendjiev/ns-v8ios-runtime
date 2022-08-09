@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2B29CB2A25473D96001233FF /* SwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B29CB2925473D96001233FF /* SwiftClass.swift */; };
+		2B494DE4289B960E00ADC9FC /* SwiftMetadataInlines.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B494DE3289B960900ADC9FC /* SwiftMetadataInlines.h */; };
+		2B494DE8289BE10500ADC9FC /* SomeSwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B494DE7289BE10500ADC9FC /* SomeSwiftClass.swift */; };
 		2B7EA6AF2353477000E5184E /* NativeScriptException.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EA6AD2353476F00E5184E /* NativeScriptException.mm */; };
 		2B7EA6B02353477000E5184E /* NativeScriptException.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B7EA6AE2353477000E5184E /* NativeScriptException.h */; };
 		2BF6186A25C9A1EF00B3DFAC /* SwiftMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF6186925C9A1EF00B3DFAC /* SwiftMetadata.h */; };
@@ -543,6 +545,8 @@
 /* Begin PBXFileReference section */
 		2B29CB2825473D95001233FF /* TestRunner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestRunner-Bridging-Header.h"; sourceTree = "<group>"; };
 		2B29CB2925473D96001233FF /* SwiftClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftClass.swift; sourceTree = "<group>"; };
+		2B494DE3289B960900ADC9FC /* SwiftMetadataInlines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftMetadataInlines.h; sourceTree = "<group>"; };
+		2B494DE7289BE10500ADC9FC /* SomeSwiftClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeSwiftClass.swift; sourceTree = "<group>"; };
 		2B7EA6AD2353476F00E5184E /* NativeScriptException.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NativeScriptException.mm; sourceTree = "<group>"; };
 		2B7EA6AE2353477000E5184E /* NativeScriptException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeScriptException.h; sourceTree = "<group>"; };
 		2BF6186925C9A1EF00B3DFAC /* SwiftMetadata.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftMetadata.h; sourceTree = "<group>"; };
@@ -1115,6 +1119,7 @@
 			isa = PBXGroup;
 			children = (
 				2BF6186925C9A1EF00B3DFAC /* SwiftMetadata.h */,
+				2B494DE3289B960900ADC9FC /* SwiftMetadataInlines.h */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -1862,6 +1867,7 @@
 				C2DDEB35229EAB3B00345BFE /* Info.plist */,
 				C2DDEB34229EAB3B00345BFE /* NativeScript.h */,
 				C2F64E8222E870A300EDB057 /* NativeScript.mm */,
+				2B494DE7289BE10500ADC9FC /* SomeSwiftClass.swift */,
 				C298C029233DEB8C000DDF54 /* NativeScript-Prefix.pch */,
 			);
 			path = NativeScript;
@@ -2025,6 +2031,7 @@
 				C247C3A622F828E3001D2CA2 /* logging.h in Headers */,
 				C23E8F7322CB386F0078FD4C /* ConcurrentQueue.h in Headers */,
 				C22536B8241A318900192740 /* ffi.h in Headers */,
+				2B494DE4289B960E00ADC9FC /* SwiftMetadataInlines.h in Headers */,
 				C247C3AC22F828E3001D2CA2 /* safe_conversions_impl.h in Headers */,
 				C247C38D22F828E3001D2CA2 /* v8-page-agent-impl.h in Headers */,
 				C247C16F22F82842001D2CA2 /* v8-util.h in Headers */,
@@ -2333,6 +2340,7 @@
 					};
 					C2DDEB31229EAB3B00345BFE = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1340;
 					};
 					C2F4CBB222C60BFD0036B56F = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -2421,7 +2429,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd ${PROJECT_DIR}/swift-metadata-generator\n./SwiftMetadata -swift-files-path /Users/teodordermendzhiev/workspace/ns-v8ios-runtime/TestRunner/Source\\ Files/swift_files -output-bin /Users/teodordermendzhiev/Documents/SwiftMetadata.bin\n";
+			shellScript = "cd ${PROJECT_DIR}/swift-metadata-generator\n/Users/teodordermendzhiev/Library/Developer/Xcode/DerivedData/SwiftMetadataGenerator-atzljfznvedjotfvuvshijewbccm/Build/Products/Debug/SwiftMetadataGenerator -swift-files-path /Users/teodordermendzhiev/workspace/ns-v8ios-runtime/TestRunner/Source\\ Files/swift_files -output-bin /Users/teodordermendzhiev/workspace/ns-v8ios-runtime/swift-metadata-generator/SwiftMetadataGenerator/SwiftMetadata.bin\n";
 		};
 		C27E5DB322F31FF800498ED0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2714,6 +2722,7 @@
 				C247C37222F828E3001D2CA2 /* Debugger.cpp in Sources */,
 				C2CC8EEA22BBA01E00B78928 /* FastEnumerationAdapter.mm in Sources */,
 				C2DDEB99229EAC8300345BFE /* Metadata.mm in Sources */,
+				2B494DE8289BE10500ADC9FC /* SomeSwiftClass.swift in Sources */,
 				C2DDEBB4229EAC8300345BFE /* DictionaryAdapter.mm in Sources */,
 				C247C34D22F828E3001D2CA2 /* v8-debugger-agent-impl.cc in Sources */,
 				C247C38322F828E3001D2CA2 /* v8-heap-profiler-agent-impl.cc in Sources */,
@@ -3068,6 +3077,7 @@
 		C27E5D9F22F31CCC00498ED0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
@@ -3103,6 +3113,7 @@
 		C27E5DA022F31CCC00498ED0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
@@ -3173,6 +3184,7 @@
 		C2DDEB2A229EA89200345BFE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
@@ -3232,6 +3244,7 @@
 		C2DDEB2B229EA89200345BFE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
@@ -3291,10 +3304,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
-				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = NO;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3345,6 +3358,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.nativescript.NativeScript;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/NativeScript",
@@ -3360,10 +3375,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
-				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = NO;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3413,6 +3428,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.nativescript.NativeScript;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/NativeScript",

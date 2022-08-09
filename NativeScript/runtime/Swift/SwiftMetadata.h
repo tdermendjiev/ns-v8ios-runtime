@@ -20,7 +20,9 @@ enum SwiftMetaFlags {
 enum SwiftMetaType {
     SwiftUndefined = 0,
     SwiftStruct = 1,
-    SwiftFunction = 2
+    SwiftFunction = 2,
+    SwiftClass = 3,
+    SwiftProtocol = 4
 };
 
 enum SwiftBinaryTypeEncodingType : uint8_t {
@@ -35,7 +37,7 @@ enum SwiftBinaryTypeEncodingType : uint8_t {
 template <typename T>
 struct SwiftPtrTo;
 struct SwiftMeta;
-struct SwiftInterfaceMeta;
+struct SwiftClassMeta;
 struct SwiftProtocolMeta;
 struct SwiftTypeEncoding;
 
@@ -96,7 +98,7 @@ struct SwiftGlobalTable {
 
     ArrayOfSwiftPtrTo<ArrayOfSwiftPtrTo<SwiftMeta>> buckets;
 
-//    const InterfaceMeta* findInterfaceMeta(const char* identifierString) const;
+    const SwiftClassMeta* findClassMeta(const char* identifierString) const;
 //
 //    const InterfaceMeta* findInterfaceMeta(const char* identifierString, size_t length, unsigned hash) const;
 //
@@ -395,6 +397,49 @@ public:
         return _encoding.valuePtr();
     }
 
+};
+
+struct SwiftBaseClassMeta : SwiftMeta {
+    
+    PtrTo<ArrayOfPtrTo<MethodMeta>> instanceMethods;
+    PtrTo<ArrayOfPtrTo<MethodMeta>> staticMethods;
+    PtrTo<ArrayOfPtrTo<PropertyMeta>> instanceProps;
+    PtrTo<ArrayOfPtrTo<PropertyMeta>> staticProps;
+    PtrTo<Array<String>> protocols;
+    int16_t initializersStartIndex;
+    
+    std::vector<const MethodMeta*> initializers(std::vector<const MethodMeta*>& container, KnownUnknownClassPair klasses) const;
+    
+};
+
+struct SwiftClassMeta : SwiftBaseClassMeta {
+    
+private:
+    String _baseName;
+
+public:
+    const char* baseName() const {
+        return _baseName.valuePtr();
+    }
+
+    const SwiftClassMeta* baseMeta() const {
+        if (this->baseName() != nullptr) {
+            const SwiftClassMeta* baseMeta = SwiftMetaFile::instance()->globalTableJs()->findClassMeta(this->baseName());
+            return baseMeta;
+        }
+
+        return nullptr;
+    }
+    
+};
+
+struct SwiftMemberMeta : Meta {
+    bool isOptional() const {
+        return this->flag(MetaFlags::MemberIsOptional);
+    }
+};
+
+struct SwiftMethodMeta : MemberMeta {
 };
 
 #pragma pack(pop)

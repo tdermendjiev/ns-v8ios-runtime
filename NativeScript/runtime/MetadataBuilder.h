@@ -13,13 +13,16 @@ namespace tns {
 class MetadataBuilder {
 public:
     static void RegisterConstantsOnGlobalObject(v8::Isolate* isolate, v8::Local<v8::ObjectTemplate> globalTemplate, bool isWorkerThread);
+    static v8::Local<v8::FunctionTemplate> GetOrCreateSwiftConstructorFunctionTemplate(v8::Local<v8::Context> context, const SwiftBaseClassMeta* meta, KnownUnknownClassPair pair, const std::vector<std::string>& additionalProtocols = std::vector<std::string>());
     static v8::Local<v8::FunctionTemplate> GetOrCreateConstructorFunctionTemplate(v8::Local<v8::Context> context, const BaseClassMeta* meta, KnownUnknownClassPair pair, const std::vector<std::string>& additionalProtocols = std::vector<std::string>());
     static v8::Local<v8::Function> GetOrCreateStructCtorFunction(v8::Local<v8::Context> context, StructInfo structInfo);
     static void StructPropertyGetterCallback(v8::Local<v8::Name> property, const v8::PropertyCallbackInfo<v8::Value>& info);
     static void StructPropertySetterCallback(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const v8::PropertyCallbackInfo<v8::Value>& info);
 private:
     static v8::Local<v8::FunctionTemplate> GetOrCreateConstructorFunctionTemplateInternal(v8::Local<v8::Context> context, const BaseClassMeta* meta, KnownUnknownClassPair pair, robin_hood::unordered_map<std::string, uint8_t>& instanceMembers, robin_hood::unordered_map<std::string, uint8_t>& staticMembers, const std::vector<std::string>& additionalProtocols = std::vector<std::string>());
+    static v8::Local<v8::FunctionTemplate> GetOrCreateSwiftConstructorFunctionTemplateInternal(v8::Local<v8::Context> context, const SwiftBaseClassMeta* meta, KnownUnknownClassPair pair, robin_hood::unordered_map<std::string, uint8_t>& instanceMembers, robin_hood::unordered_map<std::string, uint8_t>& staticMembers, const std::vector<std::string>& additionalProtocols = std::vector<std::string>());
     static void GlobalPropertyGetter(v8::Local<v8::Name> property, const v8::PropertyCallbackInfo<v8::Value>& info);
+    static void SwiftClassConstructorCallback(const v8::FunctionCallbackInfo<v8::Value>& info);
     static void ClassConstructorCallback(const v8::FunctionCallbackInfo<v8::Value>& info);
     static void AllocCallback(const v8::FunctionCallbackInfo<v8::Value>& info);
     static void MethodCallback(const v8::FunctionCallbackInfo<v8::Value>& info);

@@ -35,17 +35,20 @@ public:
     static v8::Local<v8::Value> CreateJsWrapper(v8::Local<v8::Context> context, BaseDataWrapper* wrapper, v8::Local<v8::Object> receiver, bool skipGCRegistration = false, const std::vector<std::string>& additionalProtocols = std::vector<std::string>());
     static std::shared_ptr<v8::Persistent<v8::Value>> CreateEmptyObject(v8::Local<v8::Context> context, bool skipGCRegistration = false);
     static std::shared_ptr<v8::Persistent<v8::Value>> CreateEmptyStruct(v8::Local<v8::Context> context);
+    static const SwiftMeta* FindSwiftMeta(Class klass, const TypeEncoding* typeEncoding = nullptr);
     static const Meta* FindMeta(Class klass, const TypeEncoding* typeEncoding = nullptr);
     static const Meta* GetMeta(std::string name);
     static const SwiftMeta* GetSwiftMeta(std::string name);
     static const ProtocolMeta* FindProtocolMeta(Protocol* protocol);
     static void MethodCallback(ffi_cif* cif, void* retValue, void** argValues, void* userData);
     static void SetValue(v8::Local<v8::Context> context, void* retValue, v8::Local<v8::Value> value, const TypeEncoding* typeEncoding);
+    static void ConstructSwiftObject(v8::Local<v8::Context> context, const v8::FunctionCallbackInfo<v8::Value>& info, Class klass, const SwiftClassMeta* classMeta = nullptr);
     static void ConstructObject(v8::Local<v8::Context> context, const v8::FunctionCallbackInfo<v8::Value>& info, Class klass, const InterfaceMeta* interfaceMeta = nullptr);
 private:
     static v8::Local<v8::Function> CreateEmptyInstanceFunction(v8::Local<v8::Context> context, v8::GenericNamedPropertyGetterCallback propertyGetter = nullptr, v8::GenericNamedPropertySetterCallback propertySetter = nullptr);
     static std::shared_ptr<v8::Persistent<v8::Value>> CreateEmptyInstance(v8::Local<v8::Context> context, v8::Persistent<v8::Function>* ctorFunc, bool skipGCRegistration = false);
     static void FindMethodOverloads(Class klass, std::string methodName, MemberType type, std::vector<const MethodMeta*>& overloads);
+    static const SwiftMethodMeta* FindInitializer(v8::Local<v8::Context> context, Class klass, const SwiftClassMeta* classMeta, const v8::FunctionCallbackInfo<v8::Value>& info, std::vector<v8::Local<v8::Value>>& args);
     static const MethodMeta* FindInitializer(v8::Local<v8::Context> context, Class klass, const InterfaceMeta* interfaceMeta, const v8::FunctionCallbackInfo<v8::Value>& info, std::vector<v8::Local<v8::Value>>& args);
     static bool CanInvoke(v8::Local<v8::Context> context, const TypeEncoding* typeEncoding, v8::Local<v8::Value> arg);
     static bool CanInvoke(v8::Local<v8::Context> context, const MethodMeta* candidate, const v8::FunctionCallbackInfo<v8::Value>& info);

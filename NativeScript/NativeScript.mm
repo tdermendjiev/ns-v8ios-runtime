@@ -5,6 +5,7 @@
 #include "runtime/Helpers.h"
 #include "runtime/Runtime.h"
 #include "runtime/Tasks.h"
+#include <NativeScript/NativeScript-Swift.h>
 
 using namespace v8;
 using namespace tns;
@@ -23,9 +24,14 @@ using namespace tns;
 
 std::unique_ptr<Runtime> runtime_;
 
+
 - (instancetype)initWithConfig:(Config*)config {
     
+    
+    
     if (self = [super init]) {
+        SomeSwiftClass* sw = [[SomeSwiftClass alloc] init];
+        [sw someMethod];
         RuntimeConfig.BaseDir = [config.BaseDir UTF8String];
         if (config.ApplicationPath != nil) {
             RuntimeConfig.ApplicationPath = [[config.BaseDir stringByAppendingPathComponent:config.ApplicationPath] UTF8String];

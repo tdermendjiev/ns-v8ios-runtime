@@ -108,6 +108,11 @@ Local<Value> Interop::CallFunction(ObjCMethodCall& methodCall) {
     return Interop::CallFunctionInternal(methodCall);
 }
 
+id Interop::CallSwiftInitializer(Local<Context> context, const SwiftMethodMeta* methodMeta, id target, Class clazz, V8Args& args) {
+    //todo: implement
+    return nullptr;
+}
+
 id Interop::CallInitializer(Local<Context> context, const MethodMeta* methodMeta, id target, Class clazz, V8Args& args) {
     const TypeEncoding* typeEncoding = methodMeta->encodings()->first();
     SEL selector = methodMeta->selector();
@@ -116,6 +121,7 @@ id Interop::CallInitializer(Local<Context> context, const MethodMeta* methodMeta
     int initialParameterIndex = 2;
     int argsCount = initialParameterIndex + (int)args.Length();
 
+    //here is the initializer
     ParametrizedCall* parametrizedCall = ParametrizedCall::Get(typeEncoding, initialParameterIndex, argsCount);
     FFICall call(parametrizedCall);
 

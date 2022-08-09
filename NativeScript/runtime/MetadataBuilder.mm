@@ -78,6 +78,28 @@ void MetadataBuilder::GlobalPropertyGetter(Local<v8::Name> property, const Prope
 
             info.GetReturnValue().Set(func);
         }
+        
+        Local<Context> context = isolate->GetCurrentContext();
+        
+        if (meta->type() == SwiftMetaType::SwiftClass) {
+            const SwiftBaseClassMeta* classMeta = static_cast<const SwiftBaseClassMeta*>(meta);
+            Class knownClass = meta->type() == SwiftMetaType::SwiftClass ? NSClassFromString([NSString stringWithFormat:@"TestRunner.%@",[NSString stringWithUTF8String: meta->name()]]) : nil;
+            KnownUnknownClassPair pair(knownClass);
+            MetadataBuilder::GetOrCreateSwiftConstructorFunctionTemplate(context, classMeta, pair);
+            
+            bool isSwiftClass = meta->type() == SwiftMetaType::SwiftClass;
+            std::string name = meta->name();
+            std::shared_ptr<Caches> cache = Caches::Get(isolate);
+            if (isSwiftClass) {
+                auto it = cache->CtorFuncs.find(name);
+                if (it != cache->CtorFuncs.end()) {
+                    Local<v8::Function> func = it->second->Get(isolate);
+                    info.GetReturnValue().Set(func);
+                }
+            }
+            
+        }
+        
         return;
     }
 
@@ -301,6 +323,128 @@ std::pair<ffi_type*, void*> MetadataBuilder::GetStructData(Local<Context> contex
     }
 
     return std::make_pair(ffiType, data);
+}
+
+Local<FunctionTemplate> MetadataBuilder::GetOrCreateSwiftConstructorFunctionTemplate(Local<Context> context, const SwiftBaseClassMeta* meta, KnownUnknownClassPair pair, const std::vector<std::string>& additionalProtocols) {
+    robin_hood::unordered_map<std::string, uint8_t> instanceMembers;
+    robin_hood::unordered_map<std::string, uint8_t> staticMembers;
+    return MetadataBuilder::GetOrCreateSwiftConstructorFunctionTemplateInternal(context, meta, pair, instanceMembers, staticMembers, additionalProtocols);
+}
+
+Local<FunctionTemplate> MetadataBuilder::GetOrCreateSwiftConstructorFunctionTemplateInternal(Local<Context> context, const SwiftBaseClassMeta* meta, KnownUnknownClassPair pair, robin_hood::unordered_map<std::string, uint8_t>& instanceMembers, robin_hood::unordered_map<std::string, uint8_t>& staticMembers, const std::vector<std::string>& additionalProtocols) {
+    Isolate* isolate = context->GetIsolate();
+    Local<FunctionTemplate> ctorFuncTemplate;
+    auto cache = Caches::Get(isolate);
+
+    if (additionalProtocols.empty()) {
+        auto it = cache->SwiftCtorFuncTemplates.find(meta);
+        if (it != cache->SwiftCtorFuncTemplates.end()) {
+            ctorFuncTemplate = it->second->Get(isolate);
+            return ctorFuncTemplate;
+        }
+    }
+
+    std::string className;
+    SwiftCacheItem<SwiftBaseClassMeta>* item = new SwiftCacheItem<SwiftBaseClassMeta>(meta, className);
+    Local<External> ext = External::New(isolate, item);
+
+    ctorFuncTemplate = FunctionTemplate::New(isolate, SwiftClassConstructorCallback, ext);
+    ctorFuncTemplate->InstanceTemplate()->SetInternalFieldCount(1);
+    ctorFuncTemplate->SetClassName(tns::ToV8String(isolate, meta->name()));
+
+    Local<v8::Function> baseCtorFunc;
+
+    if (meta->type() == SwiftMetaType::SwiftClass) {
+        const SwiftClassMeta* classMeta = static_cast<const SwiftClassMeta*>(meta);
+        const SwiftClassMeta* currentMeta = classMeta;
+        while (true) {
+            const char* baseName = currentMeta->baseName();
+            if (baseName != nullptr) {
+                const SwiftMeta* baseClassMeta = ArgConverter::GetSwiftMeta(baseName);
+                if (baseClassMeta == nullptr || baseClassMeta->type() != SwiftMetaType::SwiftClass) {
+                    break;
+                }
+
+//                if (!baseClassMeta->isAvailable()) {
+//                    // Skip base classes that are not available in the current iOS version
+//                    currentMeta = static_cast<const InterfaceMeta*>(baseClassMeta);
+//                    continue;
+//                }
+
+                const SwiftClassMeta* baseMeta = static_cast<const SwiftClassMeta*>(baseClassMeta);
+                if (baseMeta != nullptr) {
+                    Local<FunctionTemplate> baseCtorFuncTemplate = MetadataBuilder::GetOrCreateSwiftConstructorFunctionTemplateInternal(context, baseMeta, pair, instanceMembers, staticMembers);
+                    ctorFuncTemplate->Inherit(baseCtorFuncTemplate);
+                    auto it = cache->CtorFuncs.find(baseMeta->name());
+                    if (it != cache->CtorFuncs.end()) {
+                        baseCtorFunc = it->second->Get(isolate);
+                    }
+                }
+            }
+            break;
+        }
+    }
+
+//    MetadataBuilder::RegisterInstanceProperties(context, ctorFuncTemplate, meta, meta->name(), pair, instanceMembers);
+//    MetadataBuilder::RegisterInstanceMethods(context, ctorFuncTemplate, meta, pair, instanceMembers);
+//    MetadataBuilder::RegisterInstanceProtocols(context, ctorFuncTemplate, meta, meta->name(), pair, instanceMembers);
+//    MetadataBuilder::RegisterAdditionalProtocols(context, ctorFuncTemplate, pair, additionalProtocols, instanceMembers);
+
+    ctorFuncTemplate->PrototypeTemplate()->Set(tns::ToV8String(isolate, "toString"), FunctionTemplate::New(isolate, MetadataBuilder::ToStringFunctionCallback));
+
+//    if (meta->type() == SwiftMetaType::SwiftClass) {
+//        const SwiftClassMeta* classMeta = static_cast<const InterfaceMeta*>(meta);
+//        MetadataBuilder::RegisterAllocMethod(isolate, ctorFuncTemplate, interfaceMeta);
+//        ctorFuncTemplate->Set(tns::ToV8String(isolate, "extend"), ClassBuilder::GetExtendFunction(isolate, interfaceMeta));
+//    }
+
+    NamedPropertyHandlerConfiguration config(nullptr, MetadataBuilder::SwizzledInstanceMethodCallback, nullptr, nullptr, nullptr, MetadataBuilder::SwizzledPropertyCallback, nullptr, ext);
+    ctorFuncTemplate->PrototypeTemplate()->SetHandler(config);
+
+    Local<v8::Function> ctorFunc;
+    bool success = ctorFuncTemplate->GetFunction(context).ToLocal(&ctorFunc);
+    tns::Assert(success, isolate);
+
+//    if (meta->type() == MetaType::ProtocolType) {
+//        const ProtocolMeta* protoMeta = static_cast<const ProtocolMeta*>(meta);
+//        tns::SetValue(isolate, ctorFunc, new ObjCProtocolWrapper(objc_getProtocol(meta->name()), protoMeta));
+//        cache->ProtocolCtorFuncs.emplace(meta->name(), new Persistent<v8::Function>(isolate, ctorFunc));
+//    } else {
+    Class klass = NSClassFromString([NSString stringWithFormat:@"TestRunner.%@",[NSString stringWithUTF8String: meta->name()]]);
+        if (klass == nil) {
+            SymbolLoader::instance().ensureModule(meta->topLevelModule());
+            klass = objc_getClass(meta->name());
+        }
+        tns::SetValue(isolate, ctorFunc, new ObjCClassWrapper(klass));
+        cache->CtorFuncs.emplace(meta->name(), std::make_unique<Persistent<v8::Function>>(isolate, ctorFunc));
+//    }
+
+    Local<Object> global = context->Global();
+    success = global->Set(context, tns::ToV8String(isolate, meta->jsName()), ctorFunc).FromMaybe(false);
+    tns::Assert(success, isolate);
+
+    if (!baseCtorFunc.IsEmpty()) {
+        bool success;
+        if (!ctorFunc->SetPrototype(context, baseCtorFunc).To(&success) || !success) {
+            tns::Assert(false, isolate);
+        }
+    }
+
+//    MetadataBuilder::RegisterStaticMethods(context, ctorFunc, meta, pair, staticMembers);
+//    MetadataBuilder::RegisterStaticProperties(context, ctorFunc, meta, meta->name(), pair, staticMembers);
+//    MetadataBuilder::RegisterStaticProtocols(context, ctorFunc, meta, meta->name(), pair, staticMembers);
+
+    cache->SwiftCtorFuncTemplates.emplace(meta, std::make_unique<Persistent<FunctionTemplate>>(isolate, ctorFuncTemplate));
+
+    Local<Value> prototypeValue;
+    success = ctorFunc->Get(context, tns::ToV8String(isolate, "prototype")).ToLocal(&prototypeValue);
+    tns::Assert(success, isolate);
+    Local<Object> prototype = prototypeValue.As<Object>();
+
+    Persistent<Value>* poPrototype = new Persistent<Value>(isolate, prototype);
+    cache->SwiftPrototypes.emplace(meta, poPrototype);
+
+    return ctorFuncTemplate;
 }
 
 Local<FunctionTemplate> MetadataBuilder::GetOrCreateConstructorFunctionTemplate(Local<Context> context, const BaseClassMeta* meta, KnownUnknownClassPair pair, const std::vector<std::string>& additionalProtocols) {
@@ -623,6 +767,22 @@ void MetadataBuilder::RegisterStaticProtocols(Local<Context> context, Local<v8::
         if (protoMeta != nullptr) {
             MetadataBuilder::RegisterStaticProtocols(context, ctorFunc, protoMeta, className, pair, names);
         }
+    }
+}
+
+void MetadataBuilder::SwiftClassConstructorCallback(const FunctionCallbackInfo<Value>& info) {
+    Isolate* isolate = info.GetIsolate();
+    Local<Context> context = isolate->GetCurrentContext();
+    tns::Assert(info.IsConstructCall(), isolate);
+    try {
+        CacheItem<SwiftBaseClassMeta>* item = static_cast<CacheItem<SwiftBaseClassMeta>*>(info.Data().As<External>()->Value());
+        //Class klass = objc_getClass(item->meta_->name());
+        Class klass = NSClassFromString([NSString stringWithFormat:@"TestRunner.%@",[NSString stringWithUTF8String: item->meta_->name()]]);
+
+        const SwiftClassMeta* classMeta = static_cast<const SwiftClassMeta*>(item->meta_);
+        ArgConverter::ConstructSwiftObject(context, info, klass, classMeta);
+    } catch (NativeScriptException& ex) {
+        ex.ReThrowToV8(isolate);
     }
 }
 

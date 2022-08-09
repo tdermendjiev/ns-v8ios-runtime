@@ -5,7 +5,8 @@
 unsigned int binary::BinaryHashtable::hash(std::string value)
 {
     StringHasher hasher;
-    hasher.addCharactersAssumingAligned(value.c_str(), value.size());
+    std::string v2 = "AClass";
+    hasher.addCharactersAssumingAligned(v2.c_str(), v2.size());
     return hasher.hashWithTop8BitsMasked();
 }
 

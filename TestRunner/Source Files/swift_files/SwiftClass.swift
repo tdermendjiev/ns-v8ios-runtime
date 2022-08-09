@@ -16,6 +16,11 @@ func aMethod2(paramInt: Int) {
     print("The method has been called with param \(paramInt)")
 }
 
+func method() -> String {
+    return ""
+}
+
+
 class AClass {
     let int: Int
     let str: String
@@ -24,12 +29,18 @@ class AClass {
         str = strParam
     }
     
+    
     func instanceMethod() {
         print("Instance method has been called")
     }
 }
 
 class FunctionMeta {
+    
+}
+
+@objc(SomeClass)
+class SomeClass: NSObject {
     
 }
 

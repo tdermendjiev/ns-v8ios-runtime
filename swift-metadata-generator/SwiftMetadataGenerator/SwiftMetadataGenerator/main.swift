@@ -9,6 +9,28 @@ import Foundation
 import SourceKittenFramework
 import SwiftSyntax
 import SwiftSyntaxParser
+import Runtime
+
+//
+//class SomeClass {
+//    var username:String
+//
+//    init(us: String) {
+//        username = us
+//    }
+//
+//    func printUS() {
+//        print(username)
+//    }
+//
+//}
+//
+//
+//let info = try typeInfo(of: SomeClass.self)
+//let property = try info.property(named: "username")
+//
+//let user = try createInstance(of: SomeClass.self) as! SomeClass
+//user.printUS()
 
 let MODULE_NAME = "TestRunner"
 

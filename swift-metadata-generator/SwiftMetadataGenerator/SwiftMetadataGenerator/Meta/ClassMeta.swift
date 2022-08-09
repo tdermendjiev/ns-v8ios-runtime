@@ -22,6 +22,8 @@ class ClassMeta: Meta {
     
     var protocols = [ProtocolMeta]()
     
+    var constructors = [ConstructorMeta]()
+    
     override func visit(visitor: MetaVisitor) {
         var temp = self
         visitor.visit(meta: &temp)
@@ -46,22 +48,28 @@ class ClassMeta: Meta {
     }
     
     convenience init(decl: ClassDeclSyntax, moduleName: String, path: String) {
-        let name = decl.identifier.description
+        let name = decl.identifier.description.trimmingCharacters(in: .whitespaces)
         let offset = decl.identifier.tokenClassification.offset
         let usr = Meta.usrForOffset(offset: ByteCount(offset), path: path)
         let mangledName = usr
         self.init(name: name, jsName: name, mangledName: mangledName, moduleName: moduleName)
         
         //for debug
-//        for m in decl.members.members {
-//            print(m.decl.syntaxNodeType)
-//        }
+        for m in decl.members.members {
+            print(m.decl.syntaxNodeType)
+        }
         
+        populateConstructors(decl: decl, moduleName: moduleName, path: path)
         populateStaticMethods()
         populateInstanceMethods(decl: decl, moduleName: moduleName, path: path)
         populateStaticProperties()
         populateInstanceProperties(decl: decl)
         populateProtocols()
+    }
+    
+    private func populateConstructors(decl: ClassDeclSyntax, moduleName: String, path: String) {
+        let con = ConstructorMeta(decl: decl, moduleName: moduleName, path: path)
+        constructors.append(con)
     }
     
     private func populateStaticMethods() {
