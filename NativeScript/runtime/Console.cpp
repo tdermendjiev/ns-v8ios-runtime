@@ -35,6 +35,7 @@ void Console::Init(Local<Context> context) {
 }
 
 void Console::LogCallback(const FunctionCallbackInfo<Value>& args) {
+    // TODO: implement 'forceLog' override option like android has, to force logs in prod if desired
     if (!RuntimeConfig.LogToSystemConsole) {
         return;
     }

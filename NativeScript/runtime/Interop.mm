@@ -15,9 +15,11 @@
 #include "Reference.h"
 #include "Pointer.h"
 #include "ExtVector.h"
+#include "RuntimeConfig.h"
 #include "SymbolIterator.h"
 #include "UnmanagedType.h"
 #include "OneByteStringResource.h"
+#include "robin_hood.h"
 
 using namespace v8;
 
@@ -143,7 +145,7 @@ bool Interop::isRefTypeEqual(const TypeEncoding* typeEncoding, const char* clazz
 
 void Interop::WriteValue(Local<Context> context, const TypeEncoding* typeEncoding, void* dest, Local<Value> arg) {
     Isolate* isolate = context->GetIsolate();
-
+    ExecuteWriteValueDebugValidationsIfInDebug(context, typeEncoding, dest, arg);
     if (arg.IsEmpty() || arg->IsNullOrUndefined()) {
         ffi_type* ffiType = FFICall::GetArgumentType(typeEncoding, true);
         size_t size = ffiType->size;
@@ -1366,6 +1368,26 @@ Local<v8::Array> Interop::ToArray(Local<Object> object) {
     return result.As<v8::Array>();
 }
 
+SEL Interop::GetSwizzledMethodSelector(SEL selector) {
+    static robin_hood::unordered_map<SEL, SEL> *swizzledMethodSelectorCache = new robin_hood::unordered_map<SEL, SEL>();
+
+    SEL swizzledMethodSelector = NULL;
+    
+    try {
+        swizzledMethodSelector = swizzledMethodSelectorCache->at(selector);
+    } catch(const std::out_of_range&) {
+        // ignore...
+    }
+
+    if(!swizzledMethodSelector) {
+        swizzledMethodSelector = sel_registerName((Constants::SwizzledPrefix + std::string(sel_getName(selector))).c_str());
+        // save to cache
+        swizzledMethodSelectorCache->emplace(selector, swizzledMethodSelector);
+    }
+    
+    return swizzledMethodSelector;
+}
+
 Local<Value> Interop::CallFunctionInternal(MethodCall& methodCall) {
     int initialParameterIndex = methodCall.isPrimitiveFunction_ ? 0 : 2;
 
@@ -1401,9 +1423,7 @@ Local<Value> Interop::CallFunctionInternal(MethodCall& methodCall) {
 
         SEL selector = methodCall.selector_;
         if (isInstanceMethod) {
-            NSString* selectorStr = NSStringFromSelector(selector);
-            NSString* swizzledMethodSelectorStr = [NSString stringWithFormat:@"%s%@", Constants::SwizzledPrefix.c_str(), selectorStr];
-            SEL swizzledMethodSelector = NSSelectorFromString(swizzledMethodSelectorStr);
+            SEL swizzledMethodSelector = Interop::GetSwizzledMethodSelector(selector);
             if ([methodCall.target_ respondsToSelector:swizzledMethodSelector]) {
                 selector = swizzledMethodSelector;
             }
@@ -1464,4 +1484,71 @@ Local<Value> Interop::CallFunctionInternal(MethodCall& methodCall) {
     return result;
 }
 
+// MARK: - Debug Messages for the runtime
+
+void ExecuteWriteValueValidationsAndStopExecutionAndLogStackTrace(Local<Context> context, const TypeEncoding* typeEncoding, void* dest, Local<Value> arg) {
+    Isolate* isolate = context->GetIsolate();
+    std::string destName = typeEncoding->details.interfaceDeclarationReference.name.valuePtr();
+    Local<Value> originArg = arg;
+    if (typeEncoding->type == BinaryTypeEncodingType::InterfaceDeclarationReference) {
+        if (originArg->IsObject()) {
+            Local<Object> originObj = originArg.As<Object>();
+            if ((originObj->IsArrayBuffer() || originObj->IsArrayBufferView()) &&
+                destName != "NSArray") {
+                tns::StopExecutionAndLogStackTrace(isolate);
+            }
+        }
+        if (destName == "NSString" && tns::IsNumber(originArg)) {
+            tns::StopExecutionAndLogStackTrace(isolate);
+        }
+        if (destName == "NSString" && tns::IsBool(originArg)) {
+            tns::StopExecutionAndLogStackTrace(isolate);
+        }
+        if (destName == "NSString" && tns::IsArrayOrArrayLike(isolate, originArg)) {
+            tns::StopExecutionAndLogStackTrace(isolate);
+        }
+    }
+}
+
+bool IsTypeEncondingHandldedByDebugMessages(const TypeEncoding* typeEncoding) {
+    if (typeEncoding->type != BinaryTypeEncodingType::InterfaceDeclarationReference &&
+        typeEncoding->type != BinaryTypeEncodingType::StructDeclarationReference &&
+        typeEncoding->type != BinaryTypeEncodingType::IdEncoding) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+void LogWriteValueTraceMessage(Local<Context> context, const TypeEncoding* typeEncoding, void* dest, Local<Value> arg) {
+    Isolate* isolate = context->GetIsolate();
+    std::string destName = typeEncoding->details.interfaceDeclarationReference.name.valuePtr();
+    std::string originName = tns::ToString(isolate, arg);
+    if (originName == "") {
+        // empty string
+        originName = "\"\"";
+    }
+    // NOTE: stringWithFormat is slow, perhaps use different c string concatenation?
+    NSString* message = [NSString stringWithFormat:@"Interop::WriteValue: from {%s} to {%s}", originName.c_str(), destName.c_str()];
+    Log(@"%@", message);
+}
+
+void Interop::ExecuteWriteValueDebugValidationsIfInDebug(Local<Context> context, const TypeEncoding* typeEncoding, void* dest, Local<Value> arg) {
+
+    #ifdef DEBUG
+    id value = Runtime::GetAppConfigValue("logRuntimeDetail");
+    bool logRuntimeDetail = value ? [value boolValue] : false;
+    if (logRuntimeDetail) {
+        if (arg.IsEmpty() || arg->IsNullOrUndefined()) {
+            return;
+        }
+        if (IsTypeEncondingHandldedByDebugMessages(typeEncoding)) {
+            return;
+        }
+        LogWriteValueTraceMessage(context, typeEncoding, dest, arg);
+        ExecuteWriteValueValidationsAndStopExecutionAndLogStackTrace(context, typeEncoding, dest, arg);
+    }
+    #endif
+}
+    
 }

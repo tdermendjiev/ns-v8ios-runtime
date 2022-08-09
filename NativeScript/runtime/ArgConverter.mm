@@ -341,7 +341,7 @@ void ArgConverter::ConstructObject(Local<Context> context, const FunctionCallbac
         tns::SetValue(isolate, thiz, wrapper);
         std::shared_ptr<Persistent<Value>> poThiz = ObjectManager::Register(context, thiz);
         cache->Instances.emplace(result, poThiz);
-        [result retain];
+        // [result retain];
     }
 }
 
@@ -622,6 +622,9 @@ Local<Value> ArgConverter::CreateJsWrapper(Local<Context> context, BaseDataWrapp
         std::string className = object_getClassName(target);
         auto it = cache->ClassPrototypes.find(className);
         if (it != cache->ClassPrototypes.end()) {
+            // for debugging rlv cell handling:
+            // NSString* message = [NSString stringWithFormat:@"ArgConverter::CreateJsWrapper FindMeta: class {%@}", NSStringFromClass(klass)];
+            // Log(@"%@", message);
             Local<Value> prototype = it->second->Get(isolate);
             bool success;
             if (!receiver->SetPrototype(context, prototype).To(&success) || !success) {

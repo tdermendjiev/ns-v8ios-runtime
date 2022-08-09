@@ -126,6 +126,7 @@ public:
     static id ToObject(v8::Local<v8::Context> context, v8::Local<v8::Value> arg);
     static v8::Local<v8::Value> GetPrimitiveReturnType(v8::Local<v8::Context> context, BinaryTypeEncodingType type, BaseCall* call);
 private:
+    static void ExecuteWriteValueDebugValidationsIfInDebug(v8::Local<v8::Context> context, const TypeEncoding* typeEncoding, void* dest, v8::Local<v8::Value> arg);
     static std::pair<IMP, ffi_closure*> CreateMethodInternal(const uint8_t initialParamIndex, const uint8_t argsCount, const TypeEncoding* typeEncoding, FFIMethodCallback callback, void* userData);
     static CFTypeRef CreateBlock(const uint8_t initialParamIndex, const uint8_t argsCount, const TypeEncoding* typeEncoding, FFIMethodCallback callback, void* userData);
     template <typename T>
@@ -148,6 +149,7 @@ private:
     static bool IsNumbericType(BinaryTypeEncodingType type);
     static v8::Local<v8::Object> GetInteropType(v8::Local<v8::Context> context, BinaryTypeEncodingType type);
     static std::vector<std::string> GetAdditionalProtocols(const TypeEncoding* typeEncoding);
+    static SEL GetSwizzledMethodSelector(SEL selector);
 
     template <typename T>
     static inline void SetValue(void* dest, T value) {
@@ -192,6 +194,7 @@ private:
         
         static JSBlockDescriptor kJSBlockDescriptor;
     } JSBlock;
+    
 };
 
 }
