@@ -33,7 +33,7 @@ class ConstructorMeta: MethodMeta {
         
         let moduleName = MODULE_NAME
         
-        let symbolName = "_$s\(moduleName.count)\(moduleName)\(mangledName)ACycfC"
+        let symbolName = "$s\(moduleName.count)\(moduleName)\(mangledName)ACycfC"
         print(symbolName)
         return symbolName
     }
