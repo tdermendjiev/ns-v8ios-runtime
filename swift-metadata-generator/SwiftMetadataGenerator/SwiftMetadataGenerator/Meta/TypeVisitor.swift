@@ -13,5 +13,6 @@ class TypeVisitor<T_RESULT> {
     func visitInt() -> T_RESULT  { fatalError("Should override") }
     func visitString() -> T_RESULT { fatalError("Should override") }
     func visitFloat() -> T_RESULT  { fatalError("Should override") }
+    func visitPointer() -> T_RESULT { fatalError("Should override") }
 }
  
