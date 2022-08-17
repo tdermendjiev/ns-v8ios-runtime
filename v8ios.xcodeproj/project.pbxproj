@@ -2421,7 +2421,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd ${PROJECT_DIR}/swift-metadata-generator\n./SwiftMetadata -swift-files-path /Users/teodordermendzhiev/workspace/ns-v8ios-runtime/TestRunner/Source\\ Files/swift_files -output-bin /Users/teodordermendzhiev/Documents/SwiftMetadata.bin\n";
+			shellScript = "cd ${PROJECT_DIR}/swift-metadata-generator /Users/ivoyakov/Library/Developer/Xcode/DerivedData/SwiftMetadataGenerator-ceaxkexlwefhulfxfttpulewvfoj/Build/Products/Debug/SwiftMetadataGenerator -swift-files-path /Users/ivoyakov/work/azbouki/ns-runtime/teo-fork/ns-v8ios-runtime/TestRunner/Source\\ Files/swift_files -output-bin /Users/ivoyakov/work/azbouki/ns-runtime/teo-fork/ns-v8ios-runtime/swift-metadata-generator/SwiftMetadataGenerator/SwiftMetadata.bin\n";
 		};
 		C27E5DB322F31FF800498ED0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3179,7 +3179,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = CHSQ3M3P37;
+				DEVELOPMENT_TEAM = 74KMQA97YN;
 				ENABLE_BITCODE = YES;
 				EXPORTED_SYMBOLS_FILE = "$(PROJECT_DIR)/TestFixtures/exported-symbols.txt";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -3212,7 +3212,7 @@
 					"-sectcreate",
 					__DATA,
 					__SwiftMetadata,
-					"/Users/teodordermendzhiev/workspace/ns-v8ios-runtime/swift-metadata-generator/SwiftMetadataGenerator/SwiftMetadata.bin",
+					"/Users/ivoyakov/work/azbouki/ns-runtime/teo-fork/ns-v8ios-runtime/swift-metadata-generator/SwiftMetadataGenerator/SwiftMetadata.bin",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.nativescript.TestRunner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3238,7 +3238,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = CHSQ3M3P37;
+				DEVELOPMENT_TEAM = 74KMQA97YN;
 				ENABLE_BITCODE = YES;
 				EXPORTED_SYMBOLS_FILE = "$(PROJECT_DIR)/TestFixtures/exported-symbols.txt";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
