@@ -48,4 +48,8 @@ class BinaryTypeEncodingSerializer: TypeVisitor<TypeEncoding> {
     override func visitFloat() -> TypeEncoding {
         return TypeEncoding(type: .Float)
     }
+    
+    override func visitPointer() -> TypeEncoding {
+        return TypeEncoding(type: .Pointer)
+    }
 }
