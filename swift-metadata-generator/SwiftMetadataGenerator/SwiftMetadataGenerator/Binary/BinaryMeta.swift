@@ -58,7 +58,7 @@ class MethodBinaryMeta: FunctionBinaryMeta {
     
 }
 
-class ClassBinaryMeta: BinaryMeta {
+class BaseClassBinaryMeta: BinaryMeta {
     var instanceMethods: MetaFileOffset = 0
     var staticMethods: MetaFileOffset = 0
     var instanceProperties: MetaFileOffset = 0
@@ -75,6 +75,16 @@ class ClassBinaryMeta: BinaryMeta {
         writer.pushPointer(offset: self.staticProperties)
         writer.pushPointer(offset: self.protocols)
         writer.pushShort(value: self.initializersStartIndex)
+        return offset
+    }
+}
+
+class ClassBinaryMeta: BaseClassBinaryMeta {
+    var baseName:MetaFileOffset = 0;
+    
+    override func save(writer: BinaryWriter) -> MetaFileOffset {
+        let offset = super.save(writer: writer)
+        writer.pushPointer(offset: self.baseName)
         return offset
     }
 }

@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Runtime
+
 
 //@_cdecl("someGlobalFunc")
 //func someGlobalFunc() {
@@ -77,5 +79,14 @@ class PrivateClass {
     }
     
 }
+
+@objc public  class SwiftFactory: NSObject {
+    @objc public func createClass(_ typename: NSString) -> Any {
+        let cls: AnyClass = NSClassFromString(typename as String)!
+        let instance = try? createInstance(of: cls) 
+        return instance
+    }
+}
+
 
 

@@ -24,6 +24,8 @@ class ClassMeta: Meta {
     
     var constructors = [ConstructorMeta]()
     
+    var  baseClass: ClassMeta?
+    
     override func visit(visitor: MetaVisitor) {
         var temp = self
         visitor.visit(meta: &temp)

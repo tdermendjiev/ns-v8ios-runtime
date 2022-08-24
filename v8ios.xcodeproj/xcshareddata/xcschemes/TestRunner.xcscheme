@@ -77,6 +77,13 @@
             ReferencedContainer = "container:v8ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "NS_DEBUG_METADATA_PATH"
+            value = "/Users/teodordermendzhiev/workspace/ns-v8ios-runtime/yaml"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

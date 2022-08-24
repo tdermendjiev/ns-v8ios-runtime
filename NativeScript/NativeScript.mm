@@ -30,6 +30,7 @@ std::unique_ptr<Runtime> runtime_;
     
     
     if (self = [super init]) {
+        
         SomeSwiftClass* sw = [[SomeSwiftClass alloc] init];
         [sw someMethod];
         RuntimeConfig.BaseDir = [config.BaseDir UTF8String];

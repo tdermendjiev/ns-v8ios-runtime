@@ -381,8 +381,66 @@ void ArgConverter::ConstructObject(Local<Context> context, const FunctionCallbac
     }
 }
 
-const SwiftMethodMeta* ArgConverter::FindInitializer(Local<Context> context, Class klass, const SwiftClassMeta* interfaceMeta, const FunctionCallbackInfo<Value>& info, std::vector<Local<Value>>& args) {
-    return nullptr;
+const SwiftMethodMeta* ArgConverter::FindInitializer(Local<Context> context, Class klass, const SwiftClassMeta* classMeta, const FunctionCallbackInfo<Value>& info, std::vector<Local<Value>>& args) {
+    Isolate* isolate = context->GetIsolate();
+    std::vector<const SwiftMethodMeta*> candidates;
+    args = tns::ArgsToVector(info);
+    std::vector<Local<Value>> initializerArgs;
+    std::string constructorTokens;
+    if (info.Length() == 1 && info[0]->IsObject() && tns::GetValue(isolate, info[0]) == nullptr) {
+        initializerArgs = GetInitializerArgs(info[0].As<Object>(), constructorTokens);
+    }
+
+    std::shared_ptr<Caches> cache = Caches::Get(isolate);
+    bool found = false;
+    
+    do {
+        std::vector<const SwiftMethodMeta*> initializers = ArgConverter::GetInitializers(cache.get(), klass, classMeta);
+//        for (const SwiftMethodMeta* candidate: initializers) {
+//            if (constructorTokens != "") {
+//                const char* expectedTokens = candidate->constructorTokens();
+//                if (strcmp(expectedTokens, constructorTokens.c_str()) == 0) {
+//                    candidates.clear();
+//                    candidates.push_back(candidate);
+//                    args = initializerArgs;
+//                    found = true;
+//                    break;
+//                }
+//            }
+//
+//            if (ArgConverter::CanInvoke(context, candidate, info)) {
+//                candidates.push_back(candidate);
+//            }
+//        }
+
+        if (found) {
+            break;
+        }
+
+        classMeta = classMeta->baseMeta();
+    } while (classMeta);
+    
+    if (candidates.size() == 0) {
+        throw NativeScriptException("No initializer found that matches constructor invocation.");
+    } else if (candidates.size() > 1) {
+        if (info.Length() == 0) {
+            auto it = std::find_if(candidates.begin(), candidates.end(), [](const SwiftMethodMeta* c) -> bool { return strcmp(c->name(), "init") == 0; });
+            if (it != candidates.end()) {
+                return (*it);
+            }
+        }
+
+        std::stringstream ss;
+        ss << "More than one initializer found that matches constructor invocation:";
+        for (int i = 0; i < candidates.size(); i++) {
+            ss << " ";
+            ss << candidates[i]->name();
+        }
+        std::string errorMessage = ss.str();
+        throw NativeScriptException(errorMessage);
+    }
+
+    return candidates[0];
 }
 
 const MethodMeta* ArgConverter::FindInitializer(Local<Context> context, Class klass, const InterfaceMeta* interfaceMeta, const FunctionCallbackInfo<Value>& info, std::vector<Local<Value>>& args) {
@@ -1007,6 +1065,20 @@ std::vector<const MethodMeta*> ArgConverter::GetInitializers(Caches* cache, Clas
     std::vector<const MethodMeta*> initializers = interfaceMeta->initializersWithProtocols(klasses, ProtocolMetas());
 
     cache->Initializers.emplace(interfaceMeta, initializers);
+
+    return initializers;
+}
+
+std::vector<const SwiftMethodMeta*> ArgConverter::GetInitializers(Caches* cache, Class klass, const SwiftClassMeta* classMeta) {
+    auto it = cache->SwiftInitializers.find(classMeta);
+    if (it != cache->SwiftInitializers.end()) {
+        return it->second;
+    }
+
+    KnownUnknownClassPair klasses(klass);
+    std::vector<const SwiftMethodMeta*> initializers = classMeta->initializers(klasses);
+
+    cache->SwiftInitializers.emplace(classMeta, initializers);
 
     return initializers;
 }

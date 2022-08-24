@@ -142,6 +142,7 @@ struct ProtocolMeta;
 struct ModuleMeta;
 struct LibraryMeta;
 struct TypeEncoding;
+struct SwiftClassMeta;
 
 typedef std::vector<const ProtocolMeta*> ProtocolMetas;
 
@@ -296,6 +297,10 @@ struct GlobalTable {
     const InterfaceMeta* findInterfaceMeta(const char* identifierString) const;
 
     const InterfaceMeta* findInterfaceMeta(const char* identifierString, size_t length, unsigned hash) const;
+    
+    const SwiftClassMeta* findSwiftClassMeta(const char* identifierString) const;
+
+    const SwiftClassMeta* findSwiftClassMeta(const char* identifierString, size_t length, unsigned hash) const;
 
     const ProtocolMeta* findProtocol(const char* identifierString) const;
 

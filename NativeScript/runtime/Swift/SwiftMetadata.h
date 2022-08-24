@@ -10,6 +10,7 @@
 #define SwiftMetadata_h
 #include "Metadata.h"
 
+
 namespace tns {
 
 // Bit indices in flags section
@@ -98,7 +99,7 @@ struct SwiftGlobalTable {
 
     ArrayOfSwiftPtrTo<ArrayOfSwiftPtrTo<SwiftMeta>> buckets;
 
-    const SwiftClassMeta* findClassMeta(const char* identifierString) const;
+    const SwiftClassMeta* findSwiftClassMeta(const char* identifierString) const;
 //
 //    const InterfaceMeta* findInterfaceMeta(const char* identifierString, size_t length, unsigned hash) const;
 //
@@ -399,16 +400,34 @@ public:
 
 };
 
+struct SwiftMemberMeta : Meta {
+    bool isOptional() const {
+        return this->flag(MetaFlags::MemberIsOptional);
+    }
+};
+
+struct SwiftMethodMeta : MemberMeta {
+    
+    bool isInitializer() const {
+        return this->flag(MetaFlags::MethodIsInitializer);
+    }
+};
+
 struct SwiftBaseClassMeta : SwiftMeta {
     
-    PtrTo<ArrayOfPtrTo<MethodMeta>> instanceMethods;
-    PtrTo<ArrayOfPtrTo<MethodMeta>> staticMethods;
+    PtrTo<ArrayOfPtrTo<SwiftMethodMeta>> instanceMethods;
+    PtrTo<ArrayOfPtrTo<SwiftMethodMeta>> staticMethods;
     PtrTo<ArrayOfPtrTo<PropertyMeta>> instanceProps;
     PtrTo<ArrayOfPtrTo<PropertyMeta>> staticProps;
     PtrTo<Array<String>> protocols;
     int16_t initializersStartIndex;
     
-    std::vector<const MethodMeta*> initializers(std::vector<const MethodMeta*>& container, KnownUnknownClassPair klasses) const;
+    std::vector<const SwiftMethodMeta*> initializers(std::vector<const SwiftMethodMeta*>& container, KnownUnknownClassPair klasses) const;
+    
+    std::vector<const SwiftMethodMeta*> initializers(KnownUnknownClassPair klasses) const {
+        std::vector<const SwiftMethodMeta*> initializers;
+        return this->initializers(initializers, klasses);
+    }
     
 };
 
@@ -423,28 +442,20 @@ public:
     }
 
     const SwiftClassMeta* baseMeta() const {
-        if (this->baseName() != nullptr) {
-            const SwiftClassMeta* baseMeta = SwiftMetaFile::instance()->globalTableJs()->findClassMeta(this->baseName());
-            return baseMeta;
-        }
+//        if (this->baseName() != nullptr) {
+//            const SwiftClassMeta* baseMeta = SwiftMetaFile::instance()->globalTableJs()->findClassMeta(this->baseName());
+//            return baseMeta;
+//        }
 
         return nullptr;
     }
     
 };
 
-struct SwiftMemberMeta : Meta {
-    bool isOptional() const {
-        return this->flag(MetaFlags::MemberIsOptional);
-    }
-};
-
-struct SwiftMethodMeta : MemberMeta {
-};
-
 #pragma pack(pop)
 
-}
+} // namespace tns
 
+#include "SwiftMetadataInlines.h"
 
-#endif /* SwiftMetadata_h */
+#endif /* Metadata_h */

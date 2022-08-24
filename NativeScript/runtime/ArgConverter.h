@@ -57,6 +57,7 @@ private:
     static void IndexedPropertySetterCallback(uint32_t index, v8::Local<v8::Value> value, const v8::PropertyCallbackInfo<v8::Value>& args);
     static bool IsErrorOutParameter(const TypeEncoding* typeEncoding);
     static std::vector<const MethodMeta*> GetInitializers(Caches* cache, Class klass, const InterfaceMeta* interfaceMeta);
+    static std::vector<const SwiftMethodMeta*> GetInitializers(Caches* cache, Class klass, const SwiftClassMeta* classMeta);
     static void MethodCallbackInternal(ffi_cif* cif, void* retValue, void** argValues, void* userData);
 };
 

@@ -4,6 +4,7 @@
 #include <thread>
 #include <functional>
 #include "Metadata.h"
+#include "SwiftMetadata.h"
 #include "libffi.h"
 #include "ConcurrentQueue.h"
 #include "Common.h"

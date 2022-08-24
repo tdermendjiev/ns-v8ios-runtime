@@ -12,6 +12,8 @@
 #include "Caches.h"
 #include "Tasks.h"
 
+#include <NativeScript/NativeScript-Swift.h>
+
 using namespace v8;
 
 namespace tns {
@@ -83,7 +85,12 @@ void MetadataBuilder::GlobalPropertyGetter(Local<v8::Name> property, const Prope
         
         if (meta->type() == SwiftMetaType::SwiftClass) {
             const SwiftBaseClassMeta* classMeta = static_cast<const SwiftBaseClassMeta*>(meta);
+//            SwiftFactory* f = [[SwiftFactory alloc] init];
+//            id inst = [f createClass: [NSString stringWithFormat:@"TestRunner.%@",[NSString stringWithUTF8String: meta->name()]]];
+//            NSLog(@"%@", [inst description]);
+//            id inst = [f createClass: [NSString stringWithFormat:@"TestRunner.%@",[NSString stringWithUTF8String: meta->name()]]];
             Class knownClass = meta->type() == SwiftMetaType::SwiftClass ? NSClassFromString([NSString stringWithFormat:@"TestRunner.%@",[NSString stringWithUTF8String: meta->name()]]) : nil;
+            
             KnownUnknownClassPair pair(knownClass);
             MetadataBuilder::GetOrCreateSwiftConstructorFunctionTemplate(context, classMeta, pair);
             

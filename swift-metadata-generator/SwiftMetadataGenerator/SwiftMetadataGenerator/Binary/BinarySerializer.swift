@@ -190,6 +190,10 @@ class BinarySerializer: MetaVisitor {
         var base = meta as Meta
         serializeBase(meta: &base, binaryMetaStruct: binaryStruct)
         
+//        if let baseClass = meta.baseClass {
+//            binaryStruct.
+//        }
+        
         let offset = binaryStruct.save(writer: heapWriter)
         file.registerInGlobalTables(meta: meta, offset: offset)
     }
