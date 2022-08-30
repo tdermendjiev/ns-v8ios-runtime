@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5F1472202881468D0011F206"
-               BuildableName = "SwiftMetadataGenerator"
-               BlueprintName = "SwiftMetadataGenerator"
-               ReferencedContainer = "container:SwiftMetadataGenerator.xcodeproj">
+               BlueprintIdentifier = "C2F4CBB222C60BFD0036B56F"
+               BuildableName = "metadata-generator"
+               BlueprintName = "metadata-generator"
+               ReferencedContainer = "container:v8ios.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,30 +44,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5F1472202881468D0011F206"
-            BuildableName = "SwiftMetadataGenerator"
-            BlueprintName = "SwiftMetadataGenerator"
-            ReferencedContainer = "container:SwiftMetadataGenerator.xcodeproj">
+            BlueprintIdentifier = "C2F4CBB222C60BFD0036B56F"
+            BuildableName = "metadata-generator"
+            BlueprintName = "metadata-generator"
+            ReferencedContainer = "container:v8ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-swift-files-path   "
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "/Users/ivoyakov/work/azbouki/ns-runtime/teo-fork/ns-v8ios-runtime/TestRunner/Source\ Files/swift_files"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-output-bin"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "/Users/ivoyakov/work/azbouki/ns-runtime/teo-fork/ns-v8ios-runtime/swift-metadata-generator/SwiftMetadataGenerator/SwiftMetadata.bin"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -79,10 +61,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5F1472202881468D0011F206"
-            BuildableName = "SwiftMetadataGenerator"
-            BlueprintName = "SwiftMetadataGenerator"
-            ReferencedContainer = "container:SwiftMetadataGenerator.xcodeproj">
+            BlueprintIdentifier = "C2F4CBB222C60BFD0036B56F"
+            BuildableName = "metadata-generator"
+            BlueprintName = "metadata-generator"
+            ReferencedContainer = "container:v8ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
