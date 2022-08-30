@@ -14,6 +14,7 @@ enum BinaryTypeEncodingType: UInt8 {
     case Int
     case Float
     case String
+    case Pointer
 };
 
 class TypeEncoding {
