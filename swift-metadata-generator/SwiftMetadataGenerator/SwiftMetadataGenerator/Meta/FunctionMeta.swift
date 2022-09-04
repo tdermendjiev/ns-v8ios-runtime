@@ -49,14 +49,48 @@ class FunctionMeta: Meta {
         
         let moduleName = MODULE_NAME
         
-        let symbolName = "_$s\(moduleName.count)\(moduleName)\(mangledName)"
+        let symbolName = "g$s\(moduleName.count)\(moduleName)\(mangledName)"
         print(symbolName)
         return symbolName
     }
     
+    static func asType(syntax: SyntaxProtocol?) -> Type {
+        if(syntax == nil) {
+            return Type(type: TypeType.TypeVoid)
+        }
+        
+        let source = syntax!.description.replacingOccurrences(
+            of: " ",
+            with: ""
+        );
+        
+        if(source == "Int") {
+            return Type(type: TypeType.TypeInt)
+        }
+        else if(source == "Bool") {
+            return Type(type: TypeType.TypeBool)
+        }
+        else if(source == "Float") {
+            return Type(type: TypeType.TypeFloat)
+        }
+        else if(source == "String") {
+            return Type(type: TypeType.TypeString)
+        } else {
+            return Type(type: TypeType.TypePointer);
+        }
+    }
+    
     static func signatureFromDecl(decl: FunctionSignatureSyntax) -> [Type] {
-        //todo: implement
-        return [Type(type: TypeType.TypeInt)]
+        var signature = [Type]()
+        let returnType = asType(syntax: decl.output?.returnType);
+        signature.append(returnType)
+
+        decl.input.parameterList.forEach { functionParameterSyntax in
+          let paramType = asType(syntax: functionParameterSyntax.type)
+          signature.append(paramType)
+        }
+
+        return signature
     }
 
     static func signatureFromDecl(d: [String:SourceKitRepresentable]) -> [Type] {

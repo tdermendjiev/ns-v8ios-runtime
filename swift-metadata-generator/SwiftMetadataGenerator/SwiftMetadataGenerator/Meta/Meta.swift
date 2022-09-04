@@ -14,6 +14,7 @@ enum TypeType {
     case TypeInt
     case TypeFloat
     case TypeString
+    case TypePointer
 }
 
 class Type {
@@ -35,6 +36,8 @@ class Type {
             return visitor.visitFloat()
         case .TypeString:
             return visitor.visitString()
+        case .TypePointer:
+            return visitor.visitPointer()
         }
     }
 }

@@ -59,8 +59,7 @@ void MetadataBuilder::GlobalPropertyGetter(Local<v8::Name> property, const Prope
             }
 
             const SwiftFunctionMeta* funcMeta = static_cast<const SwiftFunctionMeta*>(meta);
-            std::string moduleName = "$s10TestRunner";
-            std::string symbolName = moduleName + meta->mangledName();
+            std::string symbolName = meta->mangledName();
             void* functionPointer = SymbolLoader::instance().loadSwiftFunctionSymbol(symbolName.c_str());
             if (functionPointer == nullptr) {
                 Log(@"Unable to load \"%s\" function", meta->name());
