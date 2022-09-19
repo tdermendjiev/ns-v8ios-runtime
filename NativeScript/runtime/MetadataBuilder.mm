@@ -12,8 +12,6 @@
 #include "Caches.h"
 #include "Tasks.h"
 
-#include <NativeScript/NativeScript-Swift.h>
-
 using namespace v8;
 
 namespace tns {
@@ -84,10 +82,7 @@ void MetadataBuilder::GlobalPropertyGetter(Local<v8::Name> property, const Prope
         
         if (meta->type() == SwiftMetaType::SwiftClass) {
             const SwiftBaseClassMeta* classMeta = static_cast<const SwiftBaseClassMeta*>(meta);
-//            SwiftFactory* f = [[SwiftFactory alloc] init];
-//            id inst = [f createClass: [NSString stringWithFormat:@"TestRunner.%@",[NSString stringWithUTF8String: meta->name()]]];
-//            NSLog(@"%@", [inst description]);
-//            id inst = [f createClass: [NSString stringWithFormat:@"TestRunner.%@",[NSString stringWithUTF8String: meta->name()]]];
+            
             Class knownClass = meta->type() == SwiftMetaType::SwiftClass ? NSClassFromString([NSString stringWithFormat:@"TestRunner.%@",[NSString stringWithUTF8String: meta->name()]]) : nil;
             
             KnownUnknownClassPair pair(knownClass);
@@ -399,9 +394,9 @@ Local<FunctionTemplate> MetadataBuilder::GetOrCreateSwiftConstructorFunctionTemp
     ctorFuncTemplate->PrototypeTemplate()->Set(tns::ToV8String(isolate, "toString"), FunctionTemplate::New(isolate, MetadataBuilder::ToStringFunctionCallback));
 
 //    if (meta->type() == SwiftMetaType::SwiftClass) {
-//        const SwiftClassMeta* classMeta = static_cast<const InterfaceMeta*>(meta);
-//        MetadataBuilder::RegisterAllocMethod(isolate, ctorFuncTemplate, interfaceMeta);
-//        ctorFuncTemplate->Set(tns::ToV8String(isolate, "extend"), ClassBuilder::GetExtendFunction(isolate, interfaceMeta));
+//        const SwiftClassMeta* classMeta = static_cast<const SwiftClassMeta*>(meta);
+//        MetadataBuilder::RegisterAllocMethod(isolate, ctorFuncTemplate, classMeta);
+//        ctorFuncTemplate->Set(tns::ToV8String(isolate, "extend"), ClassBuilder::GetExtendFunction(isolate, classMeta));
 //    }
 
     NamedPropertyHandlerConfiguration config(nullptr, MetadataBuilder::SwizzledInstanceMethodCallback, nullptr, nullptr, nullptr, MetadataBuilder::SwizzledPropertyCallback, nullptr, ext);

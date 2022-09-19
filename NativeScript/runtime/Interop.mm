@@ -18,6 +18,7 @@
 #include "SymbolIterator.h"
 #include "UnmanagedType.h"
 #include "OneByteStringResource.h"
+#include <NativeScript/NativeScript-Swift.h>
 
 using namespace v8;
 
@@ -109,6 +110,12 @@ Local<Value> Interop::CallFunction(ObjCMethodCall& methodCall) {
 }
 
 id Interop::CallSwiftInitializer(Local<Context> context, const SwiftMethodMeta* methodMeta, id target, Class clazz, V8Args& args) {
+    if (methodMeta == nullptr) {
+        //call default initializer
+        SwiftFactory* f = [[SwiftFactory alloc] init];
+        id inst = [f createClass: NSStringFromClass(clazz)];
+        return inst;
+    }
     //todo: implement
     return nullptr;
 }

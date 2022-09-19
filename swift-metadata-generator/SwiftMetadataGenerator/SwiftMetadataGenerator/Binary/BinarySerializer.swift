@@ -185,6 +185,16 @@ class BinarySerializer: MetaVisitor {
         file.registerInGlobalTables(meta: meta, offset: offset)
     }
     
+    func visit(meta: inout ConstructorMeta) {
+        let binaryStruct = MethodBinaryMeta(type: .Method)
+        var base = meta as Meta
+        serializeBase(meta: &base, binaryMetaStruct: binaryStruct)
+        
+        binaryStruct.encoding = typEncodingSerializer.visit(types: meta.signature)
+        let offset = binaryStruct.save(writer: heapWriter)
+        file.registerInGlobalTables(meta: meta, offset: offset)
+    }
+    
     func visit(meta: inout ClassMeta) {
         let binaryStruct = ClassBinaryMeta(type: .Class)
         var base = meta as Meta

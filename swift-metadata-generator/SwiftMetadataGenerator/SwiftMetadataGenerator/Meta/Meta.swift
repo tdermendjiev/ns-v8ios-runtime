@@ -70,6 +70,7 @@ class Meta {
     var jsName: String
     var mangledName: String
     var moduleName: String
+    var flags: __uint16_t
     
     init(type: MetaType, name: String, jsName: String, mangledName: String, moduleName: String) {
         self.name = name
@@ -77,9 +78,20 @@ class Meta {
         self.mangledName = mangledName
         self.moduleName = moduleName
         self.type = type
+        self.flags = MetaFlags.None.val
     }
     
     func visit(visitor: MetaVisitor) {
+        
+    }
+    
+    func setFlags(flags: __uint16_t, value: Bool) {
+        //if value?
+        if (value) {
+            self.flags = self.flags | flags
+        } else {
+            self.flags = self.flags & ~flags
+        }
         
     }
     

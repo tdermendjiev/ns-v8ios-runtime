@@ -11,10 +11,26 @@ protocol BinaryMetaProtocol {
     func save(writer: BinaryWriter) -> MetaFileOffset
 }
 
+enum MetaFlags {
+    case None
+    case MethodIsInitializer
+    
+    var val: __uint16_t {
+        switch self {
+        case .None:
+             return 0
+        
+        case .MethodIsInitializer:
+             return 1 << 8
+        }
+   }
+    
+}
+
 class BinaryMeta: BinaryMetaProtocol {
     var names: MetaFileOffset = 0
     var topLevelModule: MetaFileOffset = 0
-    var flags: __uint16_t = 0
+    var flags: __uint16_t = MetaFlags.None.val
     
     init(type: BinaryMetaType) {
         let val = UInt16(type.rawValue & 0x7)

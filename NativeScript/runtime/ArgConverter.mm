@@ -301,7 +301,6 @@ void ArgConverter::ConstructSwiftObject(Local<Context> context, const FunctionCa
 
     id result = nil;
 
-
     if (result == nil && classMeta != nullptr && info.Length() == 0) { //info.Length() == 0 => default init
         std::vector<Local<Value>> args;
         const SwiftMethodMeta* initializer = ArgConverter::FindInitializer(context, klass, classMeta, info, args);
@@ -386,15 +385,15 @@ const SwiftMethodMeta* ArgConverter::FindInitializer(Local<Context> context, Cla
     std::vector<const SwiftMethodMeta*> candidates;
     args = tns::ArgsToVector(info);
     std::vector<Local<Value>> initializerArgs;
-    std::string constructorTokens;
-    if (info.Length() == 1 && info[0]->IsObject() && tns::GetValue(isolate, info[0]) == nullptr) {
-        initializerArgs = GetInitializerArgs(info[0].As<Object>(), constructorTokens);
-    }
+//    std::string constructorTokens;
+//    if (info.Length() == 1 && info[0]->IsObject() && tns::GetValue(isolate, info[0]) == nullptr) {
+//        initializerArgs = GetInitializerArgs(info[0].As<Object>(), constructorTokens);
+//    }
 
     std::shared_ptr<Caches> cache = Caches::Get(isolate);
-    bool found = false;
+//    bool found = false;
     
-    do {
+//    do {
         std::vector<const SwiftMethodMeta*> initializers = ArgConverter::GetInitializers(cache.get(), klass, classMeta);
 //        for (const SwiftMethodMeta* candidate: initializers) {
 //            if (constructorTokens != "") {
@@ -412,16 +411,21 @@ const SwiftMethodMeta* ArgConverter::FindInitializer(Local<Context> context, Cla
 //                candidates.push_back(candidate);
 //            }
 //        }
-
-        if (found) {
-            break;
-        }
-
-        classMeta = classMeta->baseMeta();
-    } while (classMeta);
+//
+//        if (found) {
+//            break;
+//        }
+//
+//        classMeta = classMeta->baseMeta();
+//    } while (classMeta);
     
     if (candidates.size() == 0) {
-        throw NativeScriptException("No initializer found that matches constructor invocation.");
+        //for PoC only - call default init
+        
+        return nullptr;
+        
+//        throw NativeScriptException("No initializer found that matches constructor invocation.");
+        
     } else if (candidates.size() > 1) {
         if (info.Length() == 0) {
             auto it = std::find_if(candidates.begin(), candidates.end(), [](const SwiftMethodMeta* c) -> bool { return strcmp(c->name(), "init") == 0; });

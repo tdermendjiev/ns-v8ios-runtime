@@ -70,8 +70,14 @@ class ClassMeta: Meta {
     }
     
     private func populateConstructors(decl: ClassDeclSyntax, moduleName: String, path: String) {
-        let con = ConstructorMeta(decl: decl, moduleName: moduleName, path: path)
-        constructors.append(con)
+        for m in decl.members.members {
+            if let funcDecl = InitializerDeclSyntax(m.decl._syntaxNode) {
+                let con = ConstructorMeta(classDecl: decl, decl: funcDecl, moduleName: moduleName, path: path)
+                constructors.append(con)
+            }
+        }
+       
+        
     }
     
     private func populateStaticMethods() {
@@ -96,6 +102,7 @@ class ClassMeta: Meta {
                 }
                 
             }
+            
         }
     }
     
