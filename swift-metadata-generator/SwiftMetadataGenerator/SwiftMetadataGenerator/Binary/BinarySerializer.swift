@@ -12,6 +12,22 @@ import Foundation
 //    HasName = 1 << 7
 //}
 
+enum BinaryFlags {
+    case HasName;
+    case MethodIsInitializer
+    
+    var val: __uint16_t {
+        switch self {
+        case .HasName:
+             return 1 << 7
+        
+        case .MethodIsInitializer:
+             return 1 << 1
+        }
+   }
+    
+}
+
 class BinaryHashtable {
     private var elements: [[(String, MetaFileOffset)]]
     
@@ -165,10 +181,22 @@ class BinarySerializer: MetaVisitor {
         //TODO: serialize frameworks
     }
     
+    func serializeMethod(meta: MethodMeta, binaryMetaStruct: inout MethodBinaryMeta) {
+        self.serializeMember(meta: meta, binaryMetaStruct: &binaryMetaStruct)
+        if meta.getFlags(flags: .MethodIsInitializer) {
+            binaryMetaStruct.flags |= BinaryFlags.MethodIsInitializer.val
+        }
+    }
+    
+    func serializeMember<T:BinaryMeta, M: Meta>(meta: M, binaryMetaStruct: inout T) {
+        self.serializeBase(meta: meta, binaryMetaStruct: &binaryMetaStruct)
+        binaryMetaStruct.flags &= 0b11111000; // this clears the type information written in the lower 3 bits
+    }
+    
     internal func visit(meta: inout FunctionMeta) {
-        let binaryStruct = FunctionBinaryMeta(type: .Function)
+        var binaryStruct = FunctionBinaryMeta(type: .Function)
         var base = meta as Meta
-        serializeBase(meta: &base, binaryMetaStruct: binaryStruct)
+        serializeBase(meta: base, binaryMetaStruct: &binaryStruct)
         
         binaryStruct.encoding = typEncodingSerializer.visit(types: meta.signature)
         let offset = binaryStruct.save(writer: heapWriter)
@@ -176,9 +204,9 @@ class BinarySerializer: MetaVisitor {
     }
     
     func visit(meta: inout MethodMeta) {
-        let binaryStruct = MethodBinaryMeta(type: .Method)
+        var binaryStruct = MethodBinaryMeta(type: .Method)
         var base = meta as Meta
-        serializeBase(meta: &base, binaryMetaStruct: binaryStruct)
+        serializeBase(meta: base, binaryMetaStruct: &binaryStruct)
         
         binaryStruct.encoding = typEncodingSerializer.visit(types: meta.signature)
         let offset = binaryStruct.save(writer: heapWriter)
@@ -186,9 +214,9 @@ class BinarySerializer: MetaVisitor {
     }
     
     func visit(meta: inout ConstructorMeta) {
-        let binaryStruct = MethodBinaryMeta(type: .Method)
+        var binaryStruct = MethodBinaryMeta(type: .Method)
         var base = meta as Meta
-        serializeBase(meta: &base, binaryMetaStruct: binaryStruct)
+        serializeBase(meta: base, binaryMetaStruct: &binaryStruct)
         
         binaryStruct.encoding = typEncodingSerializer.visit(types: meta.signature)
         let offset = binaryStruct.save(writer: heapWriter)
@@ -196,19 +224,27 @@ class BinarySerializer: MetaVisitor {
     }
     
     func visit(meta: inout ClassMeta) {
-        let binaryStruct = ClassBinaryMeta(type: .Class)
-        var base = meta as Meta
-        serializeBase(meta: &base, binaryMetaStruct: binaryStruct)
+        var binaryStruct = ClassBinaryMeta(type: .Class)
         
-//        if let baseClass = meta.baseClass {
-//            binaryStruct.
-//        }
+        
+        serializeBase(meta: meta, binaryMetaStruct: &binaryStruct)
+        
+     
+        var offsets = [MetaFileOffset]()
+        for method in meta.instanceMethods {
+            var binaryMeta = MethodBinaryMeta(type: .Undefined)
+            self.serializeMethod(meta: method, binaryMetaStruct: &binaryMeta)
+            offsets.append(binaryMeta.save(writer: self.heapWriter))
+        }
+        binaryStruct.instanceMethods = heapWriter.pushBinaryArray(array: offsets)
+        offsets = [MetaFileOffset]()
+        
         
         let offset = binaryStruct.save(writer: heapWriter)
         file.registerInGlobalTables(meta: meta, offset: offset)
     }
     
-    func serializeBase(meta: inout Meta, binaryMetaStruct: BinaryMeta) {
+    func serializeBase<T:BinaryMeta, M: Meta>(meta:M, binaryMetaStruct: inout T) {
         let hasName = meta.name != meta.jsName
         //TODO: hasDemangledName -> hasMangledName (do we ALWAYS have it true?)
         let hasMangledName = true

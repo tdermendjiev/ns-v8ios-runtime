@@ -70,6 +70,10 @@ class FunctionBinaryMeta: BinaryMeta {
     }
 }
 
+class MemberBinaryMeta: BinaryMeta {
+    
+}
+
 class MethodBinaryMeta: FunctionBinaryMeta {
     
 }

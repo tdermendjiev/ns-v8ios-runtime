@@ -400,13 +400,13 @@ public:
 
 };
 
-struct SwiftMemberMeta : Meta {
+struct SwiftMemberMeta : SwiftMeta {
     bool isOptional() const {
         return this->flag(MetaFlags::MemberIsOptional);
     }
 };
 
-struct SwiftMethodMeta : MemberMeta {
+struct SwiftMethodMeta : SwiftMemberMeta {
     
     bool isInitializer() const {
         return this->flag(MetaFlags::MethodIsInitializer);

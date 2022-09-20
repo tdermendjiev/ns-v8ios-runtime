@@ -22,8 +22,6 @@ class ClassMeta: Meta {
     
     var protocols = [ProtocolMeta]()
     
-    var constructors = [ConstructorMeta]()
-    
     var  baseClass: ClassMeta?
     
     override func visit(visitor: MetaVisitor) {
@@ -73,7 +71,7 @@ class ClassMeta: Meta {
         for m in decl.members.members {
             if let funcDecl = InitializerDeclSyntax(m.decl._syntaxNode) {
                 let con = ConstructorMeta(classDecl: decl, decl: funcDecl, moduleName: moduleName, path: path)
-                constructors.append(con)
+                instanceMethods.append(con)
             }
         }
        

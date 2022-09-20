@@ -92,7 +92,11 @@ class Meta {
         } else {
             self.flags = self.flags & ~flags
         }
-        
+
+    }
+
+    func getFlags(flags: MetaFlags) -> Bool {
+        return (self.flags & flags.val) == flags.val
     }
     
     static func usrForOffset(offset: ByteCount, path: String) -> String {

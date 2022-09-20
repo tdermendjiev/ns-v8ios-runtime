@@ -30,9 +30,9 @@ class AClass {
     }
     
     
-    func instanceMethod() {
-        print("Instance method has been called")
-    }
+//    func instanceMethod() {
+//        print("Instance method has been called")
+//    }
 }
 
 class FunctionMeta {
