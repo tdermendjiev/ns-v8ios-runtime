@@ -301,7 +301,7 @@ void ArgConverter::ConstructSwiftObject(Local<Context> context, const FunctionCa
 
     id result = nil;
 
-    if (result == nil && classMeta != nullptr && info.Length() == 0) { //info.Length() == 0 => default init
+    if (result == nil && classMeta != nullptr) { //info.Length() == 0 => default init
         std::vector<Local<Value>> args;
         const SwiftMethodMeta* initializer = ArgConverter::FindInitializer(context, klass, classMeta, info, args);
 //        result = [klass alloc];
@@ -391,33 +391,34 @@ const SwiftMethodMeta* ArgConverter::FindInitializer(Local<Context> context, Cla
 //    }
 
     std::shared_ptr<Caches> cache = Caches::Get(isolate);
-//    bool found = false;
+    bool found = false;
     
-//    do {
+    do {
         std::vector<const SwiftMethodMeta*> initializers = ArgConverter::GetInitializers(cache.get(), klass, classMeta);
-//        for (const SwiftMethodMeta* candidate: initializers) {
+    
+        for (const SwiftMethodMeta* candidate: initializers) {
 //            if (constructorTokens != "") {
 //                const char* expectedTokens = candidate->constructorTokens();
 //                if (strcmp(expectedTokens, constructorTokens.c_str()) == 0) {
 //                    candidates.clear();
 //                    candidates.push_back(candidate);
 //                    args = initializerArgs;
-//                    found = true;
+                    found = true;
 //                    break;
 //                }
 //            }
-//
+
 //            if (ArgConverter::CanInvoke(context, candidate, info)) {
-//                candidates.push_back(candidate);
+                candidates.push_back(candidate);
 //            }
-//        }
-//
-//        if (found) {
-//            break;
-//        }
-//
-//        classMeta = classMeta->baseMeta();
-//    } while (classMeta);
+        }
+
+        if (found) {
+            break;
+        }
+
+        classMeta = classMeta->baseMeta();
+    } while (classMeta);
     
     if (candidates.size() == 0) {
         //for PoC only - call default init

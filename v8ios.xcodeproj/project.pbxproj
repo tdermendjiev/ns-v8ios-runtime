@@ -11,9 +11,9 @@
 		199F0E9BEE2623EEBC91554E /* Pods_NativeScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1D25C847FBDADD185855869 /* Pods_NativeScript.framework */; };
 		2B29CB2A25473D96001233FF /* SwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B29CB2925473D96001233FF /* SwiftClass.swift */; };
 		2B494DE4289B960E00ADC9FC /* SwiftMetadataInlines.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B494DE3289B960900ADC9FC /* SwiftMetadataInlines.h */; };
-		2B494DE8289BE10500ADC9FC /* SomeSwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B494DE7289BE10500ADC9FC /* SomeSwiftClass.swift */; };
 		2B7EA6AF2353477000E5184E /* NativeScriptException.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EA6AD2353476F00E5184E /* NativeScriptException.mm */; };
 		2B7EA6B02353477000E5184E /* NativeScriptException.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B7EA6AE2353477000E5184E /* NativeScriptException.h */; };
+		2B8E8CED28C47EA100D6525B /* SomeSwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B494DE7289BE10500ADC9FC /* SomeSwiftClass.swift */; };
 		2BA006FE28ACC3FA00B5E61E /* SwiftMetadata.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2BA006FD28ACC3FA00B5E61E /* SwiftMetadata.mm */; };
 		2BF6186A25C9A1EF00B3DFAC /* SwiftMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF6186925C9A1EF00B3DFAC /* SwiftMetadata.h */; };
 		C205257F2577D6F900C12A5C /* NativeScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DDEB32229EAB3B00345BFE /* NativeScript.framework */; };
@@ -104,7 +104,7 @@
 		C247C33F22F828E3001D2CA2 /* custom-preview.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C2B422F828E2001D2CA2 /* custom-preview.h */; };
 		C247C34022F828E3001D2CA2 /* v8-regex.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C2B522F828E2001D2CA2 /* v8-regex.h */; };
 		C247C34122F828E3001D2CA2 /* v8-log-agent-impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C247C2B622F828E2001D2CA2 /* v8-log-agent-impl.cpp */; };
-		C247C34222F828E3001D2CA2 /* v8-css-agent-impl.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C2B722F828E2001D2CA2 /* v8-css-agent-impl.h */; };
+		C247C34222F828E3001D2CA2 /* v8-css-agent-impl.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C247C2B722F828E2001D2CA2 /* v8-css-agent-impl.hpp */; };
 		C247C34322F828E3001D2CA2 /* remote-object-id.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C2B822F828E2001D2CA2 /* remote-object-id.h */; };
 		C247C34422F828E3001D2CA2 /* v8-console.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C2B922F828E2001D2CA2 /* v8-console.h */; };
 		C247C34522F828E3001D2CA2 /* v8-debugger.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C2BA22F828E2001D2CA2 /* v8-debugger.h */; };
@@ -118,7 +118,7 @@
 		C247C34E22F828E3001D2CA2 /* inspected-context.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C2C322F828E2001D2CA2 /* inspected-context.h */; };
 		C247C34F22F828E3001D2CA2 /* v8-debugger-agent-impl.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C2C422F828E2001D2CA2 /* v8-debugger-agent-impl.h */; };
 		C247C35022F828E3001D2CA2 /* v8-regex.cc in Sources */ = {isa = PBXBuildFile; fileRef = C247C2C522F828E2001D2CA2 /* v8-regex.cc */; };
-		C247C35122F828E3001D2CA2 /* v8-inspector-impl.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C2C622F828E2001D2CA2 /* v8-inspector-impl.h */; };
+		C247C35122F828E3001D2CA2 /* v8-inspector-impl.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C247C2C622F828E2001D2CA2 /* v8-inspector-impl.hpp */; };
 		C247C35222F828E3001D2CA2 /* v8-stack-trace-impl.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C2C722F828E2001D2CA2 /* v8-stack-trace-impl.h */; };
 		C247C35322F828E3001D2CA2 /* v8-runtime-agent-impl.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C2C822F828E2001D2CA2 /* v8-runtime-agent-impl.h */; };
 		C247C35422F828E3001D2CA2 /* v8-console-message.cc in Sources */ = {isa = PBXBuildFile; fileRef = C247C2C922F828E2001D2CA2 /* v8-console-message.cc */; };
@@ -194,14 +194,14 @@
 		C247C39D22F828E3001D2CA2 /* template-utils.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C31622F828E3001D2CA2 /* template-utils.h */; };
 		C247C39E22F828E3001D2CA2 /* base-export.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C31722F828E3001D2CA2 /* base-export.h */; };
 		C247C39F22F828E3001D2CA2 /* flags.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C31822F828E3001D2CA2 /* flags.h */; };
-		C247C3A022F828E3001D2CA2 /* semaphore.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C31A22F828E3001D2CA2 /* semaphore.h */; };
-		C247C3A122F828E3001D2CA2 /* mutex.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C31B22F828E3001D2CA2 /* mutex.h */; };
-		C247C3A222F828E3001D2CA2 /* platform.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C31C22F828E3001D2CA2 /* platform.h */; };
+		C247C3A022F828E3001D2CA2 /* semaphore.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C247C31A22F828E3001D2CA2 /* semaphore.hpp */; };
+		C247C3A122F828E3001D2CA2 /* mutex.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C247C31B22F828E3001D2CA2 /* mutex.hpp */; };
+		C247C3A222F828E3001D2CA2 /* platform.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C247C31C22F828E3001D2CA2 /* platform.hpp */; };
 		C247C3A322F828E3001D2CA2 /* v8-fallthrough.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C31D22F828E3001D2CA2 /* v8-fallthrough.h */; };
 		C247C3A522F828E3001D2CA2 /* safe_conversions.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C31F22F828E3001D2CA2 /* safe_conversions.h */; };
 		C247C3A622F828E3001D2CA2 /* logging.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C32022F828E3001D2CA2 /* logging.h */; };
 		C247C3A722F828E3001D2CA2 /* atomicops.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C32122F828E3001D2CA2 /* atomicops.h */; };
-		C247C3A822F828E3001D2CA2 /* lazy-instance.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C32222F828E3001D2CA2 /* lazy-instance.h */; };
+		C247C3A822F828E3001D2CA2 /* lazy-instance.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C247C32222F828E3001D2CA2 /* lazy-instance.hpp */; };
 		C247C3A922F828E3001D2CA2 /* macros.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C32322F828E3001D2CA2 /* macros.h */; };
 		C247C3AA22F828E3001D2CA2 /* once.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C32422F828E3001D2CA2 /* once.h */; };
 		C247C3AB22F828E3001D2CA2 /* memory.h in Headers */ = {isa = PBXBuildFile; fileRef = C247C32522F828E3001D2CA2 /* memory.h */; };
@@ -647,7 +647,7 @@
 		C247C2B422F828E2001D2CA2 /* custom-preview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "custom-preview.h"; sourceTree = "<group>"; };
 		C247C2B522F828E2001D2CA2 /* v8-regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "v8-regex.h"; sourceTree = "<group>"; };
 		C247C2B622F828E2001D2CA2 /* v8-log-agent-impl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "v8-log-agent-impl.cpp"; sourceTree = "<group>"; };
-		C247C2B722F828E2001D2CA2 /* v8-css-agent-impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "v8-css-agent-impl.h"; sourceTree = "<group>"; };
+		C247C2B722F828E2001D2CA2 /* v8-css-agent-impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "v8-css-agent-impl.hpp"; sourceTree = "<group>"; };
 		C247C2B822F828E2001D2CA2 /* remote-object-id.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "remote-object-id.h"; sourceTree = "<group>"; };
 		C247C2B922F828E2001D2CA2 /* v8-console.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "v8-console.h"; sourceTree = "<group>"; };
 		C247C2BA22F828E2001D2CA2 /* v8-debugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "v8-debugger.h"; sourceTree = "<group>"; };
@@ -661,7 +661,7 @@
 		C247C2C322F828E2001D2CA2 /* inspected-context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "inspected-context.h"; sourceTree = "<group>"; };
 		C247C2C422F828E2001D2CA2 /* v8-debugger-agent-impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "v8-debugger-agent-impl.h"; sourceTree = "<group>"; };
 		C247C2C522F828E2001D2CA2 /* v8-regex.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "v8-regex.cc"; sourceTree = "<group>"; };
-		C247C2C622F828E2001D2CA2 /* v8-inspector-impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "v8-inspector-impl.h"; sourceTree = "<group>"; };
+		C247C2C622F828E2001D2CA2 /* v8-inspector-impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "v8-inspector-impl.hpp"; sourceTree = "<group>"; };
 		C247C2C722F828E2001D2CA2 /* v8-stack-trace-impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "v8-stack-trace-impl.h"; sourceTree = "<group>"; };
 		C247C2C822F828E2001D2CA2 /* v8-runtime-agent-impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "v8-runtime-agent-impl.h"; sourceTree = "<group>"; };
 		C247C2C922F828E2001D2CA2 /* v8-console-message.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "v8-console-message.cc"; sourceTree = "<group>"; };
@@ -737,14 +737,14 @@
 		C247C31622F828E3001D2CA2 /* template-utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "template-utils.h"; sourceTree = "<group>"; };
 		C247C31722F828E3001D2CA2 /* base-export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "base-export.h"; sourceTree = "<group>"; };
 		C247C31822F828E3001D2CA2 /* flags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flags.h; sourceTree = "<group>"; };
-		C247C31A22F828E3001D2CA2 /* semaphore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = semaphore.h; sourceTree = "<group>"; };
-		C247C31B22F828E3001D2CA2 /* mutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mutex.h; sourceTree = "<group>"; };
-		C247C31C22F828E3001D2CA2 /* platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = platform.h; sourceTree = "<group>"; };
+		C247C31A22F828E3001D2CA2 /* semaphore.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = semaphore.hpp; sourceTree = "<group>"; };
+		C247C31B22F828E3001D2CA2 /* mutex.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = mutex.hpp; sourceTree = "<group>"; };
+		C247C31C22F828E3001D2CA2 /* platform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = platform.hpp; sourceTree = "<group>"; };
 		C247C31D22F828E3001D2CA2 /* v8-fallthrough.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "v8-fallthrough.h"; sourceTree = "<group>"; };
 		C247C31F22F828E3001D2CA2 /* safe_conversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = safe_conversions.h; sourceTree = "<group>"; };
 		C247C32022F828E3001D2CA2 /* logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logging.h; sourceTree = "<group>"; };
 		C247C32122F828E3001D2CA2 /* atomicops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = atomicops.h; sourceTree = "<group>"; };
-		C247C32222F828E3001D2CA2 /* lazy-instance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "lazy-instance.h"; sourceTree = "<group>"; };
+		C247C32222F828E3001D2CA2 /* lazy-instance.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "lazy-instance.hpp"; sourceTree = "<group>"; };
 		C247C32322F828E3001D2CA2 /* macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = macros.h; sourceTree = "<group>"; };
 		C247C32422F828E3001D2CA2 /* once.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = once.h; sourceTree = "<group>"; };
 		C247C32522F828E3001D2CA2 /* memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memory.h; sourceTree = "<group>"; };
@@ -1370,7 +1370,7 @@
 				C247C2C922F828E2001D2CA2 /* v8-console-message.cc */,
 				C247C2B922F828E2001D2CA2 /* v8-console.h */,
 				C247C2BB22F828E2001D2CA2 /* v8-console.cc */,
-				C247C2B722F828E2001D2CA2 /* v8-css-agent-impl.h */,
+				C247C2B722F828E2001D2CA2 /* v8-css-agent-impl.hpp */,
 				C247C2F522F828E2001D2CA2 /* v8-css-agent-impl.cpp */,
 				C247C2C422F828E2001D2CA2 /* v8-debugger-agent-impl.h */,
 				C247C2C222F828E2001D2CA2 /* v8-debugger-agent-impl.cc */,
@@ -1384,7 +1384,7 @@
 				C247C2FB22F828E2001D2CA2 /* v8-dom-agent-impl.cpp */,
 				C247C30B22F828E2001D2CA2 /* v8-heap-profiler-agent-impl.h */,
 				C247C2F922F828E2001D2CA2 /* v8-heap-profiler-agent-impl.cc */,
-				C247C2C622F828E2001D2CA2 /* v8-inspector-impl.h */,
+				C247C2C622F828E2001D2CA2 /* v8-inspector-impl.hpp */,
 				C247C2F822F828E2001D2CA2 /* v8-inspector-impl.cc */,
 				C247C2CD22F828E2001D2CA2 /* v8-inspector-session-impl.h */,
 				C247C30922F828E2001D2CA2 /* v8-inspector-session-impl.cc */,
@@ -1487,7 +1487,7 @@
 				C247C31F22F828E3001D2CA2 /* safe_conversions.h */,
 				C247C32022F828E3001D2CA2 /* logging.h */,
 				C247C32122F828E3001D2CA2 /* atomicops.h */,
-				C247C32222F828E3001D2CA2 /* lazy-instance.h */,
+				C247C32222F828E3001D2CA2 /* lazy-instance.hpp */,
 				C247C32322F828E3001D2CA2 /* macros.h */,
 				C247C32422F828E3001D2CA2 /* once.h */,
 				C247C32522F828E3001D2CA2 /* memory.h */,
@@ -1504,9 +1504,9 @@
 			children = (
 				C2D1168E25666B090020BF3E /* wrappers.h */,
 				C263B4CF23D0AF0900D5B872 /* v8-time.h */,
-				C247C31A22F828E3001D2CA2 /* semaphore.h */,
-				C247C31B22F828E3001D2CA2 /* mutex.h */,
-				C247C31C22F828E3001D2CA2 /* platform.h */,
+				C247C31A22F828E3001D2CA2 /* semaphore.hpp */,
+				C247C31B22F828E3001D2CA2 /* mutex.hpp */,
+				C247C31C22F828E3001D2CA2 /* platform.hpp */,
 			);
 			path = platform;
 			sourceTree = "<group>";
@@ -2062,7 +2062,7 @@
 				C247C3AC22F828E3001D2CA2 /* safe_conversions_impl.h in Headers */,
 				C247C38D22F828E3001D2CA2 /* v8-page-agent-impl.h in Headers */,
 				C247C16F22F82842001D2CA2 /* v8-util.h in Headers */,
-				C247C34222F828E3001D2CA2 /* v8-css-agent-impl.h in Headers */,
+				C247C34222F828E3001D2CA2 /* v8-css-agent-impl.hpp in Headers */,
 				C2C8EE7222CE323C001F8CEC /* ConcurrentMap.h in Headers */,
 				C2A6EF3123745A0B00E8FBE7 /* MetadataInlines.h in Headers */,
 				C2F4D0AE232F85E20008A2EB /* SymbolIterator.h in Headers */,
@@ -2092,7 +2092,7 @@
 				C247C16A22F82842001D2CA2 /* v8-profiler.h in Headers */,
 				C2DDEB8E229EAC8300345BFE /* Interop.h in Headers */,
 				C247C33C22F828E3001D2CA2 /* v8-log-agent-impl.h in Headers */,
-				C247C3A122F828E3001D2CA2 /* mutex.h in Headers */,
+				C247C3A122F828E3001D2CA2 /* mutex.hpp in Headers */,
 				C247C39522F828E3001D2CA2 /* v8-heap-profiler-agent-impl.h in Headers */,
 				C247C34522F828E3001D2CA2 /* v8-debugger.h in Headers */,
 				C247C34422F828E3001D2CA2 /* v8-console.h in Headers */,
@@ -2103,7 +2103,7 @@
 				C22C092322CA3F370080D176 /* Worker.h in Headers */,
 				C247C37022F828E3001D2CA2 /* Network.h in Headers */,
 				C247C16622F82842001D2CA2 /* v8-version.h in Headers */,
-				C247C3A022F828E3001D2CA2 /* semaphore.h in Headers */,
+				C247C3A022F828E3001D2CA2 /* semaphore.hpp in Headers */,
 				C2DDEBAE229EAC8300345BFE /* DictionaryAdapter.h in Headers */,
 				C2B07AFA23C38FDA00E245BE /* serializer_traits.h in Headers */,
 				C2D116AF25666C460020BF3E /* frontend_channel.h in Headers */,
@@ -2113,7 +2113,7 @@
 				2B7EA6B02353477000E5184E /* NativeScriptException.h in Headers */,
 				C2B30FDB238418CA009D6A46 /* status.h in Headers */,
 				C247C36D22F828E3001D2CA2 /* HeapProfiler.h in Headers */,
-				C247C35122F828E3001D2CA2 /* v8-inspector-impl.h in Headers */,
+				C247C35122F828E3001D2CA2 /* v8-inspector-impl.hpp in Headers */,
 				C275F478253B37AB00A997D5 /* UnmanagedType.h in Headers */,
 				C247C39B22F828E3001D2CA2 /* address-region.h in Headers */,
 				C247C33922F828E3001D2CA2 /* trace-event.h in Headers */,
@@ -2121,12 +2121,12 @@
 				C2DDEB9F229EAC8300345BFE /* Tasks.h in Headers */,
 				C247C16722F82842001D2CA2 /* libplatform.h in Headers */,
 				C247C3AA22F828E3001D2CA2 /* once.h in Headers */,
-				C247C3A822F828E3001D2CA2 /* lazy-instance.h in Headers */,
+				C247C3A822F828E3001D2CA2 /* lazy-instance.hpp in Headers */,
 				C27E5D8622F2FDDB00498ED0 /* KnownUnknownClassPair.h in Headers */,
 				C247C36922F828E3001D2CA2 /* Security.h in Headers */,
 				C247C33822F828E3001D2CA2 /* v8.h in Headers */,
 				C247C3A722F828E3001D2CA2 /* atomicops.h in Headers */,
-				C247C3A222F828E3001D2CA2 /* platform.h in Headers */,
+				C247C3A222F828E3001D2CA2 /* platform.hpp in Headers */,
 				C247C16922F82842001D2CA2 /* v8-tracing.h in Headers */,
 				C22536B7241A318900192740 /* ffitarget.h in Headers */,
 				C247C3B122F828E3001D2CA2 /* debug-interface.h in Headers */,
@@ -2780,6 +2780,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C247C36822F828E3001D2CA2 /* Console.cpp in Sources */,
+				2B8E8CED28C47EA100D6525B /* SomeSwiftClass.swift in Sources */,
 				C20AB5E626E1015300E2B41D /* OneByteStringResource.cpp in Sources */,
 				C247C36422F828E3001D2CA2 /* Log.cpp in Sources */,
 				C247C34922F828E3001D2CA2 /* v8-string-conversions.cc in Sources */,
@@ -2813,7 +2814,6 @@
 				C247C37222F828E3001D2CA2 /* Debugger.cpp in Sources */,
 				C2CC8EEA22BBA01E00B78928 /* FastEnumerationAdapter.mm in Sources */,
 				C2DDEB99229EAC8300345BFE /* Metadata.mm in Sources */,
-				2B494DE8289BE10500ADC9FC /* SomeSwiftClass.swift in Sources */,
 				C2DDEBB4229EAC8300345BFE /* DictionaryAdapter.mm in Sources */,
 				C247C34D22F828E3001D2CA2 /* v8-debugger-agent-impl.cc in Sources */,
 				C247C38322F828E3001D2CA2 /* v8-heap-profiler-agent-impl.cc in Sources */,
@@ -3105,6 +3105,7 @@
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
 				STRIP_SWIFT_SYMBOLS = NO;
+				SWIFT_VERSION = 5.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
@@ -3161,6 +3162,7 @@
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
 				STRIP_SWIFT_SYMBOLS = NO;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
@@ -3284,10 +3286,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = CHSQ3M3P37;
+				DEVELOPMENT_TEAM = UW75CQJWP6;
 				ENABLE_BITCODE = YES;
 				EXPORTED_SYMBOLS_FILE = "$(PROJECT_DIR)/TestFixtures/exported-symbols.txt";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = (
@@ -3345,10 +3350,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = CHSQ3M3P37;
+				DEVELOPMENT_TEAM = UW75CQJWP6;
 				ENABLE_BITCODE = YES;
 				EXPORTED_SYMBOLS_FILE = "$(PROJECT_DIR)/TestFixtures/exported-symbols.txt";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = (

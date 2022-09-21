@@ -43,7 +43,7 @@ class BinaryWriter: BinaryOperation {
         return offset
     }
     
-    func pushString(str: String, shouldIntern: Bool = true) -> MetaFileOffset {
+    func pushString(str: String, shouldIntern: Bool = true, name: String? = nil) -> MetaFileOffset {
         if (shouldIntern && uniqueStrings[str] != nil) {
             return uniqueStrings[str]!
         }
@@ -58,6 +58,12 @@ class BinaryWriter: BinaryOperation {
             uniqueStrings[str] = offset
         }
         
+        if let name = name {
+            print("--------")
+            print("Pushed String: \(name)\n at: \(offset)\n bytesCount: \(MemoryLayout.size(ofValue: str))")
+            print("--------")
+        }
+        
         return offset
     }
     
@@ -65,12 +71,25 @@ class BinaryWriter: BinaryOperation {
         return pushNumber(number: Int(count), bytesCount: MemoryLayout.size(ofValue: count))
     }
     
-    func pushPointer(offset: MetaFileOffset) -> MetaFileOffset {
-        return pushNumber(number: Int(offset), bytesCount: MemoryLayout.size(ofValue: offset))
+    func pushPointer(offset: MetaFileOffset, name: String? = nil) -> MetaFileOffset {
+        
+        let offset = pushNumber(number: Int(offset), bytesCount: MemoryLayout.size(ofValue: offset))
+        if let name = name {
+            print("--------")
+            print("Pushed Pointer: \(name)\n at: \(offset)\n bytesCount: \(MemoryLayout.size(ofValue: offset))")
+            print("--------")
+        }
+        return offset
     }
     
-    func pushShort(value: Int16) -> MetaFileOffset {
-        return pushNumber(number: Int(value), bytesCount: 2)
+    func pushShort(value: Int16, name: String? = nil) -> MetaFileOffset {
+        let offset = pushNumber(number: Int(value), bytesCount: 2)
+        if let name = name {
+            print("--------")
+            print("Pushed short: \(name)\n at: \(offset)\n bytesCount: 2")
+            print("--------")
+        }
+        return offset
     }
     
     func pushBinaryArray(array: [MetaFileOffset]) -> MetaFileOffset {

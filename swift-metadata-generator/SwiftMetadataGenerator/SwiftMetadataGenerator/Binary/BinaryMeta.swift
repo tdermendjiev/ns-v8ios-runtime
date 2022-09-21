@@ -39,8 +39,8 @@ class BinaryMeta: BinaryMetaProtocol {
     
     func save(writer: BinaryWriter) -> MetaFileOffset {
         let offset = writer.pushPointer(offset: self.names)
-        writer.pushPointer(offset: topLevelModule)
-        writer.pushShort(value: Int16(flags))
+        writer.pushPointer(offset: topLevelModule, name: "top level module")
+        writer.pushShort(value: Int16(flags), name: "flags")
         return offset
     }
 }
@@ -74,26 +74,33 @@ class MemberBinaryMeta: BinaryMeta {
     
 }
 
-class MethodBinaryMeta: FunctionBinaryMeta {
+class MethodBinaryMeta: MemberBinaryMeta {
+    var encoding: MetaFileOffset = 0
+    
+    override func save(writer: BinaryWriter) -> MetaFileOffset {
+        let offset = super.save(writer: writer)
+        let _ = writer.pushPointer(offset: self.encoding, name: "encoding")
+        return offset
+    }
     
 }
 
 class BaseClassBinaryMeta: BinaryMeta {
     var instanceMethods: MetaFileOffset = 0
-    var staticMethods: MetaFileOffset = 0
-    var instanceProperties: MetaFileOffset = 0
-    var staticProperties: MetaFileOffset = 0
-    var protocols: MetaFileOffset = 0
+//    var staticMethods: MetaFileOffset = 0
+//    var instanceProperties: MetaFileOffset = 0
+//    var staticProperties: MetaFileOffset = 0
+//    var protocols: MetaFileOffset = 0
     
     var initializersStartIndex: Int16 = -1
     
     override func save(writer: BinaryWriter) -> MetaFileOffset {
         let offset = super.save(writer: writer)
-        writer.pushPointer(offset: self.instanceMethods)
-        writer.pushPointer(offset: self.staticMethods)
-        writer.pushPointer(offset: self.instanceProperties)
-        writer.pushPointer(offset: self.staticProperties)
-        writer.pushPointer(offset: self.protocols)
+        writer.pushPointer(offset: self.instanceMethods, name: "instanceMethods")
+//        writer.pushPointer(offset: self.staticMethods)
+//        writer.pushPointer(offset: self.instanceProperties)
+//        writer.pushPointer(offset: self.staticProperties)
+//        writer.pushPointer(offset: self.protocols)
         writer.pushShort(value: self.initializersStartIndex)
         return offset
     }

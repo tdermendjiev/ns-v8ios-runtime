@@ -186,6 +186,7 @@ class BinarySerializer: MetaVisitor {
         if meta.getFlags(flags: .MethodIsInitializer) {
             binaryMetaStruct.flags |= BinaryFlags.MethodIsInitializer.val
         }
+        binaryMetaStruct.encoding = typEncodingSerializer.visit(types: meta.signature)
     }
     
     func serializeMember<T:BinaryMeta, M: Meta>(meta: M, binaryMetaStruct: inout T) {
@@ -232,12 +233,23 @@ class BinarySerializer: MetaVisitor {
      
         var offsets = [MetaFileOffset]()
         for method in meta.instanceMethods {
-            var binaryMeta = MethodBinaryMeta(type: .Undefined)
+            var binaryMeta = MethodBinaryMeta(type: .Method)
             self.serializeMethod(meta: method, binaryMetaStruct: &binaryMeta)
-            offsets.append(binaryMeta.save(writer: self.heapWriter))
+            let methodOffset = binaryMeta.save(writer: self.heapWriter)
+            offsets.append(methodOffset)
         }
         binaryStruct.instanceMethods = heapWriter.pushBinaryArray(array: offsets)
-        offsets = [MetaFileOffset]()
+       // offsets = [MetaFileOffset]()
+        
+        var initializersStartIndex: Int16 = -1
+        for (index, method) in meta.instanceMethods.enumerated() {
+            if (method.getFlags(flags: .MethodIsInitializer)) {
+                initializersStartIndex = Int16(index)
+                break
+            }
+        }
+        
+        binaryStruct.initializersStartIndex = initializersStartIndex
         
         
         let offset = binaryStruct.save(writer: heapWriter)
@@ -256,10 +268,10 @@ class BinarySerializer: MetaVisitor {
                 nOffsets += 1
             }
             
-            offsets[nOffsets] = Int(heapWriter.pushString(str: meta.name))
+            offsets[nOffsets] = Int(heapWriter.pushString(str: meta.name, name: "name -> \(meta.name)"))
             nOffsets += 1
             if (hasMangledName) {
-                offsets[nOffsets] = Int(heapWriter.pushString(str: meta.mangledName))
+                offsets[nOffsets] = Int(heapWriter.pushString(str: meta.mangledName, name: "mangled name -> \(meta.name)"))
                 nOffsets += 1
             }
             binaryMetaStruct.names = heapWriter.currentPosition()

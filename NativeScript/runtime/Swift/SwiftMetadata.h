@@ -16,6 +16,7 @@ namespace tns {
 // Bit indices in flags section
 enum SwiftMetaFlags {
     HasMangledName = 8
+    
 };
 
 enum SwiftMetaType {
@@ -408,18 +409,27 @@ struct SwiftMemberMeta : SwiftMeta {
 
 struct SwiftMethodMeta : SwiftMemberMeta {
     
+private:
+    SwiftPtrTo<SwiftTypeEncodingsList<ArrayCount>> _encodings;
+    //String _constructorTokens;
+public:
     bool isInitializer() const {
         return this->flag(MetaFlags::MethodIsInitializer);
+    }
+    
+    const SwiftTypeEncodingsList<ArrayCount>* encodings() const {
+     
+        return _encodings.valuePtr();
     }
 };
 
 struct SwiftBaseClassMeta : SwiftMeta {
     
-    PtrTo<ArrayOfPtrTo<SwiftMethodMeta>> instanceMethods;
-    PtrTo<ArrayOfPtrTo<SwiftMethodMeta>> staticMethods;
-    PtrTo<ArrayOfPtrTo<PropertyMeta>> instanceProps;
-    PtrTo<ArrayOfPtrTo<PropertyMeta>> staticProps;
-    PtrTo<Array<String>> protocols;
+    SwiftPtrTo<ArrayOfSwiftPtrTo<SwiftMethodMeta>> instanceMethods;
+//    SwiftPtrTo<ArrayOfPtrTo<SwiftMethodMeta>> staticMethods;
+//    SwiftPtrTo<ArrayOfPtrTo<PropertyMeta>> instanceProps;
+//    SwiftPtrTo<ArrayOfPtrTo<PropertyMeta>> staticProps;
+//    SwiftPtrTo<Array<String>> protocols;
     int16_t initializersStartIndex;
     
     std::vector<const SwiftMethodMeta*> initializers(std::vector<const SwiftMethodMeta*>& container, KnownUnknownClassPair klasses) const;
@@ -434,7 +444,7 @@ struct SwiftBaseClassMeta : SwiftMeta {
 struct SwiftClassMeta : SwiftBaseClassMeta {
     
 private:
-    String _baseName;
+    SwiftString _baseName;
 
 public:
     const char* baseName() const {

@@ -12,13 +12,13 @@ import Foundation
 //    print("The method has been called with param \(paramFloat)")
 //}
 
-func aMethod2(paramInt: Int) {
-    print("The method has been called with param \(paramInt)")
-}
-
-func method() -> String {
-    return ""
-}
+//func aMethod2(paramInt: Int) {
+//    print("The method has been called with param \(paramInt)")
+//}
+//
+//func method() -> String {
+//    return ""
+//}
 
 
 class AClass {
@@ -35,15 +35,15 @@ class AClass {
 //    }
 }
 
-class FunctionMeta {
-    
-}
-
-@objc(SomeClass)
-class SomeClass: NSObject {
-    
-}
-
-class MethodMeta: FunctionMeta {
-    
-}
+//class FunctionMeta {
+//
+//}
+//
+//@objc(SomeClass)
+//class SomeClass: NSObject {
+//
+//}
+//
+//class MethodMeta: FunctionMeta {
+//
+//}

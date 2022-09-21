@@ -25,6 +25,11 @@ class MemoryStream: Stream {
         return result
     }
     
+    func readByte(position: Int) -> __uint8_t {
+        let result = self.heap[position]
+        return result
+    }
+    
     func pushByte(b: __uint8_t) {
         heap.insert(b, at: Int(position))
         position += 1
