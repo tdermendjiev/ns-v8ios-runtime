@@ -38,7 +38,7 @@ class BinaryMeta: BinaryMetaProtocol {
     }
     
     func save(writer: BinaryWriter) -> MetaFileOffset {
-        let offset = writer.pushPointer(offset: self.names)
+        let offset = writer.pushPointer(offset: self.names, name: "names")
         writer.pushPointer(offset: topLevelModule, name: "top level module")
         writer.pushShort(value: Int16(flags), name: "flags")
         return offset

@@ -117,8 +117,30 @@ id Interop::CallSwiftInitializer(Local<Context> context, const SwiftMethodMeta* 
         return inst;
     }
     //todo: implement
+    std::string symbolName = methodMeta->mangledName();
+    void* functionPointer = SymbolLoader::instance().loadSwiftFunctionSymbol(symbolName.c_str());
+    if (functionPointer == nullptr) {
+        Log(@"Unable to load \"%s\" function", methodMeta->name());
+        return nullptr;
+    }
     
-    return nullptr;
+    int initialParameterIndex = 1;
+    int argsCount = initialParameterIndex + (int)args.Length();
+    
+    
+    const SwiftTypeEncoding* typeEncoding = methodMeta->encodings()->first();
+    //here is the initializer
+    ParametrizedCall* parametrizedCall = ParametrizedCall::Get(typeEncoding, initialParameterIndex, argsCount);
+    FFICall call(parametrizedCall);
+
+    Interop::SetValue(call.ArgumentBuffer(0), target);
+    Interop::SetFFIParams(context, typeEncoding, &call, argsCount, initialParameterIndex, args);
+
+    ffi_call(parametrizedCall->Cif, FFI_FN(functionPointer), call.ResultBuffer(), call.ArgsArray());
+
+    id result = call.GetResult<id>();
+
+    return result;
 }
 
 id Interop::CallInitializer(Local<Context> context, const MethodMeta* methodMeta, id target, Class clazz, V8Args& args) {
@@ -180,6 +202,10 @@ void Interop::WriteValue(Local<Context> context, const SwiftTypeEncoding* typeEn
         if (typeEncoding->type == SwiftBinaryTypeEncodingType::SwiftIntEncoding) {
             Interop::SetNumericValue<int>(dest, value);
         }
+    } else if (Interop::IsSwiftStringType(typeEncoding->type)) {
+        std::string str = tns::ToString(isolate, arg);
+        NSString* result = [NSString stringWithUTF8String:str.c_str()];
+        Interop::SetValue(dest, result);
     } else {
         tns::Assert(false, isolate);
     }
@@ -1311,6 +1337,11 @@ bool Interop::IsNumbericType(BinaryTypeEncodingType type) {
 bool Interop::IsNumbericType(SwiftBinaryTypeEncodingType type) {
     return
     type == SwiftBinaryTypeEncodingType::SwiftIntEncoding;
+}
+
+bool Interop::IsSwiftStringType(SwiftBinaryTypeEncodingType type) {
+    return
+    type == SwiftBinaryTypeEncodingType::SwiftStringEncoding;
 }
 
 void Interop::SetStructPropertyValue(Local<Context> context, StructWrapper* wrapper, StructField field, Local<Value> value) {

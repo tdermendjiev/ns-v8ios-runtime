@@ -220,3 +220,5 @@ __SCNVector3FromFloat3
 __SCNVector4FromFloat4
 __SCNMatrix4FromMat4
 _getStructFromCallback
+_$s10TestRunner8aMethod28paramIntySi_tF
+_$s10TestRunner6AClassC8intParam03strE0ACSi_SStcfc

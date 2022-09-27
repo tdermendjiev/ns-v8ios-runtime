@@ -13,6 +13,10 @@ ffi_type* FFICall::GetArgumentType(const SwiftTypeEncoding* typeEncoding, bool i
         case SwiftBinaryTypeEncodingType::SwiftIntEncoding: {
             return &ffi_type_sint32;
         }
+        case SwiftBinaryTypeEncodingType::SwiftStringEncoding:
+        case SwiftBinaryTypeEncodingType::SwiftInstanceTypeEncoding: {
+            return &ffi_type_pointer;
+        }
         default: {
             break;
         }

@@ -49,7 +49,7 @@ class FunctionMeta: Meta {
         
         let moduleName = MODULE_NAME
         
-        let symbolName = "g$s\(moduleName.count)\(moduleName)\(mangledName)"
+        let symbolName = "$s\(moduleName.count)\(moduleName)\(mangledName)"
         print(symbolName)
         return symbolName
     }

@@ -227,6 +227,7 @@ private:
     static v8::Local<v8::Value> CallFunctionInternal(SwiftMethodCall& methodCall);
     static bool IsNumbericType(BinaryTypeEncodingType type);
     static bool IsNumbericType(SwiftBinaryTypeEncodingType type);
+    static bool IsSwiftStringType(SwiftBinaryTypeEncodingType type);
     static v8::Local<v8::Object> GetInteropType(v8::Local<v8::Context> context, BinaryTypeEncodingType type);
     static std::vector<std::string> GetAdditionalProtocols(const TypeEncoding* typeEncoding);
 

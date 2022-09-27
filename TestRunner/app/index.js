@@ -1,6 +1,6 @@
 //var object = TNSPropertyMethodConflictClass.alloc().init()
 //let obj = new NSObject()
-let vc = new AClass(1, "2")
+let vc = new AClass(5, "2")
 console.log("DONE")
 //aMethod2(5);
 //freeFunc();

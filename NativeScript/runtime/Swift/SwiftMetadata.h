@@ -31,6 +31,8 @@ enum SwiftBinaryTypeEncodingType : uint8_t {
     SwiftVoidEncoding,
     SwiftBoolEncoding,
     SwiftIntEncoding,
+    SwiftFloatEncoding,
+    SwiftStringEncoding,
     SwiftInstanceTypeEncoding
 };
 

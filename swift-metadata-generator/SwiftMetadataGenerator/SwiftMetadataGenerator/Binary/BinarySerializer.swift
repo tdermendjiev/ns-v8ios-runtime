@@ -191,7 +191,7 @@ class BinarySerializer: MetaVisitor {
     
     func serializeMember<T:BinaryMeta, M: Meta>(meta: M, binaryMetaStruct: inout T) {
         self.serializeBase(meta: meta, binaryMetaStruct: &binaryMetaStruct)
-        binaryMetaStruct.flags &= 0b11111000; // this clears the type information written in the lower 3 bits
+        binaryMetaStruct.flags =  binaryMetaStruct.flags & 0b1111111111111000; // this clears the type information written in the lower 3 bits
     }
     
     internal func visit(meta: inout FunctionMeta) {
