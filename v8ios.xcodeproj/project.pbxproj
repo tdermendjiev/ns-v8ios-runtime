@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2B7EA6AF2353477000E5184E /* NativeScriptException.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EA6AD2353476F00E5184E /* NativeScriptException.mm */; };
 		2B7EA6B02353477000E5184E /* NativeScriptException.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B7EA6AE2353477000E5184E /* NativeScriptException.h */; };
+		2B9286952975BBB30028983C /* metadata-x86_64.bin in Resources */ = {isa = PBXBuildFile; fileRef = 2B9286922975BBB30028983C /* metadata-x86_64.bin */; };
+		2B9286962975BBB30028983C /* metadata-arm64.bin in Resources */ = {isa = PBXBuildFile; fileRef = 2B9286932975BBB30028983C /* metadata-arm64.bin */; };
+		2B9286972975BBB30028983C /* metadata-arm64e.bin in Resources */ = {isa = PBXBuildFile; fileRef = 2B9286942975BBB30028983C /* metadata-arm64e.bin */; };
 		2BB920282702FA3F006C4F9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB920272702FA3F006C4F9B /* AppDelegate.m */; };
 		2BB9202B2702FA3F006C4F9B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9202A2702FA3F006C4F9B /* SceneDelegate.m */; };
 		2BB9202E2702FA3F006C4F9B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9202D2702FA3F006C4F9B /* ViewController.m */; };
@@ -23,7 +26,6 @@
 		2BB921412703B457006C4F9B /* WebviewDispatcher.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2BB921402703B457006C4F9B /* WebviewDispatcher.mm */; };
 		5F4431F228721B5B00409C00 /* URLTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4431F128721B5B00409C00 /* URLTextFieldViewController.m */; };
 		5FD84636270C4951005AB313 /* safe_conversions_arm_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FD84635270C4951005AB313 /* safe_conversions_arm_impl.h */; };
-		5FFAB23A27A46028009A666A /* metadata-x86_64.bin in Resources */ = {isa = PBXBuildFile; fileRef = 5FFAB23927A46028009A666A /* metadata-x86_64.bin */; };
 		5FFAB24E27A828F7009A666A /* VoivodaServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5FFAB24C27A828F7009A666A /* VoivodaServer.mm */; };
 		5FFAB24F27A828F7009A666A /* VoivodaServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FFAB24D27A828F7009A666A /* VoivodaServer.h */; };
 		C205257F2577D6F900C12A5C /* NativeScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DDEB32229EAB3B00345BFE /* NativeScript.framework */; };
@@ -583,6 +585,9 @@
 /* Begin PBXFileReference section */
 		2B7EA6AD2353476F00E5184E /* NativeScriptException.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NativeScriptException.mm; sourceTree = "<group>"; };
 		2B7EA6AE2353477000E5184E /* NativeScriptException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeScriptException.h; sourceTree = "<group>"; };
+		2B9286922975BBB30028983C /* metadata-x86_64.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "metadata-x86_64.bin"; sourceTree = "<group>"; };
+		2B9286932975BBB30028983C /* metadata-arm64.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "metadata-arm64.bin"; sourceTree = "<group>"; };
+		2B9286942975BBB30028983C /* metadata-arm64e.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "metadata-arm64e.bin"; sourceTree = "<group>"; };
 		2BB920242702FA3E006C4F9B /* AppInWebview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppInWebview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB920262702FA3F006C4F9B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2BB920272702FA3F006C4F9B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -602,7 +607,6 @@
 		5F4431F128721B5B00409C00 /* URLTextFieldViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLTextFieldViewController.m; sourceTree = "<group>"; };
 		5F4431F328732D3300409C00 /* URLLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLLoader.h; sourceTree = "<group>"; };
 		5FD84635270C4951005AB313 /* safe_conversions_arm_impl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = safe_conversions_arm_impl.h; sourceTree = "<group>"; };
-		5FFAB23927A46028009A666A /* metadata-x86_64.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "metadata-x86_64.bin"; sourceTree = "<group>"; };
 		5FFAB24C27A828F7009A666A /* VoivodaServer.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = VoivodaServer.mm; sourceTree = "<group>"; };
 		5FFAB24D27A828F7009A666A /* VoivodaServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoivodaServer.h; sourceTree = "<group>"; };
 		C2003F9E23FA78CD0043B815 /* TNSDerivedClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNSDerivedClass.h; sourceTree = "<group>"; };
@@ -1195,7 +1199,9 @@
 		5FFAB23827A46002009A666A /* metadata */ = {
 			isa = PBXGroup;
 			children = (
-				5FFAB23927A46028009A666A /* metadata-x86_64.bin */,
+				2B9286932975BBB30028983C /* metadata-arm64.bin */,
+				2B9286942975BBB30028983C /* metadata-arm64e.bin */,
+				2B9286922975BBB30028983C /* metadata-x86_64.bin */,
 			);
 			path = metadata;
 			sourceTree = "<group>";
@@ -2522,7 +2528,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FFAB23A27A46028009A666A /* metadata-x86_64.bin in Resources */,
+				2B9286952975BBB30028983C /* metadata-x86_64.bin in Resources */,
+				2B9286962975BBB30028983C /* metadata-arm64.bin in Resources */,
+				2B9286972975BBB30028983C /* metadata-arm64e.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
