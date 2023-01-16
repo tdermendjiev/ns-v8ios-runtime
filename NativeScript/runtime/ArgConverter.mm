@@ -163,7 +163,7 @@ void ArgConverter::MethodCallback(ffi_cif* cif, void* retValue, void** argValues
             void* errorParam = argValues[errorParamIndex];
             NSError*__strong** outPtr = static_cast<NSError*__strong**>(errorParam);
             if (outPtr && *outPtr) {
-                NSError* error = [NSError errorWithDomain:@"TNSErrorDomain" code:164 userInfo:@{ @"TNSJavaScriptError": [NSString stringWithUTF8String:message.c_str()] }];
+                NSError* error = [NSError errorWithDomain:@"TNSErrorDomain" code:164 userInfo:@{ @"TNSJavaScriptError": tns::ToNSString(message) }];
                 **static_cast<NSError*__strong**>(outPtr) = error;
             }
         }
@@ -248,8 +248,7 @@ void ArgConverter::SetValue(Local<Context> context, void* retValue, Local<Value>
     } else if (value->IsString()) {
         if (type == BinaryTypeEncodingType::IdEncoding ||
             type == BinaryTypeEncodingType::InterfaceDeclarationReference) {
-            std::string strValue = tns::ToString(isolate, value);
-            id data = [NSString stringWithUTF8String:strValue.c_str()];
+            id data = tns::ToNSString(isolate, value);
             *(CFTypeRef*)retValue = CFBridgingRetain(data);
             return;
         }
@@ -825,12 +824,12 @@ void ArgConverter::IndexedPropertyGetterCallback(uint32_t index, const PropertyC
     }
 
     if (obj == nil || obj == [NSNull null]) {
-        args.GetReturnValue().Set(Null(isolate));
+        args.GetReturnValue().SetNull();
         return;
     }
 
     if ([obj isKindOfClass:[@YES class]]) {
-        args.GetReturnValue().Set(v8::Boolean::New(isolate, [obj boolValue]));
+        args.GetReturnValue().Set([obj boolValue]);
         return;
     }
 
@@ -859,7 +858,7 @@ void ArgConverter::IndexedPropertyGetterCallback(uint32_t index, const PropertyC
 
     if ([obj isKindOfClass:[NSNumber class]] && ![obj isKindOfClass:[NSDecimalNumber class]]) {
         double value = [obj doubleValue];
-        args.GetReturnValue().Set(Number::New(isolate, value));
+        args.GetReturnValue().Set(value);
         return;
     }
 

@@ -143,25 +143,69 @@ bool Interop::isRefTypeEqual(const TypeEncoding* typeEncoding, const char* clazz
     return n.compare(clazz) == 0;
 }
 
+// this is experimental. Maybe we can have something like this to wrap all Local<Value> to avoid extra v8 calls
+class ValueCache {
+    public:
+    enum IsOfType {
+        UNDEFINED,
+        TYPES_YES,
+        TYPE_NO
+    };
+    
+    inline bool isObject() {
+        if(this->_isObject == UNDEFINED) {
+            this->_isObject = this->_arg->IsObject() ? TYPES_YES : TYPE_NO;
+        }
+        return this->_isObject == TYPES_YES;
+    }
+    
+    inline bool isString() {
+        if(this->_isString == UNDEFINED) {
+            this->_isString = tns::IsString(this->_arg) ? TYPES_YES : TYPE_NO;
+        }
+        return this->_isString == TYPES_YES;
+    }
+    
+    inline bool isBool() {
+        if(this->_isBool == UNDEFINED) {
+            this->_isBool = tns::IsBool(this->_arg) ? TYPES_YES : TYPE_NO;
+        }
+        return this->_isBool == TYPES_YES;
+    }
+    
+    ValueCache(Local<Value>& arg) : _arg(arg) {
+        
+    };
+    
+    private:
+    Local<Value>& _arg;
+    IsOfType _isString = UNDEFINED;
+    IsOfType _isBool = UNDEFINED;
+    IsOfType _isObject = UNDEFINED;
+};
+
 void Interop::WriteValue(Local<Context> context, const TypeEncoding* typeEncoding, void* dest, Local<Value> arg) {
     Isolate* isolate = context->GetIsolate();
     ExecuteWriteValueDebugValidationsIfInDebug(context, typeEncoding, dest, arg);
+    ValueCache argHelper(arg);
     if (arg.IsEmpty() || arg->IsNullOrUndefined()) {
         ffi_type* ffiType = FFICall::GetArgumentType(typeEncoding, true);
         size_t size = ffiType->size;
         memset(dest, 0, size);
-    } else if (tns::IsBool(arg) && typeEncoding->type == BinaryTypeEncodingType::InterfaceDeclarationReference && isRefTypeEqual(typeEncoding, "NSNumber")) {
-        bool value = tns::ToBool(arg);
-        NSNumber *num = [NSNumber numberWithBool: value];
-        Interop::SetValue(dest, num);
-    } else if (tns::IsBool(arg) && typeEncoding->type == BinaryTypeEncodingType::IdEncoding) {
-        bool value = tns::ToBool(arg);
-        NSObject* o = @(value);
-        Interop::SetValue(dest, o);
-    } else if (tns::IsBool(arg)) {
-        bool value = tns::ToBool(arg);
-        Interop::SetValue(dest, value);
-    } else if (tns::IsString(arg) && typeEncoding->type == BinaryTypeEncodingType::SelectorEncoding) {
+    } else if (argHelper.isBool()) {
+        if(typeEncoding->type == BinaryTypeEncodingType::InterfaceDeclarationReference && isRefTypeEqual(typeEncoding, "NSNumber")) {
+            bool value = tns::ToBool(arg);
+            NSNumber *num = [NSNumber numberWithBool: value];
+            Interop::SetValue(dest, num);
+        } else if(typeEncoding->type == BinaryTypeEncodingType::IdEncoding) {
+            bool value = tns::ToBool(arg);
+            NSObject* o = @(value);
+            Interop::SetValue(dest, o);
+        } else {
+            bool value = tns::ToBool(arg);
+            Interop::SetValue(dest, value);
+        }
+    } else if (argHelper.isString() && typeEncoding->type == BinaryTypeEncodingType::SelectorEncoding) {
         std::string str = tns::ToString(isolate, arg);
         NSString* selStr = [NSString stringWithUTF8String:str.c_str()];
         SEL selector = NSSelectorFromString(selStr);
@@ -212,7 +256,7 @@ void Interop::WriteValue(Local<Context> context, const TypeEncoding* typeEncodin
                 tns::Assert(false, isolate);
             }
         }
-    } else if (arg->IsString() && typeEncoding->type == BinaryTypeEncodingType::UnicharEncoding) {
+    } else if (argHelper.isString() && typeEncoding->type == BinaryTypeEncodingType::UnicharEncoding) {
         v8::String::Utf8Value utf8Value(isolate, arg);
         std::vector<uint16_t> vector = tns::ToVector(*utf8Value);
         if (vector.size() > 1) {
@@ -220,9 +264,8 @@ void Interop::WriteValue(Local<Context> context, const TypeEncoding* typeEncodin
         }
         unichar c = (vector.size() == 0) ? 0 : vector[0];
         Interop::SetValue(dest, c);
-    } else if (tns::IsString(arg) && (typeEncoding->type == BinaryTypeEncodingType::InterfaceDeclarationReference || typeEncoding->type == BinaryTypeEncodingType::IdEncoding)) {
-        std::string str = tns::ToString(isolate, arg);
-        NSString* result = [NSString stringWithUTF8String:str.c_str()];
+    } else if (argHelper.isString() && (typeEncoding->type == BinaryTypeEncodingType::InterfaceDeclarationReference || typeEncoding->type == BinaryTypeEncodingType::IdEncoding)) {
+        NSString* result = tns::ToNSString(isolate, arg);
         Interop::SetValue(dest, result);
     } else if (Interop::IsNumbericType(typeEncoding->type) || tns::IsNumber(arg)) {
         double value = tns::ToNumber(isolate, arg);
@@ -337,7 +380,7 @@ void Interop::WriteValue(Local<Context> context, const TypeEncoding* typeEncodin
 
             Interop::SetValue(dest, data);
         }
-    } else if (arg->IsObject() && typeEncoding->type == BinaryTypeEncodingType::FunctionPointerEncoding) {
+    } else if (argHelper.isObject() && typeEncoding->type == BinaryTypeEncodingType::FunctionPointerEncoding) {
         BaseDataWrapper* wrapper = tns::GetValue(isolate, arg.As<Object>());
         tns::Assert(wrapper != nullptr, isolate);
         if (wrapper->Type() == WrapperType::Pointer) {
@@ -387,7 +430,7 @@ void Interop::WriteValue(Local<Context> context, const TypeEncoding* typeEncodin
         }
 
         Interop::SetValue(dest, blockPtr);
-    } else if (arg->IsObject() && typeEncoding->type == BinaryTypeEncodingType::StructDeclarationReference) {
+    } else if (argHelper.isObject() && typeEncoding->type == BinaryTypeEncodingType::StructDeclarationReference) {
         Local<Object> obj = arg.As<Object>();
         BaseDataWrapper* wrapper = tns::GetValue(isolate, arg);
         if (wrapper != nullptr) {
@@ -414,7 +457,7 @@ void Interop::WriteValue(Local<Context> context, const TypeEncoding* typeEncodin
             StructInfo structInfo = FFICall::GetStructInfo(structMeta);
             Interop::InitializeStruct(context, dest, structInfo.Fields(), obj);
         }
-    } else if (arg->IsObject() && typeEncoding->type == BinaryTypeEncodingType::AnonymousStructEncoding) {
+    } else if (argHelper.isObject() && typeEncoding->type == BinaryTypeEncodingType::AnonymousStructEncoding) {
         Local<Object> obj = arg.As<Object>();
         BaseDataWrapper* wrapper = tns::GetValue(isolate, arg);
         if (wrapper != nullptr && wrapper->Type() == WrapperType::Struct) {
@@ -443,7 +486,7 @@ void Interop::WriteValue(Local<Context> context, const TypeEncoding* typeEncodin
         ObjCProtocolWrapper* protoWrapper = static_cast<ObjCProtocolWrapper*>(wrapper);
         Protocol* proto = protoWrapper->Proto();
         Interop::SetValue(dest, proto);
-    } else if (arg->IsObject() && typeEncoding->type == BinaryTypeEncodingType::ClassEncoding) {
+    } else if (argHelper.isObject() && typeEncoding->type == BinaryTypeEncodingType::ClassEncoding) {
         Local<Object> obj = arg.As<Object>();
         BaseDataWrapper* wrapper = tns::GetValue(isolate, obj);
         tns::Assert(wrapper != nullptr && wrapper->Type() == WrapperType::ObjCClass, isolate);
@@ -485,7 +528,7 @@ void Interop::WriteValue(Local<Context> context, const TypeEncoding* typeEncodin
             void* data = Reference::GetWrappedPointer(context, arg, typeEncoding);
             Interop::SetValue(dest, data);
         }
-    } else if (arg->IsObject()) {
+    } else if (argHelper.isObject()) {
         Local<Object> obj = arg.As<Object>();
         BaseDataWrapper* wrapper = tns::GetValue(isolate, obj);
 
@@ -559,8 +602,7 @@ id Interop::ToObject(Local<Context> context, v8::Local<v8::Value> arg) {
     if (arg.IsEmpty() || arg->IsNullOrUndefined()) {
         return nil;
     } else if (tns::IsString(arg)) {
-        std::string value = tns::ToString(isolate, arg);
-        NSString* result = [NSString stringWithUTF8String:value.c_str()];
+        NSString* result = tns::ToNSString(isolate, arg);
         return result;
     } else if (tns::IsNumber(arg)) {
         double value = tns::ToNumber(isolate, arg);
@@ -1048,8 +1090,7 @@ Local<Value> Interop::GetResult(Local<Context> context, const TypeEncoding* type
 
             if (marshalToPrimitive) {
                 // Convert NSString instances to javascript strings for all instance method calls
-                const char* str = [result UTF8String];
-                return tns::ToV8String(isolate, str);
+                return tns::ToV8String(isolate, result);
             }
         }
 
@@ -1369,21 +1410,19 @@ Local<v8::Array> Interop::ToArray(Local<Object> object) {
 }
 
 SEL Interop::GetSwizzledMethodSelector(SEL selector) {
-    static robin_hood::unordered_map<SEL, SEL> *swizzledMethodSelectorCache = new robin_hood::unordered_map<SEL, SEL>();
-
-    SEL swizzledMethodSelector = NULL;
+    static robin_hood::unordered_map<SEL, SEL> swizzledMethodSelectorCache;
+    static SpinMutex p;
+    SpinLock lock(p);
     
-    try {
-        swizzledMethodSelector = swizzledMethodSelectorCache->at(selector);
-    } catch(const std::out_of_range&) {
-        // ignore...
+    auto it = swizzledMethodSelectorCache.find(selector);
+    if (it != swizzledMethodSelectorCache.end()) {
+        return it->second;
     }
+    SEL swizzledMethodSelector = NULL;
 
-    if(!swizzledMethodSelector) {
-        swizzledMethodSelector = sel_registerName((Constants::SwizzledPrefix + std::string(sel_getName(selector))).c_str());
-        // save to cache
-        swizzledMethodSelectorCache->emplace(selector, swizzledMethodSelector);
-    }
+    swizzledMethodSelector = sel_registerName((Constants::SwizzledPrefix + std::string(sel_getName(selector))).c_str());
+    // save to cache
+    swizzledMethodSelectorCache.emplace(selector, swizzledMethodSelector);
     
     return swizzledMethodSelector;
 }

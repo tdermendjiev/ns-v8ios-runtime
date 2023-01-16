@@ -127,7 +127,7 @@ void Reference::GetValueCallback(Local<v8::Name> name, const PropertyCallbackInf
     Local<Context> context = isolate->GetCurrentContext();
     Local<Value> result = Reference::GetReferredValue(context, info.This());
     if (result.IsEmpty()) {
-        info.GetReturnValue().Set(v8::Undefined(isolate));
+        info.GetReturnValue().SetUndefined();
     } else {
         info.GetReturnValue().Set(result);
     }
@@ -295,9 +295,9 @@ void Reference::RegisterToStringMethod(Local<Context> context, Local<Object> pro
 
         char buffer[100];
         if (value == nullptr) {
-            sprintf(buffer, "<Reference: %p>", reinterpret_cast<void*>(0));
+            snprintf(buffer, 100, "<Reference: %p>", reinterpret_cast<void*>(0));
         } else {
-            sprintf(buffer, "<Reference: %p>", value);
+            snprintf(buffer, 100, "<Reference: %p>", value);
         }
 
         Local<v8::String> result = tns::ToV8String(isolate, buffer);

@@ -41,7 +41,7 @@ void ExtVector::IndexedPropertyGetCallback(uint32_t index, const PropertyCallbac
     ffi_type* ffiType = extVectorWrapper->FFIType();
     if (offset >= ffiType->size) {
         // Trying to access an element outside of the vector size
-        info.GetReturnValue().Set(v8::Undefined(isolate));
+        info.GetReturnValue().SetUndefined();
         return;
     }
 
@@ -80,7 +80,7 @@ void ExtVector::RegisterToStringMethod(Isolate* isolate, Local<ObjectTemplate> p
         void* value = wrapper->Data();
 
         char buffer[100];
-        sprintf(buffer, "<Vector: %p>", value);
+        snprintf(buffer, 100, "<Vector: %p>", value);
 
         Local<v8::String> result = tns::ToV8String(isolate, buffer);
         info.GetReturnValue().Set(result);
