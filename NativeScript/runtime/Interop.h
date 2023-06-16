@@ -27,7 +27,8 @@ struct MethodCall {
         bool provideErrorOutParameter,
         bool ownsReturnedObject,
         bool returnsUnmanaged,
-        bool isInitializer)
+        bool isInitializer,
+        bool isSwiftMethod = false)
         : context_(context),
           isPrimitiveFunction_(isPrimitiveFunction),
           functionPointer_(functionPointer),
@@ -41,7 +42,8 @@ struct MethodCall {
           provideErrorOutParameter_(provideErrorOutParameter),
           ownsReturnedObject_(ownsReturnedObject),
           returnsUnmanaged_(returnsUnmanaged),
-          isInitializer_(isInitializer) {
+          isInitializer_(isInitializer),
+          isSwiftMethod_(isSwiftMethod){
     }
 
     v8::Local<v8::Context> context_;
@@ -58,6 +60,35 @@ struct MethodCall {
     bool ownsReturnedObject_;
     bool returnsUnmanaged_;
     bool isInitializer_;
+    bool isSwiftMethod_;
+};
+
+struct SwiftMethodCall: MethodCall {
+    SwiftMethodCall(
+        v8::Local<v8::Context> context,
+        void* functionPointer,
+        const TypeEncoding* typeEncoding,
+        V8Args& args,
+        id target,
+        bool ownsReturnedObject,
+        bool returnsUnmanaged)
+        : MethodCall(
+            context,
+            true,
+            functionPointer,
+            typeEncoding,
+            args,
+            target,
+            nil,
+            nil,
+            false,
+            MetaType::Undefined,
+            false,
+            ownsReturnedObject,
+            returnsUnmanaged,
+            false,
+            true) {
+    }
 };
 
 struct CMethodCall: MethodCall {
@@ -116,10 +147,12 @@ class Interop {
 public:
     static void RegisterInteropTypes(v8::Local<v8::Context> context);
     static IMP CreateMethod(const uint8_t initialParamIndex, const uint8_t argsCount, const TypeEncoding* typeEncoding, FFIMethodCallback callback, void* userData);
+    static id CallSwiftInitializer(v8::Local<v8::Context> context, const FunctionMeta* functionMeta, id target, V8Args& args);
     static id CallInitializer(v8::Local<v8::Context> context, const MethodMeta* methodMeta, id target, Class clazz, V8Args& args);
     static v8::Local<v8::Value> CallFunction(ObjCMethodCall& methodCall);
     static v8::Local<v8::Value> CallFunction(CMethodCall& methodCall);
-    static v8::Local<v8::Value> GetResult(v8::Local<v8::Context> context, const TypeEncoding* typeEncoding, BaseCall* call, bool marshalToPrimitive, std::shared_ptr<v8::Persistent<v8::Value>> parentStruct = nullptr, bool isStructMember = false, bool ownsReturnedObject = false, bool returnsUnmanaged = false, bool isInitializer = false);
+    static v8::Local<v8::Value> CallFunction(SwiftMethodCall& methodCall);
+    static v8::Local<v8::Value> GetResult(v8::Local<v8::Context> context, const TypeEncoding* typeEncoding, BaseCall* call, bool marshalToPrimitive, std::shared_ptr<v8::Persistent<v8::Value>> parentStruct = nullptr, bool isStructMember = false, bool ownsReturnedObject = false, bool returnsUnmanaged = false, bool isInitializer = false, bool isSwiftMethod = false);
     static void SetStructPropertyValue(v8::Local<v8::Context> context, StructWrapper* wrapper, StructField field, v8::Local<v8::Value> value);
     static void InitializeStruct(v8::Local<v8::Context> context, void* destBuffer, std::vector<StructField> fields, v8::Local<v8::Value> inititalizer);
     static void WriteValue(v8::Local<v8::Context> context, const TypeEncoding* typeEncoding, void* dest, v8::Local<v8::Value> arg);

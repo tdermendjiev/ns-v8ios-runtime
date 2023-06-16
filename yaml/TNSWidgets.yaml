@@ -1,0 +1,111 @@
+---
+Module:
+  FullName:        TNSWidgets
+  IsPartOfFramework: true
+  IsSystemModule:  false
+  Libraries:
+    - Library:         TNSWidgets
+      IsFramework:     true
+Items:
+  - Name:            TNSLabel
+    JsName:          TNSLabel
+    Filename:        '/Users/teodordermendzhiev/workspace/ns-v8ios-runtime/build/Debug-iphonesimulator/TNSWidgets.framework/Headers/TNSLabel.h'
+    Module:
+      FullName:        TNSWidgets.TNSLabel
+      IsPartOfFramework: true
+      IsSystemModule:  false
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Interface
+    InstanceMethods: []
+    StaticMethods:   []
+    InstanceProperties:
+      - Name:            borderThickness
+        JsName:          borderThickness
+        Filename:        '/Users/teodordermendzhiev/workspace/ns-v8ios-runtime/build/Debug-iphonesimulator/TNSWidgets.framework/Headers/TNSLabel.h'
+        Module:
+          FullName:        TNSWidgets.TNSLabel
+          IsPartOfFramework: true
+          IsSystemModule:  false
+          Libraries:       []
+        Flags:           [ IsIosAppExtensionAvailable ]
+        Type:            Property
+        Getter:
+          Name:            borderThickness
+          JsName:          borderThickness
+          Filename:        '/Users/teodordermendzhiev/workspace/ns-v8ios-runtime/build/Debug-iphonesimulator/TNSWidgets.framework/Headers/TNSLabel.h'
+          Module:
+            FullName:        TNSWidgets.TNSLabel
+            IsPartOfFramework: true
+            IsSystemModule:  false
+            Libraries:       []
+          Flags:           [ IsIosAppExtensionAvailable ]
+          Type:            Method
+          Signature:
+            - Type:            Int
+        Setter:
+          Name:            'setBorderThickness:'
+          JsName:          setBorderThickness
+          Filename:        '/Users/teodordermendzhiev/workspace/ns-v8ios-runtime/build/Debug-iphonesimulator/TNSWidgets.framework/Headers/TNSLabel.h'
+          Module:
+            FullName:        TNSWidgets.TNSLabel
+            IsPartOfFramework: true
+            IsSystemModule:  false
+            Libraries:       []
+          Flags:           [ IsIosAppExtensionAvailable ]
+          Type:            Method
+          Signature:
+            - Type:            Void
+            - Type:            Int
+      - Name:            padding
+        JsName:          padding
+        Filename:        '/Users/teodordermendzhiev/workspace/ns-v8ios-runtime/build/Debug-iphonesimulator/TNSWidgets.framework/Headers/TNSLabel.h'
+        Module:
+          FullName:        TNSWidgets.TNSLabel
+          IsPartOfFramework: true
+          IsSystemModule:  false
+          Libraries:       []
+        Flags:           [ IsIosAppExtensionAvailable ]
+        Type:            Property
+        Getter:
+          Name:            padding
+          JsName:          padding
+          Filename:        '/Users/teodordermendzhiev/workspace/ns-v8ios-runtime/build/Debug-iphonesimulator/TNSWidgets.framework/Headers/TNSLabel.h'
+          Module:
+            FullName:        TNSWidgets.TNSLabel
+            IsPartOfFramework: true
+            IsSystemModule:  false
+            Libraries:       []
+          Flags:           [ IsIosAppExtensionAvailable ]
+          Type:            Method
+          Signature:
+            - Type:            Int
+        Setter:
+          Name:            'setPadding:'
+          JsName:          setPadding
+          Filename:        '/Users/teodordermendzhiev/workspace/ns-v8ios-runtime/build/Debug-iphonesimulator/TNSWidgets.framework/Headers/TNSLabel.h'
+          Module:
+            FullName:        TNSWidgets.TNSLabel
+            IsPartOfFramework: true
+            IsSystemModule:  false
+            Libraries:       []
+          Flags:           [ IsIosAppExtensionAvailable ]
+          Type:            Method
+          Signature:
+            - Type:            Void
+            - Type:            Int
+    StaticProperties: []
+    Protocols:       []
+  - Name:            __tns_uptime
+    JsName:          __tns_uptime
+    Filename:        '/Users/teodordermendzhiev/workspace/ns-v8ios-runtime/build/Debug-iphonesimulator/TNSWidgets.framework/Headers/TNSProcess.h'
+    Module:
+      FullName:        TNSWidgets.TNSProcess
+      IsPartOfFramework: true
+      IsSystemModule:  false
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Double
+...

@@ -1,0 +1,56 @@
+---
+Module:
+  FullName:        AudioToolbox
+  IsPartOfFramework: true
+  IsSystemModule:  true
+  Libraries:
+    - Library:         AudioToolbox
+      IsFramework:     true
+Items:
+  - Name:            CopyInstrumentInfoFromSoundBank
+    JsName:          CopyInstrumentInfoFromSoundBank
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.h'
+    Module:
+      FullName:        AudioToolbox
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:
+        - Library:         AudioToolbox
+          IsFramework:     true
+    IntroducedIn:    7.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            BridgedInterface
+        Name:            NSURL
+        BridgedTo:       NSObject
+      - Type:            Pointer
+        PointerType:
+          Type:            BridgedInterface
+          Name:            NSArray
+          BridgedTo:       NSObject
+  - Name:            CopyNameFromSoundBank
+    JsName:          CopyNameFromSoundBank
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.h'
+    Module:
+      FullName:        AudioToolbox
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:
+        - Library:         AudioToolbox
+          IsFramework:     true
+    IntroducedIn:    7.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            BridgedInterface
+        Name:            NSURL
+        BridgedTo:       NSObject
+      - Type:            Pointer
+        PointerType:
+          Type:            BridgedInterface
+          Name:            NSString
+          BridgedTo:       NSObject
+...

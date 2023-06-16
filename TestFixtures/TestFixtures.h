@@ -25,3 +25,5 @@
 
 #import "TNSTestCommon.h"
 #import "TNSTestNativeCallbacks.h"
+#import "AClass.h"
+

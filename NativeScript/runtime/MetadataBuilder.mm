@@ -371,7 +371,13 @@ Local<FunctionTemplate> MetadataBuilder::GetOrCreateConstructorFunctionTemplateI
             SymbolLoader::instance().ensureModule(meta->topLevelModule());
             klass = objc_getClass(meta->name());
         }
-        tns::SetValue(isolate, ctorFunc, new ObjCClassWrapper(klass));
+        
+        if (klass == nil) {
+            tns::SetValue(isolate, ctorFunc, new SwiftClassWrapper(meta->name()));
+        } else {
+            tns::SetValue(isolate, ctorFunc, new ObjCClassWrapper(klass));
+        }
+        
         cache->CtorFuncs.emplace(meta->name(), std::make_unique<Persistent<v8::Function>>(isolate, ctorFunc));
     }
     ObjectManager::Register(context, ctorFunc);
@@ -408,7 +414,9 @@ void MetadataBuilder::ToStringFunctionCallback(const FunctionCallbackInfo<Value>
     Isolate* isolate = info.GetIsolate();
     Local<Object> thiz = info.This();
     BaseDataWrapper* wrapper = tns::GetValue(isolate, thiz);
+    
 
+    //TODO: add WrapperType::SwiftObject
     if (wrapper == nullptr || wrapper->Type() != WrapperType::ObjCObject) {
         info.GetReturnValue().Set(thiz);
         return;
@@ -665,7 +673,15 @@ void MetadataBuilder::MethodCallback(const FunctionCallbackInfo<Value>& info) {
     if (thiz->IsFunction()) {
         if (BaseDataWrapper* wrapper = tns::GetValue(isolate, thiz)) {
             ObjCClassWrapper* classWrapper = static_cast<ObjCClassWrapper*>(wrapper);
-            className = class_getName(classWrapper->Klass());
+            SwiftClassWrapper* swiftWrapper = static_cast<SwiftClassWrapper*>(wrapper);
+            
+            if (wrapper->Type() == WrapperType::SwiftClass) {
+                printf("%s", swiftWrapper->className().c_str());
+            } else {
+                className = class_getName(classWrapper->Klass());
+            }
+            
+            
         }
     }
 

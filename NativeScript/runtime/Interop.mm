@@ -101,6 +101,35 @@ Local<Value> Interop::CallFunction(ObjCMethodCall& methodCall) {
     return Interop::CallFunctionInternal(methodCall);
 }
 
+Local<Value> Interop::CallFunction(SwiftMethodCall& methodCall) {
+    return Interop::CallFunctionInternal(methodCall);
+}
+
+id Interop::CallSwiftInitializer(Local<Context> context, const FunctionMeta* functionMeta, id target, V8Args& args) {
+    
+    
+    return nullptr;
+//    const TypeEncoding* typeEncoding = functionMeta->encodings()->first();
+//    SEL selector = functionMeta->selector();
+//    void* functionPointer = (void*)objc_msgSend;
+//
+//    int initialParameterIndex = 2;
+//    int argsCount = initialParameterIndex + (int)args.Length();
+//
+//    ParametrizedCall* parametrizedCall = ParametrizedCall::Get(typeEncoding, initialParameterIndex, argsCount);
+//    FFICall call(parametrizedCall);
+//
+//    Interop::SetValue(call.ArgumentBuffer(0), target);
+//    Interop::SetValue(call.ArgumentBuffer(1), selector);
+//    Interop::SetFFIParams(context, typeEncoding, &call, argsCount, initialParameterIndex, args);
+//
+//    ffi_call(parametrizedCall->Cif, FFI_FN(functionPointer), call.ResultBuffer(), call.ArgsArray());
+//
+//    id result = call.GetResult<id>();
+//
+//    return result;
+}
+
 id Interop::CallInitializer(Local<Context> context, const MethodMeta* methodMeta, id target, Class clazz, V8Args& args) {
     const TypeEncoding* typeEncoding = methodMeta->encodings()->first();
     SEL selector = methodMeta->selector();
@@ -803,7 +832,7 @@ void Interop::SetStructValue(Local<Value> value, void* destBuffer, ptrdiff_t pos
     *static_cast<T*>((void*)((uint8_t*)destBuffer + position)) = result;
 }
 
-Local<Value> Interop::GetResult(Local<Context> context, const TypeEncoding* typeEncoding, BaseCall* call, bool marshalToPrimitive, std::shared_ptr<Persistent<Value>> parentStruct, bool isStructMember, bool ownsReturnedObject, bool returnsUnmanaged, bool isInitializer) {
+Local<Value> Interop::GetResult(Local<Context> context, const TypeEncoding* typeEncoding, BaseCall* call, bool marshalToPrimitive, std::shared_ptr<Persistent<Value>> parentStruct, bool isStructMember, bool ownsReturnedObject, bool returnsUnmanaged, bool isInitializer, bool isSwiftMethod) {
     Isolate* isolate = context->GetIsolate();
 
     if (returnsUnmanaged) {
@@ -1123,7 +1152,15 @@ Local<Value> Interop::GetResult(Local<Context> context, const TypeEncoding* type
         // because class_getSuperclass will directly return NSProxy and thus missing to attach all instance members
         const TypeEncoding* te = [result isProxy] ? typeEncoding : nullptr;
 
+        //TODO: here we should create the swiftdatawrapper
         ObjCDataWrapper* wrapper = new ObjCDataWrapper(result, te);
+        if (isSwiftMethod) {
+            SwiftDataWrapper* swiftWrapper = new SwiftDataWrapper(wrapper->Data(), wrapper->TypeEncoding());
+            std::vector<std::string> additionalProtocols = Interop::GetAdditionalProtocols(typeEncoding);
+            Local<Value> jsResult = ArgConverter::ConvertArgument(context, swiftWrapper, false, additionalProtocols);
+            return jsResult;
+        }
+        
         std::vector<std::string> additionalProtocols = Interop::GetAdditionalProtocols(typeEncoding);
         Local<Value> jsResult = ArgConverter::ConvertArgument(context, wrapper, false, additionalProtocols);
 
@@ -1444,6 +1481,10 @@ SEL Interop::GetSwizzledMethodSelector(SEL selector) {
 
 Local<Value> Interop::CallFunctionInternal(MethodCall& methodCall) {
     int initialParameterIndex = methodCall.isPrimitiveFunction_ ? 0 : 2;
+    
+    if (methodCall.isSwiftMethod_) {
+        initialParameterIndex = 1;
+    }
 
     int argsCount = initialParameterIndex + (int)methodCall.args_.Length();
     int cifArgsCount = methodCall.provideErrorOutParameter_ ? argsCount + 1 : argsCount;
@@ -1456,7 +1497,7 @@ Local<Value> Interop::CallFunctionInternal(MethodCall& methodCall) {
 
     bool isInstanceMethod = (methodCall.target_ && methodCall.target_ != nil);
 
-    if (initialParameterIndex > 1) {
+    if (initialParameterIndex > 1 || methodCall.isSwiftMethod_) {
 #if defined(__x86_64__)
         if (methodCall.metaType_ == MetaType::Undefined || methodCall.metaType_ == MetaType::Union || methodCall.metaType_ == MetaType::Struct) {
             const unsigned UNIX64_FLAG_RET_IN_MEM = (1 << 10);
@@ -1493,7 +1534,10 @@ Local<Value> Interop::CallFunctionInternal(MethodCall& methodCall) {
             Interop::SetValue(call.ArgumentBuffer(0), methodCall.clazz_);
         }
 
-        Interop::SetValue(call.ArgumentBuffer(1), selector);
+        if (!methodCall.isSwiftMethod_) {
+            Interop::SetValue(call.ArgumentBuffer(1), selector);
+        }
+        
     }
 
     bool isInstanceReturnType = methodCall.typeEncoding_->type == BinaryTypeEncodingType::InstanceTypeEncoding;
@@ -1533,7 +1577,8 @@ Local<Value> Interop::CallFunctionInternal(MethodCall& methodCall) {
         false,
         methodCall.ownsReturnedObject_,
         methodCall.returnsUnmanaged_,
-        methodCall.isInitializer_);
+        methodCall.isInitializer_,
+        methodCall.isSwiftMethod_);
 
     return result;
 }

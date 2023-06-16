@@ -7,6 +7,9 @@
 #include "Caches.h"
 #include "DataWrapper.h"
 #include "IsolateWrapper.h"
+#include "Interop.h"
+
+using namespace std;
 
 namespace tns {
 
@@ -46,15 +49,18 @@ private:
     static v8::Local<v8::Function> CreateEmptyInstanceFunction(v8::Local<v8::Context> context, v8::GenericNamedPropertyGetterCallback propertyGetter = nullptr, v8::GenericNamedPropertySetterCallback propertySetter = nullptr);
     static std::shared_ptr<v8::Persistent<v8::Value>> CreateEmptyInstance(v8::Local<v8::Context> context, v8::Persistent<v8::Function>* ctorFunc, bool skipGCRegistration = false);
     static void FindMethodOverloads(Class klass, std::string methodName, MemberType type, std::vector<const MethodMeta*>& overloads);
-    static const MethodMeta* FindInitializer(v8::Local<v8::Context> context, Class klass, const InterfaceMeta* interfaceMeta, const v8::FunctionCallbackInfo<v8::Value>& info, std::vector<v8::Local<v8::Value>>& args);
+    static const FunctionMeta* FindSwiftInitializer(v8::Local<v8::Context> context, const InterfaceMeta* interfaceMeta, const v8::FunctionCallbackInfo<v8::Value>& info, std::vector<v8::Local<v8::Value>>& args);
+    static const MethodMeta* FindInitializer(v8::Local<v8::Context> context, Class klass, const InterfaceMeta* interfaceMeta, const v8::FunctionCallbackInfo<v8::Value>& info, std::vector<v8::Local<v8::Value>>& args); //TODO: refactor
     static bool CanInvoke(v8::Local<v8::Context> context, const TypeEncoding* typeEncoding, v8::Local<v8::Value> arg);
     static bool CanInvoke(v8::Local<v8::Context> context, const MethodMeta* candidate, const v8::FunctionCallbackInfo<v8::Value>& info);
     static std::vector<v8::Local<v8::Value>> GetInitializerArgs(v8::Local<v8::Object> obj, std::string& constructorTokens);
     static void IndexedPropertyGetterCallback(uint32_t index, const v8::PropertyCallbackInfo<v8::Value>& args);
     static void IndexedPropertySetterCallback(uint32_t index, v8::Local<v8::Value> value, const v8::PropertyCallbackInfo<v8::Value>& args);
     static bool IsErrorOutParameter(const TypeEncoding* typeEncoding);
+    static std::vector<const FunctionMeta*> GetSwiftInitializers(Caches* cache, const InterfaceMeta* interfaceMeta, const char* methodName);
     static std::vector<const MethodMeta*> GetInitializers(Caches* cache, Class klass, const InterfaceMeta* interfaceMeta);
     static void MethodCallbackInternal(ffi_cif* cif, void* retValue, void** argValues, void* userData);
+    static SwiftMethodCall getSwiftMethodCall(v8::Local<v8::Context> context, const MethodMeta* meta, id instance, V8Args& args);
 };
 
 }

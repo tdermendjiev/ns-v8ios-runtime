@@ -1,0 +1,93 @@
+---
+Module:
+  FullName:        networkext
+  IsPartOfFramework: false
+  IsSystemModule:  true
+  Libraries:       []
+Items:
+  - Name:            NE_SOCKET_ATTRIBUTION_DEVELOPER
+    JsName:          NE_SOCKET_ATTRIBUTION_DEVELOPER
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/networkext/ne_socket.h'
+    Module:
+      FullName:        networkext.ne_socket
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1'
+  - Name:            NE_SOCKET_ATTRIBUTION_USER
+    JsName:          NE_SOCKET_ATTRIBUTION_USER
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/networkext/ne_socket.h'
+    Module:
+      FullName:        networkext.ne_socket
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '2'
+  - Name:            ne_socket_attribution_t
+    JsName:          ne_socket_attribution_t
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/networkext/ne_socket.h'
+    Module:
+      FullName:        networkext.ne_socket
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Enum
+    FullNameFields:
+      - NE_SOCKET_ATTRIBUTION_DEVELOPER: '1'
+      - NE_SOCKET_ATTRIBUTION_USER: '2'
+    SwiftNameFields: []
+  - Name:            ne_socket_set_attribution
+    JsName:          ne_socket_set_attribution
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/networkext/ne_socket.h'
+    Module:
+      FullName:        networkext.ne_socket
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    15.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Int
+      - Type:            Enum
+        Name:            ne_socket_attribution_t
+  - Name:            ne_socket_set_domains
+    JsName:          ne_socket_set_domains
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/networkext/ne_socket.h'
+    Module:
+      FullName:        networkext.ne_socket
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    15.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            CString
+      - Type:            Int
+  - Name:            ne_socket_set_website_attribution
+    JsName:          ne_socket_set_website_attribution
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/networkext/ne_socket.h'
+    Module:
+      FullName:        networkext.ne_socket
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    15.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Int
+      - Type:            CString
+...

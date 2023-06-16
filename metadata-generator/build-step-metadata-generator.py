@@ -146,6 +146,8 @@ def generate_metadata(arch):
       generator_call.extend(["-target", "{}-{}-{}{}".format(arch, llvm_target_triple_vendor, llvm_target_triple_os_version, llvm_target_triple_suffix)])
 
     generator_call.extend(header_search_paths_parsed)  # HEADER_SEARCH_PATHS
+    print("HSP")
+    print(header_search_paths_parsed)
     generator_call.extend(framework_search_paths_parsed)  # FRAMEWORK_SEARCH_PATHS
     generator_call.extend(other_cflags_parsed)  # OTHER_CFLAGS
     generator_call.extend(preprocessor_defs_parsed)  # GCC_PREPROCESSOR_DEFINITIONS
@@ -153,6 +155,8 @@ def generate_metadata(arch):
     if enable_modules:
         # -I. is needed for includes coming from clang's lib/clang/<version>/include/ directory when parsing modules
         generator_call.extend(["-I.", "-fmodules"])
+
+        
 
     child_process = subprocess.Popen(generator_call, stderr=subprocess.PIPE, universal_newlines=True)
     sys.stdout.flush()

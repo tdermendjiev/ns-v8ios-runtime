@@ -34,6 +34,8 @@ enum class WrapperType {
     ExtVector = 1 << 18,
     Worker = 1 << 19,
     UnmanagedType = 1 << 20,
+    SwiftObject = 1 << 21,
+    SwiftClass = 1 << 22,
 };
 
 struct V8Args {
@@ -468,6 +470,28 @@ private:
     const tns::TypeEncoding* typeEncoding_;
 };
 
+class SwiftDataWrapper: public BaseDataWrapper {
+public:
+    SwiftDataWrapper(void* data, const TypeEncoding* typeEncoding = nullptr)
+        : data_(data), typeEncoding_(typeEncoding) {
+    }
+
+    const WrapperType Type() {
+        return WrapperType::SwiftObject;
+    }
+
+    void* Data() {
+        return this->data_;
+    }
+
+    const TypeEncoding* TypeEncoding() {
+        return this->typeEncoding_;
+    }
+private:
+    void* data_;
+    const tns::TypeEncoding* typeEncoding_;
+};
+
 class ObjCClassWrapper: public BaseDataWrapper {
 public:
     ObjCClassWrapper(Class klazz, bool extendedClass = false)
@@ -488,6 +512,29 @@ public:
     }
 private:
     Class klass_;
+    bool extendedClass_;
+};
+
+class SwiftClassWrapper: public BaseDataWrapper {
+public:
+    SwiftClassWrapper(std::string className, bool extendedClass = false)
+        : className_(className),
+          extendedClass_(extendedClass) {
+    }
+
+    const WrapperType Type() {
+        return WrapperType::SwiftClass;
+    }
+
+    std::string className() {
+        return this->className_;
+    }
+
+    bool ExtendedClass() {
+        return this->extendedClass_;
+    }
+private:
+    std::string className_;
     bool extendedClass_;
 };
 

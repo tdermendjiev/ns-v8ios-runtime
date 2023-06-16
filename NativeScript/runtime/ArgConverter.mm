@@ -4,9 +4,11 @@
 #include "NativeScriptException.h"
 #include "DictionaryAdapter.h"
 #include "ObjectManager.h"
-#include "Interop.h"
 #include "Helpers.h"
 #include "Runtime.h"
+
+#include "MetadataBuilder.h"
+#include "SymbolLoader.h"
 
 using namespace v8;
 using namespace std;
@@ -42,6 +44,14 @@ Local<Value> ArgConverter::Invoke(Local<Context> context, Class klass, Local<Obj
             auto it = cache->ClassPrototypes.find(className);
             // For extended classes we will call the base method
             callSuper = isMethodCallback && it != cache->ClassPrototypes.end();
+        } else if (wrapper->Type() == WrapperType::SwiftObject || wrapper->Type() == WrapperType::SwiftClass) {
+            SwiftDataWrapper* swiftWrapper = static_cast<SwiftDataWrapper*>(wrapper);
+
+            id instance = (id)swiftWrapper->Data();
+            
+            SwiftMethodCall methodCall = ArgConverter::getSwiftMethodCall(context, meta, instance, args);
+            return Interop::CallFunction(methodCall);
+            
         } else {
             tns::Assert(false, isolate);
         }
@@ -74,8 +84,38 @@ Local<Value> ArgConverter::Invoke(Local<Context> context, Class klass, Local<Obj
         throw NativeScriptException(errorMessage);
     }
 
-    ObjCMethodCall methodCall(context, meta, target, klass, args, callSuper);
-    return Interop::CallFunction(methodCall);
+    if (klass == nullptr) {
+        SwiftMethodCall methodCall = ArgConverter::getSwiftMethodCall(context, meta, nullptr, args);
+        return Interop::CallFunction(methodCall);
+    } else {
+        ObjCMethodCall methodCall(context, meta, target, klass, args, callSuper);
+        return Interop::CallFunction(methodCall);
+    }
+    
+    
+}
+
+SwiftMethodCall ArgConverter::getSwiftMethodCall(Local<Context> context, const MethodMeta* meta, id instance, V8Args& args) {
+    Isolate* isolate = context->GetIsolate();
+    string metaName = meta->name();
+    string symbolName = "LCManager_" + metaName;
+    void* functionPointer = SymbolLoader::instance().loadFunctionSymbol(meta->topLevelModule(), symbolName.c_str());
+    if (functionPointer == nullptr) {
+        Log(@"Unable to load \"%s\" function", meta->name());
+        tns::Assert(false, isolate);
+    }
+    
+    
+
+    MetadataBuilder::CacheItem<MethodMeta>* item = new MetadataBuilder::CacheItem<MethodMeta>(meta, std::string(), functionPointer);
+
+    
+    
+    const TypeEncoding* typeEncoding = item->meta_->encodings()->first();
+    
+//            CMethodCall methodCall(context, item->userData_, typeEncoding, args, item->meta_->ownsReturnedCocoaObject(), false);
+    SwiftMethodCall methodCall(context, item->userData_, typeEncoding, args, instance, item->meta_->ownsReturnedCocoaObject(), false);
+    return methodCall;
 }
 
 Local<Value> ArgConverter::ConvertArgument(Local<Context> context, BaseDataWrapper* wrapper, bool skipGCRegistration, const std::vector<std::string>& additionalProtocols) {
@@ -84,6 +124,7 @@ Local<Value> ArgConverter::ConvertArgument(Local<Context> context, BaseDataWrapp
         return Null(isolate);
     }
 
+    //TODO: (teodor) check if its a swift constructor so we attach the this properly (i.e. pass the info->this instead of empty Local Object)
     Local<Value> result = CreateJsWrapper(context, wrapper, Local<Object>(), skipGCRegistration, additionalProtocols);
     return result;
 }
@@ -301,7 +342,7 @@ void ArgConverter::SetValue(Local<Context> context, void* retValue, Local<Value>
 
 void ArgConverter::ConstructObject(Local<Context> context, const FunctionCallbackInfo<Value>& info, Class klass, const InterfaceMeta* interfaceMeta) {
     Isolate* isolate = context->GetIsolate();
-    tns::Assert(klass != nullptr, isolate);
+//    tns::Assert(klass != nullptr, isolate);
 
     id result = nil;
 
@@ -318,6 +359,40 @@ void ArgConverter::ConstructObject(Local<Context> context, const FunctionCallbac
         if (meta != nullptr && meta->type() == MetaType::Interface) {
             interfaceMeta = static_cast<const InterfaceMeta*>(meta);
         }
+    }
+    
+    if (klass == nullptr) {
+        std::vector<Local<Value>> args;
+        const FunctionMeta* initializer = ArgConverter::FindSwiftInitializer(context, interfaceMeta, info, args);
+        V8VectorArgs vectorArgs(args);
+        
+        
+        void* functionPointer = SymbolLoader::instance().loadFunctionSymbol(initializer->topLevelModule(), initializer->name());
+        if (functionPointer == nullptr) {
+            Log(@"Unable to load \"%s\" function", initializer->name());
+            tns::Assert(false, isolate);
+        }
+        
+        
+
+        MetadataBuilder::CacheItem<FunctionMeta>* item = new MetadataBuilder::CacheItem<FunctionMeta>(initializer, std::string(), functionPointer);
+        
+        
+        const TypeEncoding* typeEncoding = item->meta_->encodings()->first();
+        
+        CMethodCall methodCall(context, item->userData_, typeEncoding, vectorArgs, item->meta_->ownsReturnedCocoaObject(), item->meta_->returnsUnmanaged());
+        
+        //todo: figure out what to do with the jswrapper that this creates itself
+        Local<Value> result = Interop::CallFunction(methodCall);
+        Local<Object> thiz = info.This();
+        
+        
+        BaseDataWrapper* baseWrapper = tns::GetValue(isolate, result);
+        ObjCDataWrapper* wrapper = static_cast<ObjCDataWrapper*>(baseWrapper);
+        SwiftDataWrapper* swiftWrapper = new SwiftDataWrapper(wrapper->Data(), wrapper->TypeEncoding());
+        tns::SetValue(isolate, thiz, swiftWrapper);
+//        info.GetReturnValue().Set(result); //propertygetter wont be called if this is called
+        return;
     }
 
     if (result == nil && interfaceMeta != nullptr && info.Length() > 0) {
@@ -349,6 +424,31 @@ void ArgConverter::ConstructObject(Local<Context> context, const FunctionCallbac
     }
 }
 
+const FunctionMeta* ArgConverter::FindSwiftInitializer(Local<Context> context, const InterfaceMeta* interfaceMeta, const FunctionCallbackInfo<Value>& info, std::vector<Local<Value>>& args) {
+    Isolate* isolate = context->GetIsolate();
+    std::vector<const FunctionMeta*> candidates;
+    args = tns::ArgsToVector(info);
+    std::vector<Local<Value>> initializerArgs;
+    
+    std::string constructorTokens;
+    if (info.Length() == 1 && info[0]->IsObject() && tns::GetValue(isolate, info[0]) == nullptr) {
+        initializerArgs = GetInitializerArgs(info[0].As<Object>(), constructorTokens);
+    }
+    
+    std::shared_ptr<Caches> cache = Caches::Get(isolate);
+    
+    //std::string className;
+    const MethodMeta* initializer = ArgConverter::FindInitializer(context, nullptr, interfaceMeta, info, args);
+
+    std::vector<const FunctionMeta*> initializers = ArgConverter::GetSwiftInitializers(cache.get(), interfaceMeta,  initializer->jsName());
+    for (const FunctionMeta* candidate: initializers) {
+        candidates.push_back(candidate);
+    }
+    
+    args = initializerArgs;
+    return candidates[0];
+}
+
 const MethodMeta* ArgConverter::FindInitializer(Local<Context> context, Class klass, const InterfaceMeta* interfaceMeta, const FunctionCallbackInfo<Value>& info, std::vector<Local<Value>>& args) {
     Isolate* isolate = context->GetIsolate();
     std::vector<const MethodMeta*> candidates;
@@ -358,6 +458,8 @@ const MethodMeta* ArgConverter::FindInitializer(Local<Context> context, Class kl
     if (info.Length() == 1 && info[0]->IsObject() && tns::GetValue(isolate, info[0]) == nullptr) {
         initializerArgs = GetInitializerArgs(info[0].As<Object>(), constructorTokens);
     }
+    
+//    candidateClassName = interfaceMeta->name();
 
     std::shared_ptr<Caches> cache = Caches::Get(isolate);
     bool found = false;
@@ -369,6 +471,7 @@ const MethodMeta* ArgConverter::FindInitializer(Local<Context> context, Class kl
                 if (strcmp(expectedTokens, constructorTokens.c_str()) == 0) {
                     candidates.clear();
                     candidates.push_back(candidate);
+//                    candidateClassName = interfaceMeta->name();
                     args = initializerArgs;
                     found = true;
                     break;
@@ -377,6 +480,7 @@ const MethodMeta* ArgConverter::FindInitializer(Local<Context> context, Class kl
 
             if (ArgConverter::CanInvoke(context, candidate, info)) {
                 candidates.push_back(candidate);
+//                candidateClassName = interfaceMeta->name();
             }
         }
 
@@ -599,6 +703,12 @@ Local<Value> ArgConverter::CreateJsWrapper(Local<Context> context, BaseDataWrapp
         target = dataWrapper->Data();
         typeEncoding = dataWrapper->TypeEncoding();
     }
+    
+    if (wrapper->Type() == WrapperType::SwiftObject) {
+        SwiftDataWrapper* dataWrapper = static_cast<SwiftDataWrapper*>(wrapper);
+        target = (id)dataWrapper->Data();
+        typeEncoding = dataWrapper->TypeEncoding();
+    }
 
     if (target == nil) {
         return Null(isolate);
@@ -622,7 +732,16 @@ Local<Value> ArgConverter::CreateJsWrapper(Local<Context> context, BaseDataWrapp
 
     Class klass = [target class];
     const Meta* meta = FindMeta(klass, typeEncoding);
-    if (meta != nullptr) {
+    //TODO: swift meta -> here we should find the PROPER meta
+    const BaseClassMeta* baseMeta = nullptr;
+    //TODO: remove this hardcoded class
+    Class k = NSClassFromString(@"TestRunner.LCManager");
+    if (klass == k) {
+        baseMeta = static_cast<const BaseClassMeta*>(GetMeta("LCManager"));
+    }
+    
+    
+    if (meta != nullptr || baseMeta != nullptr) {
         std::string className = object_getClassName(target);
         auto it = cache->ClassPrototypes.find(className);
         if (it != cache->ClassPrototypes.end()) {
@@ -637,7 +756,18 @@ Local<Value> ArgConverter::CreateJsWrapper(Local<Context> context, BaseDataWrapp
         } else {
             Class knownClass = objc_getClass(meta->name());
             KnownUnknownClassPair pair(knownClass, klass);
-            Local<FunctionTemplate> ctorFuncTemplate = cache->ObjectCtorInitializer(context, static_cast<const BaseClassMeta*>(meta), pair, additionalProtocols);
+            
+            //probably this ctor is important - test with the commented one the working code
+            Local<FunctionTemplate> ctorFuncTemplate;
+            if (baseMeta != nullptr) {
+                ctorFuncTemplate = cache->ObjectCtorInitializer(context, baseMeta, pair, additionalProtocols);
+            } else if (meta != nullptr && baseMeta == nullptr) {
+                ctorFuncTemplate = cache->ObjectCtorInitializer(context, static_cast<const BaseClassMeta*>(meta), pair, additionalProtocols);
+                
+            } else {
+                tns::Assert(false, isolate);
+            }
+            
             Local<v8::Function> ctorFunc;
             bool success = ctorFuncTemplate->GetFunction(context).ToLocal(&ctorFunc);
             tns::Assert(success, isolate);
@@ -938,6 +1068,21 @@ bool ArgConverter::IsErrorOutParameter(const TypeEncoding* typeEncoding) {
     }
 
     return strcmp(name, "NSError") == 0;
+}
+
+std::vector<const FunctionMeta*> ArgConverter::GetSwiftInitializers(Caches* cache, const InterfaceMeta* interfaceMeta, const char* methodName) {
+    auto it = cache->SwiftInitializers.find(interfaceMeta);
+    if (it != cache->SwiftInitializers.end()) {
+        return it->second;
+    }
+    vector<const FunctionMeta*> initializers;
+    std::string className = interfaceMeta->jsName();
+    std::string constructorName = className + "_" + methodName;
+    const Meta* meta = ArgConverter::GetMeta(constructorName);
+    
+    const FunctionMeta* initializerMeta = static_cast<const FunctionMeta*>(meta);
+    initializers.push_back(initializerMeta);
+    return initializers;
 }
 
 std::vector<const MethodMeta*> ArgConverter::GetInitializers(Caches* cache, Class klass, const InterfaceMeta* interfaceMeta) {

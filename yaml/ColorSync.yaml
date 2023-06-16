@@ -1,0 +1,2568 @@
+---
+Module:
+  FullName:        ColorSync
+  IsPartOfFramework: true
+  IsSystemModule:  true
+  Libraries:
+    - Library:         ColorSync
+      IsFramework:     true
+Items:
+  - Name:            ColorSyncAlphaInfo
+    JsName:          ColorSyncAlphaInfo
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Enum
+    FullNameFields:
+      - kColorSyncAlphaNone: '0'
+      - kColorSyncAlphaPremultipliedLast: '1'
+      - kColorSyncAlphaPremultipliedFirst: '2'
+      - kColorSyncAlphaLast: '3'
+      - kColorSyncAlphaFirst: '4'
+      - kColorSyncAlphaNoneSkipLast: '5'
+      - kColorSyncAlphaNoneSkipFirst: '6'
+    SwiftNameFields: []
+  - Name:            ColorSyncCreateCodeFragment
+    JsName:          ColorSyncCreateCodeFragment
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionOwnsReturnedCocoaObject ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            BridgedInterface
+        Name:            NSArray
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            NSDictionary
+        BridgedTo:       NSObject
+  - Name:            ColorSyncDataDepth
+    JsName:          ColorSyncDataDepth
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Enum
+    FullNameFields:
+      - kColorSync1BitGamut: '1'
+      - kColorSync8BitInteger: '2'
+      - kColorSync16BitInteger: '3'
+      - kColorSync16BitFloat: '4'
+      - kColorSync32BitInteger: '5'
+      - kColorSync32BitNamedColorIndex: '6'
+      - kColorSync32BitFloat: '7'
+      - kColorSync10BitInteger: '8'
+    SwiftNameFields: []
+  - Name:            ColorSyncIterateInstalledProfiles
+    JsName:          ColorSyncIterateInstalledProfiles
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            Bool
+          - Type:            BridgedInterface
+            Name:            NSDictionary
+            BridgedTo:       NSObject
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            UInt
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            BridgedInterface
+          Name:            NSError
+          BridgedTo:       NSObject
+  - Name:            ColorSyncMD5
+    JsName:          ColorSyncMD5
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Struct
+    Fields:
+      - Name:            digest
+        Signature:
+          Type:            ConstantArray
+          ArrayType:
+            Type:            UChar
+          Size:            16
+  - Name:            ColorSyncProfileContainsTag
+    JsName:          ColorSyncProfileContainsTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Bool
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+  - Name:            ColorSyncProfileCopyData
+    JsName:          ColorSyncProfileCopyData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionOwnsReturnedCocoaObject ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            NSData
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            Pointer
+        PointerType:
+          Type:            BridgedInterface
+          Name:            NSError
+          BridgedTo:       NSObject
+  - Name:            ColorSyncProfileCopyDescriptionString
+    JsName:          ColorSyncProfileCopyDescriptionString
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionOwnsReturnedCocoaObject ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+  - Name:            ColorSyncProfileCopyHeader
+    JsName:          ColorSyncProfileCopyHeader
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionOwnsReturnedCocoaObject ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            NSData
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+  - Name:            ColorSyncProfileCopyTag
+    JsName:          ColorSyncProfileCopyTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionOwnsReturnedCocoaObject ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            NSData
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+  - Name:            ColorSyncProfileCopyTagSignatures
+    JsName:          ColorSyncProfileCopyTagSignatures
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionOwnsReturnedCocoaObject ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            NSArray
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+  - Name:            ColorSyncProfileCreate
+    JsName:          ColorSyncProfileCreate
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionOwnsReturnedCocoaObject ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            BridgedInterface
+        Name:            NSData
+        BridgedTo:       NSObject
+      - Type:            Pointer
+        PointerType:
+          Type:            BridgedInterface
+          Name:            NSError
+          BridgedTo:       NSObject
+  - Name:            ColorSyncProfileCreateLink
+    JsName:          ColorSyncProfileCreateLink
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionOwnsReturnedCocoaObject ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            BridgedInterface
+        Name:            NSArray
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            NSDictionary
+        BridgedTo:       NSObject
+  - Name:            ColorSyncProfileCreateMutable
+    JsName:          ColorSyncProfileCreateMutable
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionOwnsReturnedCocoaObject ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+  - Name:            ColorSyncProfileCreateMutableCopy
+    JsName:          ColorSyncProfileCreateMutableCopy
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionOwnsReturnedCocoaObject ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+  - Name:            ColorSyncProfileCreateWithName
+    JsName:          ColorSyncProfileCreateWithName
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionOwnsReturnedCocoaObject ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+  - Name:            ColorSyncProfileCreateWithURL
+    JsName:          ColorSyncProfileCreateWithURL
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionOwnsReturnedCocoaObject ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            BridgedInterface
+        Name:            NSURL
+        BridgedTo:       NSObject
+      - Type:            Pointer
+        PointerType:
+          Type:            BridgedInterface
+          Name:            NSError
+          BridgedTo:       NSObject
+  - Name:            ColorSyncProfileGetMD5
+    JsName:          ColorSyncProfileGetMD5
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Struct
+        Module:          ColorSync.ColorSyncProfile
+        Name:            ColorSyncMD5
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+  - Name:            ColorSyncProfileGetTypeID
+    JsName:          ColorSyncProfileGetTypeID
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            ULong
+  - Name:            ColorSyncProfileGetURL
+    JsName:          ColorSyncProfileGetURL
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            NSURL
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            Pointer
+        PointerType:
+          Type:            BridgedInterface
+          Name:            NSError
+          BridgedTo:       NSObject
+  - Name:            ColorSyncProfileIsHLGBased
+    JsName:          ColorSyncProfileIsHLGBased
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Bool
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+  - Name:            ColorSyncProfileIsMatrixBased
+    JsName:          ColorSyncProfileIsMatrixBased
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Bool
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+  - Name:            ColorSyncProfileIsPQBased
+    JsName:          ColorSyncProfileIsPQBased
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Bool
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+  - Name:            ColorSyncProfileIsWideGamut
+    JsName:          ColorSyncProfileIsWideGamut
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Bool
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+  - Name:            ColorSyncProfileRemoveTag
+    JsName:          ColorSyncProfileRemoveTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+  - Name:            ColorSyncProfileSetHeader
+    JsName:          ColorSyncProfileSetHeader
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            BridgedInterface
+        Name:            NSData
+        BridgedTo:       NSObject
+  - Name:            ColorSyncProfileSetTag
+    JsName:          ColorSyncProfileSetTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            NSData
+        BridgedTo:       NSObject
+  - Name:            ColorSyncProfileVerify
+    JsName:          ColorSyncProfileVerify
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Bool
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            Pointer
+        PointerType:
+          Type:            BridgedInterface
+          Name:            NSError
+          BridgedTo:       NSObject
+      - Type:            Pointer
+        PointerType:
+          Type:            BridgedInterface
+          Name:            NSError
+          BridgedTo:       NSObject
+  - Name:            ColorSyncTransformConvert
+    JsName:          ColorSyncTransformConvert
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Bool
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            ULong
+      - Type:            ULong
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Enum
+        Name:            ColorSyncDataDepth
+      - Type:            UInt
+      - Type:            ULong
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Enum
+        Name:            ColorSyncDataDepth
+      - Type:            UInt
+      - Type:            ULong
+      - Type:            BridgedInterface
+        Name:            NSDictionary
+        BridgedTo:       NSObject
+  - Name:            ColorSyncTransformCopyProperty
+    JsName:          ColorSyncTransformCopyProperty
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionOwnsReturnedCocoaObject ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            BridgedInterface
+        Name:            NSDictionary
+        BridgedTo:       NSObject
+  - Name:            ColorSyncTransformCreate
+    JsName:          ColorSyncTransformCreate
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionOwnsReturnedCocoaObject ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            BridgedInterface
+        Name:            NSArray
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            NSDictionary
+        BridgedTo:       NSObject
+  - Name:            ColorSyncTransformGetProfileSequence
+    JsName:          ColorSyncTransformGetProfileSequence
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            NSArray
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+  - Name:            ColorSyncTransformGetTypeID
+    JsName:          ColorSyncTransformGetTypeID
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            ULong
+  - Name:            ColorSyncTransformSetProperty
+    JsName:          ColorSyncTransformSetProperty
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+      - Type:            BridgedInterface
+        Name:            id
+        BridgedTo:       id
+  - Name:            kColorSync10BitInteger
+    JsName:          kColorSync10BitInteger
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '8'
+  - Name:            kColorSync16BitFloat
+    JsName:          kColorSync16BitFloat
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '4'
+  - Name:            kColorSync16BitInteger
+    JsName:          kColorSync16BitInteger
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '3'
+  - Name:            kColorSync1BitGamut
+    JsName:          kColorSync1BitGamut
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1'
+  - Name:            kColorSync32BitFloat
+    JsName:          kColorSync32BitFloat
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '7'
+  - Name:            kColorSync32BitInteger
+    JsName:          kColorSync32BitInteger
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '5'
+  - Name:            kColorSync32BitNamedColorIndex
+    JsName:          kColorSync32BitNamedColorIndex
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '6'
+  - Name:            kColorSync8BitInteger
+    JsName:          kColorSync8BitInteger
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '2'
+  - Name:            kColorSyncACESCGLinearProfile
+    JsName:          kColorSyncACESCGLinearProfile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncAdobeRGB1998Profile
+    JsName:          kColorSyncAdobeRGB1998Profile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncAlphaFirst
+    JsName:          kColorSyncAlphaFirst
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '4'
+  - Name:            kColorSyncAlphaInfoMask
+    JsName:          kColorSyncAlphaInfoMask
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '31'
+  - Name:            kColorSyncAlphaLast
+    JsName:          kColorSyncAlphaLast
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '3'
+  - Name:            kColorSyncAlphaNone
+    JsName:          kColorSyncAlphaNone
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '0'
+  - Name:            kColorSyncAlphaNoneSkipFirst
+    JsName:          kColorSyncAlphaNoneSkipFirst
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '6'
+  - Name:            kColorSyncAlphaNoneSkipLast
+    JsName:          kColorSyncAlphaNoneSkipLast
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '5'
+  - Name:            kColorSyncAlphaPremultipliedFirst
+    JsName:          kColorSyncAlphaPremultipliedFirst
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '2'
+  - Name:            kColorSyncAlphaPremultipliedLast
+    JsName:          kColorSyncAlphaPremultipliedLast
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1'
+  - Name:            kColorSyncBestQuality
+    JsName:          kColorSyncBestQuality
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncBlackPointCompensation
+    JsName:          kColorSyncBlackPointCompensation
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncByteOrder16Big
+    JsName:          kColorSyncByteOrder16Big
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '12288'
+  - Name:            kColorSyncByteOrder16Little
+    JsName:          kColorSyncByteOrder16Little
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '4096'
+  - Name:            kColorSyncByteOrder32Big
+    JsName:          kColorSyncByteOrder32Big
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '16384'
+  - Name:            kColorSyncByteOrder32Little
+    JsName:          kColorSyncByteOrder32Little
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '8192'
+  - Name:            kColorSyncByteOrderDefault
+    JsName:          kColorSyncByteOrderDefault
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '0'
+  - Name:            kColorSyncByteOrderMask
+    JsName:          kColorSyncByteOrderMask
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '28672'
+  - Name:            kColorSyncConversion1DLut
+    JsName:          kColorSyncConversion1DLut
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncConversion3DLut
+    JsName:          kColorSyncConversion3DLut
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncConversionBPC
+    JsName:          kColorSyncConversionBPC
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncConversionChannelID
+    JsName:          kColorSyncConversionChannelID
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncConversionGridPoints
+    JsName:          kColorSyncConversionGridPoints
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncConversionInpChan
+    JsName:          kColorSyncConversionInpChan
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncConversionMatrix
+    JsName:          kColorSyncConversionMatrix
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncConversionNDLut
+    JsName:          kColorSyncConversionNDLut
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncConversionOutChan
+    JsName:          kColorSyncConversionOutChan
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncConversionParamCurve0
+    JsName:          kColorSyncConversionParamCurve0
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncConversionParamCurve1
+    JsName:          kColorSyncConversionParamCurve1
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncConversionParamCurve2
+    JsName:          kColorSyncConversionParamCurve2
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncConversionParamCurve3
+    JsName:          kColorSyncConversionParamCurve3
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncConversionParamCurve4
+    JsName:          kColorSyncConversionParamCurve4
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncConvertQuality
+    JsName:          kColorSyncConvertQuality
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncConvertUseExtendedRange
+    JsName:          kColorSyncConvertUseExtendedRange
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncDCIP3Profile
+    JsName:          kColorSyncDCIP3Profile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncDisplayP3Profile
+    JsName:          kColorSyncDisplayP3Profile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncDraftQuality
+    JsName:          kColorSyncDraftQuality
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncExtendedRange
+    JsName:          kColorSyncExtendedRange
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncFixedPointRange
+    JsName:          kColorSyncFixedPointRange
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncGenericCMYKProfile
+    JsName:          kColorSyncGenericCMYKProfile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncGenericGrayGamma22Profile
+    JsName:          kColorSyncGenericGrayGamma22Profile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncGenericGrayProfile
+    JsName:          kColorSyncGenericGrayProfile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncGenericLabProfile
+    JsName:          kColorSyncGenericLabProfile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncGenericRGBProfile
+    JsName:          kColorSyncGenericRGBProfile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncGenericXYZProfile
+    JsName:          kColorSyncGenericXYZProfile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncITUR2020Profile
+    JsName:          kColorSyncITUR2020Profile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncITUR709Profile
+    JsName:          kColorSyncITUR709Profile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncNormalQuality
+    JsName:          kColorSyncNormalQuality
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncProfile
+    JsName:          kColorSyncProfile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncProfileCacheSeed
+    JsName:          kColorSyncProfileCacheSeed
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncProfileClass
+    JsName:          kColorSyncProfileClass
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncProfileColorSpace
+    JsName:          kColorSyncProfileColorSpace
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncProfileDescription
+    JsName:          kColorSyncProfileDescription
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncProfileHeader
+    JsName:          kColorSyncProfileHeader
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncProfileIsValid
+    JsName:          kColorSyncProfileIsValid
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncProfileMD5Digest
+    JsName:          kColorSyncProfileMD5Digest
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncProfilePCS
+    JsName:          kColorSyncProfilePCS
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncProfileURL
+    JsName:          kColorSyncProfileURL
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncROMMRGBProfile
+    JsName:          kColorSyncROMMRGBProfile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncRenderingIntent
+    JsName:          kColorSyncRenderingIntent
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncRenderingIntentAbsolute
+    JsName:          kColorSyncRenderingIntentAbsolute
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncRenderingIntentPerceptual
+    JsName:          kColorSyncRenderingIntentPerceptual
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncRenderingIntentRelative
+    JsName:          kColorSyncRenderingIntentRelative
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncRenderingIntentSaturation
+    JsName:          kColorSyncRenderingIntentSaturation
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncRenderingIntentUseProfileHeader
+    JsName:          kColorSyncRenderingIntentUseProfileHeader
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSRGBProfile
+    JsName:          kColorSyncSRGBProfile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigAToB0Tag
+    JsName:          kColorSyncSigAToB0Tag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigAToB1Tag
+    JsName:          kColorSyncSigAToB1Tag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigAToB2Tag
+    JsName:          kColorSyncSigAToB2Tag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigAbstractClass
+    JsName:          kColorSyncSigAbstractClass
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigBToA0Tag
+    JsName:          kColorSyncSigBToA0Tag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigBToA1Tag
+    JsName:          kColorSyncSigBToA1Tag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigBToA2Tag
+    JsName:          kColorSyncSigBToA2Tag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigBlueColorantTag
+    JsName:          kColorSyncSigBlueColorantTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigBlueTRCTag
+    JsName:          kColorSyncSigBlueTRCTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigCmykData
+    JsName:          kColorSyncSigCmykData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigColorSpaceClass
+    JsName:          kColorSyncSigColorSpaceClass
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigCopyrightTag
+    JsName:          kColorSyncSigCopyrightTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigDeviceMfgDescTag
+    JsName:          kColorSyncSigDeviceMfgDescTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigDeviceModelDescTag
+    JsName:          kColorSyncSigDeviceModelDescTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigDisplayClass
+    JsName:          kColorSyncSigDisplayClass
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigGamutTag
+    JsName:          kColorSyncSigGamutTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigGrayData
+    JsName:          kColorSyncSigGrayData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigGrayTRCTag
+    JsName:          kColorSyncSigGrayTRCTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigGreenColorantTag
+    JsName:          kColorSyncSigGreenColorantTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigGreenTRCTag
+    JsName:          kColorSyncSigGreenTRCTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigInputClass
+    JsName:          kColorSyncSigInputClass
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigLabData
+    JsName:          kColorSyncSigLabData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigLinkClass
+    JsName:          kColorSyncSigLinkClass
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigMediaBlackPointTag
+    JsName:          kColorSyncSigMediaBlackPointTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigMediaWhitePointTag
+    JsName:          kColorSyncSigMediaWhitePointTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigNamedColor2Tag
+    JsName:          kColorSyncSigNamedColor2Tag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigNamedColorClass
+    JsName:          kColorSyncSigNamedColorClass
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigOutputClass
+    JsName:          kColorSyncSigOutputClass
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigPreview0Tag
+    JsName:          kColorSyncSigPreview0Tag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigPreview1Tag
+    JsName:          kColorSyncSigPreview1Tag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigPreview2Tag
+    JsName:          kColorSyncSigPreview2Tag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigProfileDescriptionTag
+    JsName:          kColorSyncSigProfileDescriptionTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigProfileSequenceDescTag
+    JsName:          kColorSyncSigProfileSequenceDescTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigRedColorantTag
+    JsName:          kColorSyncSigRedColorantTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigRedTRCTag
+    JsName:          kColorSyncSigRedTRCTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigRgbData
+    JsName:          kColorSyncSigRgbData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigTechnologyTag
+    JsName:          kColorSyncSigTechnologyTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigViewingCondDescTag
+    JsName:          kColorSyncSigViewingCondDescTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigViewingConditionsTag
+    JsName:          kColorSyncSigViewingConditionsTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncSigXYZData
+    JsName:          kColorSyncSigXYZData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncTransformCodeFragmentMD5
+    JsName:          kColorSyncTransformCodeFragmentMD5
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncTransformCodeFragmentType
+    JsName:          kColorSyncTransformCodeFragmentType
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncTransformCreator
+    JsName:          kColorSyncTransformCreator
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncTransformDeviceToDevice
+    JsName:          kColorSyncTransformDeviceToDevice
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncTransformDeviceToPCS
+    JsName:          kColorSyncTransformDeviceToPCS
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncTransformDstSpace
+    JsName:          kColorSyncTransformDstSpace
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncTransformFullConversionData
+    JsName:          kColorSyncTransformFullConversionData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncTransformGamutCheck
+    JsName:          kColorSyncTransformGamutCheck
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncTransformInfo
+    JsName:          kColorSyncTransformInfo
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncTransformPCSToDevice
+    JsName:          kColorSyncTransformPCSToDevice
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncTransformPCSToPCS
+    JsName:          kColorSyncTransformPCSToPCS
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncTransformParametricConversionData
+    JsName:          kColorSyncTransformParametricConversionData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncTransformProfileSequnce
+    JsName:          kColorSyncTransformProfileSequnce
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncTransformSimplifiedConversionData
+    JsName:          kColorSyncTransformSimplifiedConversionData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncTransformSrcSpace
+    JsName:          kColorSyncTransformSrcSpace
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncTransformTag
+    JsName:          kColorSyncTransformTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncTransform.h'
+    Module:
+      FullName:        ColorSync.ColorSyncTransform
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kColorSyncWebSafeColorsProfile
+    JsName:          kColorSyncWebSafeColorsProfile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/ColorSync.framework/Headers/ColorSyncProfile.h'
+    Module:
+      FullName:        ColorSync.ColorSyncProfile
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.1
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+...

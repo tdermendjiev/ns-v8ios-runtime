@@ -7,8 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B6F3B2E2A0CC15100F0D68C /* AClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F3B2D2A0CC15100F0D68C /* AClass.swift */; };
 		2B7EA6AF2353477000E5184E /* NativeScriptException.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EA6AD2353476F00E5184E /* NativeScriptException.mm */; };
 		2B7EA6B02353477000E5184E /* NativeScriptException.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B7EA6AE2353477000E5184E /* NativeScriptException.h */; };
+		2B8086212A3C492F008F957C /* CDecl.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 2B8086202A3C492F008F957C /* CDecl.stencil */; };
+		2B8086232A3C4B19008F957C /* CDecl.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8086222A3C4B18008F957C /* CDecl.generated.swift */; };
+		2B8086262A3C4D1D008F957C /* CDecl.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8086252A3C4D1D008F957C /* CDecl.generated.swift */; };
+		2B8086282A3C51B2008F957C /* Symbols.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 2B8086272A3C51B2008F957C /* Symbols.stencil */; };
+		2B80862A2A3C5292008F957C /* cdecls.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2B8086292A3C5292008F957C /* cdecls.txt */; };
+		2B91BBDB2A27708B0015A627 /* ResizeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91BBD52A27708B0015A627 /* ResizeController.swift */; };
+		2B91BBDC2A27708B0015A627 /* LCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91BBD62A27708B0015A627 /* LCManager.swift */; };
+		2B91BBDD2A27708B0015A627 /* GestureEndpointPredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91BBD72A27708B0015A627 /* GestureEndpointPredictor.swift */; };
+		2B91BBDE2A27708B0015A627 /* SystemReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91BBD82A27708B0015A627 /* SystemReport.swift */; };
+		2B91BBDF2A27708B0015A627 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91BBD92A27708B0015A627 /* Extensions.swift */; };
+		2B91BBE02A27708B0015A627 /* BorderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91BBDA2A27708B0015A627 /* BorderManager.swift */; };
+		2B91BBE32A2DFAD10015A627 /* exported-symbols.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2B91BBE22A2DFAD10015A627 /* exported-symbols.txt */; };
+		2B91BBE42A2DFAF10015A627 /* LCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91BBD62A27708B0015A627 /* LCManager.swift */; };
+		2B91BBE52A2DFAF30015A627 /* ResizeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91BBD52A27708B0015A627 /* ResizeController.swift */; };
+		2B91BBE62A2DFAF60015A627 /* GestureEndpointPredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91BBD72A27708B0015A627 /* GestureEndpointPredictor.swift */; };
+		2B91BBE72A2DFAF80015A627 /* SystemReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91BBD82A27708B0015A627 /* SystemReport.swift */; };
+		2B91BBE82A2DFAFA0015A627 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91BBD92A27708B0015A627 /* Extensions.swift */; };
+		2B91BBE92A2DFAFC0015A627 /* BorderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91BBDA2A27708B0015A627 /* BorderManager.swift */; };
 		3CA6E53529A78C6000D30F8B /* IsolateWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CA6E53429A78C6000D30F8B /* IsolateWrapper.h */; };
 		3CBFF7442971C1C200C5DE36 /* ArcMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CBFF7432971C1C200C5DE36 /* ArcMacro.h */; };
 		3CD1D9C129AA2C14004C1C21 /* DisposerPHV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3CD1D9BF29AA2C14004C1C21 /* DisposerPHV.mm */; };
@@ -416,8 +435,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2B6F3B2D2A0CC15100F0D68C /* AClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AClass.swift; sourceTree = "<group>"; };
+		2B6F3B2F2A0CD31300F0D68C /* SwiftDeclarations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftDeclarations.h; sourceTree = "<group>"; };
 		2B7EA6AD2353476F00E5184E /* NativeScriptException.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NativeScriptException.mm; sourceTree = "<group>"; };
 		2B7EA6AE2353477000E5184E /* NativeScriptException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeScriptException.h; sourceTree = "<group>"; };
+		2B8086062A2E0CC5008F957C /* SwiftHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftHeaders.h; sourceTree = "<group>"; };
+		2B8086202A3C492F008F957C /* CDecl.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = CDecl.stencil; sourceTree = "<group>"; };
+		2B8086222A3C4B18008F957C /* CDecl.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDecl.generated.swift; sourceTree = "<group>"; };
+		2B8086252A3C4D1D008F957C /* CDecl.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDecl.generated.swift; sourceTree = "<group>"; };
+		2B8086272A3C51B2008F957C /* Symbols.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = Symbols.stencil; sourceTree = "<group>"; };
+		2B8086292A3C5292008F957C /* cdecls.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cdecls.txt; sourceTree = "<group>"; };
+		2B91BBD32A189FFA0015A627 /* AClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AClass.h; sourceTree = "<group>"; };
+		2B91BBD52A27708B0015A627 /* ResizeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizeController.swift; sourceTree = "<group>"; };
+		2B91BBD62A27708B0015A627 /* LCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCManager.swift; sourceTree = "<group>"; };
+		2B91BBD72A27708B0015A627 /* GestureEndpointPredictor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureEndpointPredictor.swift; sourceTree = "<group>"; };
+		2B91BBD82A27708B0015A627 /* SystemReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemReport.swift; sourceTree = "<group>"; };
+		2B91BBD92A27708B0015A627 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2B91BBDA2A27708B0015A627 /* BorderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderManager.swift; sourceTree = "<group>"; };
+		2B91BBE12A2773C30015A627 /* LCManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCManager.h; sourceTree = "<group>"; };
+		2B91BBE22A2DFAD10015A627 /* exported-symbols.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "exported-symbols.txt"; sourceTree = "<group>"; };
 		3CA6E53429A78C6000D30F8B /* IsolateWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IsolateWrapper.h; sourceTree = "<group>"; };
 		3CBFF7432971C1C200C5DE36 /* ArcMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArcMacro.h; sourceTree = "<group>"; };
 		3CD1D9BF29AA2C14004C1C21 /* DisposerPHV.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DisposerPHV.mm; sourceTree = "<group>"; };
@@ -510,7 +546,7 @@
 		C247C15B22F82842001D2CA2 /* v8config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = v8config.h; sourceTree = "<group>"; };
 		C247C15C22F82842001D2CA2 /* v8-inspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "v8-inspector.h"; sourceTree = "<group>"; };
 		C247C15D22F82842001D2CA2 /* v8-internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "v8-internal.h"; sourceTree = "<group>"; };
-		C24ECA9222C4FF3700AEBA9A /* exported-symbols.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "exported-symbols.txt"; sourceTree = "<group>"; };
+		C24ECA9222C4FF3700AEBA9A /* exported-symbols-old.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "exported-symbols-old.txt"; sourceTree = "<group>"; };
 		C25376FB24162F5C00660D62 /* TNSPseudoDataTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNSPseudoDataTypes.h; sourceTree = "<group>"; };
 		C25376FC2416302D00660D62 /* TNSPseudoDataTypes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TNSPseudoDataTypes.m; sourceTree = "<group>"; };
 		C266567722AA405100EE15CC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -853,6 +889,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B8086052A2E0C72008F957C /* SwiftHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				2B91BBE12A2773C30015A627 /* LCManager.h */,
+				2B8086062A2E0CC5008F957C /* SwiftHeaders.h */,
+			);
+			path = SwiftHeaders;
+			sourceTree = "<group>";
+		};
+		2B80861E2A3C4617008F957C /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				2B91BBD42A27708B0015A627 /* LocalConsole */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		2B80861F2A3C48E9008F957C /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				2B8086202A3C492F008F957C /* CDecl.stencil */,
+				2B8086272A3C51B2008F957C /* Symbols.stencil */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		2B91BBD42A27708B0015A627 /* LocalConsole */ = {
+			isa = PBXGroup;
+			children = (
+				2B91BBD52A27708B0015A627 /* ResizeController.swift */,
+				2B91BBD62A27708B0015A627 /* LCManager.swift */,
+				2B91BBD72A27708B0015A627 /* GestureEndpointPredictor.swift */,
+				2B91BBD82A27708B0015A627 /* SystemReport.swift */,
+				2B91BBD92A27708B0015A627 /* Extensions.swift */,
+				2B91BBDA2A27708B0015A627 /* BorderManager.swift */,
+			);
+			path = LocalConsole;
+			sourceTree = "<group>";
+		};
 		6573B9C1291FE29F00B0ED7C /* v8runtime */ = {
 			isa = PBXGroup;
 			children = (
@@ -992,6 +1067,9 @@
 		C27E277722202663009C10A3 = {
 			isa = PBXGroup;
 			children = (
+				2B80861F2A3C48E9008F957C /* Templates */,
+				2B80861E2A3C4617008F957C /* Swift */,
+				2B8086052A2E0C72008F957C /* SwiftHeaders */,
 				9160C064291ED41F000641C0 /* SpinLock.h */,
 				C2DDEB33229EAB3B00345BFE /* NativeScript */,
 				C2DDEB17229EA89000345BFE /* TestRunner */,
@@ -1026,6 +1104,7 @@
 				C27E5DB422F3206B00498ED0 /* app */,
 				C27E5D9B22F31CCC00498ED0 /* Info.plist */,
 				C27E5DB922F324C200498ED0 /* Default-568h@2x.png */,
+				2B91BBE22A2DFAD10015A627 /* exported-symbols.txt */,
 			);
 			path = AppWithModules;
 			sourceTree = "<group>";
@@ -1041,6 +1120,7 @@
 		C27E5DB622F3207800498ED0 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
+				2B8086222A3C4B18008F957C /* CDecl.generated.swift */,
 				C27E5DB722F3207800498ED0 /* main.m */,
 			);
 			path = "Source Files";
@@ -1055,11 +1135,13 @@
 				C293750A229FC1600075CB16 /* Marshalling */,
 				C2937509229FC1600075CB16 /* TestFixtures-Prefix.h */,
 				C29374F9229FC1600075CB16 /* TestFixtures.h */,
+				2B91BBD32A189FFA0015A627 /* AClass.h */,
 				C2937508229FC1600075CB16 /* TNSTestCommon.h */,
 				C29374F8229FC1600075CB16 /* TNSTestCommon.m */,
 				C2937507229FC1600075CB16 /* TNSTestNativeCallbacks.h */,
 				C29374F4229FC1600075CB16 /* TNSTestNativeCallbacks.m */,
-				C24ECA9222C4FF3700AEBA9A /* exported-symbols.txt */,
+				C24ECA9222C4FF3700AEBA9A /* exported-symbols-old.txt */,
+				2B6F3B2F2A0CD31300F0D68C /* SwiftDeclarations.h */,
 			);
 			path = TestFixtures;
 			sourceTree = "<group>";
@@ -1414,7 +1496,10 @@
 		C2DDEBDA229EB37A00345BFE /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
+				2B8086292A3C5292008F957C /* cdecls.txt */,
+				2B8086252A3C4D1D008F957C /* CDecl.generated.swift */,
 				C2DDEBDB229EB37A00345BFE /* main.m */,
+				2B6F3B2D2A0CC15100F0D68C /* AClass.swift */,
 			);
 			path = "Source Files";
 			sourceTree = "<group>";
@@ -1587,6 +1672,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C27E5D9E22F31CCC00498ED0 /* Build configuration list for PBXNativeTarget "AppWithModules" */;
 			buildPhases = (
+				2B80861D2A3C422F008F957C /* Generate cdecl proxies */,
 				C27E5DB322F31FF800498ED0 /* ShellScript */,
 				C27E5D8722F31CC900498ED0 /* Sources */,
 				C27E5D8822F31CC900498ED0 /* Frameworks */,
@@ -1625,6 +1711,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2DDEB29229EA89200345BFE /* Build configuration list for PBXNativeTarget "TestRunner" */;
 			buildPhases = (
+				2B8086242A3C4BF2008F957C /* Generate swift bindings */,
 				C2F4CBBD22C61D480036B56F /* ShellScript */,
 				C2DDEB12229EA89000345BFE /* Sources */,
 				C2DDEB13229EA89000345BFE /* Frameworks */,
@@ -1706,6 +1793,7 @@
 					};
 					C2DDEB15229EA89000345BFE = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1420;
 					};
 					C2DDEB31229EAB3B00345BFE = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -1758,6 +1846,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B91BBE32A2DFAD10015A627 /* exported-symbols.txt in Resources */,
 				C27E5DB522F3206B00498ED0 /* app in Resources */,
 				C27E5DBA22F324C200498ED0 /* Default-568h@2x.png in Resources */,
 			);
@@ -1767,6 +1856,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B80862A2A3C5292008F957C /* cdecls.txt in Resources */,
+				2B8086282A3C51B2008F957C /* Symbols.stencil in Resources */,
+				2B8086212A3C492F008F957C /* CDecl.stencil in Resources */,
 				C2DDEBDE229EB4A900345BFE /* app in Resources */,
 				C266567822AA405100EE15CC /* Default-568h@2x.png in Resources */,
 			);
@@ -1782,6 +1874,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2B80861D2A3C422F008F957C /* Generate cdecl proxies */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate cdecl proxies";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which /opt/homebrew/bin/sourcery >/dev/null; then\n    /opt/homebrew/bin/sourcery --sources \"$SRCROOT/Swift\" --templates \"$SRCROOT/Templates/CDecl.stencil\" --output \"$SRCROOT/AppWithModules/Source Files\"\nelse\n    echo \"warning: Sourcery not installed, download from https://github.com/krzysztofzablocki/Sourcery\"\nfi\n";
+		};
+		2B8086242A3C4BF2008F957C /* Generate swift bindings */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate swift bindings";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which /opt/homebrew/bin/sourcery >/dev/null; then\n    /opt/homebrew/bin/sourcery --sources \"$SRCROOT/Swift\" --templates \"$SRCROOT/Templates/CDecl.stencil\" --output \"$SRCROOT/TestRunner/Source Files\"\n    \n    grep -o '@_cdecl(\"[^\"]*\")' \"$SRCROOT/TestRunner/Source Files/CDecl.generated.swift\" | sed -e 's/@_cdecl(\"/_/' -e 's/\")//' > \"$SRCROOT/TestRunner/Source Files/cdecls.txt\"\nelse\n    echo \"warning: Sourcery not installed, download from https://github.com/krzysztofzablocki/Sourcery\"\nfi\n\nrm -rf ${SRCROOT}/TestFixtures/exported-symbols.txt\ncat ${SRCROOT}/TestFixtures/exported-symbols-old.txt \"$SRCROOT/TestRunner/Source Files/cdecls.txt\" >> ${SRCROOT}/TestFixtures/exported-symbols.txt\n";
+		};
 		65A6D684291F63A30074DF31 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2024,7 +2152,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B8086232A3C4B19008F957C /* CDecl.generated.swift in Sources */,
+				2B91BBE72A2DFAF80015A627 /* SystemReport.swift in Sources */,
+				2B91BBE92A2DFAFC0015A627 /* BorderManager.swift in Sources */,
+				2B91BBE82A2DFAFA0015A627 /* Extensions.swift in Sources */,
+				2B91BBE42A2DFAF10015A627 /* LCManager.swift in Sources */,
+				2B91BBE62A2DFAF60015A627 /* GestureEndpointPredictor.swift in Sources */,
 				C27E5DB822F3207800498ED0 /* main.m in Sources */,
+				2B91BBE52A2DFAF30015A627 /* ResizeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2060,7 +2195,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B91BBDE2A27708B0015A627 /* SystemReport.swift in Sources */,
+				2B91BBDC2A27708B0015A627 /* LCManager.swift in Sources */,
+				2B6F3B2E2A0CC15100F0D68C /* AClass.swift in Sources */,
+				2B91BBDD2A27708B0015A627 /* GestureEndpointPredictor.swift in Sources */,
 				C2DDEBDC229EB37A00345BFE /* main.m in Sources */,
+				2B91BBDB2A27708B0015A627 /* ResizeController.swift in Sources */,
+				2B8086262A3C4D1D008F957C /* CDecl.generated.swift in Sources */,
+				2B91BBDF2A27708B0015A627 /* Extensions.swift in Sources */,
+				2B91BBE02A27708B0015A627 /* BorderManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2356,6 +2499,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
@@ -2413,6 +2557,7 @@
 				OTHER_CFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
@@ -2425,14 +2570,18 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = NO;
+				EXPORTED_SYMBOLS_FILE = "/Users/teodordermendzhiev/workspace/ns-v8ios-runtime/AppWithModules/exported-symbols.txt";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AppWithModules/Frameworks",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/NativeScript";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/NativeScript",
+					"$(SRCROOT)/SwiftHeaders",
+				);
 				INFOPLIST_FILE = AppWithModules/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2460,14 +2609,18 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = NO;
+				EXPORTED_SYMBOLS_FILE = "/Users/teodordermendzhiev/workspace/ns-v8ios-runtime/AppWithModules/exported-symbols.txt";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AppWithModules/Frameworks",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/NativeScript";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/NativeScript",
+					"$(SRCROOT)/SwiftHeaders",
+				);
 				INFOPLIST_FILE = AppWithModules/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2538,9 +2691,10 @@
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/NativeScript",
 					"$(SRCROOT)/TestFixtures",
+					"$(SRCROOT)/SwiftHeaders",
 				);
 				INFOPLIST_FILE = TestRunner/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2567,6 +2721,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRIPFLAGS = "-s $(PROJECT_DIR)/TestFixtures/exported-symbols.txt";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -2587,9 +2743,10 @@
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/NativeScript",
 					"$(SRCROOT)/TestFixtures",
+					"$(SRCROOT)/SwiftHeaders",
 				);
 				INFOPLIST_FILE = TestRunner/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2616,6 +2773,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRIPFLAGS = "-s $(PROJECT_DIR)/TestFixtures/exported-symbols.txt";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
 			};

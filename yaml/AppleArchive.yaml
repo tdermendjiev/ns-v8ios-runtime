@@ -1,0 +1,4027 @@
+---
+Module:
+  FullName:        AppleArchive
+  IsPartOfFramework: false
+  IsSystemModule:  true
+  Libraries:       []
+Items:
+  - Name:            AAACEQualifierTypes
+    JsName:          AAACEQualifierTypes
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryACLBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryACLBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Enum
+    FullNameFields:
+      - AA_ACE_QUALIFIER_TYPE_USER: '85'
+      - AA_ACE_QUALIFIER_TYPE_GROUP: '71'
+      - AA_ACE_QUALIFIER_TYPE_SID: '83'
+      - AA_ACE_QUALIFIER_TYPE_UUID: '73'
+    SwiftNameFields:
+      - A_ACE_QUALIFIER_TYPE_USER: '85'
+      - A_ACE_QUALIFIER_TYPE_GROUP: '71'
+      - A_ACE_QUALIFIER_TYPE_SID: '83'
+      - A_ACE_QUALIFIER_TYPE_UUID: '73'
+  - Name:            AAAccessControlEntry
+    JsName:          AAAccessControlEntry
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryACLBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryACLBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Struct
+    Fields:
+      - Name:            tag
+        Signature:
+          Type:            Enum
+          Name:            acl_tag_t
+      - Name:            perms
+        Signature:
+          Type:            ULongLong
+      - Name:            flags
+        Signature:
+          Type:            ULongLong
+      - Name:            qualifier_type
+        Signature:
+          Type:            UInt
+  - Name:            AAArchiveStreamCancel
+    JsName:          AAArchiveStreamCancel
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAArchiveStream.h'
+    Module:
+      FullName:        AppleArchive.AAArchiveStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAArchiveStreamClose
+    JsName:          AAArchiveStreamClose
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAArchiveStream.h'
+    Module:
+      FullName:        AppleArchive.AAArchiveStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAArchiveStreamProcess
+    JsName:          AAArchiveStreamProcess
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAArchiveStream.h'
+    Module:
+      FullName:        AppleArchive.AAArchiveStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Long
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            Int
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+          - Type:            UInt
+          - Type:            CString
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+      - Type:            ULongLong
+      - Type:            Int
+  - Name:            AAArchiveStreamReadHeader
+    JsName:          AAArchiveStreamReadHeader
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAArchiveStream.h'
+    Module:
+      FullName:        AppleArchive.AAArchiveStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Pointer
+          PointerType:
+            Type:            Void
+  - Name:            AAArchiveStreamWriteHeader
+    JsName:          AAArchiveStreamWriteHeader
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAArchiveStream.h'
+    Module:
+      FullName:        AppleArchive.AAArchiveStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAArchiveStreamWritePathList
+    JsName:          AAArchiveStreamWritePathList
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAArchiveStream.h'
+    Module:
+      FullName:        AppleArchive.AAArchiveStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            Int
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+          - Type:            UInt
+          - Type:            CString
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+      - Type:            ULongLong
+      - Type:            Int
+  - Name:            AAByteStreamCancel
+    JsName:          AAByteStreamCancel
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAByteStream.h'
+    Module:
+      FullName:        AppleArchive.AAByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAByteStreamClose
+    JsName:          AAByteStreamClose
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAByteStream.h'
+    Module:
+      FullName:        AppleArchive.AAByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAByteStreamPRead
+    JsName:          AAByteStreamPRead
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAByteStream.h'
+    Module:
+      FullName:        AppleArchive.AAByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Long
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            ULong
+      - Type:            LongLong
+  - Name:            AAByteStreamPWrite
+    JsName:          AAByteStreamPWrite
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAByteStream.h'
+    Module:
+      FullName:        AppleArchive.AAByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Long
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            ULong
+      - Type:            LongLong
+  - Name:            AAByteStreamProcess
+    JsName:          AAByteStreamProcess
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAByteStream.h'
+    Module:
+      FullName:        AppleArchive.AAByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            LongLong
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAByteStreamRead
+    JsName:          AAByteStreamRead
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAByteStream.h'
+    Module:
+      FullName:        AppleArchive.AAByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Long
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            ULong
+  - Name:            AAByteStreamSeek
+    JsName:          AAByteStreamSeek
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAByteStream.h'
+    Module:
+      FullName:        AppleArchive.AAByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            LongLong
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            LongLong
+      - Type:            Int
+  - Name:            AAByteStreamWrite
+    JsName:          AAByteStreamWrite
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAByteStream.h'
+    Module:
+      FullName:        AppleArchive.AAByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Long
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            ULong
+  - Name:            AACompressionAlgorithms
+    JsName:          AACompressionAlgorithms
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Enum
+    FullNameFields:
+      - AA_COMPRESSION_ALGORITHM_NONE: '0'
+      - AA_COMPRESSION_ALGORITHM_LZ4: '256'
+      - AA_COMPRESSION_ALGORITHM_ZLIB: '1285'
+      - AA_COMPRESSION_ALGORITHM_LZMA: '774'
+      - AA_COMPRESSION_ALGORITHM_LZFSE: '2049'
+      - AA_COMPRESSION_ALGORITHM_LZBITMAP: '1794'
+    SwiftNameFields:
+      - A_COMPRESSION_ALGORITHM_NONE: '0'
+      - A_COMPRESSION_ALGORITHM_LZ4: '256'
+      - A_COMPRESSION_ALGORITHM_ZLIB: '1285'
+      - A_COMPRESSION_ALGORITHM_LZMA: '774'
+      - A_COMPRESSION_ALGORITHM_LZFSE: '2049'
+      - A_COMPRESSION_ALGORITHM_LZBITMAP: '1794'
+  - Name:            AACompressionOutputStreamOpen
+    JsName:          AACompressionOutputStreamOpen
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAByteStream.h'
+    Module:
+      FullName:        AppleArchive.AAByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+      - Type:            ULong
+      - Type:            ULongLong
+      - Type:            Int
+  - Name:            AACompressionOutputStreamOpenExisting
+    JsName:          AACompressionOutputStreamOpenExisting
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAByteStream.h'
+    Module:
+      FullName:        AppleArchive.AAByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            ULongLong
+      - Type:            Int
+  - Name:            AAConvertArchiveOutputStreamOpen
+    JsName:          AAConvertArchiveOutputStreamOpen
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAArchiveStream.h'
+    Module:
+      FullName:        AppleArchive.AAArchiveStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            Int
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+          - Type:            UInt
+          - Type:            CString
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+      - Type:            ULongLong
+      - Type:            Int
+  - Name:            AACustomArchiveStreamOpen
+    JsName:          AACustomArchiveStreamOpen
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AACustomArchiveStream.h'
+    Module:
+      FullName:        AppleArchive.AACustomArchiveStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AACustomArchiveStreamSetCancelProc
+    JsName:          AACustomArchiveStreamSetCancelProc
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AACustomArchiveStream.h'
+    Module:
+      FullName:        AppleArchive.AACustomArchiveStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            Void
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+  - Name:            AACustomArchiveStreamSetCloseProc
+    JsName:          AACustomArchiveStreamSetCloseProc
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AACustomArchiveStream.h'
+    Module:
+      FullName:        AppleArchive.AACustomArchiveStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            Int
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+  - Name:            AACustomArchiveStreamSetData
+    JsName:          AACustomArchiveStreamSetData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AACustomArchiveStream.h'
+    Module:
+      FullName:        AppleArchive.AACustomArchiveStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AACustomArchiveStreamSetReadHeaderProc
+    JsName:          AACustomArchiveStreamSetReadHeaderProc
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AACustomArchiveStream.h'
+    Module:
+      FullName:        AppleArchive.AACustomArchiveStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            Int
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+          - Type:            Pointer
+            PointerType:
+              Type:            Pointer
+              PointerType:
+                Type:            Void
+  - Name:            AACustomArchiveStreamSetWriteHeaderProc
+    JsName:          AACustomArchiveStreamSetWriteHeaderProc
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AACustomArchiveStream.h'
+    Module:
+      FullName:        AppleArchive.AACustomArchiveStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            Int
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+  - Name:            AACustomByteStreamOpen
+    JsName:          AACustomByteStreamOpen
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AACustomByteStream.h'
+    Module:
+      FullName:        AppleArchive.AACustomByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AACustomByteStreamSetCancelProc
+    JsName:          AACustomByteStreamSetCancelProc
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AACustomByteStream.h'
+    Module:
+      FullName:        AppleArchive.AACustomByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            Void
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+  - Name:            AACustomByteStreamSetCloseProc
+    JsName:          AACustomByteStreamSetCloseProc
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AACustomByteStream.h'
+    Module:
+      FullName:        AppleArchive.AACustomByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            Int
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+  - Name:            AACustomByteStreamSetData
+    JsName:          AACustomByteStreamSetData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AACustomByteStream.h'
+    Module:
+      FullName:        AppleArchive.AACustomByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AACustomByteStreamSetPReadProc
+    JsName:          AACustomByteStreamSetPReadProc
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AACustomByteStream.h'
+    Module:
+      FullName:        AppleArchive.AACustomByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            Long
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+          - Type:            ULong
+          - Type:            LongLong
+  - Name:            AACustomByteStreamSetPWriteProc
+    JsName:          AACustomByteStreamSetPWriteProc
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AACustomByteStream.h'
+    Module:
+      FullName:        AppleArchive.AACustomByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            Long
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+          - Type:            ULong
+          - Type:            LongLong
+  - Name:            AACustomByteStreamSetReadProc
+    JsName:          AACustomByteStreamSetReadProc
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AACustomByteStream.h'
+    Module:
+      FullName:        AppleArchive.AACustomByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            Long
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+          - Type:            ULong
+  - Name:            AACustomByteStreamSetSeekProc
+    JsName:          AACustomByteStreamSetSeekProc
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AACustomByteStream.h'
+    Module:
+      FullName:        AppleArchive.AACustomByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            LongLong
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+          - Type:            LongLong
+          - Type:            Int
+  - Name:            AACustomByteStreamSetWriteProc
+    JsName:          AACustomByteStreamSetWriteProc
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AACustomByteStream.h'
+    Module:
+      FullName:        AppleArchive.AACustomByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            Long
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+          - Type:            ULong
+  - Name:            AADecodeArchiveInputStreamOpen
+    JsName:          AADecodeArchiveInputStreamOpen
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAArchiveStream.h'
+    Module:
+      FullName:        AppleArchive.AAArchiveStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            Int
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+          - Type:            UInt
+          - Type:            CString
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+      - Type:            ULongLong
+      - Type:            Int
+  - Name:            AADecompressionInputStreamOpen
+    JsName:          AADecompressionInputStreamOpen
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAByteStream.h'
+    Module:
+      FullName:        AppleArchive.AAByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            ULongLong
+      - Type:            Int
+  - Name:            AADecompressionRandomAccessInputStreamOpen
+    JsName:          AADecompressionRandomAccessInputStreamOpen
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAByteStream.h'
+    Module:
+      FullName:        AppleArchive.AAByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            ULong
+      - Type:            ULongLong
+      - Type:            Int
+  - Name:            AAEncodeArchiveOutputStreamOpen
+    JsName:          AAEncodeArchiveOutputStreamOpen
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAArchiveStream.h'
+    Module:
+      FullName:        AppleArchive.AAArchiveStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            Int
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+          - Type:            UInt
+          - Type:            CString
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+      - Type:            ULongLong
+      - Type:            Int
+  - Name:            AAEntryACLBlobAppendEntry
+    JsName:          AAEntryACLBlobAppendEntry
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryACLBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryACLBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Struct
+          Module:          AppleArchive.AAEntryACLBlob
+          Name:            AAAccessControlEntry
+      - Type:            CString
+      - Type:            ULong
+  - Name:            AAEntryACLBlobApplyToPath
+    JsName:          AAEntryACLBlobApplyToPath
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryACLBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryACLBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            CString
+      - Type:            CString
+      - Type:            ULongLong
+  - Name:            AAEntryACLBlobClear
+    JsName:          AAEntryACLBlobClear
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryACLBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryACLBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAEntryACLBlobCreate
+    JsName:          AAEntryACLBlobCreate
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryACLBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryACLBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAEntryACLBlobCreateWithEncodedData
+    JsName:          AAEntryACLBlobCreateWithEncodedData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryACLBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryACLBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            CString
+      - Type:            ULong
+  - Name:            AAEntryACLBlobCreateWithPath
+    JsName:          AAEntryACLBlobCreateWithPath
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryACLBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryACLBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            CString
+      - Type:            CString
+      - Type:            ULongLong
+  - Name:            AAEntryACLBlobDestroy
+    JsName:          AAEntryACLBlobDestroy
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryACLBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryACLBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAEntryACLBlobGetEncodedData
+    JsName:          AAEntryACLBlobGetEncodedData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryACLBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryACLBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAEntryACLBlobGetEncodedSize
+    JsName:          AAEntryACLBlobGetEncodedSize
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryACLBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryACLBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            ULong
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAEntryACLBlobGetEntry
+    JsName:          AAEntryACLBlobGetEntry
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryACLBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryACLBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+      - Type:            Pointer
+        PointerType:
+          Type:            Struct
+          Module:          AppleArchive.AAEntryACLBlob
+          Name:            AAAccessControlEntry
+      - Type:            ULong
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            ULong
+  - Name:            AAEntryACLBlobGetEntryCount
+    JsName:          AAEntryACLBlobGetEntryCount
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryACLBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryACLBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            UInt
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAEntryACLBlobRemoveEntry
+    JsName:          AAEntryACLBlobRemoveEntry
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryACLBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryACLBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+  - Name:            AAEntryACLBlobSetEntry
+    JsName:          AAEntryACLBlobSetEntry
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryACLBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryACLBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+      - Type:            Pointer
+        PointerType:
+          Type:            Struct
+          Module:          AppleArchive.AAEntryACLBlob
+          Name:            AAAccessControlEntry
+      - Type:            CString
+      - Type:            ULong
+  - Name:            AAEntryMessages
+    JsName:          AAEntryMessages
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryMessage.h'
+    Module:
+      FullName:        AppleArchive.AAEntryMessage
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Enum
+    FullNameFields:
+      - AA_ENTRY_MESSAGE_SEARCH_PRUNE_DIR: '10'
+      - AA_ENTRY_MESSAGE_SEARCH_EXCLUDE: '11'
+      - AA_ENTRY_MESSAGE_SEARCH_FAIL: '12'
+      - AA_ENTRY_MESSAGE_EXTRACT_BEGIN: '20'
+      - AA_ENTRY_MESSAGE_EXTRACT_END: '21'
+      - AA_ENTRY_MESSAGE_EXTRACT_FAIL: '22'
+      - AA_ENTRY_MESSAGE_EXTRACT_ATTRIBUTES: '23'
+      - AA_ENTRY_MESSAGE_EXTRACT_XAT: '24'
+      - AA_ENTRY_MESSAGE_EXTRACT_ACL: '25'
+      - AA_ENTRY_MESSAGE_ENCODE_SCANNING: '30'
+      - AA_ENTRY_MESSAGE_ENCODE_WRITING: '31'
+      - AA_ENTRY_MESSAGE_CONVERT_EXCLUDE: '40'
+      - AA_ENTRY_MESSAGE_PROCESS_EXCLUDE: '50'
+      - AA_ENTRY_MESSAGE_DECODE_READING: '60'
+    SwiftNameFields:
+      - A_ENTRY_MESSAGE_SEARCH_PRUNE_DIR: '10'
+      - A_ENTRY_MESSAGE_SEARCH_EXCLUDE: '11'
+      - A_ENTRY_MESSAGE_SEARCH_FAIL: '12'
+      - A_ENTRY_MESSAGE_EXTRACT_BEGIN: '20'
+      - A_ENTRY_MESSAGE_EXTRACT_END: '21'
+      - A_ENTRY_MESSAGE_EXTRACT_FAIL: '22'
+      - A_ENTRY_MESSAGE_EXTRACT_ATTRIBUTES: '23'
+      - A_ENTRY_MESSAGE_EXTRACT_XAT: '24'
+      - A_ENTRY_MESSAGE_EXTRACT_ACL: '25'
+      - A_ENTRY_MESSAGE_ENCODE_SCANNING: '30'
+      - A_ENTRY_MESSAGE_ENCODE_WRITING: '31'
+      - A_ENTRY_MESSAGE_CONVERT_EXCLUDE: '40'
+      - A_ENTRY_MESSAGE_PROCESS_EXCLUDE: '50'
+      - A_ENTRY_MESSAGE_DECODE_READING: '60'
+  - Name:            AAEntryTypes
+    JsName:          AAEntryTypes
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Enum
+    FullNameFields:
+      - AA_ENTRY_TYPE_REG: '70'
+      - AA_ENTRY_TYPE_DIR: '68'
+      - AA_ENTRY_TYPE_LNK: '76'
+      - AA_ENTRY_TYPE_FIFO: '80'
+      - AA_ENTRY_TYPE_CHR: '67'
+      - AA_ENTRY_TYPE_BLK: '66'
+      - AA_ENTRY_TYPE_SOCK: '83'
+      - AA_ENTRY_TYPE_WHT: '87'
+      - AA_ENTRY_TYPE_DOOR: '82'
+      - AA_ENTRY_TYPE_PORT: '84'
+      - AA_ENTRY_TYPE_METADATA: '77'
+    SwiftNameFields:
+      - A_ENTRY_TYPE_REG: '70'
+      - A_ENTRY_TYPE_DIR: '68'
+      - A_ENTRY_TYPE_LNK: '76'
+      - A_ENTRY_TYPE_FIFO: '80'
+      - A_ENTRY_TYPE_CHR: '67'
+      - A_ENTRY_TYPE_BLK: '66'
+      - A_ENTRY_TYPE_SOCK: '83'
+      - A_ENTRY_TYPE_WHT: '87'
+      - A_ENTRY_TYPE_DOOR: '82'
+      - A_ENTRY_TYPE_PORT: '84'
+      - A_ENTRY_TYPE_METADATA: '77'
+  - Name:            AAEntryXATBlobAppendEntry
+    JsName:          AAEntryXATBlobAppendEntry
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryXATBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryXATBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            CString
+      - Type:            CString
+      - Type:            ULong
+  - Name:            AAEntryXATBlobApplyToPath
+    JsName:          AAEntryXATBlobApplyToPath
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryXATBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryXATBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            CString
+      - Type:            CString
+      - Type:            ULongLong
+  - Name:            AAEntryXATBlobClear
+    JsName:          AAEntryXATBlobClear
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryXATBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryXATBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAEntryXATBlobCreate
+    JsName:          AAEntryXATBlobCreate
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryXATBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryXATBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAEntryXATBlobCreateWithEncodedData
+    JsName:          AAEntryXATBlobCreateWithEncodedData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryXATBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryXATBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            CString
+      - Type:            ULong
+  - Name:            AAEntryXATBlobCreateWithPath
+    JsName:          AAEntryXATBlobCreateWithPath
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryXATBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryXATBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            CString
+      - Type:            CString
+      - Type:            ULongLong
+  - Name:            AAEntryXATBlobDestroy
+    JsName:          AAEntryXATBlobDestroy
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryXATBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryXATBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAEntryXATBlobGetEncodedData
+    JsName:          AAEntryXATBlobGetEncodedData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryXATBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryXATBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAEntryXATBlobGetEncodedSize
+    JsName:          AAEntryXATBlobGetEncodedSize
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryXATBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryXATBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            ULong
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAEntryXATBlobGetEntry
+    JsName:          AAEntryXATBlobGetEntry
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryXATBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryXATBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+      - Type:            ULong
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            ULong
+      - Type:            ULong
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            ULong
+  - Name:            AAEntryXATBlobGetEntryCount
+    JsName:          AAEntryXATBlobGetEntryCount
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryXATBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryXATBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            UInt
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAEntryXATBlobRemoveEntry
+    JsName:          AAEntryXATBlobRemoveEntry
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryXATBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryXATBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+  - Name:            AAEntryXATBlobSetEntry
+    JsName:          AAEntryXATBlobSetEntry
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryXATBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryXATBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+      - Type:            CString
+      - Type:            CString
+      - Type:            ULong
+  - Name:            AAExtractArchiveOutputStreamOpen
+    JsName:          AAExtractArchiveOutputStreamOpen
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAArchiveStream.h'
+    Module:
+      FullName:        AppleArchive.AAArchiveStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            Int
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+          - Type:            UInt
+          - Type:            CString
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+      - Type:            ULongLong
+      - Type:            Int
+  - Name:            AAFieldKeySetClear
+    JsName:          AAFieldKeySetClear
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFieldKeys.h'
+    Module:
+      FullName:        AppleArchive.AAFieldKeys
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAFieldKeySetClone
+    JsName:          AAFieldKeySetClone
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFieldKeys.h'
+    Module:
+      FullName:        AppleArchive.AAFieldKeys
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAFieldKeySetCreate
+    JsName:          AAFieldKeySetCreate
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFieldKeys.h'
+    Module:
+      FullName:        AppleArchive.AAFieldKeys
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAFieldKeySetCreateWithString
+    JsName:          AAFieldKeySetCreateWithString
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFieldKeys.h'
+    Module:
+      FullName:        AppleArchive.AAFieldKeys
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            CString
+  - Name:            AAFieldKeySetDestroy
+    JsName:          AAFieldKeySetDestroy
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFieldKeys.h'
+    Module:
+      FullName:        AppleArchive.AAFieldKeys
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAFieldKeySetGetKeyCount
+    JsName:          AAFieldKeySetGetKeyCount
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFieldKeys.h'
+    Module:
+      FullName:        AppleArchive.AAFieldKeys
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            UInt
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAFieldKeySetInsertKeySet
+    JsName:          AAFieldKeySetInsertKeySet
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFieldKeys.h'
+    Module:
+      FullName:        AppleArchive.AAFieldKeys
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAFieldKeySetRemoveKeySet
+    JsName:          AAFieldKeySetRemoveKeySet
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFieldKeys.h'
+    Module:
+      FullName:        AppleArchive.AAFieldKeys
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAFieldKeySetSelectKeySet
+    JsName:          AAFieldKeySetSelectKeySet
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFieldKeys.h'
+    Module:
+      FullName:        AppleArchive.AAFieldKeys
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAFieldKeySetSerialize
+    JsName:          AAFieldKeySetSerialize
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFieldKeys.h'
+    Module:
+      FullName:        AppleArchive.AAFieldKeys
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            ULong
+      - Type:            CString
+  - Name:            AAFieldTypes
+    JsName:          AAFieldTypes
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Enum
+    FullNameFields:
+      - AA_FIELD_TYPE_FLAG: '0'
+      - AA_FIELD_TYPE_UINT: '1'
+      - AA_FIELD_TYPE_STRING: '2'
+      - AA_FIELD_TYPE_HASH: '3'
+      - AA_FIELD_TYPE_TIMESPEC: '4'
+      - AA_FIELD_TYPE_BLOB: '5'
+    SwiftNameFields:
+      - A_FIELD_TYPE_FLAG: '0'
+      - A_FIELD_TYPE_UINT: '1'
+      - A_FIELD_TYPE_STRING: '2'
+      - A_FIELD_TYPE_HASH: '3'
+      - A_FIELD_TYPE_TIMESPEC: '4'
+      - A_FIELD_TYPE_BLOB: '5'
+  - Name:            AAFileStreamOpenWithFD
+    JsName:          AAFileStreamOpenWithFD
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAByteStream.h'
+    Module:
+      FullName:        AppleArchive.AAByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Int
+      - Type:            Int
+  - Name:            AAFileStreamOpenWithPath
+    JsName:          AAFileStreamOpenWithPath
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAByteStream.h'
+    Module:
+      FullName:        AppleArchive.AAByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            CString
+      - Type:            Int
+      - Type:            Ushort
+  - Name:            AAFlags
+    JsName:          AAFlags
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFlagSet.h'
+    Module:
+      FullName:        AppleArchive.AAFlagSet
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Enum
+    FullNameFields:
+      - AA_FLAG_IGNORE_EPERM: '1'
+      - AA_FLAG_ARCHIVE_DEDUPLICATE_DAT: '2'
+      - AA_FLAG_ARCHIVE_NO_RESOLVE_ACL_QUALIFIERS: '4'
+      - AA_FLAG_REPLACE_ATTRIBUTES: '8'
+      - AA_FLAG_EXTRACT_NO_AUTO_DEDUP: '16'
+      - AA_FLAG_EXTRACT_NO_AUTO_SPARSE: '32'
+      - AA_FLAG_CROSS_VOLUME_BOUNDARIES: '64'
+      - AA_FLAG_EXTRACT_AUTO_DEDUP_AS_HARD_LINKS: '128'
+      - AA_FLAG_DECODE_INSERT_IDX: '256'
+      - AA_FLAG_EXCLUDE_METADATA_ENTRIES: '512'
+      - AA_FLAG_PROCESS_RANDOM_ACCESS_OUTPUT: '1024'
+      - AA_FLAG_VERBOSITY_0: '0'
+      - AA_FLAG_VERBOSITY_1: '4611686018427387904'
+      - AA_FLAG_VERBOSITY_2: '-9223372036854775808'
+      - AA_FLAG_VERBOSITY_3: '-4611686018427387904'
+    SwiftNameFields:
+      - A_FLAG_IGNORE_EPERM: '1'
+      - A_FLAG_ARCHIVE_DEDUPLICATE_DAT: '2'
+      - A_FLAG_ARCHIVE_NO_RESOLVE_ACL_QUALIFIERS: '4'
+      - A_FLAG_REPLACE_ATTRIBUTES: '8'
+      - A_FLAG_EXTRACT_NO_AUTO_DEDUP: '16'
+      - A_FLAG_EXTRACT_NO_AUTO_SPARSE: '32'
+      - A_FLAG_CROSS_VOLUME_BOUNDARIES: '64'
+      - A_FLAG_EXTRACT_AUTO_DEDUP_AS_HARD_LINKS: '128'
+      - A_FLAG_DECODE_INSERT_IDX: '256'
+      - A_FLAG_EXCLUDE_METADATA_ENTRIES: '512'
+      - A_FLAG_PROCESS_RANDOM_ACCESS_OUTPUT: '1024'
+      - A_FLAG_VERBOSITY_0: '0'
+      - A_FLAG_VERBOSITY_1: '4611686018427387904'
+      - A_FLAG_VERBOSITY_2: '-9223372036854775808'
+      - A_FLAG_VERBOSITY_3: '-4611686018427387904'
+  - Name:            AAHashFunctions
+    JsName:          AAHashFunctions
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Enum
+    FullNameFields:
+      - AA_HASH_FUNCTION_CRC32: '1'
+      - AA_HASH_FUNCTION_SHA1: '2'
+      - AA_HASH_FUNCTION_SHA256: '3'
+      - AA_HASH_FUNCTION_SHA384: '4'
+      - AA_HASH_FUNCTION_SHA512: '5'
+    SwiftNameFields:
+      - A_HASH_FUNCTION_CRC32: '1'
+      - A_HASH_FUNCTION_SHA1: '2'
+      - A_HASH_FUNCTION_SHA256: '3'
+      - A_HASH_FUNCTION_SHA384: '4'
+      - A_HASH_FUNCTION_SHA512: '5'
+  - Name:            AAHeaderAssign
+    JsName:          AAHeaderAssign
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAHeader.h'
+    Module:
+      FullName:        AppleArchive.AAHeader
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAHeaderClear
+    JsName:          AAHeaderClear
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAHeader.h'
+    Module:
+      FullName:        AppleArchive.AAHeader
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAHeaderClone
+    JsName:          AAHeaderClone
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAHeader.h'
+    Module:
+      FullName:        AppleArchive.AAHeader
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAHeaderCreate
+    JsName:          AAHeaderCreate
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAHeader.h'
+    Module:
+      FullName:        AppleArchive.AAHeader
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAHeaderCreateWithEncodedData
+    JsName:          AAHeaderCreateWithEncodedData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAHeader.h'
+    Module:
+      FullName:        AppleArchive.AAHeader
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            ULong
+      - Type:            CString
+  - Name:            AAHeaderCreateWithPath
+    JsName:          AAHeaderCreateWithPath
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAHeader.h'
+    Module:
+      FullName:        AppleArchive.AAHeader
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            CString
+      - Type:            CString
+      - Type:            ULongLong
+  - Name:            AAHeaderDestroy
+    JsName:          AAHeaderDestroy
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAHeader.h'
+    Module:
+      FullName:        AppleArchive.AAHeader
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAHeaderGetEncodedData
+    JsName:          AAHeaderGetEncodedData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAHeader.h'
+    Module:
+      FullName:        AppleArchive.AAHeader
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAHeaderGetEncodedSize
+    JsName:          AAHeaderGetEncodedSize
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAHeader.h'
+    Module:
+      FullName:        AppleArchive.AAHeader
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            ULong
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAHeaderGetFieldBlob
+    JsName:          AAHeaderGetFieldBlob
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAHeader.h'
+    Module:
+      FullName:        AppleArchive.AAHeader
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+      - Type:            Pointer
+        PointerType:
+          Type:            ULongLong
+      - Type:            Pointer
+        PointerType:
+          Type:            ULongLong
+  - Name:            AAHeaderGetFieldCount
+    JsName:          AAHeaderGetFieldCount
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAHeader.h'
+    Module:
+      FullName:        AppleArchive.AAHeader
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            UInt
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAHeaderGetFieldHash
+    JsName:          AAHeaderGetFieldHash
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAHeader.h'
+    Module:
+      FullName:        AppleArchive.AAHeader
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+      - Type:            ULong
+      - Type:            Pointer
+        PointerType:
+          Type:            UInt
+      - Type:            CString
+  - Name:            AAHeaderGetFieldString
+    JsName:          AAHeaderGetFieldString
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAHeader.h'
+    Module:
+      FullName:        AppleArchive.AAHeader
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+      - Type:            ULong
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            ULong
+  - Name:            AAHeaderGetFieldTimespec
+    JsName:          AAHeaderGetFieldTimespec
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAHeader.h'
+    Module:
+      FullName:        AppleArchive.AAHeader
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+      - Type:            Pointer
+        PointerType:
+          Type:            Struct
+          Module:          Darwin.POSIX.sys.types._timespec
+          Name:            timespec
+  - Name:            AAHeaderGetFieldType
+    JsName:          AAHeaderGetFieldType
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAHeader.h'
+    Module:
+      FullName:        AppleArchive.AAHeader
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+  - Name:            AAHeaderGetFieldUInt
+    JsName:          AAHeaderGetFieldUInt
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAHeader.h'
+    Module:
+      FullName:        AppleArchive.AAHeader
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+      - Type:            Pointer
+        PointerType:
+          Type:            ULongLong
+  - Name:            AAHeaderGetPayloadSize
+    JsName:          AAHeaderGetPayloadSize
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAHeader.h'
+    Module:
+      FullName:        AppleArchive.AAHeader
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            ULongLong
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAHeaderRemoveField
+    JsName:          AAHeaderRemoveField
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAHeader.h'
+    Module:
+      FullName:        AppleArchive.AAHeader
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+  - Name:            AAPathListCreateWithDirectoryContents
+    JsName:          AAPathListCreateWithDirectoryContents
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAPathList.h'
+    Module:
+      FullName:        AppleArchive.AAPathList
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            CString
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            Int
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+          - Type:            UInt
+          - Type:            CString
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+      - Type:            ULongLong
+      - Type:            Int
+  - Name:            AAPathListCreateWithPath
+    JsName:          AAPathListCreateWithPath
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAPathList.h'
+    Module:
+      FullName:        AppleArchive.AAPathList
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    15.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            CString
+      - Type:            CString
+  - Name:            AAPathListDestroy
+    JsName:          AAPathListDestroy
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAPathList.h'
+    Module:
+      FullName:        AppleArchive.AAPathList
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAPathListNodeFirst
+    JsName:          AAPathListNodeFirst
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAPathList.h'
+    Module:
+      FullName:        AppleArchive.AAPathList
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            ULongLong
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AAPathListNodeGetPath
+    JsName:          AAPathListNodeGetPath
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAPathList.h'
+    Module:
+      FullName:        AppleArchive.AAPathList
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            ULongLong
+      - Type:            ULong
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            ULong
+  - Name:            AAPathListNodeNext
+    JsName:          AAPathListNodeNext
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAPathList.h'
+    Module:
+      FullName:        AppleArchive.AAPathList
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            ULongLong
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            ULongLong
+  - Name:            AARandomAccessByteStreamProcess
+    JsName:          AARandomAccessByteStreamProcess
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAByteStream.h'
+    Module:
+      FullName:        AppleArchive.AAByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    15.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            LongLong
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            LongLong
+      - Type:            ULong
+      - Type:            ULongLong
+      - Type:            Int
+  - Name:            AASharedBufferPipeOpen
+    JsName:          AASharedBufferPipeOpen
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAByteStream.h'
+    Module:
+      FullName:        AppleArchive.AAByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Pointer
+          PointerType:
+            Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Pointer
+          PointerType:
+            Type:            Void
+      - Type:            ULong
+  - Name:            AATempFileStreamOpen
+    JsName:          AATempFileStreamOpen
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAByteStream.h'
+    Module:
+      FullName:        AppleArchive.AAByteStream
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AA_ACE_QUALIFIER_TYPE_GROUP
+    JsName:          AA_ACE_QUALIFIER_TYPE_GROUP
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryACLBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryACLBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '71'
+  - Name:            AA_ACE_QUALIFIER_TYPE_SID
+    JsName:          AA_ACE_QUALIFIER_TYPE_SID
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryACLBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryACLBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '83'
+  - Name:            AA_ACE_QUALIFIER_TYPE_USER
+    JsName:          AA_ACE_QUALIFIER_TYPE_USER
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryACLBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryACLBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '85'
+  - Name:            AA_ACE_QUALIFIER_TYPE_UUID
+    JsName:          AA_ACE_QUALIFIER_TYPE_UUID
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryACLBlob.h'
+    Module:
+      FullName:        AppleArchive.AAEntryACLBlob
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '73'
+  - Name:            AA_COMPRESSION_ALGORITHM_LZ4
+    JsName:          AA_COMPRESSION_ALGORITHM_LZ4
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '256'
+  - Name:            AA_COMPRESSION_ALGORITHM_LZBITMAP
+    JsName:          AA_COMPRESSION_ALGORITHM_LZBITMAP
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1794'
+  - Name:            AA_COMPRESSION_ALGORITHM_LZFSE
+    JsName:          AA_COMPRESSION_ALGORITHM_LZFSE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '2049'
+  - Name:            AA_COMPRESSION_ALGORITHM_LZMA
+    JsName:          AA_COMPRESSION_ALGORITHM_LZMA
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '774'
+  - Name:            AA_COMPRESSION_ALGORITHM_NONE
+    JsName:          AA_COMPRESSION_ALGORITHM_NONE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '0'
+  - Name:            AA_COMPRESSION_ALGORITHM_ZLIB
+    JsName:          AA_COMPRESSION_ALGORITHM_ZLIB
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1285'
+  - Name:            AA_ENTRY_MESSAGE_CONVERT_EXCLUDE
+    JsName:          AA_ENTRY_MESSAGE_CONVERT_EXCLUDE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryMessage.h'
+    Module:
+      FullName:        AppleArchive.AAEntryMessage
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '40'
+  - Name:            AA_ENTRY_MESSAGE_DECODE_READING
+    JsName:          AA_ENTRY_MESSAGE_DECODE_READING
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryMessage.h'
+    Module:
+      FullName:        AppleArchive.AAEntryMessage
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '60'
+  - Name:            AA_ENTRY_MESSAGE_ENCODE_SCANNING
+    JsName:          AA_ENTRY_MESSAGE_ENCODE_SCANNING
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryMessage.h'
+    Module:
+      FullName:        AppleArchive.AAEntryMessage
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '30'
+  - Name:            AA_ENTRY_MESSAGE_ENCODE_WRITING
+    JsName:          AA_ENTRY_MESSAGE_ENCODE_WRITING
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryMessage.h'
+    Module:
+      FullName:        AppleArchive.AAEntryMessage
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '31'
+  - Name:            AA_ENTRY_MESSAGE_EXTRACT_ACL
+    JsName:          AA_ENTRY_MESSAGE_EXTRACT_ACL
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryMessage.h'
+    Module:
+      FullName:        AppleArchive.AAEntryMessage
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '25'
+  - Name:            AA_ENTRY_MESSAGE_EXTRACT_ATTRIBUTES
+    JsName:          AA_ENTRY_MESSAGE_EXTRACT_ATTRIBUTES
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryMessage.h'
+    Module:
+      FullName:        AppleArchive.AAEntryMessage
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '23'
+  - Name:            AA_ENTRY_MESSAGE_EXTRACT_BEGIN
+    JsName:          AA_ENTRY_MESSAGE_EXTRACT_BEGIN
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryMessage.h'
+    Module:
+      FullName:        AppleArchive.AAEntryMessage
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '20'
+  - Name:            AA_ENTRY_MESSAGE_EXTRACT_END
+    JsName:          AA_ENTRY_MESSAGE_EXTRACT_END
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryMessage.h'
+    Module:
+      FullName:        AppleArchive.AAEntryMessage
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '21'
+  - Name:            AA_ENTRY_MESSAGE_EXTRACT_FAIL
+    JsName:          AA_ENTRY_MESSAGE_EXTRACT_FAIL
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryMessage.h'
+    Module:
+      FullName:        AppleArchive.AAEntryMessage
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '22'
+  - Name:            AA_ENTRY_MESSAGE_EXTRACT_XAT
+    JsName:          AA_ENTRY_MESSAGE_EXTRACT_XAT
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryMessage.h'
+    Module:
+      FullName:        AppleArchive.AAEntryMessage
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '24'
+  - Name:            AA_ENTRY_MESSAGE_PROCESS_EXCLUDE
+    JsName:          AA_ENTRY_MESSAGE_PROCESS_EXCLUDE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryMessage.h'
+    Module:
+      FullName:        AppleArchive.AAEntryMessage
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '50'
+  - Name:            AA_ENTRY_MESSAGE_SEARCH_EXCLUDE
+    JsName:          AA_ENTRY_MESSAGE_SEARCH_EXCLUDE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryMessage.h'
+    Module:
+      FullName:        AppleArchive.AAEntryMessage
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '11'
+  - Name:            AA_ENTRY_MESSAGE_SEARCH_FAIL
+    JsName:          AA_ENTRY_MESSAGE_SEARCH_FAIL
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryMessage.h'
+    Module:
+      FullName:        AppleArchive.AAEntryMessage
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '12'
+  - Name:            AA_ENTRY_MESSAGE_SEARCH_PRUNE_DIR
+    JsName:          AA_ENTRY_MESSAGE_SEARCH_PRUNE_DIR
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAEntryMessage.h'
+    Module:
+      FullName:        AppleArchive.AAEntryMessage
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '10'
+  - Name:            AA_ENTRY_TYPE_BLK
+    JsName:          AA_ENTRY_TYPE_BLK
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '66'
+  - Name:            AA_ENTRY_TYPE_CHR
+    JsName:          AA_ENTRY_TYPE_CHR
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '67'
+  - Name:            AA_ENTRY_TYPE_DIR
+    JsName:          AA_ENTRY_TYPE_DIR
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '68'
+  - Name:            AA_ENTRY_TYPE_DOOR
+    JsName:          AA_ENTRY_TYPE_DOOR
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '82'
+  - Name:            AA_ENTRY_TYPE_FIFO
+    JsName:          AA_ENTRY_TYPE_FIFO
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '80'
+  - Name:            AA_ENTRY_TYPE_LNK
+    JsName:          AA_ENTRY_TYPE_LNK
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '76'
+  - Name:            AA_ENTRY_TYPE_METADATA
+    JsName:          AA_ENTRY_TYPE_METADATA
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '77'
+  - Name:            AA_ENTRY_TYPE_PORT
+    JsName:          AA_ENTRY_TYPE_PORT
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '84'
+  - Name:            AA_ENTRY_TYPE_REG
+    JsName:          AA_ENTRY_TYPE_REG
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '70'
+  - Name:            AA_ENTRY_TYPE_SOCK
+    JsName:          AA_ENTRY_TYPE_SOCK
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '83'
+  - Name:            AA_ENTRY_TYPE_WHT
+    JsName:          AA_ENTRY_TYPE_WHT
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '87'
+  - Name:            AA_FIELD_TYPE_BLOB
+    JsName:          AA_FIELD_TYPE_BLOB
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '5'
+  - Name:            AA_FIELD_TYPE_FLAG
+    JsName:          AA_FIELD_TYPE_FLAG
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '0'
+  - Name:            AA_FIELD_TYPE_HASH
+    JsName:          AA_FIELD_TYPE_HASH
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '3'
+  - Name:            AA_FIELD_TYPE_STRING
+    JsName:          AA_FIELD_TYPE_STRING
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '2'
+  - Name:            AA_FIELD_TYPE_TIMESPEC
+    JsName:          AA_FIELD_TYPE_TIMESPEC
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '4'
+  - Name:            AA_FIELD_TYPE_UINT
+    JsName:          AA_FIELD_TYPE_UINT
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1'
+  - Name:            AA_FLAG_ARCHIVE_DEDUPLICATE_DAT
+    JsName:          AA_FLAG_ARCHIVE_DEDUPLICATE_DAT
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFlagSet.h'
+    Module:
+      FullName:        AppleArchive.AAFlagSet
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '2'
+  - Name:            AA_FLAG_ARCHIVE_NO_RESOLVE_ACL_QUALIFIERS
+    JsName:          AA_FLAG_ARCHIVE_NO_RESOLVE_ACL_QUALIFIERS
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFlagSet.h'
+    Module:
+      FullName:        AppleArchive.AAFlagSet
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '4'
+  - Name:            AA_FLAG_CROSS_VOLUME_BOUNDARIES
+    JsName:          AA_FLAG_CROSS_VOLUME_BOUNDARIES
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFlagSet.h'
+    Module:
+      FullName:        AppleArchive.AAFlagSet
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '64'
+  - Name:            AA_FLAG_DECODE_INSERT_IDX
+    JsName:          AA_FLAG_DECODE_INSERT_IDX
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFlagSet.h'
+    Module:
+      FullName:        AppleArchive.AAFlagSet
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '256'
+  - Name:            AA_FLAG_EXCLUDE_METADATA_ENTRIES
+    JsName:          AA_FLAG_EXCLUDE_METADATA_ENTRIES
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFlagSet.h'
+    Module:
+      FullName:        AppleArchive.AAFlagSet
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '512'
+  - Name:            AA_FLAG_EXTRACT_AUTO_DEDUP_AS_HARD_LINKS
+    JsName:          AA_FLAG_EXTRACT_AUTO_DEDUP_AS_HARD_LINKS
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFlagSet.h'
+    Module:
+      FullName:        AppleArchive.AAFlagSet
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '128'
+  - Name:            AA_FLAG_EXTRACT_NO_AUTO_DEDUP
+    JsName:          AA_FLAG_EXTRACT_NO_AUTO_DEDUP
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFlagSet.h'
+    Module:
+      FullName:        AppleArchive.AAFlagSet
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '16'
+  - Name:            AA_FLAG_EXTRACT_NO_AUTO_SPARSE
+    JsName:          AA_FLAG_EXTRACT_NO_AUTO_SPARSE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFlagSet.h'
+    Module:
+      FullName:        AppleArchive.AAFlagSet
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '32'
+  - Name:            AA_FLAG_IGNORE_EPERM
+    JsName:          AA_FLAG_IGNORE_EPERM
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFlagSet.h'
+    Module:
+      FullName:        AppleArchive.AAFlagSet
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1'
+  - Name:            AA_FLAG_PROCESS_RANDOM_ACCESS_OUTPUT
+    JsName:          AA_FLAG_PROCESS_RANDOM_ACCESS_OUTPUT
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFlagSet.h'
+    Module:
+      FullName:        AppleArchive.AAFlagSet
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1024'
+  - Name:            AA_FLAG_REPLACE_ATTRIBUTES
+    JsName:          AA_FLAG_REPLACE_ATTRIBUTES
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFlagSet.h'
+    Module:
+      FullName:        AppleArchive.AAFlagSet
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '8'
+  - Name:            AA_FLAG_VERBOSITY_0
+    JsName:          AA_FLAG_VERBOSITY_0
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFlagSet.h'
+    Module:
+      FullName:        AppleArchive.AAFlagSet
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '0'
+  - Name:            AA_FLAG_VERBOSITY_1
+    JsName:          AA_FLAG_VERBOSITY_1
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFlagSet.h'
+    Module:
+      FullName:        AppleArchive.AAFlagSet
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '4611686018427387904'
+  - Name:            AA_FLAG_VERBOSITY_2
+    JsName:          AA_FLAG_VERBOSITY_2
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFlagSet.h'
+    Module:
+      FullName:        AppleArchive.AAFlagSet
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '9223372036854775808'
+  - Name:            AA_FLAG_VERBOSITY_3
+    JsName:          AA_FLAG_VERBOSITY_3
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AAFlagSet.h'
+    Module:
+      FullName:        AppleArchive.AAFlagSet
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '13835058055282163712'
+  - Name:            AA_HASH_FUNCTION_CRC32
+    JsName:          AA_HASH_FUNCTION_CRC32
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1'
+  - Name:            AA_HASH_FUNCTION_SHA1
+    JsName:          AA_HASH_FUNCTION_SHA1
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '2'
+  - Name:            AA_HASH_FUNCTION_SHA256
+    JsName:          AA_HASH_FUNCTION_SHA256
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '3'
+  - Name:            AA_HASH_FUNCTION_SHA384
+    JsName:          AA_HASH_FUNCTION_SHA384
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '4'
+  - Name:            AA_HASH_FUNCTION_SHA512
+    JsName:          AA_HASH_FUNCTION_SHA512
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AADefs.h'
+    Module:
+      FullName:        AppleArchive.AADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '5'
+  - Name:            AEAAuthDataAppendEntry
+    JsName:          AEAAuthDataAppendEntry
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAAuthData.h'
+    Module:
+      FullName:        AppleArchive.AEAAuthData
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.5
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            CString
+      - Type:            CString
+      - Type:            ULong
+  - Name:            AEAAuthDataClear
+    JsName:          AEAAuthDataClear
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAAuthData.h'
+    Module:
+      FullName:        AppleArchive.AEAAuthData
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.5
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AEAAuthDataCreate
+    JsName:          AEAAuthDataCreate
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAAuthData.h'
+    Module:
+      FullName:        AppleArchive.AEAAuthData
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.5
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AEAAuthDataCreateWithContext
+    JsName:          AEAAuthDataCreateWithContext
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAAuthData.h'
+    Module:
+      FullName:        AppleArchive.AEAAuthData
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.5
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AEAAuthDataDestroy
+    JsName:          AEAAuthDataDestroy
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAAuthData.h'
+    Module:
+      FullName:        AppleArchive.AEAAuthData
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.5
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AEAAuthDataGetEncodedData
+    JsName:          AEAAuthDataGetEncodedData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAAuthData.h'
+    Module:
+      FullName:        AppleArchive.AEAAuthData
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.5
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AEAAuthDataGetEncodedSize
+    JsName:          AEAAuthDataGetEncodedSize
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAAuthData.h'
+    Module:
+      FullName:        AppleArchive.AEAAuthData
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.5
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            ULong
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AEAAuthDataGetEntry
+    JsName:          AEAAuthDataGetEntry
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAAuthData.h'
+    Module:
+      FullName:        AppleArchive.AEAAuthData
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.5
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+      - Type:            ULong
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            ULong
+      - Type:            ULong
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            ULong
+  - Name:            AEAAuthDataGetEntryCount
+    JsName:          AEAAuthDataGetEntryCount
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAAuthData.h'
+    Module:
+      FullName:        AppleArchive.AEAAuthData
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.5
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            UInt
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AEAAuthDataRemoveEntry
+    JsName:          AEAAuthDataRemoveEntry
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAAuthData.h'
+    Module:
+      FullName:        AppleArchive.AEAAuthData
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.5
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+  - Name:            AEAAuthDataSetEntry
+    JsName:          AEAAuthDataSetEntry
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAAuthData.h'
+    Module:
+      FullName:        AppleArchive.AEAAuthData
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.5
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+      - Type:            CString
+      - Type:            CString
+      - Type:            ULong
+  - Name:            AEAContextCreateWithEncryptedStream
+    JsName:          AEAContextCreateWithEncryptedStream
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAContext.h'
+    Module:
+      FullName:        AppleArchive.AEAContext
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AEAContextCreateWithProfile
+    JsName:          AEAContextCreateWithProfile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAContext.h'
+    Module:
+      FullName:        AppleArchive.AEAContext
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+  - Name:            AEAContextDecryptAttributes
+    JsName:          AEAContextDecryptAttributes
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAStreams.h'
+    Module:
+      FullName:        AppleArchive.AEAStreams
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    16.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AEAContextDestroy
+    JsName:          AEAContextDestroy
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAContext.h'
+    Module:
+      FullName:        AppleArchive.AEAContext
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AEAContextFieldRepresentations
+    JsName:          AEAContextFieldRepresentations
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Enum
+    FullNameFields:
+      - AEA_CONTEXT_FIELD_REPRESENTATION_RAW: '0'
+      - AEA_CONTEXT_FIELD_REPRESENTATION_X963: '1'
+      - AEA_CONTEXT_FIELD_REPRESENTATION_GENERATE: '2'
+    SwiftNameFields:
+      - A_CONTEXT_FIELD_REPRESENTATION_RAW: '0'
+      - A_CONTEXT_FIELD_REPRESENTATION_X963: '1'
+      - A_CONTEXT_FIELD_REPRESENTATION_GENERATE: '2'
+  - Name:            AEAContextFieldValues
+    JsName:          AEAContextFieldValues
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Enum
+    FullNameFields:
+      - AEA_CONTEXT_CIPHERSUITE_HKDF_SHA256_HMAC: '0'
+      - AEA_CONTEXT_CIPHERSUITE_HKDF_SHA256_AESCTR_HMAC: '1'
+      - AEA_CONTEXT_SIGNATURE_NONE: '0'
+      - AEA_CONTEXT_SIGNATURE_ECDSA_P256: '1'
+      - AEA_CONTEXT_ENCRYPTION_NONE: '0'
+      - AEA_CONTEXT_ENCRYPTION_SYMMETRIC: '1'
+      - AEA_CONTEXT_ENCRYPTION_ECDHE_P256: '2'
+      - AEA_CONTEXT_ENCRYPTION_SCRYPT: '3'
+      - AEA_CONTEXT_CHECKSUM_NONE: '0'
+      - AEA_CONTEXT_CHECKSUM_MURMURHASH64: '1'
+      - AEA_CONTEXT_CHECKSUM_SHA256: '2'
+      - AEA_CONTEXT_PADDING_NONE: '0'
+      - AEA_CONTEXT_PADDING_ADAPTIVE: '1'
+      - AEA_CONTEXT_PADDING_MIN_SIZE: '16'
+    SwiftNameFields:
+      - A_CONTEXT_CIPHERSUITE_HKDF_SHA256_HMAC: '0'
+      - A_CONTEXT_CIPHERSUITE_HKDF_SHA256_AESCTR_HMAC: '1'
+      - A_CONTEXT_SIGNATURE_NONE: '0'
+      - A_CONTEXT_SIGNATURE_ECDSA_P256: '1'
+      - A_CONTEXT_ENCRYPTION_NONE: '0'
+      - A_CONTEXT_ENCRYPTION_SYMMETRIC: '1'
+      - A_CONTEXT_ENCRYPTION_ECDHE_P256: '2'
+      - A_CONTEXT_ENCRYPTION_SCRYPT: '3'
+      - A_CONTEXT_CHECKSUM_NONE: '0'
+      - A_CONTEXT_CHECKSUM_MURMURHASH64: '1'
+      - A_CONTEXT_CHECKSUM_SHA256: '2'
+      - A_CONTEXT_PADDING_NONE: '0'
+      - A_CONTEXT_PADDING_ADAPTIVE: '1'
+      - A_CONTEXT_PADDING_MIN_SIZE: '16'
+  - Name:            AEAContextFields
+    JsName:          AEAContextFields
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Enum
+    FullNameFields:
+      - AEA_CONTEXT_FIELD_PROFILE: '0'
+      - AEA_CONTEXT_FIELD_PADDING_SIZE: '1'
+      - AEA_CONTEXT_FIELD_CHECKSUM_MODE: '2'
+      - AEA_CONTEXT_FIELD_COMPRESSION_ALGORITHM: '3'
+      - AEA_CONTEXT_FIELD_COMPRESSION_BLOCK_SIZE: '4'
+      - AEA_CONTEXT_FIELD_AUTH_DATA: '5'
+      - AEA_CONTEXT_FIELD_MAIN_KEY: '6'
+      - AEA_CONTEXT_FIELD_SIGNING_PUBLIC_KEY: '7'
+      - AEA_CONTEXT_FIELD_SIGNING_PRIVATE_KEY: '8'
+      - AEA_CONTEXT_FIELD_SYMMETRIC_KEY: '9'
+      - AEA_CONTEXT_FIELD_RECIPIENT_PUBLIC_KEY: '10'
+      - AEA_CONTEXT_FIELD_RECIPIENT_PRIVATE_KEY: '11'
+      - AEA_CONTEXT_FIELD_SIGNATURE_ENCRYPTION_KEY: '12'
+      - AEA_CONTEXT_FIELD_RAW_SIZE: '13'
+      - AEA_CONTEXT_FIELD_CONTAINER_SIZE: '14'
+      - AEA_CONTEXT_FIELD_BLOCKS_PER_CLUSTER: '17'
+      - AEA_CONTEXT_FIELD_ARCHIVE_IDENTIFIER: '18'
+      - AEA_CONTEXT_FIELD_PASSWORD: '19'
+    SwiftNameFields:
+      - A_CONTEXT_FIELD_PROFILE: '0'
+      - A_CONTEXT_FIELD_PADDING_SIZE: '1'
+      - A_CONTEXT_FIELD_CHECKSUM_MODE: '2'
+      - A_CONTEXT_FIELD_COMPRESSION_ALGORITHM: '3'
+      - A_CONTEXT_FIELD_COMPRESSION_BLOCK_SIZE: '4'
+      - A_CONTEXT_FIELD_AUTH_DATA: '5'
+      - A_CONTEXT_FIELD_MAIN_KEY: '6'
+      - A_CONTEXT_FIELD_SIGNING_PUBLIC_KEY: '7'
+      - A_CONTEXT_FIELD_SIGNING_PRIVATE_KEY: '8'
+      - A_CONTEXT_FIELD_SYMMETRIC_KEY: '9'
+      - A_CONTEXT_FIELD_RECIPIENT_PUBLIC_KEY: '10'
+      - A_CONTEXT_FIELD_RECIPIENT_PRIVATE_KEY: '11'
+      - A_CONTEXT_FIELD_SIGNATURE_ENCRYPTION_KEY: '12'
+      - A_CONTEXT_FIELD_RAW_SIZE: '13'
+      - A_CONTEXT_FIELD_CONTAINER_SIZE: '14'
+      - A_CONTEXT_FIELD_BLOCKS_PER_CLUSTER: '17'
+      - A_CONTEXT_FIELD_ARCHIVE_IDENTIFIER: '18'
+      - A_CONTEXT_FIELD_PASSWORD: '19'
+  - Name:            AEAContextGenerateFieldBlob
+    JsName:          AEAContextGenerateFieldBlob
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAContext.h'
+    Module:
+      FullName:        AppleArchive.AEAContext
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    15.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+  - Name:            AEAContextGetFieldBlob
+    JsName:          AEAContextGetFieldBlob
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAContext.h'
+    Module:
+      FullName:        AppleArchive.AEAContext
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+      - Type:            UInt
+      - Type:            ULong
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            ULong
+  - Name:            AEAContextGetFieldUInt
+    JsName:          AEAContextGetFieldUInt
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAContext.h'
+    Module:
+      FullName:        AppleArchive.AEAContext
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            ULongLong
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+  - Name:            AEAContextSetFieldBlob
+    JsName:          AEAContextSetFieldBlob
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAContext.h'
+    Module:
+      FullName:        AppleArchive.AEAContext
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+      - Type:            UInt
+      - Type:            CString
+      - Type:            ULong
+  - Name:            AEAContextSetFieldUInt
+    JsName:          AEAContextSetFieldUInt
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAContext.h'
+    Module:
+      FullName:        AppleArchive.AEAContext
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+      - Type:            ULongLong
+  - Name:            AEADecryptionInputStreamOpen
+    JsName:          AEADecryptionInputStreamOpen
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAStreams.h'
+    Module:
+      FullName:        AppleArchive.AEAStreams
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            ULongLong
+      - Type:            Int
+  - Name:            AEADecryptionRandomAccessInputStreamOpen
+    JsName:          AEADecryptionRandomAccessInputStreamOpen
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAStreams.h'
+    Module:
+      FullName:        AppleArchive.AEAStreams
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            ULong
+      - Type:            ULongLong
+      - Type:            Int
+  - Name:            AEAEncryptionOutputStreamCloseAndUpdateContext
+    JsName:          AEAEncryptionOutputStreamCloseAndUpdateContext
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAStreams.h'
+    Module:
+      FullName:        AppleArchive.AEAStreams
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.5
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AEAEncryptionOutputStreamOpen
+    JsName:          AEAEncryptionOutputStreamOpen
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAStreams.h'
+    Module:
+      FullName:        AppleArchive.AEAStreams
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            ULongLong
+      - Type:            Int
+  - Name:            AEAEncryptionOutputStreamOpenExisting
+    JsName:          AEAEncryptionOutputStreamOpenExisting
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAStreams.h'
+    Module:
+      FullName:        AppleArchive.AEAStreams
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            ULongLong
+      - Type:            Int
+  - Name:            AEAProfiles
+    JsName:          AEAProfiles
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Enum
+    FullNameFields:
+      - AEA_PROFILE__HKDF_SHA256_HMAC__NONE__ECDSA_P256: '0'
+      - AEA_PROFILE__HKDF_SHA256_AESCTR_HMAC__SYMMETRIC__NONE: '1'
+      - AEA_PROFILE__HKDF_SHA256_AESCTR_HMAC__SYMMETRIC__ECDSA_P256: '2'
+      - AEA_PROFILE__HKDF_SHA256_AESCTR_HMAC__ECDHE_P256__NONE: '3'
+      - AEA_PROFILE__HKDF_SHA256_AESCTR_HMAC__ECDHE_P256__ECDSA_P256: '4'
+      - AEA_PROFILE__HKDF_SHA256_AESCTR_HMAC__SCRYPT__NONE: '5'
+    SwiftNameFields:
+      - A_PROFILE__HKDF_SHA256_HMAC__NONE__ECDSA_P256: '0'
+      - A_PROFILE__HKDF_SHA256_AESCTR_HMAC__SYMMETRIC__NONE: '1'
+      - A_PROFILE__HKDF_SHA256_AESCTR_HMAC__SYMMETRIC__ECDSA_P256: '2'
+      - A_PROFILE__HKDF_SHA256_AESCTR_HMAC__ECDHE_P256__NONE: '3'
+      - A_PROFILE__HKDF_SHA256_AESCTR_HMAC__ECDHE_P256__ECDSA_P256: '4'
+      - A_PROFILE__HKDF_SHA256_AESCTR_HMAC__SCRYPT__NONE: '5'
+  - Name:            AEAStreamSign
+    JsName:          AEAStreamSign
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEAStreams.h'
+    Module:
+      FullName:        AppleArchive.AEAStreams
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            AEA_CONTEXT_CHECKSUM_MURMURHASH64
+    JsName:          AEA_CONTEXT_CHECKSUM_MURMURHASH64
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1'
+  - Name:            AEA_CONTEXT_CHECKSUM_NONE
+    JsName:          AEA_CONTEXT_CHECKSUM_NONE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '0'
+  - Name:            AEA_CONTEXT_CHECKSUM_SHA256
+    JsName:          AEA_CONTEXT_CHECKSUM_SHA256
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '2'
+  - Name:            AEA_CONTEXT_CIPHERSUITE_HKDF_SHA256_AESCTR_HMAC
+    JsName:          AEA_CONTEXT_CIPHERSUITE_HKDF_SHA256_AESCTR_HMAC
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1'
+  - Name:            AEA_CONTEXT_CIPHERSUITE_HKDF_SHA256_HMAC
+    JsName:          AEA_CONTEXT_CIPHERSUITE_HKDF_SHA256_HMAC
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '0'
+  - Name:            AEA_CONTEXT_ENCRYPTION_ECDHE_P256
+    JsName:          AEA_CONTEXT_ENCRYPTION_ECDHE_P256
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '2'
+  - Name:            AEA_CONTEXT_ENCRYPTION_NONE
+    JsName:          AEA_CONTEXT_ENCRYPTION_NONE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '0'
+  - Name:            AEA_CONTEXT_ENCRYPTION_SCRYPT
+    JsName:          AEA_CONTEXT_ENCRYPTION_SCRYPT
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '3'
+  - Name:            AEA_CONTEXT_ENCRYPTION_SYMMETRIC
+    JsName:          AEA_CONTEXT_ENCRYPTION_SYMMETRIC
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1'
+  - Name:            AEA_CONTEXT_FIELD_ARCHIVE_IDENTIFIER
+    JsName:          AEA_CONTEXT_FIELD_ARCHIVE_IDENTIFIER
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '18'
+  - Name:            AEA_CONTEXT_FIELD_AUTH_DATA
+    JsName:          AEA_CONTEXT_FIELD_AUTH_DATA
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '5'
+  - Name:            AEA_CONTEXT_FIELD_BLOCKS_PER_CLUSTER
+    JsName:          AEA_CONTEXT_FIELD_BLOCKS_PER_CLUSTER
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '17'
+  - Name:            AEA_CONTEXT_FIELD_CHECKSUM_MODE
+    JsName:          AEA_CONTEXT_FIELD_CHECKSUM_MODE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '2'
+  - Name:            AEA_CONTEXT_FIELD_COMPRESSION_ALGORITHM
+    JsName:          AEA_CONTEXT_FIELD_COMPRESSION_ALGORITHM
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '3'
+  - Name:            AEA_CONTEXT_FIELD_COMPRESSION_BLOCK_SIZE
+    JsName:          AEA_CONTEXT_FIELD_COMPRESSION_BLOCK_SIZE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '4'
+  - Name:            AEA_CONTEXT_FIELD_CONTAINER_SIZE
+    JsName:          AEA_CONTEXT_FIELD_CONTAINER_SIZE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '14'
+  - Name:            AEA_CONTEXT_FIELD_MAIN_KEY
+    JsName:          AEA_CONTEXT_FIELD_MAIN_KEY
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '6'
+  - Name:            AEA_CONTEXT_FIELD_PADDING_SIZE
+    JsName:          AEA_CONTEXT_FIELD_PADDING_SIZE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1'
+  - Name:            AEA_CONTEXT_FIELD_PASSWORD
+    JsName:          AEA_CONTEXT_FIELD_PASSWORD
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '19'
+  - Name:            AEA_CONTEXT_FIELD_PROFILE
+    JsName:          AEA_CONTEXT_FIELD_PROFILE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '0'
+  - Name:            AEA_CONTEXT_FIELD_RAW_SIZE
+    JsName:          AEA_CONTEXT_FIELD_RAW_SIZE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '13'
+  - Name:            AEA_CONTEXT_FIELD_RECIPIENT_PRIVATE_KEY
+    JsName:          AEA_CONTEXT_FIELD_RECIPIENT_PRIVATE_KEY
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '11'
+  - Name:            AEA_CONTEXT_FIELD_RECIPIENT_PUBLIC_KEY
+    JsName:          AEA_CONTEXT_FIELD_RECIPIENT_PUBLIC_KEY
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '10'
+  - Name:            AEA_CONTEXT_FIELD_REPRESENTATION_GENERATE
+    JsName:          AEA_CONTEXT_FIELD_REPRESENTATION_GENERATE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '2'
+  - Name:            AEA_CONTEXT_FIELD_REPRESENTATION_RAW
+    JsName:          AEA_CONTEXT_FIELD_REPRESENTATION_RAW
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '0'
+  - Name:            AEA_CONTEXT_FIELD_REPRESENTATION_X963
+    JsName:          AEA_CONTEXT_FIELD_REPRESENTATION_X963
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1'
+  - Name:            AEA_CONTEXT_FIELD_SIGNATURE_ENCRYPTION_KEY
+    JsName:          AEA_CONTEXT_FIELD_SIGNATURE_ENCRYPTION_KEY
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '12'
+  - Name:            AEA_CONTEXT_FIELD_SIGNING_PRIVATE_KEY
+    JsName:          AEA_CONTEXT_FIELD_SIGNING_PRIVATE_KEY
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '8'
+  - Name:            AEA_CONTEXT_FIELD_SIGNING_PUBLIC_KEY
+    JsName:          AEA_CONTEXT_FIELD_SIGNING_PUBLIC_KEY
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '7'
+  - Name:            AEA_CONTEXT_FIELD_SYMMETRIC_KEY
+    JsName:          AEA_CONTEXT_FIELD_SYMMETRIC_KEY
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '9'
+  - Name:            AEA_CONTEXT_PADDING_ADAPTIVE
+    JsName:          AEA_CONTEXT_PADDING_ADAPTIVE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1'
+  - Name:            AEA_CONTEXT_PADDING_MIN_SIZE
+    JsName:          AEA_CONTEXT_PADDING_MIN_SIZE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '16'
+  - Name:            AEA_CONTEXT_PADDING_NONE
+    JsName:          AEA_CONTEXT_PADDING_NONE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '0'
+  - Name:            AEA_CONTEXT_SIGNATURE_ECDSA_P256
+    JsName:          AEA_CONTEXT_SIGNATURE_ECDSA_P256
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1'
+  - Name:            AEA_CONTEXT_SIGNATURE_NONE
+    JsName:          AEA_CONTEXT_SIGNATURE_NONE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '0'
+  - Name:            AEA_PROFILE__HKDF_SHA256_AESCTR_HMAC__ECDHE_P256__ECDSA_P256
+    JsName:          AEA_PROFILE__HKDF_SHA256_AESCTR_HMAC__ECDHE_P256__ECDSA_P256
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '4'
+  - Name:            AEA_PROFILE__HKDF_SHA256_AESCTR_HMAC__ECDHE_P256__NONE
+    JsName:          AEA_PROFILE__HKDF_SHA256_AESCTR_HMAC__ECDHE_P256__NONE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '3'
+  - Name:            AEA_PROFILE__HKDF_SHA256_AESCTR_HMAC__SCRYPT__NONE
+    JsName:          AEA_PROFILE__HKDF_SHA256_AESCTR_HMAC__SCRYPT__NONE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '5'
+  - Name:            AEA_PROFILE__HKDF_SHA256_AESCTR_HMAC__SYMMETRIC__ECDSA_P256
+    JsName:          AEA_PROFILE__HKDF_SHA256_AESCTR_HMAC__SYMMETRIC__ECDSA_P256
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '2'
+  - Name:            AEA_PROFILE__HKDF_SHA256_AESCTR_HMAC__SYMMETRIC__NONE
+    JsName:          AEA_PROFILE__HKDF_SHA256_AESCTR_HMAC__SYMMETRIC__NONE
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1'
+  - Name:            AEA_PROFILE__HKDF_SHA256_HMAC__NONE__ECDSA_P256
+    JsName:          AEA_PROFILE__HKDF_SHA256_HMAC__NONE__ECDSA_P256
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/AppleArchive/AEADefs.h'
+    Module:
+      FullName:        AppleArchive.AEADefs
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '0'
+...

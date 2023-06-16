@@ -1,0 +1,249 @@
+---
+Module:
+  FullName:        IOSurface
+  IsPartOfFramework: true
+  IsSystemModule:  true
+  Libraries:
+    - Library:         IOSurface
+      IsFramework:     true
+Items:
+  - Name:            IOSurfaceLockOptions
+    JsName:          IOSurfaceLockOptions
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Enum
+    FullNameFields:
+      - kIOSurfaceLockReadOnly: '1'
+      - kIOSurfaceLockAvoidSync: '2'
+    SwiftNameFields: []
+  - Name:            IOSurfacePurgeabilityState
+    JsName:          IOSurfacePurgeabilityState
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Enum
+    FullNameFields:
+      - kIOSurfacePurgeableNonVolatile: '0'
+      - kIOSurfacePurgeableVolatile: '1'
+      - kIOSurfacePurgeableEmpty: '2'
+      - kIOSurfacePurgeableKeepCurrent: '3'
+    SwiftNameFields: []
+  - Name:            kIOSurfaceCopybackCache
+    JsName:          kIOSurfaceCopybackCache
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '3'
+  - Name:            kIOSurfaceCopybackInnerCache
+    JsName:          kIOSurfaceCopybackInnerCache
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '5'
+  - Name:            kIOSurfaceDefaultCache
+    JsName:          kIOSurfaceDefaultCache
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '0'
+  - Name:            kIOSurfaceInhibitCache
+    JsName:          kIOSurfaceInhibitCache
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1'
+  - Name:            kIOSurfaceLockAvoidSync
+    JsName:          kIOSurfaceLockAvoidSync
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '2'
+  - Name:            kIOSurfaceLockReadOnly
+    JsName:          kIOSurfaceLockReadOnly
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1'
+  - Name:            kIOSurfaceMapCacheShift
+    JsName:          kIOSurfaceMapCacheShift
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '8'
+  - Name:            kIOSurfaceMapCopybackCache
+    JsName:          kIOSurfaceMapCopybackCache
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '768'
+  - Name:            kIOSurfaceMapCopybackInnerCache
+    JsName:          kIOSurfaceMapCopybackInnerCache
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1280'
+  - Name:            kIOSurfaceMapDefaultCache
+    JsName:          kIOSurfaceMapDefaultCache
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '0'
+  - Name:            kIOSurfaceMapInhibitCache
+    JsName:          kIOSurfaceMapInhibitCache
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '256'
+  - Name:            kIOSurfaceMapWriteCombineCache
+    JsName:          kIOSurfaceMapWriteCombineCache
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1024'
+  - Name:            kIOSurfaceMapWriteThruCache
+    JsName:          kIOSurfaceMapWriteThruCache
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '512'
+  - Name:            kIOSurfacePurgeableEmpty
+    JsName:          kIOSurfacePurgeableEmpty
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '2'
+  - Name:            kIOSurfacePurgeableKeepCurrent
+    JsName:          kIOSurfacePurgeableKeepCurrent
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '3'
+  - Name:            kIOSurfacePurgeableNonVolatile
+    JsName:          kIOSurfacePurgeableNonVolatile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '0'
+  - Name:            kIOSurfacePurgeableVolatile
+    JsName:          kIOSurfacePurgeableVolatile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '1'
+  - Name:            kIOSurfaceWriteCombineCache
+    JsName:          kIOSurfaceWriteCombineCache
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '4'
+  - Name:            kIOSurfaceWriteThruCache
+    JsName:          kIOSurfaceWriteThruCache
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h'
+    Module:
+      FullName:        IOSurface.IOSurfaceTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            EnumConstant
+    Value:           '2'
+...

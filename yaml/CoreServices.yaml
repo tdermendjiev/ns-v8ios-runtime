@@ -1,0 +1,2309 @@
+---
+Module:
+  FullName:        CoreServices
+  IsPartOfFramework: true
+  IsSystemModule:  true
+  Libraries:
+    - Library:         CoreServices
+      IsFramework:     true
+Items:
+  - Name:            UTTypeConformsTo
+    JsName:          UTTypeConformsTo
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Bool
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+  - Name:            UTTypeCopyAllTagsWithClass
+    JsName:          UTTypeCopyAllTagsWithClass
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionReturnsUnmanaged ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            NSArray
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+  - Name:            UTTypeCopyDeclaration
+    JsName:          UTTypeCopyDeclaration
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionReturnsUnmanaged ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            NSDictionary
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+  - Name:            UTTypeCopyDeclaringBundleURL
+    JsName:          UTTypeCopyDeclaringBundleURL
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionReturnsUnmanaged ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            NSURL
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+  - Name:            UTTypeCopyDescription
+    JsName:          UTTypeCopyDescription
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionReturnsUnmanaged ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+  - Name:            UTTypeCopyPreferredTagWithClass
+    JsName:          UTTypeCopyPreferredTagWithClass
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionReturnsUnmanaged ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+  - Name:            UTTypeCreateAllIdentifiersForTag
+    JsName:          UTTypeCreateAllIdentifiersForTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionReturnsUnmanaged ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            NSArray
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+  - Name:            UTTypeCreatePreferredIdentifierForTag
+    JsName:          UTTypeCreatePreferredIdentifierForTag
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionReturnsUnmanaged ]
+    Type:            Function
+    Signature:
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+  - Name:            UTTypeEqual
+    JsName:          UTTypeEqual
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Bool
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+  - Name:            UTTypeIsDeclared
+    JsName:          UTTypeIsDeclared
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Bool
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+  - Name:            UTTypeIsDynamic
+    JsName:          UTTypeIsDynamic
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Bool
+      - Type:            BridgedInterface
+        Name:            NSString
+        BridgedTo:       NSObject
+  - Name:            kUTExportedTypeDeclarationsKey
+    JsName:          kUTExportedTypeDeclarationsKey
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTImportedTypeDeclarationsKey
+    JsName:          kUTImportedTypeDeclarationsKey
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTagClassFilenameExtension
+    JsName:          kUTTagClassFilenameExtension
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTagClassMIMEType
+    JsName:          kUTTagClassMIMEType
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTType3DContent
+    JsName:          kUTType3DContent
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeAVIMovie
+    JsName:          kUTTypeAVIMovie
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeAliasFile
+    JsName:          kUTTypeAliasFile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeAliasRecord
+    JsName:          kUTTypeAliasRecord
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeAppleICNS
+    JsName:          kUTTypeAppleICNS
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeAppleProtectedMPEG4Audio
+    JsName:          kUTTypeAppleProtectedMPEG4Audio
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeAppleProtectedMPEG4Video
+    JsName:          kUTTypeAppleProtectedMPEG4Video
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeAppleScript
+    JsName:          kUTTypeAppleScript
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeApplication
+    JsName:          kUTTypeApplication
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeApplicationBundle
+    JsName:          kUTTypeApplicationBundle
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeApplicationFile
+    JsName:          kUTTypeApplicationFile
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeArchive
+    JsName:          kUTTypeArchive
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeAssemblyLanguageSource
+    JsName:          kUTTypeAssemblyLanguageSource
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeAudio
+    JsName:          kUTTypeAudio
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeAudioInterchangeFileFormat
+    JsName:          kUTTypeAudioInterchangeFileFormat
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeAudiovisualContent
+    JsName:          kUTTypeAudiovisualContent
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeBMP
+    JsName:          kUTTypeBMP
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeBinaryPropertyList
+    JsName:          kUTTypeBinaryPropertyList
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeBookmark
+    JsName:          kUTTypeBookmark
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeBundle
+    JsName:          kUTTypeBundle
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeBzip2Archive
+    JsName:          kUTTypeBzip2Archive
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeCHeader
+    JsName:          kUTTypeCHeader
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeCPlusPlusHeader
+    JsName:          kUTTypeCPlusPlusHeader
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeCPlusPlusSource
+    JsName:          kUTTypeCPlusPlusSource
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeCSource
+    JsName:          kUTTypeCSource
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeCalendarEvent
+    JsName:          kUTTypeCalendarEvent
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeCommaSeparatedText
+    JsName:          kUTTypeCommaSeparatedText
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeCompositeContent
+    JsName:          kUTTypeCompositeContent
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeConformsToKey
+    JsName:          kUTTypeConformsToKey
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeContact
+    JsName:          kUTTypeContact
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeContent
+    JsName:          kUTTypeContent
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeData
+    JsName:          kUTTypeData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeDatabase
+    JsName:          kUTTypeDatabase
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeDelimitedText
+    JsName:          kUTTypeDelimitedText
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeDescriptionKey
+    JsName:          kUTTypeDescriptionKey
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeDirectory
+    JsName:          kUTTypeDirectory
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeDiskImage
+    JsName:          kUTTypeDiskImage
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeElectronicPublication
+    JsName:          kUTTypeElectronicPublication
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeEmailMessage
+    JsName:          kUTTypeEmailMessage
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeExecutable
+    JsName:          kUTTypeExecutable
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeFileURL
+    JsName:          kUTTypeFileURL
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeFlatRTFD
+    JsName:          kUTTypeFlatRTFD
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeFolder
+    JsName:          kUTTypeFolder
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeFont
+    JsName:          kUTTypeFont
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeFramework
+    JsName:          kUTTypeFramework
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeGIF
+    JsName:          kUTTypeGIF
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeGNUZipArchive
+    JsName:          kUTTypeGNUZipArchive
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeHTML
+    JsName:          kUTTypeHTML
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeICO
+    JsName:          kUTTypeICO
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeIconFileKey
+    JsName:          kUTTypeIconFileKey
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeIdentifierKey
+    JsName:          kUTTypeIdentifierKey
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeImage
+    JsName:          kUTTypeImage
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeInkText
+    JsName:          kUTTypeInkText
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeInternetLocation
+    JsName:          kUTTypeInternetLocation
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeItem
+    JsName:          kUTTypeItem
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeJPEG
+    JsName:          kUTTypeJPEG
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeJPEG2000
+    JsName:          kUTTypeJPEG2000
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeJSON
+    JsName:          kUTTypeJSON
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeJavaArchive
+    JsName:          kUTTypeJavaArchive
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeJavaClass
+    JsName:          kUTTypeJavaClass
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeJavaScript
+    JsName:          kUTTypeJavaScript
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeJavaSource
+    JsName:          kUTTypeJavaSource
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeLivePhoto
+    JsName:          kUTTypeLivePhoto
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    9.1
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeLog
+    JsName:          kUTTypeLog
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeM3UPlaylist
+    JsName:          kUTTypeM3UPlaylist
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeMIDIAudio
+    JsName:          kUTTypeMIDIAudio
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeMP3
+    JsName:          kUTTypeMP3
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeMPEG
+    JsName:          kUTTypeMPEG
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeMPEG2TransportStream
+    JsName:          kUTTypeMPEG2TransportStream
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeMPEG2Video
+    JsName:          kUTTypeMPEG2Video
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeMPEG4
+    JsName:          kUTTypeMPEG4
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeMPEG4Audio
+    JsName:          kUTTypeMPEG4Audio
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeMessage
+    JsName:          kUTTypeMessage
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeMountPoint
+    JsName:          kUTTypeMountPoint
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeMovie
+    JsName:          kUTTypeMovie
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeOSAScript
+    JsName:          kUTTypeOSAScript
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeOSAScriptBundle
+    JsName:          kUTTypeOSAScriptBundle
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeObjectiveCPlusPlusSource
+    JsName:          kUTTypeObjectiveCPlusPlusSource
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeObjectiveCSource
+    JsName:          kUTTypeObjectiveCSource
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypePDF
+    JsName:          kUTTypePDF
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypePHPScript
+    JsName:          kUTTypePHPScript
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypePICT
+    JsName:          kUTTypePICT
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypePKCS12
+    JsName:          kUTTypePKCS12
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypePNG
+    JsName:          kUTTypePNG
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypePackage
+    JsName:          kUTTypePackage
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypePerlScript
+    JsName:          kUTTypePerlScript
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypePlainText
+    JsName:          kUTTypePlainText
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypePlaylist
+    JsName:          kUTTypePlaylist
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypePluginBundle
+    JsName:          kUTTypePluginBundle
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypePresentation
+    JsName:          kUTTypePresentation
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypePropertyList
+    JsName:          kUTTypePropertyList
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypePythonScript
+    JsName:          kUTTypePythonScript
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeQuickLookGenerator
+    JsName:          kUTTypeQuickLookGenerator
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeQuickTimeImage
+    JsName:          kUTTypeQuickTimeImage
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeQuickTimeMovie
+    JsName:          kUTTypeQuickTimeMovie
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeRTF
+    JsName:          kUTTypeRTF
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeRTFD
+    JsName:          kUTTypeRTFD
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeRawImage
+    JsName:          kUTTypeRawImage
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeReferenceURLKey
+    JsName:          kUTTypeReferenceURLKey
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeResolvable
+    JsName:          kUTTypeResolvable
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeRubyScript
+    JsName:          kUTTypeRubyScript
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeScalableVectorGraphics
+    JsName:          kUTTypeScalableVectorGraphics
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeScript
+    JsName:          kUTTypeScript
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeShellScript
+    JsName:          kUTTypeShellScript
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeSourceCode
+    JsName:          kUTTypeSourceCode
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeSpotlightImporter
+    JsName:          kUTTypeSpotlightImporter
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeSpreadsheet
+    JsName:          kUTTypeSpreadsheet
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeSwiftSource
+    JsName:          kUTTypeSwiftSource
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    9.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeSymLink
+    JsName:          kUTTypeSymLink
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeSystemPreferencesPane
+    JsName:          kUTTypeSystemPreferencesPane
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeTIFF
+    JsName:          kUTTypeTIFF
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeTXNTextAndMultimediaData
+    JsName:          kUTTypeTXNTextAndMultimediaData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeTabSeparatedText
+    JsName:          kUTTypeTabSeparatedText
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeTagSpecificationKey
+    JsName:          kUTTypeTagSpecificationKey
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeText
+    JsName:          kUTTypeText
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeToDoItem
+    JsName:          kUTTypeToDoItem
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeURL
+    JsName:          kUTTypeURL
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeURLBookmarkData
+    JsName:          kUTTypeURLBookmarkData
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeUTF16ExternalPlainText
+    JsName:          kUTTypeUTF16ExternalPlainText
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeUTF16PlainText
+    JsName:          kUTTypeUTF16PlainText
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeUTF8PlainText
+    JsName:          kUTTypeUTF8PlainText
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeUTF8TabSeparatedText
+    JsName:          kUTTypeUTF8TabSeparatedText
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeUnixExecutable
+    JsName:          kUTTypeUnixExecutable
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeVCard
+    JsName:          kUTTypeVCard
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeVersionKey
+    JsName:          kUTTypeVersionKey
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTType.h'
+    Module:
+      FullName:        CoreServices.UTType
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeVideo
+    JsName:          kUTTypeVideo
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeVolume
+    JsName:          kUTTypeVolume
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeWaveformAudio
+    JsName:          kUTTypeWaveformAudio
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeWebArchive
+    JsName:          kUTTypeWebArchive
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeWindowsExecutable
+    JsName:          kUTTypeWindowsExecutable
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeX509Certificate
+    JsName:          kUTTypeX509Certificate
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeXML
+    JsName:          kUTTypeXML
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeXMLPropertyList
+    JsName:          kUTTypeXMLPropertyList
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeXPCService
+    JsName:          kUTTypeXPCService
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+  - Name:            kUTTypeZipArchive
+    JsName:          kUTTypeZipArchive
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/System/Library/Frameworks/CoreServices.framework/Headers/UTCoreTypes.h'
+    Module:
+      FullName:        CoreServices.UTCoreTypes
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            BridgedInterface
+      Name:            NSString
+      BridgedTo:       NSObject
+...

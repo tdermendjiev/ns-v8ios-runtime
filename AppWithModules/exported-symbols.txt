@@ -1,0 +1,4 @@
+_LCManager_shared
+_LCManager_setIsVisible:
+_LCManager_print:
+_LCManager_isVisible

@@ -1,3 +1,28 @@
+
+
+
+
+// __webpack_require__("../node_modules/tns-core-modules/globals/globals");
+// const timerModule = __webpack_require__("../node_modules/tns-core-modules/timer");
+
+// console.log(">>>>>>>>")
+
+
+let consoleManager = LCManager.shared()
+console.log(consoleManager.isVisible)
+consoleManager.isVisible = true
+console.log(consoleManager.isVisible)
+consoleManager.print("this is a print from a swift package")
+
+// id = timerModule.setInterval(() => {
+//     consoleManager.print("1976")
+// }, 5000);
+
+
+
+
+
+
 require("./runtime.js");require("./vendor.js");module.exports =
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["bundle"],{
 
@@ -24,6 +49,13 @@ webpackEmptyAsyncContext.id = "../$$_lazy_route_resource lazy recursive";
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {exports = module.exports = __webpack_require__("../node_modules/css-loader/dist/runtime/api.js")(false);
+
+
+
+
+
+
+
 // Imports
 exports.i(__webpack_require__("../node_modules/css-loader/dist/cjs.js?!../node_modules/nativescript-theme-core/css/core.light.css"), "");
 
@@ -53,9 +85,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var nativescript_angular_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nativescript_angular_router__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _item_items_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("./app/item/items.component.ts");
 /* harmony import */ var _item_item_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("./app/item/item-detail.component.ts");
-
-
-
 
 var routes = [
     { path: "", redirectTo: "/items", pathMatch: "full" },
@@ -104,6 +133,9 @@ var AppComponent = /** @class */ (function () {
     ], AppComponent);
     return AppComponent;
 }());
+
+
+
 
 
 

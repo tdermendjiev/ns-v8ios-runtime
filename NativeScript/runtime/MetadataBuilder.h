@@ -17,6 +17,18 @@ public:
     static v8::Local<v8::Function> GetOrCreateStructCtorFunction(v8::Local<v8::Context> context, StructInfo structInfo);
     static void StructPropertyGetterCallback(v8::Local<v8::Name> property, const v8::PropertyCallbackInfo<v8::Value>& info);
     static void StructPropertySetterCallback(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const v8::PropertyCallbackInfo<v8::Value>& info);
+    template<class T>
+    struct CacheItem {
+        CacheItem(const T* meta, const std::string className, void* userData = nullptr)
+        : meta_(meta),
+          className_(className),
+          userData_(userData) {
+            static_assert(std::is_base_of<Meta, T>::value, "Derived not derived from Meta");
+        }
+        const T* meta_;
+        const std::string className_;
+        void* userData_;
+    };
 private:
     static v8::Local<v8::FunctionTemplate> GetOrCreateConstructorFunctionTemplateInternal(v8::Local<v8::Context> context, const BaseClassMeta* meta, KnownUnknownClassPair pair, robin_hood::unordered_map<std::string, uint8_t>& instanceMembers, robin_hood::unordered_map<std::string, uint8_t>& staticMembers, const std::vector<std::string>& additionalProtocols = std::vector<std::string>());
     static void GlobalPropertyGetter(v8::Local<v8::Name> property, const v8::PropertyCallbackInfo<v8::Value>& info);
@@ -53,18 +65,6 @@ private:
         bool isWorkerThread_;
     };
 
-    template<class T>
-    struct CacheItem {
-        CacheItem(const T* meta, const std::string className, void* userData = nullptr)
-        : meta_(meta),
-          className_(className),
-          userData_(userData) {
-            static_assert(std::is_base_of<Meta, T>::value, "Derived not derived from Meta");
-        }
-        const T* meta_;
-        const std::string className_;
-        void* userData_;
-    };
 };
 
 }

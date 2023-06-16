@@ -1,0 +1,222 @@
+---
+Module:
+  FullName:        notify
+  IsPartOfFramework: false
+  IsSystemModule:  true
+  Libraries:       []
+Items:
+  - Name:            notify_cancel
+    JsName:          notify_cancel
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/notify.h'
+    Module:
+      FullName:        notify
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            UInt
+      - Type:            Int
+  - Name:            notify_check
+    JsName:          notify_check
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/notify.h'
+    Module:
+      FullName:        notify
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            UInt
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Int
+  - Name:            notify_get_state
+    JsName:          notify_get_state
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/notify.h'
+    Module:
+      FullName:        notify
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    2.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            UInt
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            ULongLong
+  - Name:            notify_is_valid_token
+    JsName:          notify_is_valid_token
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/notify.h'
+    Module:
+      FullName:        notify
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    8.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Bool
+      - Type:            Int
+  - Name:            notify_post
+    JsName:          notify_post
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/notify.h'
+    Module:
+      FullName:        notify
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            UInt
+      - Type:            CString
+  - Name:            notify_register_check
+    JsName:          notify_register_check
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/notify.h'
+    Module:
+      FullName:        notify
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            UInt
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            Int
+  - Name:            notify_register_dispatch
+    JsName:          notify_register_dispatch
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/notify.h'
+    Module:
+      FullName:        notify
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    3.2
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            UInt
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            Int
+      - Type:            Interface
+        Name:            NSObject
+        WithProtocols:
+          - OS_dispatch_queue
+      - Type:            Block
+        Signature:
+          - Type:            Void
+          - Type:            Int
+  - Name:            notify_register_file_descriptor
+    JsName:          notify_register_file_descriptor
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/notify.h'
+    Module:
+      FullName:        notify
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            UInt
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            Int
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Int
+  - Name:            notify_register_mach_port
+    JsName:          notify_register_mach_port
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/notify.h'
+    Module:
+      FullName:        notify
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            UInt
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            UInt
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Int
+  - Name:            notify_register_signal
+    JsName:          notify_register_signal
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/notify.h'
+    Module:
+      FullName:        notify
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            UInt
+      - Type:            CString
+      - Type:            Int
+      - Type:            Pointer
+        PointerType:
+          Type:            Int
+  - Name:            notify_resume
+    JsName:          notify_resume
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/notify.h'
+    Module:
+      FullName:        notify
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    4.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            UInt
+      - Type:            Int
+  - Name:            notify_set_state
+    JsName:          notify_set_state
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/notify.h'
+    Module:
+      FullName:        notify
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    2.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            UInt
+      - Type:            Int
+      - Type:            ULongLong
+  - Name:            notify_suspend
+    JsName:          notify_suspend
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/notify.h'
+    Module:
+      FullName:        notify
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    4.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            UInt
+      - Type:            Int
+...

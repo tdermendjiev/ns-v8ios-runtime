@@ -93,6 +93,7 @@ public:
     std::function<v8::Local<v8::Function>(v8::Local<v8::Context>, StructInfo)> StructCtorInitializer;
     robin_hood::unordered_map<std::string, double> Timers;
     robin_hood::unordered_map<const InterfaceMeta*, std::vector<const MethodMeta*>> Initializers;
+    robin_hood::unordered_map<const InterfaceMeta*, std::vector<const FunctionMeta*>> SwiftInitializers;
 
     std::unique_ptr<v8::Persistent<v8::Function>> EmptyObjCtorFunc = std::unique_ptr<v8::Persistent<v8::Function>>(nullptr);
     std::unique_ptr<v8::Persistent<v8::Function>> EmptyStructCtorFunc = std::unique_ptr<v8::Persistent<v8::Function>>(nullptr);

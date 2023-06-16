@@ -1,0 +1,42 @@
+---
+Module:
+  FullName:        MultipeerConnectivity
+  IsPartOfFramework: true
+  IsSystemModule:  true
+  Libraries:
+    - Library:         MultipeerConnectivity
+      IsFramework:     true
+Items:
+  - Name:            MCNearbyServiceBrowserDelegate
+    JsName:          MCNearbyServiceBrowserDelegate
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/MultipeerConnectivity.framework/Headers/MCNearbyServiceBrowser.h'
+    Module:
+      FullName:        MultipeerConnectivity.MCNearbyServiceBrowser
+      IsPartOfFramework: true
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Protocol
+    InstanceMethods:
+      - Name:            'browser:lostPeer:'
+        JsName:          browserLostPeer
+        Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/MultipeerConnectivity.framework/Headers/MCNearbyServiceBrowser.h'
+        Module:
+          FullName:        MultipeerConnectivity.MCNearbyServiceBrowser
+          IsPartOfFramework: true
+          IsSystemModule:  true
+          Libraries:       []
+        Flags:           [ IsIosAppExtensionAvailable ]
+        Type:            Method
+        Signature:
+          - Type:            Void
+          - Type:            Id
+            WithProtocols:   []
+          - Type:            Id
+            WithProtocols:   []
+    StaticMethods:   []
+    InstanceProperties: []
+    StaticProperties: []
+    Protocols:
+      - NSObjectProtocol
+...

@@ -1,0 +1,398 @@
+---
+Module:
+  FullName:        os_workgroup
+  IsPartOfFramework: false
+  IsSystemModule:  true
+  Libraries:       []
+Items:
+  - Name:            OS_os_workgroup
+    JsName:          OS_os_workgroup
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_object.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Interface
+    InstanceMethods: []
+    StaticMethods:   []
+    InstanceProperties: []
+    StaticProperties: []
+    Protocols:       []
+    Base:            OS_object
+  - Name:            OS_os_workgroup_interval
+    JsName:          OS_os_workgroup_interval
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_interval.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Interface
+    InstanceMethods: []
+    StaticMethods:   []
+    InstanceProperties: []
+    StaticProperties: []
+    Protocols:
+      - OS_os_workgroup_intervalProtocol
+    Base:            OS_os_workgroup
+  - Name:            OS_os_workgroup_interval
+    JsName:          OS_os_workgroup_intervalProtocol
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_interval.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Protocol
+    InstanceMethods: []
+    StaticMethods:   []
+    InstanceProperties: []
+    StaticProperties: []
+    Protocols:       []
+  - Name:            OS_os_workgroup_parallel
+    JsName:          OS_os_workgroup_parallel
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_parallel.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Interface
+    InstanceMethods: []
+    StaticMethods:   []
+    InstanceProperties: []
+    StaticProperties: []
+    Protocols:
+      - OS_os_workgroup_parallelProtocol
+    Base:            OS_os_workgroup
+  - Name:            OS_os_workgroup_parallel
+    JsName:          OS_os_workgroup_parallelProtocol
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_parallel.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Protocol
+    InstanceMethods: []
+    StaticMethods:   []
+    InstanceProperties: []
+    StaticProperties: []
+    Protocols:       []
+  - Name:            os_workgroup_attr_opaque_s
+    JsName:          os_workgroup_attr_opaque_s
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_base.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Struct
+    Fields:
+      - Name:            sig
+        Signature:
+          Type:            UInt
+      - Name:            opaque
+        Signature:
+          Type:            ConstantArray
+          ArrayType:
+            Type:            Char
+          Size:            60
+  - Name:            os_workgroup_cancel
+    JsName:          os_workgroup_cancel
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_object.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Interface
+        Name:            OS_os_workgroup
+        WithProtocols:   []
+  - Name:            os_workgroup_create_with_workgroup
+    JsName:          os_workgroup_create_with_workgroup
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_object.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionOwnsReturnedCocoaObject ]
+    Type:            Function
+    Signature:
+      - Type:            Interface
+        Name:            OS_os_workgroup
+        WithProtocols:   []
+      - Type:            CString
+      - Type:            Interface
+        Name:            OS_os_workgroup
+        WithProtocols:   []
+  - Name:            os_workgroup_get_working_arena
+    JsName:          os_workgroup_get_working_arena
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_object.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            Interface
+        Name:            OS_os_workgroup
+        WithProtocols:   []
+      - Type:            Pointer
+        PointerType:
+          Type:            UInt
+  - Name:            os_workgroup_interval_data_opaque_s
+    JsName:          os_workgroup_interval_data_opaque_s
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_base.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Struct
+    Fields:
+      - Name:            sig
+        Signature:
+          Type:            UInt
+      - Name:            opaque
+        Signature:
+          Type:            ConstantArray
+          ArrayType:
+            Type:            Char
+          Size:            56
+  - Name:            os_workgroup_interval_finish
+    JsName:          os_workgroup_interval_finish
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_interval.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Interface
+        Name:            OS_os_workgroup
+        WithProtocols:
+          - OS_os_workgroup_intervalProtocol
+      - Type:            Pointer
+        PointerType:
+          Type:            Struct
+          Module:          os_workgroup.workgroup
+          Name:            os_workgroup_interval_data_opaque_s
+  - Name:            os_workgroup_interval_start
+    JsName:          os_workgroup_interval_start
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_interval.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Interface
+        Name:            OS_os_workgroup
+        WithProtocols:
+          - OS_os_workgroup_intervalProtocol
+      - Type:            ULongLong
+      - Type:            ULongLong
+      - Type:            Pointer
+        PointerType:
+          Type:            Struct
+          Module:          os_workgroup.workgroup
+          Name:            os_workgroup_interval_data_opaque_s
+  - Name:            os_workgroup_interval_update
+    JsName:          os_workgroup_interval_update
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_interval.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Interface
+        Name:            OS_os_workgroup
+        WithProtocols:
+          - OS_os_workgroup_intervalProtocol
+      - Type:            ULongLong
+      - Type:            Pointer
+        PointerType:
+          Type:            Struct
+          Module:          os_workgroup.workgroup
+          Name:            os_workgroup_interval_data_opaque_s
+  - Name:            os_workgroup_join
+    JsName:          os_workgroup_join
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_object.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Interface
+        Name:            OS_os_workgroup
+        WithProtocols:   []
+      - Type:            Pointer
+        PointerType:
+          Type:            Struct
+          Module:          os_workgroup.workgroup
+          Name:            os_workgroup_join_token_opaque_s
+  - Name:            os_workgroup_join_token_opaque_s
+    JsName:          os_workgroup_join_token_opaque_s
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_base.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Struct
+    Fields:
+      - Name:            sig
+        Signature:
+          Type:            UInt
+      - Name:            opaque
+        Signature:
+          Type:            ConstantArray
+          ArrayType:
+            Type:            Char
+          Size:            36
+  - Name:            os_workgroup_leave
+    JsName:          os_workgroup_leave
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_object.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Void
+      - Type:            Interface
+        Name:            OS_os_workgroup
+        WithProtocols:   []
+      - Type:            Pointer
+        PointerType:
+          Type:            Struct
+          Module:          os_workgroup.workgroup
+          Name:            os_workgroup_join_token_opaque_s
+  - Name:            os_workgroup_max_parallel_threads
+    JsName:          os_workgroup_max_parallel_threads
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_object.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Interface
+        Name:            OS_os_workgroup
+        WithProtocols:   []
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+  - Name:            os_workgroup_parallel_create
+    JsName:          os_workgroup_parallel_create
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_parallel.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable, FunctionOwnsReturnedCocoaObject ]
+    Type:            Function
+    Signature:
+      - Type:            Interface
+        Name:            OS_os_workgroup
+        WithProtocols:
+          - OS_os_workgroup_parallelProtocol
+      - Type:            CString
+      - Type:            Pointer
+        PointerType:
+          Type:            Struct
+          Module:          os_workgroup.workgroup
+          Name:            os_workgroup_attr_opaque_s
+  - Name:            os_workgroup_set_working_arena
+    JsName:          os_workgroup_set_working_arena
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_object.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Int
+      - Type:            Interface
+        Name:            OS_os_workgroup
+        WithProtocols:   []
+      - Type:            Pointer
+        PointerType:
+          Type:            Void
+      - Type:            UInt
+      - Type:            FunctionPointer
+        Signature:
+          - Type:            Void
+          - Type:            Pointer
+            PointerType:
+              Type:            Void
+  - Name:            os_workgroup_testcancel
+    JsName:          os_workgroup_testcancel
+    Filename:        '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.2.sdk/usr/include/os/workgroup_object.h'
+    Module:
+      FullName:        os_workgroup.workgroup
+      IsPartOfFramework: false
+      IsSystemModule:  true
+      Libraries:       []
+    IntroducedIn:    14.0
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:
+      - Type:            Bool
+      - Type:            Interface
+        Name:            OS_os_workgroup
+        WithProtocols:   []
+...

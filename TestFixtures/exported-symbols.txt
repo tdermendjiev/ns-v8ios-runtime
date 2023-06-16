@@ -220,3 +220,7 @@ __SCNVector3FromFloat3
 __SCNVector4FromFloat4
 __SCNMatrix4FromMat4
 _getStructFromCallback
+_LCManager_shared
+_LCManager_isVisible
+_LCManager_setIsVisible:
+_LCManager_print:
