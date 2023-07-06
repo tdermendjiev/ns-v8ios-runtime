@@ -10,12 +10,12 @@ import SwiftUI
 
 var GLOBAL_BORDER_TRACKERS: [BorderManager] = []
 
-@_cdecl("LCManager_shared")
-public func LCManager_shared() -> UnsafeMutableRawPointer {
-    let shared = LCManager.shared
-    let result = Unmanaged.passUnretained(shared).toOpaque()
-    return result
-}
+//@_cdecl("LCManager_shared")
+//public func LCManager_shared() -> UnsafeMutableRawPointer {
+//    let shared = LCManager.shared
+//    let result = Unmanaged.passUnretained(shared).toOpaque()
+//    return result
+//}
 
 //@_cdecl("LCManager_isVisible")
 //public func LCManager_getIsVisible(inst: UnsafeRawPointer) -> Bool {

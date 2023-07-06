@@ -12,5 +12,4 @@
 @property (assign) bool isVisible;
 -(void)print: (id)params;
 +(instancetype)shared;
--(bool)isSwift;
 @end

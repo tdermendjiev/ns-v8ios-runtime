@@ -10,10 +10,8 @@
 		2B6F3B2E2A0CC15100F0D68C /* AClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F3B2D2A0CC15100F0D68C /* AClass.swift */; };
 		2B7EA6AF2353477000E5184E /* NativeScriptException.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EA6AD2353476F00E5184E /* NativeScriptException.mm */; };
 		2B7EA6B02353477000E5184E /* NativeScriptException.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B7EA6AE2353477000E5184E /* NativeScriptException.h */; };
-		2B8086212A3C492F008F957C /* CDecl.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 2B8086202A3C492F008F957C /* CDecl.stencil */; };
 		2B8086232A3C4B19008F957C /* CDecl.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8086222A3C4B18008F957C /* CDecl.generated.swift */; };
 		2B8086262A3C4D1D008F957C /* CDecl.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8086252A3C4D1D008F957C /* CDecl.generated.swift */; };
-		2B8086282A3C51B2008F957C /* Symbols.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 2B8086272A3C51B2008F957C /* Symbols.stencil */; };
 		2B80862A2A3C5292008F957C /* cdecls.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2B8086292A3C5292008F957C /* cdecls.txt */; };
 		2B91BBDB2A27708B0015A627 /* ResizeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91BBD52A27708B0015A627 /* ResizeController.swift */; };
 		2B91BBDC2A27708B0015A627 /* LCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91BBD62A27708B0015A627 /* LCManager.swift */; };
@@ -435,6 +433,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2B0736F22A4AF426001CF071 /* CDecl.swifttemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = CDecl.swifttemplate; sourceTree = "<group>"; };
+		2B0736F42A52B8B4001CF071 /* MethodUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodUtils.swift; sourceTree = "<group>"; };
+		2B0736F52A5540A6001CF071 /* ObjCHeader.swifttemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = ObjCHeader.swifttemplate; sourceTree = "<group>"; };
+		2B0736F62A5541E7001CF071 /* Interfaces.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Interfaces.h; sourceTree = "<group>"; };
 		2B6F3B2D2A0CC15100F0D68C /* AClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AClass.swift; sourceTree = "<group>"; };
 		2B6F3B2F2A0CD31300F0D68C /* SwiftDeclarations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftDeclarations.h; sourceTree = "<group>"; };
 		2B7EA6AD2353476F00E5184E /* NativeScriptException.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NativeScriptException.mm; sourceTree = "<group>"; };
@@ -443,7 +445,6 @@
 		2B8086202A3C492F008F957C /* CDecl.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = CDecl.stencil; sourceTree = "<group>"; };
 		2B8086222A3C4B18008F957C /* CDecl.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDecl.generated.swift; sourceTree = "<group>"; };
 		2B8086252A3C4D1D008F957C /* CDecl.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDecl.generated.swift; sourceTree = "<group>"; };
-		2B8086272A3C51B2008F957C /* Symbols.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = Symbols.stencil; sourceTree = "<group>"; };
 		2B8086292A3C5292008F957C /* cdecls.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cdecls.txt; sourceTree = "<group>"; };
 		2B91BBD32A189FFA0015A627 /* AClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AClass.h; sourceTree = "<group>"; };
 		2B91BBD52A27708B0015A627 /* ResizeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizeController.swift; sourceTree = "<group>"; };
@@ -892,6 +893,7 @@
 		2B8086052A2E0C72008F957C /* SwiftHeaders */ = {
 			isa = PBXGroup;
 			children = (
+				2B0736F62A5541E7001CF071 /* Interfaces.h */,
 				2B91BBE12A2773C30015A627 /* LCManager.h */,
 				2B8086062A2E0CC5008F957C /* SwiftHeaders.h */,
 			);
@@ -910,7 +912,9 @@
 			isa = PBXGroup;
 			children = (
 				2B8086202A3C492F008F957C /* CDecl.stencil */,
-				2B8086272A3C51B2008F957C /* Symbols.stencil */,
+				2B0736F22A4AF426001CF071 /* CDecl.swifttemplate */,
+				2B0736F42A52B8B4001CF071 /* MethodUtils.swift */,
+				2B0736F52A5540A6001CF071 /* ObjCHeader.swifttemplate */,
 			);
 			path = Templates;
 			sourceTree = "<group>";
@@ -1857,8 +1861,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B80862A2A3C5292008F957C /* cdecls.txt in Resources */,
-				2B8086282A3C51B2008F957C /* Symbols.stencil in Resources */,
-				2B8086212A3C492F008F957C /* CDecl.stencil in Resources */,
 				C2DDEBDE229EB4A900345BFE /* app in Resources */,
 				C266567822AA405100EE15CC /* Default-568h@2x.png in Resources */,
 			);
@@ -1908,7 +1910,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which /opt/homebrew/bin/sourcery >/dev/null; then\n    /opt/homebrew/bin/sourcery --sources \"$SRCROOT/Swift\" --templates \"$SRCROOT/Templates/CDecl.stencil\" --output \"$SRCROOT/TestRunner/Source Files\"\n    \n    grep -o '@_cdecl(\"[^\"]*\")' \"$SRCROOT/TestRunner/Source Files/CDecl.generated.swift\" | sed -e 's/@_cdecl(\"/_/' -e 's/\")//' > \"$SRCROOT/TestRunner/Source Files/cdecls.txt\"\nelse\n    echo \"warning: Sourcery not installed, download from https://github.com/krzysztofzablocki/Sourcery\"\nfi\n\nrm -rf ${SRCROOT}/TestFixtures/exported-symbols.txt\ncat ${SRCROOT}/TestFixtures/exported-symbols-old.txt \"$SRCROOT/TestRunner/Source Files/cdecls.txt\" >> ${SRCROOT}/TestFixtures/exported-symbols.txt\n";
+			shellScript = "if which /opt/homebrew/bin/sourcery >/dev/null; then\n    /opt/homebrew/bin/sourcery --sources \"$SRCROOT/Swift\" --templates \"$SRCROOT/Templates/CDecl.swifttemplate\" --output \"$SRCROOT/TestRunner/Source Files\"\n    \n        /opt/homebrew/bin/sourcery --sources \"$SRCROOT/Swift\" --templates \"$SRCROOT/Templates/ObjCHeader.swifttemplate\" --output \"$SRCROOT/SwiftHeaders/Interfaces.h\"\n    \n    grep -o '@_cdecl(\"[^\"]*\")' \"$SRCROOT/TestRunner/Source Files/CDecl.generated.swift\" | sed -e 's/@_cdecl(\"/_/' -e 's/\")//' > \"$SRCROOT/TestRunner/Source Files/cdecls.txt\"\nelse\n    echo \"warning: Sourcery not installed, download from https://github.com/krzysztofzablocki/Sourcery\"\nfi\n\nrm -rf ${SRCROOT}/TestFixtures/exported-symbols.txt\ncat ${SRCROOT}/TestFixtures/exported-symbols-old.txt \"$SRCROOT/TestRunner/Source Files/cdecls.txt\" >> ${SRCROOT}/TestFixtures/exported-symbols.txt\n";
 		};
 		65A6D684291F63A30074DF31 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;

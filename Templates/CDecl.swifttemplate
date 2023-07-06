@@ -1,0 +1,48 @@
+<%- includeFile("MethodUtils.swift") -%>
+<%_ for type in types.classes  { -%>
+    <%_ if type.name == "LCManager" { -%>
+        <%_ for method in type.staticMethods { -%>
+            <%_ if method.name == "shared()" { -%>
+@_cdecl("LCManager_shared")
+public func LCManager_shared() -> UnsafeMutableRawPointer {
+    let shared = <%= type.name %>.shared
+    let result = Unmanaged.passUnretained(shared).toOpaque()
+    return result
+}
+            <%_ } -%>
+        <%_ } -%>
+        <%_ for variable in type.staticVariables { -%>
+            <%_ if variable.name == "shared" { -%>
+@_cdecl("LCManager_shared")
+public func LCManager_shared() -> UnsafeMutableRawPointer {
+    let shared = <%= type.name %>.shared
+    let result = Unmanaged.passUnretained(shared).toOpaque()
+    return result
+}
+            <%_ } -%>
+        <%_ } -%>
+        <%_ for variable in type.variables { -%>
+            <%_ if variable.name == "isVisible" && variable.isMutable { -%>
+@_cdecl("LCManager_isVisible")
+public func LCManager_getIsVisible(inst: UnsafeRawPointer) -> Bool {
+    let obj = Unmanaged<<%= type.name %>>.fromOpaque(inst).takeUnretainedValue()
+    return obj.isVisible
+}
+@_cdecl("LCManager_setIsVisible:")
+public func LCManager_setIsVisible(inst: UnsafeMutableRawPointer, isVisible: Bool) {
+    let obj = Unmanaged<<%= type.name %>>.fromOpaque(inst).takeUnretainedValue()
+    obj.isVisible = isVisible
+}
+            <%_ } -%>
+        <%_ } -%>
+        <%_ for method in type.instanceMethods { -%>
+            <%_ if method.name == "print(_ items: Any)" { -%>
+@_cdecl("<%= method.cdeclName(forClass: type.name) %>")
+public func <%= method.proxyName(forClass: type.name) %> {
+    let obj = Unmanaged<<%= type.name %>>.fromOpaque(inst).takeUnretainedValue()
+    obj.print(Unmanaged<AnyObject>.fromOpaque(items).takeUnretainedValue())
+}
+            <%_ } -%>
+        <%_ } -%>
+    <%_ } -%>
+<%_ } -%>

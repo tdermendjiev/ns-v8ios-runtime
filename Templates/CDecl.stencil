@@ -13,6 +13,18 @@
             {% endif %}
         {% endfor %}
         
+         {% for variable in type.staticVariables %}
+            {% if variable.name == "shared" %}
+            @_cdecl("LCManager_shared")
+            public func LCManager_shared() -> UnsafeMutableRawPointer {
+                let shared = {{ type.name }}.shared
+                let result = Unmanaged.passUnretained(shared).toOpaque()
+                return result
+            }
+            {% endif %}
+        {% endfor %}
+        
+        
         {% for variable in type.variables %}
             {% if variable.name == "isVisible" and variable.isMutable %}
             @_cdecl("LCManager_isVisible")

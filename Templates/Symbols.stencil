@@ -1,3 +1,0 @@
-{% for function in functions|annotated:"cdecl" %}
-_{{ function.name }}
-{% endfor %}
