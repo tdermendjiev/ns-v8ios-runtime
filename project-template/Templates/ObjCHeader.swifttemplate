@@ -1,0 +1,26 @@
+<%- includeFile("MethodUtils.swift") -%>
+#import <Foundation/Foundation.h>
+
+<% for type in types.classes { -%>
+    <%_ if type.name == "LCManager" { _%>
+        @interface <%= type.name %>
+        <%_ for variable in type.variables { _%>
+            <%_ if variable.name != "shared" { _%>
+            @property (assign) <%= variable.typeName.objcEquivalent %> <%= variable.name %>;
+            <%_ } _%>
+        <%_ } _%>
+
+        <%_ for method in type.instanceMethods { _%>
+            <%= method.objcDeclaration %>
+        <%_ } _%>
+        //+(instancetype)shared;
+
+        <%_ for method in type.staticMethods { _%>
+            +(instancetype)<%= method.name %>;
+        <%_ } _%>
+        <%_ for variable in type.staticVariables { _%>
+            +(instancetype)<%= variable.name %>;
+        <%_ } _%>
+        @end
+    <%_ } _%>
+<%_ } _%>

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B0736F92A5685A8001CF071 /* CDecl.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0736F82A5685A8001CF071 /* CDecl.generated.swift */; };
+		2B0736FB2A568837001CF071 /* cdecls.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2B0736FA2A568837001CF071 /* cdecls.txt */; };
+		2BC319622A607D69008D4891 /* exported-symbols-old.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2BC319612A607D69008D4891 /* exported-symbols-old.txt */; };
 		39940D9122C4EF600050DDE1 /* NativeScript.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39940D8C22C4EAAA0050DDE1 /* NativeScript.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		39940E1C22C5DFFF0050DDE1 /* TKLiveSync.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39940E1B22C5DFFF0050DDE1 /* TKLiveSync.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		858B842D18CA22B800AB12DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 858B833A18CA111C00AB12DE /* InfoPlist.strings */; };
@@ -30,6 +33,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2B0736F82A5685A8001CF071 /* CDecl.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDecl.generated.swift; sourceTree = "<group>"; };
+		2B0736FA2A568837001CF071 /* cdecls.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = cdecls.txt; sourceTree = "<group>"; };
+		2B0736FD2A568857001CF071 /* Interfaces.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Interfaces.h; sourceTree = "<group>"; };
+		2B0736FE2A568876001CF071 /* SwiftHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftHeaders.h; sourceTree = "<group>"; };
+		2B0737012A568916001CF071 /* CDecl.swifttemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = CDecl.swifttemplate; sourceTree = "<group>"; };
+		2B0737022A568933001CF071 /* ObjCHeader.swifttemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = ObjCHeader.swifttemplate; sourceTree = "<group>"; };
+		2B0737032A568940001CF071 /* MethodUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodUtils.swift; sourceTree = "<group>"; };
+		2BC319612A607D69008D4891 /* exported-symbols-old.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "exported-symbols-old.txt"; sourceTree = "<group>"; };
+		2BCBC2872A5FC8D60046B26F /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		391174B521F1D7BF00BA2583 /* nativescript-build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "nativescript-build.xcconfig"; path = "internal/nativescript-build.xcconfig"; sourceTree = SOURCE_ROOT; };
 		391174B721F1D99900BA2583 /* plugins-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "plugins-release.xcconfig"; sourceTree = SOURCE_ROOT; };
 		391174B821F1D99900BA2583 /* plugins-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "plugins-debug.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -65,11 +77,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B0736FC2A568845001CF071 /* SwiftHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				2B0736FD2A568857001CF071 /* Interfaces.h */,
+				2B0736FE2A568876001CF071 /* SwiftHeaders.h */,
+				2BCBC2872A5FC8D60046B26F /* module.modulemap */,
+			);
+			path = SwiftHeaders;
+			sourceTree = "<group>";
+		};
+		2B0737002A5688F2001CF071 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				2B0737012A568916001CF071 /* CDecl.swifttemplate */,
+				2B0737022A568933001CF071 /* ObjCHeader.swifttemplate */,
+				2B0737032A568940001CF071 /* MethodUtils.swift */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
 		39940D8E22C4EBCC0050DDE1 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				CD62955C1BB2678900AE3A93 /* main.m */,
 				858B833F18CA111C00AB12DE /* __PROJECT_NAME__-Prefix.pch */,
+				2B0736F82A5685A8001CF071 /* CDecl.generated.swift */,
+				2B0736FA2A568837001CF071 /* cdecls.txt */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -89,6 +123,7 @@
 		858B832518CA111C00AB12DE = {
 			isa = PBXGroup;
 			children = (
+				2B0737002A5688F2001CF071 /* Templates */,
 				E070579D1B39A9D000214BF1 /* Resources */,
 				858B833718CA111C00AB12DE /* __PROJECT_NAME__ */,
 				858B833018CA111C00AB12DE /* Frameworks */,
@@ -117,10 +152,12 @@
 		858B833718CA111C00AB12DE /* __PROJECT_NAME__ */ = {
 			isa = PBXGroup;
 			children = (
+				2B0736FC2A568845001CF071 /* SwiftHeaders */,
 				39940D8E22C4EBCC0050DDE1 /* Sources */,
 				39940D8122C4E84C0050DDE1 /* __PROJECT_NAME__.entitlements */,
 				CD45EE7A18DC2D5800FB50C0 /* app */,
 				858B833818CA111C00AB12DE /* Supporting Files */,
+				2BC319612A607D69008D4891 /* exported-symbols-old.txt */,
 			);
 			path = __PROJECT_NAME__;
 			sourceTree = "<group>";
@@ -156,6 +193,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 858B843018CA22B800AB12DE /* Build configuration list for PBXNativeTarget "__PROJECT_NAME__" */;
 			buildPhases = (
+				2B0737052A568997001CF071 /* Generate Swift Bindings */,
 				C97FD7AC1ADE5369004DB2A4 /* NativeScript PreBuild */,
 				858B83F218CA22B800AB12DE /* Sources */,
 				CD62955B1BB2651D00AE3A93 /* NativeScript PreLink */,
@@ -184,6 +222,7 @@
 				ORGANIZATIONNAME = NativeScript;
 				TargetAttributes = {
 					858B83EF18CA22B800AB12DE = {
+						LastSwiftMigration = 1420;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -213,12 +252,32 @@
 			files = (
 				CD45EE7C18DC2D5800FB50C0 /* app in Resources */,
 				858B842D18CA22B800AB12DE /* InfoPlist.strings in Resources */,
+				2B0736FB2A568837001CF071 /* cdecls.txt in Resources */,
+				2BC319622A607D69008D4891 /* exported-symbols-old.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2B0737052A568997001CF071 /* Generate Swift Bindings */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Swift Bindings";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which /opt/homebrew/bin/sourcery >/dev/null; then\n    \n    LOCALCONSOLE_PATH=$BUILD_DIR/../../SourcePackages/checkouts/LocalConsole/Sources/LocalConsole\n\n\n    SWIFT_SOURCES_PATH=$LOCALCONSOLE_PATH\n    \n    /opt/homebrew/bin/sourcery --sources $SWIFT_SOURCES_PATH --templates \"$SRCROOT/Templates/CDecl.swifttemplate\" --output \"$SRCROOT/__PROJECT_NAME__\"\n    \n        /opt/homebrew/bin/sourcery --sources $SWIFT_SOURCES_PATH --templates \"$SRCROOT/Templates/ObjCHeader.swifttemplate\" --output \"$SRCROOT/__PROJECT_NAME__/SwiftHeaders/Interfaces.h\"\n    \n    #grep -o '@_cdecl(\"[^\"]*\")' \"$SRCROOT/__PROJECT_NAME__/CDecl.generated.swift\" | sed -e 's/@_cdecl(\"/_/' -e 's/\")//' > \"$SRCROOT/nsswiftdemo/cdecls.txt\"\nelse\n    echo \"warning: Sourcery not installed, download from https://github.com/krzysztofzablocki/Sourcery\"\nfi\n\n#rm -rf ${SRCROOT}/__PROJECT_NAME__/exported-symbols.txt\n#cat ${SRCROOT}/__PROJECT_NAME__/exported-symbols-old.txt \"$SRCROOT/__PROJECT_NAME__/cdecls.txt\" >> ${SRCROOT}/__PROJECT_NAME__/exported-symbols.txt\n";
+		};
 		C97FD7AC1ADE5369004DB2A4 /* NativeScript PreBuild */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -278,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B0736F92A5685A8001CF071 /* CDecl.generated.swift in Sources */,
 				CD62955D1BB2678900AE3A93 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,9 +470,11 @@
 			baseConfigurationReference = CDD59A261BB43B5D00EC2671 /* build-debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_MODULES = NO;
 				CODE_SIGN_ENTITLEMENTS = __PROJECT_NAME__/__PROJECT_NAME__.entitlements;
 				ENABLE_BITCODE = NO;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
+				EXPORTED_SYMBOLS_FILE = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "__PROJECT_NAME__/__PROJECT_NAME__-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -423,13 +485,18 @@
 					"$(inherited)",
 					"\"$SRCROOT/internal/Swift-Modules\"",
 					"\"$(SRCROOT)/internal\"",
+					"\"$(SRCROOT)/__PROJECT_NAME__/SwiftHeaders\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/__PROJECT_NAME__/__PROJECT_NAME__-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_NAME = __PROJECT_NAME__;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -439,22 +506,28 @@
 			baseConfigurationReference = CDD59A271BB43B5D00EC2671 /* build-release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_MODULES = NO;
 				CODE_SIGN_ENTITLEMENTS = __PROJECT_NAME__/__PROJECT_NAME__.entitlements;
 				ENABLE_BITCODE = NO;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
+				EXPORTED_SYMBOLS_FILE = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "__PROJECT_NAME__/__PROJECT_NAME__-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$SRCROOT/internal/Swift-Modules",
 					"$(SRCROOT)/internal",
+					"\"$(SRCROOT)/__PROJECT_NAME__/SwiftHeaders\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/__PROJECT_NAME__/__PROJECT_NAME__-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_NAME = __PROJECT_NAME__;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

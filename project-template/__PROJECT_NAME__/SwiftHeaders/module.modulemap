@@ -1,0 +1,6 @@
+module SwiftHeaders {
+  umbrella header "SwiftHeaders.h"
+  export *
+  module * { export * }
+}
+

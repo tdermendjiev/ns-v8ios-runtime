@@ -84,7 +84,7 @@ Local<Value> ArgConverter::Invoke(Local<Context> context, Class klass, Local<Obj
         throw NativeScriptException(errorMessage);
     }
 
-    if (klass == nullptr) {
+    if (klass == nullptr && target == nullptr) {
         SwiftMethodCall methodCall = ArgConverter::getSwiftMethodCall(context, meta, nullptr, args);
         return Interop::CallFunction(methodCall);
     } else {
@@ -735,7 +735,7 @@ Local<Value> ArgConverter::CreateJsWrapper(Local<Context> context, BaseDataWrapp
     //TODO: swift meta -> here we should find the PROPER meta
     const BaseClassMeta* baseMeta = nullptr;
     //TODO: remove this hardcoded class
-    Class k = NSClassFromString(@"TestRunner.LCManager");
+    Class k = NSClassFromString(@"LocalConsole.LCManager");
     if (klass == k) {
         baseMeta = static_cast<const BaseClassMeta*>(GetMeta("LCManager"));
     }

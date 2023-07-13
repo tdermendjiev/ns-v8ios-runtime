@@ -624,6 +624,11 @@ void MetadataBuilder::ClassConstructorCallback(const FunctionCallbackInfo<Value>
     tns::Assert(info.IsConstructCall(), isolate);
     try {
         CacheItem<BaseClassMeta>* item = static_cast<CacheItem<BaseClassMeta>*>(info.Data().As<External>()->Value());
+        
+        //NB!!! - here klass wont be nullptr if the swift lib has generated a <libname>-Swift.h because the objc metadata generator will process it like below:
+//    Name:            _TtC12LocalConsole9LCManager
+//       JsName:          LCManager
+//       DemangledName:   LocalConsole.LCManager
         Class klass = objc_getClass(item->meta_->name());
 
         const InterfaceMeta* interfaceMeta = static_cast<const InterfaceMeta*>(item->meta_);
